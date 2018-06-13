@@ -1,0 +1,124 @@
+# vim: ft=colortemplate fdm=marker
+
+# Information {{{
+# Mandatory
+Full name:  Yui
+Short name: yui
+Author:     Florian B <yuuki@protonmail.com>
+Maintainer: Florian B <yuuki@protonmail.com>
+# }}}
+
+Background: dark
+
+# Color palette {{{
+           # Color name      GUI         Base256    Base16 (optional)
+Color: black           #212121    ~
+Color: black2          #313131    ~
+Color: white           #e8e8e8    ~
+Color: full_white      #ffffff    ~
+Color: grey            #565656    ~
+Color: red             #d71714    ~
+Color: blue            #81d4fa    ~
+Color: dark_blue       #0d47a1    ~
+Color: citrus          #e6ee9c    ~
+Color: cyan            #80deea    ~
+Color: green           #81c784    ~
+Color: dark_green      #1b5e20    ~
+Color: yellow          #ffee58    ~
+Color: highlight_bg    #0d47a1    ~
+# }}}
+
+# Default highlight groups {{{
+# Group              Foreground        Background        Attributes
+Normal           white             black
+ColorColumn      fg                black
+Conceal          grey              none
+Cursor           white             black
+CursorColumn     white             black
+CursorLine       white             grey
+CursorLineNr     white             black
+DiffAdd          green             black             bold
+DiffChange       white             black             bold
+DiffDelete       red               black             bold
+DiffText         yellow            black             bold
+Directory        white             black
+EndOfBuffer      white             black
+ErrorMsg         red               black             reverse
+FoldColumn       white             black
+Folded           grey              black
+IncSearch        white             dark_green        t=reverse g=standout
+LineNr           grey              black
+MatchParen       blue              black
+ModeMsg          white             black
+MoreMsg          white             black
+NonText          white             black
+Pmenu            white             black2
+PmenuSbar        white             black2
+PmenuSel         white             highlight_bg
+PmenuThumb       white             black2
+Question         white             black
+QuickFixLine     ->  Search
+Search           white             highlight_bg
+SignColumn       white             black
+SpecialKey       white             black
+SpellBad         white             black             s=red
+SpellCap         white             black             s=blue
+SpellLocal       white             black             s=green
+SpellRare        white             black             s=green reverse
+StatusLine       white             grey             bold
+StatusLineNC     white             black2
+StatusLineTerm   -> StatusLine
+StatusLineTermNC -> StatusLineNC
+TabLine          white             black
+TabLineFill      white             black
+TabLineSel       white             black
+Title            white             black
+VertSplit        grey              black
+Visual           white             highlight_bg
+VisualNOS        white             black
+WarningMsg       white             black
+WildMenu         white             highlight_bg
+# Other conventional group names (see `:help group-name`)
+Boolean          -> Constant
+Character        -> Constant
+Comment          grey              black             italic
+Conditional      -> Statement
+Constant         full_white        none              bold
+Define           -> PreProc
+Debug            -> Special
+Delimiter        -> Special
+Error            white             black             reverse
+Exception        -> Statement
+Float            -> Constant
+Function         -> Identifier
+Identifier       white             none
+Ignore           white             none
+Include          -> PreProc
+Keyword          -> Statement
+Label            -> Statement
+Macro            -> PreProc
+Number           -> Constant
+Operator         -> Statement
+PreCondit        -> PreProc
+PreProc          white             none
+Repeat           -> Statement
+Special          white             none
+SpecialChar      -> Special
+SpecialComment   -> Special
+Statement        white             none
+StorageClass     -> Type
+String           -> Constant
+Structure        -> Type
+Tag              -> Special
+Todo             white             none
+Type             white             none
+Typedef          -> Type
+Underlined       white             none
+# See `:help lCursor`
+lCursor          -> Cursor
+# See `:help CursorIM`
+CursorIM         none              fg
+# See `:help window-toolbar`
+ToolbarLine      none              black
+ToolbarButton    white             black             bold
+# }}}
