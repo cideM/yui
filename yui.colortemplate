@@ -13,19 +13,17 @@ Background: dark
 # Color palette {{{
            # Color name      GUI         Base256    Base16 (optional)
 Color: black           #212121    ~
-Color: black2          #313131    ~
+Color: black_lighter          #313131    ~
 Color: white           #e8e8e8    ~
 Color: full_white      #ffffff    ~
 Color: grey            #565656    ~
-Color: red             #d71714    ~
-Color: blue            #81d4fa    ~
-Color: dark_blue       #0d47a1    ~
-Color: citrus          #e6ee9c    ~
-Color: cyan            #80deea    ~
+Color: red             #ff5722    ~
+Color: dark_red        #bf360c    ~
+Color: blue            #01579b    ~
 Color: green           #81c784    ~
-Color: dark_green      #1b5e20    ~
+Color: dark_green      #446e26    ~
 Color: yellow          #ffee58    ~
-Color: highlight_bg    #0d47a1    ~
+Color: focus_bg        #0d47a1    ~
 # }}}
 
 # Default highlight groups {{{
@@ -43,7 +41,7 @@ DiffDelete       red               black             bold
 DiffText         yellow            black             bold
 Directory        white             black
 EndOfBuffer      white             black
-ErrorMsg         red               black             reverse
+ErrorMsg         black             dark_red          reverse
 FoldColumn       white             black
 Folded           grey              black
 IncSearch        white             dark_green        t=reverse g=standout
@@ -52,13 +50,13 @@ MatchParen       blue              black
 ModeMsg          white             black
 MoreMsg          white             black
 NonText          white             black
-Pmenu            white             black2
-PmenuSbar        white             black2
-PmenuSel         white             highlight_bg
-PmenuThumb       white             black2
+Pmenu            white             black_lighter
+PmenuSbar        white             black_lighter
+PmenuSel         white             focus_bg
+PmenuThumb       white             black_lighter
 Question         white             black
 QuickFixLine     ->  Search
-Search           white             highlight_bg
+Search           white             focus_bg
 SignColumn       white             black
 SpecialKey       white             black
 SpellBad         white             black             s=red
@@ -66,18 +64,18 @@ SpellCap         white             black             s=blue
 SpellLocal       white             black             s=green
 SpellRare        white             black             s=green reverse
 StatusLine       white             grey             bold
-StatusLineNC     white             black2
+StatusLineNC     white             black_lighter
 StatusLineTerm   -> StatusLine
 StatusLineTermNC -> StatusLineNC
-TabLine          white             black
-TabLineFill      white             black
-TabLineSel       white             black
+TabLine          white             black_lighter
+TabLineFill      white             black_lighter
+TabLineSel       white             focus_bg
 Title            white             black
 VertSplit        grey              black
-Visual           white             highlight_bg
+Visual           white             focus_bg
 VisualNOS        white             black
 WarningMsg       white             black
-WildMenu         white             highlight_bg
+WildMenu         white             focus_bg
 # Other conventional group names (see `:help group-name`)
 Boolean          -> Constant
 Character        -> Constant

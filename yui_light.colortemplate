@@ -68,13 +68,13 @@ StatusLine       black             true_white
 StatusLineNC     black             white2
 StatusLineTerm   -> StatusLine
 StatusLineTermNC -> StatusLineNC
-TabLine          black             white
-TabLineFill      black             white
-TabLineSel       black             white
+TabLine          black             true_white
+TabLineFill      black             true_white
+TabLineSel       black             focus_bg
 Title            black             white
 VertSplit        grey              white
 Visual           black             focus_bg
-VisualNOS        black             true_white
+VisualNOS        black             focus_bg
 WarningMsg       black             white
 WildMenu         black             focus_bg
 # Other conventional group names (see `:help group-name`)
