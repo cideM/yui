@@ -8,15 +8,27 @@ Author:     Florian B <yuuki@protonmail.com>
 Maintainer: Florian B <yuuki@protonmail.com>
 # }}}
 
+documentation
+===========================================================================
+@fullname Options                                *@shortname-options*
+
+                                               *g:@shortname_transparent*
+Set to 1 if you want to make the background transparent.
+>
+let g:@shortname_transparent = 1
+<
+enddocumentation
+
 Background: dark
 
 # Color palette {{{
-           # Color name      GUI         Base256    Base16 (optional)
+# Color name           GUI        Base256    Base16 (optional)
 Color: black           #212121    ~
 Color: black_lighter   #313131    ~
 Color: white           #e8e8e8    ~
 Color: full_white      #ffffff    ~
-Color: grey            #565656    ~
+Color: grey            #898989    ~
+Color: dark_grey       #565656    ~
 Color: red             #ff5722    ~
 Color: dark_red        #bf360c    ~
 Color: blue            #81d4fa    ~
@@ -28,66 +40,82 @@ Color: focus_bg        #01579b    ~
 
 # Default highlight groups {{{
 # Group              Foreground        Background        Attributes
-ALEErrorSign     red               black
-ALEWarningSign   yellow            black
-Normal           white             black
-ColorColumn      fg                black
+
+verbatim
+if !has('gui_running') && get(g:, '@optionprefix_transparent', 1)
+endverbatim
+    # Transparent background
+    Normal           white             none
+    Terminal         white             none
+verbatim
+else
+endverbatim
+    # Opaque background
+    Normal           white             black
+    Terminal         white             black
+verbatim
+endif
+endverbatim
+
+ALEErrorSign     red               none
+ALEWarningSign   yellow            none
+ColorColumn      fg                none
 Conceal          grey              none
-Cursor           white             black
-CursorColumn     white             black
-CursorLine       white             grey
-CursorLineNr     white             black
-DiffAdd          green             black
-DiffChange       blue              black
-DiffDelete       red               black
-DiffText         yellow            black
-Directory        white             black
-EndOfBuffer      white             black
+Cursor           white             none
+CursorColumn     white             none
+CursorLine       white             dark_grey
+CursorLineNr     white             none
+DiffAdd          green             none
+DiffChange       blue              none
+DiffDelete       red               none
+DiffText         yellow            none
+Directory        white             none
+EndOfBuffer      white             none
 ErrorMsg         black             dark_red          reverse
-FoldColumn       white             black
-Folded           grey              black
+FoldColumn       white             none
+Folded           grey              none              italic
 IncSearch        white             dark_green        t=reverse g=standout
-LineNr           grey              black
-MatchParen       blue              black
-ModeMsg          white             black
-MoreMsg          white             black
-NonText          white             black
+LineNr           grey              none
+MatchParen       blue              none
+ModeMsg          white             none
+MoreMsg          white             none
+NonText          white             none
 Pmenu            white             black_lighter
 PmenuSbar        white             black_lighter
 PmenuSel         white             focus_bg
 PmenuThumb       white             black_lighter
-Question         white             black
+Question         white             none
 QuickFixLine     ->  Search
 Search           white             focus_bg
-SignColumn       white             black
-SpecialKey       white             black
-SpellBad         red               black
-SpellCap         yellow            black
-SpellLocal       white             black
-SpellRare        white             black
-StatusLine       white             grey
+SignColumn       white             none
+SpecialKey       white             none
+SpellBad         red               none               underline
+SpellCap         yellow            none               underline
+SpellLocal       white             none
+SpellRare        white             none
+StatusLine       white             dark_grey
 StatusLineNC     white             black_lighter
 StatusLineTerm   -> StatusLine
 StatusLineTermNC -> StatusLineNC
 TabLine          white             black_lighter
 TabLineFill      white             black_lighter
 TabLineSel       white             focus_bg
-Title            white             black
-VertSplit        grey              black
+Title            white             none
+VertSplit        grey              none
 Visual           white             focus_bg
-VisualNOS        white             black
-WarningMsg       white             black
+VisualNOS        white             none
+WarningMsg       white             none
 WildMenu         white             focus_bg
 # Other conventional group names (see `:help group-name`)
 Boolean          -> Constant
 Character        -> Constant
-Comment          grey              black
+Comment          grey              none
 Conditional      -> Statement
 Constant         full_white        none
 Define           -> PreProc
 Debug            -> Special
 Delimiter        -> Special
-Error            white             black             reverse
+Error            white             none             reverse
 Exception        -> Statement
 Float            -> Constant
 Function         -> Identifier
@@ -119,6 +147,6 @@ lCursor          -> Cursor
 # See `:help CursorIM`
 CursorIM         none              fg
 # See `:help window-toolbar`
-ToolbarLine      none              black
-ToolbarButton    white             black
+ToolbarLine      none              none
+ToolbarButton    white             none
 # }}}
