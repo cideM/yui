@@ -28,9 +28,8 @@ Color: focus_bg        #01579b    ~
 
 # Default highlight groups {{{
 # Group              Foreground        Background        Attributes
-ALEError         red               black
-ALEInfo          fg                black
-ALEWarning       yellow            black
+ALEErrorSign     red               black
+ALEWarningSign   yellow            black
 Normal           white             black
 ColorColumn      fg                black
 Conceal          grey              none
@@ -38,10 +37,10 @@ Cursor           white             black
 CursorColumn     white             black
 CursorLine       white             grey
 CursorLineNr     white             black
-DiffAdd          green             black             bold
-DiffChange       white             black             bold
-DiffDelete       red               black             bold
-DiffText         yellow            black             bold
+DiffAdd          green             black
+DiffChange       blue              black
+DiffDelete       red               black
+DiffText         yellow            black
 Directory        white             black
 EndOfBuffer      white             black
 ErrorMsg         black             dark_red          reverse
@@ -62,11 +61,11 @@ QuickFixLine     ->  Search
 Search           white             focus_bg
 SignColumn       white             black
 SpecialKey       white             black
-SpellBad         white             black             s=red
-SpellCap         white             black             s=blue
-SpellLocal       white             black             s=green
-SpellRare        white             black             s=green reverse
-StatusLine       white             grey             bold
+SpellBad         red               black
+SpellCap         yellow            black
+SpellLocal       white             black
+SpellRare        white             black
+StatusLine       white             grey
 StatusLineNC     white             black_lighter
 StatusLineTerm   -> StatusLine
 StatusLineTermNC -> StatusLineNC
@@ -82,9 +81,9 @@ WildMenu         white             focus_bg
 # Other conventional group names (see `:help group-name`)
 Boolean          -> Constant
 Character        -> Constant
-Comment          grey              black             italic
+Comment          grey              black
 Conditional      -> Statement
-Constant         full_white        none              bold
+Constant         full_white        none
 Define           -> PreProc
 Debug            -> Special
 Delimiter        -> Special
@@ -121,5 +120,5 @@ lCursor          -> Cursor
 CursorIM         none              fg
 # See `:help window-toolbar`
 ToolbarLine      none              black
-ToolbarButton    white             black             bold
+ToolbarButton    white             black
 # }}}
