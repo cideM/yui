@@ -29,6 +29,9 @@ Color: focus_bg        #bbdefb    ~
 
 # Default highlight groups {{{
 # Group      Foreground        Background        Attributes
+ALEError     red               white
+ALEInfo      fg                white
+ALEWarning   yellow            white
 Normal       black             white
 ColorColumn  black             white
 Conceal      grey              none

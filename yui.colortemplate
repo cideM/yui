@@ -13,21 +13,24 @@ Background: dark
 # Color palette {{{
            # Color name      GUI         Base256    Base16 (optional)
 Color: black           #212121    ~
-Color: black_lighter          #313131    ~
+Color: black_lighter   #313131    ~
 Color: white           #e8e8e8    ~
 Color: full_white      #ffffff    ~
 Color: grey            #565656    ~
 Color: red             #ff5722    ~
 Color: dark_red        #bf360c    ~
-Color: blue            #01579b    ~
+Color: blue            #81d4fa    ~
 Color: green           #81c784    ~
 Color: dark_green      #446e26    ~
 Color: yellow          #ffee58    ~
-Color: focus_bg        #0d47a1    ~
+Color: focus_bg        #01579b    ~
 # }}}
 
 # Default highlight groups {{{
 # Group              Foreground        Background        Attributes
+ALEError         red               black
+ALEInfo          fg                black
+ALEWarning       yellow            black
 Normal           white             black
 ColorColumn      fg                black
 Conceal          grey              none
