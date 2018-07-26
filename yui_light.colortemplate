@@ -2,8 +2,8 @@
 
 # Information {{{
 # Mandatory
-Full name:  Yui Light
-Short name: yui_light
+Full name:  Yui
+Short name: yui
 Author:     Florian B <yuuki@protonmail.com>
 Maintainer: Florian B <yuuki@protonmail.com>
 # }}}
@@ -11,116 +11,115 @@ Maintainer: Florian B <yuuki@protonmail.com>
 Background: dark
 
 # Color palette {{{
-           # Color name      GUI         Base256    Base16 (optional)
-Color: true_black      #000000    ~
-Color: black           #212121    ~
-Color: true_white      #ffffff    ~
-Color: white           #f0f0f0    ~
-Color: white2          #e8e8e8    ~
-Color: grey            #565656    ~
-Color: red             #f99190    ~
+# Color name           GUI        Base256    Base16 (optional)
+Color: background      #eeeeed    ~
+Color: alt_bg          #ffffff    ~
+Color: foreground      #0d0d0d    ~
+Color: alt_fg          #000000    ~
+Color: error_fg        #d1002a    ~
+Color: error_bg        #ff5252    ~
 Color: blue            #81d4fa    ~
-Color: citrus          #e6ee9c    ~
-Color: cyan            #80deea    ~
-Color: green           #81c784    ~
-Color: yellow          #ffee58    ~
-Color: focus_bg        #bbdefb    ~
+Color: green           #006b2d    ~
+Color: warn_fg         #7a6600    ~
+Color: accent_1        #007a5e    ~
+Color: accent_2        #677000    ~
+Color: accent_3        #8f5f00    ~
 # }}}
 
 # Default highlight groups {{{
-# Group      Foreground        Background        Attributes
-ALEError     red               white
-ALEInfo      fg                white
-ALEWarning   yellow            white
-Normal       black             white
-ColorColumn  black             white
-Conceal      grey              none
-Cursor       grey              white
-CursorColumn black             white
-CursorLine   true_white        black            reverse
-CursorLineNr black             white
-DiffAdd      black             green             bold
-DiffChange   black             white             bold
-DiffDelete   black             red               bold
-DiffText     black             yellow            bold
-Directory    black             white
-EndOfBuffer  black             white
-ErrorMsg     red               white             reverse
-FoldColumn   black             white
-Folded       grey              white
-IncSearch    black             green             t=reverse g=standout
-LineNr       grey              white
-MatchParen   blue              white
-ModeMsg      black             white
-MoreMsg      black             white
-NonText      black             white
-Pmenu        black             true_white
-PmenuSbar    black             true_white
-PmenuSel     black             focus_bg
-PmenuThumb   black             true_white
-Question     black             white
+# Group              Foreground        Background        Attributes
+ALEErrorSign     error_fg               background
+ALEWarningSign   warn_fg                background
+Normal           foreground             background
+Terminal         foreground             background
+ColorColumn      fg                     none
+Conceal          alt_fg                 none
+Cursor           foreground             none
+CursorColumn     foreground             none
+CursorLine       foreground             alt_bg
+CursorLineNr     foreground             none
+DiffAdd          green                  none
+DiffChange       blue                   none
+DiffDelete       error_fg               none
+DiffText         warn_fg                none
+Directory        foreground             none
+EndOfBuffer      background             none
+ErrorMsg         background             error_bg
+FoldColumn       foreground             alt_bg
+Folded           alt_fg                 none
+IncSearch        background             accent_1
+LineNr           alt_fg                 background
+MatchParen       accent_1               none
+ModeMsg          foreground             none
+MoreMsg          foreground             none
+NonText          foreground             none
+Pmenu            foreground             alt_bg
+PmenuSbar        foreground             alt_bg
+PmenuSel         accent_1               alt_bg
+PmenuThumb       foreground             alt_bg
+Question         foreground             none
 QuickFixLine     ->  Search
-Search           black             focus_bg
-SignColumn       black             white
-SpecialKey       black             white
-SpellBad         black             white             s=red
-SpellCap         black             white             s=blue
-SpellLocal       black             white             s=green
-SpellRare        black             white             s=green reverse
-StatusLine       black             true_white
-StatusLineNC     black             white2
+Search           background             foreground
+SignColumn       foreground             background
+SpecialKey       foreground             none
+SpellBad         error_fg               none
+SpellCap         warn_fg                none
+SpellLocal       foreground             none
+SpellRare        foreground             none
+StatusLine       foreground             alt_bg
+StatusLineNC     foreground             background
 StatusLineTerm   -> StatusLine
 StatusLineTermNC -> StatusLineNC
-TabLine          black             true_white
-TabLineFill      black             true_white
-TabLineSel       black             focus_bg
-Title            black             white
-VertSplit        grey              white
-Visual           black             focus_bg
-VisualNOS        black             focus_bg
-WarningMsg       black             white
-WildMenu         black             focus_bg
+TabLine          foreground             alt_bg
+TabLineFill      foreground             alt_bg
+TabLineSel       accent_1               alt_bg
+Title            foreground             none
+VertSplit        alt_fg                 none
+Visual           background             foreground
+VisualNOS        foreground             none
+WarningMsg       foreground             none
+WildMenu         accent_1               alt_bg
 # Other conventional group names (see `:help group-name`)
-Boolean          -> Constant
-Character        -> Constant
-Comment          grey              white             italic
-Conditional      -> Statement
-Constant         true_black        none              bold
-Define           -> PreProc
-Debug            -> Special
-Delimiter        -> Special
-Error            black             white             reverse
-Exception        -> Statement
-Float            -> Constant
-Function         -> Identifier
-Identifier       black             none
-Ignore           black             none
-Include          -> PreProc
-Keyword          -> Statement
-Label            -> Statement
-Macro            -> PreProc
-Number           -> Constant
-Operator         -> Statement
-PreCondit        -> PreProc
-PreProc          black             none
-Repeat           -> Statement
-Special          black             none
-SpecialChar      -> Special
-SpecialComment   -> Special
-Statement        black             none
-StorageClass     -> Type
-String           -> Constant
-Structure        -> Type
-Tag              -> Special
-Todo             black             none
-Type             black             none
-Typedef          -> Type
-Underlined       black             none
+Boolean        -> Constant
+Character      -> Constant
+Comment        accent_2                 none
+Conditional    -> Statement
+Constant       foreground               none
+Define         -> PreProc
+Debug          -> Special
+Delimiter      -> Special
+Error          foreground               none             reverse
+Exception      -> Statement
+Float          -> Constant
+Function       -> Identifier
+Identifier     foreground               none
+Ignore         foreground               none
+Include        -> PreProc
+Keyword        -> Statement
+Label          -> Statement
+Macro          -> PreProc
+Number         -> Constant
+Operator       -> Statement
+PreCondit      -> PreProc
+PreProc        foreground               none
+Repeat         -> Statement
+Special        foreground               none
+SpecialChar    -> Special
+SpecialComment -> Special
+Statement      foreground               none
+StorageClass   -> Type
+String         accent_1                 none
+Structure      -> Type
+Tag            -> Special
+Todo           foreground               none
+Type           foreground               none
+Typedef        -> Type
+Underlined     foreground               none
 # See `:help lCursor`
 lCursor          -> Cursor
 # See `:help CursorIM`
-CursorIM         none              black
+CursorIM         none                   fg
 # See `:help window-toolbar`
-ToolbarLine      none              white
-ToolbarButton    black             white             bold
+ToolbarLine      none                   none
+ToolbarButton    foreground             none
 # }}}
