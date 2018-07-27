@@ -2,7 +2,7 @@
 " Author:       Florian B <yuuki@protonmail.com>
 " Maintainer:   Florian B <yuuki@protonmail.com>
 " License:      Vim License (see `:help license`)
-" Last Updated: Mon Jul 23 17:24:37 2018
+" Last Updated: Fri Jul 27 18:33:35 2018
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < 256)
@@ -38,19 +38,19 @@ hi EndOfBuffer ctermfg=234 ctermbg=NONE guifg=#212121 guibg=NONE guisp=NONE cter
 hi ErrorMsg ctermfg=234 ctermbg=160 guifg=#212121 guibg=#bf360c guisp=NONE cterm=NONE gui=NONE
 hi FoldColumn ctermfg=254 ctermbg=236 guifg=#e8e8e8 guibg=#313131 guisp=NONE cterm=NONE gui=NONE
 hi Folded ctermfg=245 ctermbg=NONE guifg=#898989 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi IncSearch ctermfg=234 ctermbg=185 guifg=#212121 guibg=#dce775 guisp=NONE cterm=NONE gui=NONE
+hi IncSearch ctermfg=254 ctermbg=25 guifg=#e8e8e8 guibg=#0064b7 guisp=NONE cterm=NONE gui=NONE
 hi LineNr ctermfg=245 ctermbg=234 guifg=#898989 guibg=#212121 guisp=NONE cterm=NONE gui=NONE
-hi MatchParen ctermfg=185 ctermbg=NONE guifg=#dce775 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi MatchParen ctermfg=122 ctermbg=NONE guifg=#a7ffeb guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi ModeMsg ctermfg=254 ctermbg=NONE guifg=#e8e8e8 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi MoreMsg ctermfg=254 ctermbg=NONE guifg=#e8e8e8 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi NonText ctermfg=254 ctermbg=NONE guifg=#e8e8e8 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi Pmenu ctermfg=254 ctermbg=236 guifg=#e8e8e8 guibg=#313131 guisp=NONE cterm=NONE gui=NONE
 hi PmenuSbar ctermfg=254 ctermbg=236 guifg=#e8e8e8 guibg=#313131 guisp=NONE cterm=NONE gui=NONE
-hi PmenuSel ctermfg=185 ctermbg=236 guifg=#dce775 guibg=#313131 guisp=NONE cterm=NONE gui=NONE
+hi PmenuSel ctermfg=122 ctermbg=236 guifg=#a7ffeb guibg=#313131 guisp=NONE cterm=NONE gui=NONE
 hi PmenuThumb ctermfg=254 ctermbg=236 guifg=#e8e8e8 guibg=#313131 guisp=NONE cterm=NONE gui=NONE
 hi Question ctermfg=254 ctermbg=NONE guifg=#e8e8e8 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link QuickFixLine Search
-hi Search ctermfg=234 ctermbg=254 guifg=#212121 guibg=#e8e8e8 guisp=NONE cterm=NONE gui=NONE
+hi Search ctermfg=254 ctermbg=22 guifg=#e8e8e8 guibg=#446e26 guisp=NONE cterm=NONE gui=NONE
 hi SignColumn ctermfg=254 ctermbg=234 guifg=#e8e8e8 guibg=#212121 guisp=NONE cterm=NONE gui=NONE
 hi SpecialKey ctermfg=254 ctermbg=NONE guifg=#e8e8e8 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi SpellBad ctermfg=202 ctermbg=NONE guifg=#ff5722 guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -63,13 +63,13 @@ hi! link StatusLineTerm StatusLine
 hi! link StatusLineTermNC StatusLineNC
 hi TabLine ctermfg=254 ctermbg=236 guifg=#e8e8e8 guibg=#313131 guisp=NONE cterm=NONE gui=NONE
 hi TabLineFill ctermfg=254 ctermbg=236 guifg=#e8e8e8 guibg=#313131 guisp=NONE cterm=NONE gui=NONE
-hi TabLineSel ctermfg=185 ctermbg=236 guifg=#dce775 guibg=#313131 guisp=NONE cterm=NONE gui=NONE
+hi TabLineSel ctermfg=122 ctermbg=236 guifg=#a7ffeb guibg=#313131 guisp=NONE cterm=NONE gui=NONE
 hi Title ctermfg=254 ctermbg=NONE guifg=#e8e8e8 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi VertSplit ctermfg=245 ctermbg=NONE guifg=#898989 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi Visual ctermfg=234 ctermbg=254 guifg=#212121 guibg=#e8e8e8 guisp=NONE cterm=NONE gui=NONE
+hi Visual ctermfg=254 ctermbg=22 guifg=#e8e8e8 guibg=#446e26 guisp=NONE cterm=NONE gui=NONE
 hi VisualNOS ctermfg=254 ctermbg=NONE guifg=#e8e8e8 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi WarningMsg ctermfg=254 ctermbg=NONE guifg=#e8e8e8 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi WildMenu ctermfg=185 ctermbg=236 guifg=#dce775 guibg=#313131 guisp=NONE cterm=NONE gui=NONE
+hi WildMenu ctermfg=122 ctermbg=236 guifg=#a7ffeb guibg=#313131 guisp=NONE cterm=NONE gui=NONE
 hi! link Boolean Constant
 hi! link Character Constant
 hi Comment ctermfg=247 ctermbg=NONE guifg=#90a4ae guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -98,7 +98,7 @@ hi! link SpecialChar Special
 hi! link SpecialComment Special
 hi Statement ctermfg=254 ctermbg=NONE guifg=#e8e8e8 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link StorageClass Type
-hi String ctermfg=185 ctermbg=NONE guifg=#dce775 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi String ctermfg=122 ctermbg=NONE guifg=#a7ffeb guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link Structure Type
 hi! link Tag Special
 hi Todo ctermfg=254 ctermbg=NONE guifg=#e8e8e8 guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -113,17 +113,18 @@ finish
 
 " Background: dark
 " Color: background      #212121    ~
-" Color: alt_bg          #313131    ~
 " Color: foreground      #e8e8e8    ~
+" Color: alt_bg          #313131    ~
 " Color: alt_fg          #898989    ~
 " Color: error_fg        #ff5722    ~
 " Color: error_bg        #bf360c    ~
 " Color: blue            #81d4fa    ~
+" Color: dark_blue       #0064b7    ~
 " Color: green           #81c784    ~
 " Color: dark_green      #446e26    ~
 " Color: ice_blue        #b0bec5    ~
 " Color: warn_fg         #ffee58    ~
-" Color: accent_1        #dce775    ~
+" Color: accent_1        #a7ffeb    ~
 " Color: accent_2        #90a4ae    ~
 " Color: accent_3        #fff9c4    ~
 " ALEErrorSign   error_fg              background
@@ -145,7 +146,7 @@ finish
 " ErrorMsg         background          error_bg
 " FoldColumn       foreground          alt_bg
 " Folded           alt_fg              none
-" IncSearch        background          accent_1
+" IncSearch        foreground          dark_blue
 " LineNr           alt_fg              background
 " MatchParen       accent_1            none
 " ModeMsg          foreground          none
@@ -157,7 +158,7 @@ finish
 " PmenuThumb       foreground          alt_bg
 " Question         foreground          none
 " QuickFixLine     ->  Search
-" Search           background          foreground
+" Search           foreground          dark_green
 " SignColumn       foreground          background
 " SpecialKey       foreground          none
 " SpellBad         error_fg            none
@@ -173,7 +174,7 @@ finish
 " TabLineSel       accent_1            alt_bg
 " Title            foreground          none
 " VertSplit        alt_fg              none
-" Visual           background          foreground
+" Visual           foreground          dark_green
 " VisualNOS        foreground          none
 " WarningMsg       foreground          none
 " WildMenu         accent_1            alt_bg
