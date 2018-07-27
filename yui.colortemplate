@@ -12,36 +12,35 @@ Background: dark
 
 # Color palette {{{
 # Color name           GUI        Base256    Base16 (optional)
-Color: background      #212121    ~
-Color: foreground      #e8e8e8    ~
-Color: alt_bg          #313131    ~
+Color: background      #212428    ~
+Color: foreground      #f0f8ea    ~
+Color: alt_bg          #484f58    ~
+Color: alt_bg2         #353a41    ~
 Color: alt_fg          #898989    ~
 Color: error_fg        #ff5722    ~
 Color: error_bg        #bf360c    ~
 Color: blue            #81d4fa    ~
-Color: dark_blue       #0064b7    ~
+Color: dark_blue       #406272    ~
 Color: green           #81c784    ~
-Color: dark_green      #446e26    ~
-Color: ice_blue        #b0bec5    ~
-Color: warn_fg         #ffee58    ~
-Color: accent_1        #a7ffeb    ~
-Color: accent_2        #90a4ae    ~
-Color: accent_3        #fff9c4    ~
+Color: dark_green      #3b5b3c    ~
+Color: warn_fg         #f0f66e    ~
+Color: accent_1        #b1f1cb    ~
+Color: accent_2        #f7c59f    ~
 # }}}
 
 # Default highlight groups {{{
-# Group              Foreground        Background        Attributes
-ALEErrorSign   error_fg              background
-ALEWarningSign warn_fg               background
-Normal         foreground            background
-Terminal       foreground            background
-ColorColumn    fg                    none
-Conceal        alt_fg                none
-Cursor         foreground            none
-CursorColumn   foreground            none
-CursorLine     foreground            alt_bg
-CursorLineNr   foreground            none
-DiffAdd        green                 none
+# Group          Foreground          Background        Attributes
+ALEErrorSign     error_fg            background
+ALEWarningSign   warn_fg             background
+Normal           foreground          background
+Terminal         foreground          background
+ColorColumn      fg                  none
+Conceal          alt_fg              none
+Cursor           foreground          none
+CursorColumn     foreground          none
+CursorLine       foreground          alt_bg
+CursorLineNr     foreground          none
+DiffAdd          green               none
 DiffChange       blue                none
 DiffDelete       error_fg            none
 DiffText         warn_fg             none
@@ -58,7 +57,7 @@ MoreMsg          foreground          none
 NonText          foreground          none
 Pmenu            foreground          alt_bg
 PmenuSbar        foreground          alt_bg
-PmenuSel         accent_1            alt_bg
+PmenuSel         background          accent_1
 PmenuThumb       foreground          alt_bg
 Question         foreground          none
 QuickFixLine     ->  Search
@@ -69,19 +68,19 @@ SpellBad         error_fg            none
 SpellCap         warn_fg             none
 SpellLocal       foreground          none
 SpellRare        foreground          none
-StatusLine       foreground          alt_bg
-StatusLineNC     foreground          background
+StatusLine       foreground          dark_blue
+StatusLineNC     foreground          alt_bg2
 StatusLineTerm   -> StatusLine
 StatusLineTermNC -> StatusLineNC
 TabLine          foreground          alt_bg
 TabLineFill      foreground          alt_bg
-TabLineSel       accent_1            alt_bg
+TabLineSel       background          accent_1
 Title            foreground          none
-VertSplit        alt_fg              none
+VertSplit        none                none
 Visual           foreground          dark_green
 VisualNOS        foreground          none
 WarningMsg       foreground          none
-WildMenu         accent_1            alt_bg
+WildMenu         background          accent_1
 # Other conventional group names (see `:help group-name`)
 Boolean        -> Constant
 Character      -> Constant
