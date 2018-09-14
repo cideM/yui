@@ -2,7 +2,7 @@
 " Author:       Florian B <yuuki@protonmail.com>
 " Maintainer:   Florian B <yuuki@protonmail.com>
 " License:      Vim License (see `:help license`)
-" Last Updated: Fri Sep 14 23:56:52 2018
+" Last Updated: Sat Sep 15 00:08:53 2018
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < 256)
@@ -72,7 +72,7 @@ hi WarningMsg ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm
 hi WildMenu ctermfg=255 ctermbg=237 guifg=#efefef guibg=#373737 guisp=NONE cterm=NONE,underline gui=NONE,underline
 hi! link Boolean Constant
 hi! link Character Constant
-hi Comment ctermfg=220 ctermbg=NONE guifg=#ffc400 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi Comment ctermfg=122 ctermbg=NONE guifg=#a7ffeb guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link Conditional Statement
 hi Constant ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link Define PreProc
@@ -95,7 +95,7 @@ hi PreProc ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NO
 hi! link Repeat Statement
 hi Special ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link SpecialChar Special
-hi! link SpecialComment Special
+hi SpecialComment ctermfg=122 ctermbg=NONE guifg=#a7ffeb guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi Statement ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link StorageClass Type
 hi String ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NONE,italic gui=NONE,italic
@@ -119,7 +119,7 @@ finish
 " Color: red                #ff3d00    ~
 " Color: blue               #81d4fa    ~
 " Color: green              #81c784    ~
-" Color: comment            #ffc400    ~
+" Color: comment            #a7ffeb    ~
 " Color: yellow             #ffd740    ~
 " Color: accent             #ffffc2    ~
 " ALEErrorSign     red            background
@@ -198,7 +198,7 @@ finish
 " Repeat         -> Statement
 " Special        foreground               none
 " SpecialChar    -> Special
-" SpecialComment -> Special
+" SpecialComment comment               none
 " Statement      foreground            none
 " StorageClass   -> Type
 " String         foreground            none  italic

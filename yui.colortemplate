@@ -19,7 +19,7 @@ Color: foreground_dimmed  #6d6d6d    ~
 Color: red                #ff3d00    ~
 Color: blue               #81d4fa    ~
 Color: green              #81c784    ~
-Color: comment            #ffc400    ~
+Color: comment            #a7ffeb    ~
 Color: yellow             #ffd740    ~
 Color: accent             #ffffc2    ~
 
@@ -104,7 +104,7 @@ PreProc        foreground            none
 Repeat         -> Statement
 Special        foreground               none
 SpecialChar    -> Special
-SpecialComment -> Special
+SpecialComment comment               none
 Statement      foreground            none
 StorageClass   -> Type
 String         foreground            none  italic
