@@ -11,86 +11,83 @@ Maintainer: Florian B <yuuki@protonmail.com>
 Background: dark
 
 # Color palette {{{
-# Color name           GUI        Base256    Base16 (optional)
-Color: background      #212428    ~
-Color: foreground      #f0f8ea    ~
-Color: alt_bg          #484f58    ~
-Color: alt_bg2         #353a41    ~
-Color: alt_fg          #898989    ~
-Color: error_fg        #ff5722    ~
-Color: error_bg        #bf360c    ~
-Color: blue            #81d4fa    ~
-Color: dark_blue       #406272    ~
-Color: green           #81c784    ~
-Color: dark_green      #3b5b3c    ~
-Color: warn_fg         #f0f66e    ~
-Color: accent_1        #b1f1cb    ~
-Color: accent_2        #f7c59f    ~
+# Color name              GUI        Base256    Base16 (optional)
+Color: background         #1b1b1b    ~
+Color: background_lighter #373737    ~
+Color: foreground         #efefef    ~
+Color: foreground_dimmed  #6d6d6d    ~
+Color: red                #ff3d00    ~
+Color: blue               #81d4fa    ~
+Color: green              #81c784    ~
+Color: comment            #ffc400    ~
+Color: yellow             #ffd740    ~
+Color: accent             #ffffc2    ~
+
 # }}}
 
 # Default highlight groups {{{
 # Group          Foreground          Background        Attributes
-ALEErrorSign     error_fg            background
-ALEWarningSign   warn_fg             background
+ALEErrorSign     red            background
+ALEWarningSign   yellow             background
 Normal           foreground          background
 Terminal         foreground          background
 ColorColumn      fg                  none
-Conceal          alt_fg              none
+Conceal          foreground_dimmed              none
 Cursor           foreground          none
 CursorColumn     foreground          none
-CursorLine       foreground          alt_bg
+CursorLine       foreground          background_lighter
 CursorLineNr     foreground          none
 DiffAdd          green               none
 DiffChange       blue                none
-DiffDelete       error_fg            none
-DiffText         warn_fg             none
+DiffDelete       red            none
+DiffText         yellow             none
 Directory        foreground          none
 EndOfBuffer      background          none
-ErrorMsg         background          error_bg
-FoldColumn       foreground          alt_bg
-Folded           alt_fg              none
-IncSearch        foreground          dark_blue
-LineNr           alt_fg              background
-MatchParen       accent_1            none
+ErrorMsg         red          none
+FoldColumn       foreground          background_lighter
+Folded           foreground_dimmed              none
+IncSearch        background          accent underline
+LineNr           foreground_dimmed              background
+MatchParen       foreground            none underline
 ModeMsg          foreground          none
 MoreMsg          foreground          none
 NonText          foreground          none
-Pmenu            foreground          alt_bg
-PmenuSbar        foreground          alt_bg
-PmenuSel         background          accent_1
-PmenuThumb       foreground          alt_bg
+Pmenu            foreground          background_lighter
+PmenuSbar        foreground          background_lighter
+PmenuSel         foreground            background_lighter underline
+PmenuThumb       foreground          background_lighter
 Question         foreground          none
 QuickFixLine     ->  Search
-Search           foreground          dark_green
+Search           background          accent
 SignColumn       foreground          background
 SpecialKey       foreground          none
-SpellBad         error_fg            none
-SpellCap         warn_fg             none
+SpellBad         red            none
+SpellCap         yellow             none
 SpellLocal       foreground          none
 SpellRare        foreground          none
-StatusLine       foreground          dark_blue
-StatusLineNC     foreground          alt_bg2
+StatusLine       foreground          background_lighter 
+StatusLineNC     foreground_dimmed          background_lighter
 StatusLineTerm   -> StatusLine
 StatusLineTermNC -> StatusLineNC
-TabLine          foreground          alt_bg
-TabLineFill      foreground          alt_bg
-TabLineSel       background          accent_1
+TabLine          foreground          background_lighter
+TabLineFill      foreground          background
+TabLineSel       foreground          background_lighter  underline
 Title            foreground          none
 VertSplit        none                none
-Visual           foreground          dark_green
+Visual           background          accent
 VisualNOS        foreground          none
 WarningMsg       foreground          none
-WildMenu         background          accent_1
+WildMenu         foreground          background_lighter underline
 # Other conventional group names (see `:help group-name`)
 Boolean        -> Constant
 Character      -> Constant
-Comment        accent_2              none
+Comment        comment               none    
 Conditional    -> Statement
 Constant       foreground            none
 Define         -> PreProc
 Debug          -> Special
 Delimiter      -> Special
-Error          foreground            none             reverse
+Error          foreground            none           reverse
 Exception      -> Statement
 Float          -> Constant
 Function       -> Identifier
@@ -105,12 +102,12 @@ Operator       -> Statement
 PreCondit      -> PreProc
 PreProc        foreground            none
 Repeat         -> Statement
-Special        foreground            none
+Special        foreground               none
 SpecialChar    -> Special
 SpecialComment -> Special
 Statement      foreground            none
 StorageClass   -> Type
-String         accent_1              none
+String         foreground            none  italic
 Structure      -> Type
 Tag            -> Special
 Todo           foreground            none
