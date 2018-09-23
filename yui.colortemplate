@@ -80,7 +80,7 @@ WildMenu         foreground          background_lighter underline
 # Other conventional group names (see `:help group-name`)
 Boolean        -> Constant
 Character      -> Constant
-Comment        foreground               none     italic,bold
+Comment        foreground_dimmed               none     italic
 Conditional    -> Statement
 Constant       foreground            none
 Define         -> PreProc
