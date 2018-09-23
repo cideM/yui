@@ -19,7 +19,6 @@ Color: foreground_dimmed  #6d6d6d    ~
 Color: red                #ff3d00    ~
 Color: blue               #81d4fa    ~
 Color: green              #81c784    ~
-Color: comment            #a7ffeb    ~
 Color: yellow             #ffd740    ~
 Color: accent             #ffffc2    ~
 
@@ -81,7 +80,7 @@ WildMenu         foreground          background_lighter underline
 # Other conventional group names (see `:help group-name`)
 Boolean        -> Constant
 Character      -> Constant
-Comment        comment               none    
+Comment        foreground               none     italic,bold
 Conditional    -> Statement
 Constant       foreground            none
 Define         -> PreProc
@@ -104,10 +103,10 @@ PreProc        foreground            none
 Repeat         -> Statement
 Special        foreground               none
 SpecialChar    -> Special
-SpecialComment comment               none
+SpecialComment -> Comment
 Statement      foreground            none
 StorageClass   -> Type
-String         foreground            none  italic
+String         foreground            none  bold
 Structure      -> Type
 Tag            -> Special
 Todo           foreground            none

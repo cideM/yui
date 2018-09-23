@@ -2,7 +2,7 @@
 " Author:       Florian B <yuuki@protonmail.com>
 " Maintainer:   Florian B <yuuki@protonmail.com>
 " License:      Vim License (see `:help license`)
-" Last Updated: Sat Sep 15 00:08:53 2018
+" Last Updated: Tue Sep 18 23:08:50 2018
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < 256)
@@ -72,7 +72,7 @@ hi WarningMsg ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm
 hi WildMenu ctermfg=255 ctermbg=237 guifg=#efefef guibg=#373737 guisp=NONE cterm=NONE,underline gui=NONE,underline
 hi! link Boolean Constant
 hi! link Character Constant
-hi Comment ctermfg=122 ctermbg=NONE guifg=#a7ffeb guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi Comment ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NONE,bold,italic gui=NONE,bold,italic
 hi! link Conditional Statement
 hi Constant ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link Define PreProc
@@ -95,10 +95,10 @@ hi PreProc ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NO
 hi! link Repeat Statement
 hi Special ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link SpecialChar Special
-hi SpecialComment ctermfg=122 ctermbg=NONE guifg=#a7ffeb guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi! link SpecialComment Comment
 hi Statement ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link StorageClass Type
-hi String ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NONE,italic gui=NONE,italic
+hi String ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
 hi! link Structure Type
 hi! link Tag Special
 hi Todo ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -119,7 +119,6 @@ finish
 " Color: red                #ff3d00    ~
 " Color: blue               #81d4fa    ~
 " Color: green              #81c784    ~
-" Color: comment            #a7ffeb    ~
 " Color: yellow             #ffd740    ~
 " Color: accent             #ffffc2    ~
 " ALEErrorSign     red            background
@@ -175,7 +174,7 @@ finish
 " WildMenu         foreground          background_lighter underline
 " Boolean        -> Constant
 " Character      -> Constant
-" Comment        comment               none    
+" Comment        foreground               none     italic,bold
 " Conditional    -> Statement
 " Constant       foreground            none
 " Define         -> PreProc
@@ -198,10 +197,10 @@ finish
 " Repeat         -> Statement
 " Special        foreground               none
 " SpecialChar    -> Special
-" SpecialComment comment               none
+" SpecialComment -> Comment
 " Statement      foreground            none
 " StorageClass   -> Type
-" String         foreground            none  italic
+" String         foreground            none  bold
 " Structure      -> Type
 " Tag            -> Special
 " Todo           foreground            none
