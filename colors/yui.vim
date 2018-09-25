@@ -2,7 +2,11 @@
 " Author:       Florian B <yuuki@protonmail.com>
 " Maintainer:   Florian B <yuuki@protonmail.com>
 " License:      Vim License (see `:help license`)
+<<<<<<< HEAD
 " Last Updated: Tue Sep 25 19:16:32 2018
+=======
+" Last Updated: Sun 23 Sep 2018 07:08:15 PM CEST
+>>>>>>> 88e8586c0a975021c494713a9189b851f42e67d8
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < 256)
@@ -72,7 +76,11 @@ hi WarningMsg ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm
 hi WildMenu ctermfg=255 ctermbg=237 guifg=#efefef guibg=#373737 guisp=NONE cterm=NONE,underline gui=NONE,underline
 hi! link Boolean Constant
 hi! link Character Constant
+<<<<<<< HEAD
 hi Comment ctermfg=214 ctermbg=NONE guifg=#f9a825 guibg=NONE guisp=NONE cterm=NONE,italic gui=NONE,italic
+=======
+hi Comment ctermfg=242 ctermbg=NONE guifg=#6d6d6d guibg=NONE guisp=NONE cterm=NONE,italic gui=NONE,italic
+>>>>>>> 88e8586c0a975021c494713a9189b851f42e67d8
 hi! link Conditional Statement
 hi Constant ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link Define PreProc
@@ -176,7 +184,11 @@ finish
 " WildMenu         foreground          background_lighter underline
 " Boolean        -> Constant
 " Character      -> Constant
+<<<<<<< HEAD
 " Comment        orange               none     italic
+=======
+" Comment        foreground_dimmed               none     italic
+>>>>>>> 88e8586c0a975021c494713a9189b851f42e67d8
 " Conditional    -> Statement
 " Constant       foreground            none
 " Define         -> PreProc
