@@ -21,6 +21,8 @@ Color: blue               #81d4fa    ~
 Color: green              #81c784    ~
 Color: yellow             #ffd740    ~
 Color: accent             #ffffc2    ~
+Color: string             #9ccc65    ~
+Color: orange             #f9a825    ~
 
 # }}}
 
@@ -45,7 +47,7 @@ EndOfBuffer      background          none
 ErrorMsg         red          none
 FoldColumn       foreground          background_lighter
 Folded           foreground_dimmed              none
-IncSearch        background          accent underline
+IncSearch        foreground          background_lighter underline
 LineNr           foreground_dimmed              background
 MatchParen       foreground            none underline
 ModeMsg          foreground          none
@@ -57,7 +59,7 @@ PmenuSel         foreground            background_lighter underline
 PmenuThumb       foreground          background_lighter
 Question         foreground          none
 QuickFixLine     ->  Search
-Search           background          accent
+Search           foreground          background_lighter
 SignColumn       foreground          background
 SpecialKey       foreground          none
 SpellBad         red            none
@@ -73,14 +75,14 @@ TabLineFill      foreground          background
 TabLineSel       foreground          background_lighter  underline
 Title            foreground          none
 VertSplit        none                none
-Visual           background          accent
+Visual           foreground          background_lighter
 VisualNOS        foreground          none
 WarningMsg       foreground          none
 WildMenu         foreground          background_lighter underline
 # Other conventional group names (see `:help group-name`)
 Boolean        -> Constant
 Character      -> Constant
-Comment        foreground               none     italic,bold
+Comment        orange               none     italic
 Conditional    -> Statement
 Constant       foreground            none
 Define         -> PreProc
@@ -101,12 +103,12 @@ Operator       -> Statement
 PreCondit      -> PreProc
 PreProc        foreground            none
 Repeat         -> Statement
-Special        foreground               none
+Special        foreground            none
 SpecialChar    -> Special
 SpecialComment -> Comment
 Statement      foreground            none
 StorageClass   -> Type
-String         foreground            none  bold
+String         string                none  
 Structure      -> Type
 Tag            -> Special
 Todo           foreground            none

@@ -2,7 +2,7 @@
 " Author:       Florian B <yuuki@protonmail.com>
 " Maintainer:   Florian B <yuuki@protonmail.com>
 " License:      Vim License (see `:help license`)
-" Last Updated: Tue Sep 18 23:08:50 2018
+" Last Updated: Tue Sep 25 19:16:32 2018
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < 256)
@@ -38,7 +38,7 @@ hi EndOfBuffer ctermfg=234 ctermbg=NONE guifg=#1b1b1b guibg=NONE guisp=NONE cter
 hi ErrorMsg ctermfg=196 ctermbg=NONE guifg=#ff3d00 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi FoldColumn ctermfg=255 ctermbg=237 guifg=#efefef guibg=#373737 guisp=NONE cterm=NONE gui=NONE
 hi Folded ctermfg=242 ctermbg=NONE guifg=#6d6d6d guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi IncSearch ctermfg=234 ctermbg=229 guifg=#1b1b1b guibg=#ffffc2 guisp=NONE cterm=NONE,underline gui=NONE,underline
+hi IncSearch ctermfg=255 ctermbg=237 guifg=#efefef guibg=#373737 guisp=NONE cterm=NONE,underline gui=NONE,underline
 hi LineNr ctermfg=242 ctermbg=234 guifg=#6d6d6d guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
 hi MatchParen ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NONE,underline gui=NONE,underline
 hi ModeMsg ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -50,7 +50,7 @@ hi PmenuSel ctermfg=255 ctermbg=237 guifg=#efefef guibg=#373737 guisp=NONE cterm
 hi PmenuThumb ctermfg=255 ctermbg=237 guifg=#efefef guibg=#373737 guisp=NONE cterm=NONE gui=NONE
 hi Question ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link QuickFixLine Search
-hi Search ctermfg=234 ctermbg=229 guifg=#1b1b1b guibg=#ffffc2 guisp=NONE cterm=NONE gui=NONE
+hi Search ctermfg=255 ctermbg=237 guifg=#efefef guibg=#373737 guisp=NONE cterm=NONE gui=NONE
 hi SignColumn ctermfg=255 ctermbg=234 guifg=#efefef guibg=#1b1b1b guisp=NONE cterm=NONE gui=NONE
 hi SpecialKey ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi SpellBad ctermfg=196 ctermbg=NONE guifg=#ff3d00 guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -66,13 +66,13 @@ hi TabLineFill ctermfg=255 ctermbg=234 guifg=#efefef guibg=#1b1b1b guisp=NONE ct
 hi TabLineSel ctermfg=255 ctermbg=237 guifg=#efefef guibg=#373737 guisp=NONE cterm=NONE,underline gui=NONE,underline
 hi Title ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi VertSplit ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi Visual ctermfg=234 ctermbg=229 guifg=#1b1b1b guibg=#ffffc2 guisp=NONE cterm=NONE gui=NONE
+hi Visual ctermfg=255 ctermbg=237 guifg=#efefef guibg=#373737 guisp=NONE cterm=NONE gui=NONE
 hi VisualNOS ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi WarningMsg ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi WildMenu ctermfg=255 ctermbg=237 guifg=#efefef guibg=#373737 guisp=NONE cterm=NONE,underline gui=NONE,underline
 hi! link Boolean Constant
 hi! link Character Constant
-hi Comment ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NONE,bold,italic gui=NONE,bold,italic
+hi Comment ctermfg=214 ctermbg=NONE guifg=#f9a825 guibg=NONE guisp=NONE cterm=NONE,italic gui=NONE,italic
 hi! link Conditional Statement
 hi Constant ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link Define PreProc
@@ -98,7 +98,7 @@ hi! link SpecialChar Special
 hi! link SpecialComment Comment
 hi Statement ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link StorageClass Type
-hi String ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi String ctermfg=149 ctermbg=NONE guifg=#9ccc65 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link Structure Type
 hi! link Tag Special
 hi Todo ctermfg=255 ctermbg=NONE guifg=#efefef guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -121,6 +121,8 @@ finish
 " Color: green              #81c784    ~
 " Color: yellow             #ffd740    ~
 " Color: accent             #ffffc2    ~
+" Color: string             #9ccc65    ~
+" Color: orange             #f9a825    ~
 " ALEErrorSign     red            background
 " ALEWarningSign   yellow             background
 " Normal           foreground          background
@@ -140,7 +142,7 @@ finish
 " ErrorMsg         red          none
 " FoldColumn       foreground          background_lighter
 " Folded           foreground_dimmed              none
-" IncSearch        background          accent underline
+" IncSearch        foreground          background_lighter underline
 " LineNr           foreground_dimmed              background
 " MatchParen       foreground            none underline
 " ModeMsg          foreground          none
@@ -152,7 +154,7 @@ finish
 " PmenuThumb       foreground          background_lighter
 " Question         foreground          none
 " QuickFixLine     ->  Search
-" Search           background          accent
+" Search           foreground          background_lighter
 " SignColumn       foreground          background
 " SpecialKey       foreground          none
 " SpellBad         red            none
@@ -168,13 +170,13 @@ finish
 " TabLineSel       foreground          background_lighter  underline
 " Title            foreground          none
 " VertSplit        none                none
-" Visual           background          accent
+" Visual           foreground          background_lighter
 " VisualNOS        foreground          none
 " WarningMsg       foreground          none
 " WildMenu         foreground          background_lighter underline
 " Boolean        -> Constant
 " Character      -> Constant
-" Comment        foreground               none     italic,bold
+" Comment        orange               none     italic
 " Conditional    -> Statement
 " Constant       foreground            none
 " Define         -> PreProc
@@ -195,12 +197,12 @@ finish
 " PreCondit      -> PreProc
 " PreProc        foreground            none
 " Repeat         -> Statement
-" Special        foreground               none
+" Special        foreground            none
 " SpecialChar    -> Special
 " SpecialComment -> Comment
 " Statement      foreground            none
 " StorageClass   -> Type
-" String         foreground            none  bold
+" String         string                none  
 " Structure      -> Type
 " Tag            -> Special
 " Todo           foreground            none
