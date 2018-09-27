@@ -14,7 +14,7 @@ Background: dark
 # Color name              GUI        Base256    Base16 (optional)
 Color: background         #1b1b1b    ~
 Color: background_lighter #373737    ~
-Color: foreground         #efefef    ~
+Color: foreground         #dedede    ~
 Color: foreground_dimmed  #6d6d6d    ~
 Color: red                #ff3d00    ~
 Color: blue               #81d4fa    ~
