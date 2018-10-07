@@ -2,7 +2,7 @@
 " Author:       Florian B <yuuki@protonmail.com>
 " Maintainer:   Florian B <yuuki@protonmail.com>
 " License:      Vim License (see `:help license`)
-" Last Updated: Mon Oct  1 08:48:55 2018
+" Last Updated: Sun Oct  7 15:31:28 2018
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < 256)
@@ -72,7 +72,7 @@ hi WarningMsg ctermfg=231 ctermbg=NONE guifg=#fcf7f8 guibg=NONE guisp=NONE cterm
 hi WildMenu ctermfg=231 ctermbg=238 guifg=#fcf7f8 guibg=#414141 guisp=NONE cterm=NONE,underline gui=NONE,underline
 hi! link Boolean Constant
 hi! link Character Constant
-hi Comment ctermfg=45 ctermbg=NONE guifg=#82ddf0 guibg=NONE guisp=NONE cterm=NONE,italic gui=NONE,italic
+hi Comment ctermfg=216 ctermbg=NONE guifg=#f1ab86 guibg=NONE guisp=NONE cterm=NONE,italic gui=NONE,italic
 hi! link Conditional Statement
 hi Constant ctermfg=231 ctermbg=NONE guifg=#fcf7f8 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link Define PreProc
@@ -121,7 +121,7 @@ finish
 " Color: green              #81c784    ~
 " Color: yellow             #ffd740    ~
 " Color: string             #c8cc92    ~
-" Color: orange             #82ddf0    ~
+" Color: comment            #f1ab86    ~
 " ALEErrorSign     red                 background
 " ALEWarningSign   yellow              background
 " Normal           foreground          background
@@ -175,7 +175,7 @@ finish
 " WildMenu         foreground          background_lighter underline
 " Boolean        -> Constant
 " Character      -> Constant
-" Comment        orange               none     italic
+" Comment        comment               none     italic
 " Conditional    -> Statement
 " Constant       foreground            none
 " Define         -> PreProc

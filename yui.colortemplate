@@ -21,7 +21,7 @@ Color: blue               #81d4fa    ~
 Color: green              #81c784    ~
 Color: yellow             #ffd740    ~
 Color: string             #c8cc92    ~
-Color: orange             #82ddf0    ~
+Color: comment            #f1ab86    ~
 
 # }}}
 
@@ -81,7 +81,7 @@ WildMenu         foreground          background_lighter underline
 # Other conventional group names (see `:help group-name`)
 Boolean        -> Constant
 Character      -> Constant
-Comment        orange               none     italic
+Comment        comment               none     italic
 Conditional    -> Statement
 Constant       foreground            none
 Define         -> PreProc
