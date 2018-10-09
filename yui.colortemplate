@@ -12,10 +12,10 @@ Background: dark
 
 # Color palette {{{
 # Color name              GUI        Base256    Base16 (optional)
-Color: background         #232323    ~
-Color: background_lighter #414141    ~
-Color: foreground         #fcf7f8    ~
-Color: foreground_dimmed  #6d6d6d    ~
+Color: background         #383838    ~
+Color: background_alt     #454545    ~
+Color: foreground         #eeeeed    ~
+Color: foreground_alt     #6d6d6d    ~
 Color: red                #ed6a7a    ~
 Color: blue               #81d4fa    ~
 Color: green              #81c784    ~
@@ -32,10 +32,10 @@ ALEWarningSign   yellow              background
 Normal           foreground          background
 Terminal         foreground          background
 ColorColumn      fg                  none
-Conceal          foreground_dimmed   none
+Conceal          foreground_alt   none
 Cursor           foreground          none
 CursorColumn     foreground          none
-CursorLine       foreground          background_lighter
+CursorLine       foreground          background_alt
 CursorLineNr     foreground          none
 DiffAdd          green               none
 DiffChange       blue                none
@@ -44,40 +44,40 @@ DiffText         yellow              none
 Directory        foreground          none
 EndOfBuffer      background          none
 ErrorMsg         red                 none
-FoldColumn       foreground          background_lighter
-Folded           foreground_dimmed   none
-IncSearch        foreground          background_lighter underline
-LineNr           foreground_dimmed   background
+FoldColumn       foreground          background_alt
+Folded           foreground_alt   none
+IncSearch        foreground          background_alt underline
+LineNr           foreground_alt   background
 MatchParen       foreground          none underline, bold
 ModeMsg          foreground          none
 MoreMsg          foreground          none
 NonText          foreground          none
-Pmenu            foreground          background_lighter
-PmenuSbar        foreground          background_lighter
-PmenuSel         foreground          background_lighter underline
-PmenuThumb       foreground          background_lighter
+Pmenu            foreground          background_alt
+PmenuSbar        foreground          background_alt
+PmenuSel         foreground          background_alt underline
+PmenuThumb       foreground          background_alt
 Question         foreground          none
 QuickFixLine     ->  Search
-Search           foreground          background_lighter
+Search           foreground          background_alt
 SignColumn       foreground          background
 SpecialKey       foreground          none
 SpellBad         red                 none
 SpellCap         yellow              none
 SpellLocal       foreground          none
 SpellRare        foreground          none
-StatusLine       foreground          background_lighter 
-StatusLineNC     foreground_dimmed   background_lighter
+StatusLine       foreground          background_alt 
+StatusLineNC     foreground_alt   background_alt
 StatusLineTerm   -> StatusLine
 StatusLineTermNC -> StatusLineNC
-TabLine          foreground          background_lighter
+TabLine          foreground          background_alt
 TabLineFill      foreground          background
-TabLineSel       foreground          background_lighter  underline
+TabLineSel       foreground          background_alt  underline
 Title            foreground          none
 VertSplit        none                none
-Visual           foreground          background_lighter
+Visual           foreground          background_alt
 VisualNOS        foreground          none
 WarningMsg       foreground          none
-WildMenu         foreground          background_lighter underline
+WildMenu         foreground          background_alt underline
 # Other conventional group names (see `:help group-name`)
 Boolean        -> Constant
 Character      -> Constant
