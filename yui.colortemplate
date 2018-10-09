@@ -13,12 +13,12 @@ Background: dark
 # Color palette {{{
 # Color name              GUI        Base256    Base16 (optional)
 Color: background         #383838    ~
-Color: background_alt     #454545    ~
+Color: background_alt     #585858    ~
 Color: foreground         #eeeeed    ~
-Color: foreground_alt     #6d6d6d    ~
+Color: foreground_alt     #9a9a9a    ~
 Color: red                #ed6a7a    ~
 Color: blue               #81d4fa    ~
-Color: green              #81c784    ~
+Color: green              #c8cc92    ~
 Color: yellow             #ffd740    ~
 Color: string             #c8cc92    ~
 Color: comment            #f1ab86    ~

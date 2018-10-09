@@ -2,7 +2,7 @@
 " Author:       Florian B <yuuki@protonmail.com>
 " Maintainer:   Florian B <yuuki@protonmail.com>
 " License:      Vim License (see `:help license`)
-" Last Updated: Tue Oct  9 14:10:18 2018
+" Last Updated: Tue Oct  9 15:06:01 2018
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < 256)
@@ -20,7 +20,7 @@ endif
 let g:colors_name = 'yui_light'
 
 hi ALEErrorSign ctermfg=95 ctermbg=253 guifg=#875053 guibg=#ddddde guisp=NONE cterm=NONE gui=NONE
-hi ALEWarningSign ctermfg=172 ctermbg=253 guifg=#c17900 guibg=#ddddde guisp=NONE cterm=NONE gui=NONE
+hi ALEWarningSign ctermfg=25 ctermbg=253 guifg=#003c8f guibg=#ddddde guisp=NONE cterm=NONE gui=NONE
 hi Normal ctermfg=237 ctermbg=253 guifg=#3d3d3d guibg=#ddddde guisp=NONE cterm=NONE gui=NONE
 hi Terminal ctermfg=237 ctermbg=253 guifg=#3d3d3d guibg=#ddddde guisp=NONE cterm=NONE gui=NONE
 hi ColorColumn ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -29,10 +29,10 @@ hi Cursor ctermfg=237 ctermbg=NONE guifg=#3d3d3d guibg=NONE guisp=NONE cterm=NON
 hi CursorColumn ctermfg=237 ctermbg=NONE guifg=#3d3d3d guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi CursorLine ctermfg=237 ctermbg=252 guifg=#3d3d3d guibg=#cccccd guisp=NONE cterm=NONE gui=NONE
 hi CursorLineNr ctermfg=237 ctermbg=NONE guifg=#3d3d3d guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi DiffAdd ctermfg=22 ctermbg=NONE guifg=#255d00 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi DiffAdd ctermfg=65 ctermbg=NONE guifg=#4c6641 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi DiffChange ctermfg=25 ctermbg=NONE guifg=#003c8f guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi DiffDelete ctermfg=95 ctermbg=NONE guifg=#875053 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi DiffText ctermfg=172 ctermbg=NONE guifg=#c17900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi DiffText ctermfg=25 ctermbg=NONE guifg=#003c8f guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi Directory ctermfg=237 ctermbg=NONE guifg=#3d3d3d guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi EndOfBuffer ctermfg=253 ctermbg=NONE guifg=#ddddde guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi ErrorMsg ctermfg=95 ctermbg=NONE guifg=#875053 guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -54,7 +54,7 @@ hi Search ctermfg=237 ctermbg=252 guifg=#3d3d3d guibg=#cccccd guisp=NONE cterm=N
 hi SignColumn ctermfg=237 ctermbg=253 guifg=#3d3d3d guibg=#ddddde guisp=NONE cterm=NONE gui=NONE
 hi SpecialKey ctermfg=237 ctermbg=NONE guifg=#3d3d3d guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi SpellBad ctermfg=95 ctermbg=NONE guifg=#875053 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi SpellCap ctermfg=172 ctermbg=NONE guifg=#c17900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi SpellCap ctermfg=25 ctermbg=NONE guifg=#003c8f guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi SpellLocal ctermfg=237 ctermbg=NONE guifg=#3d3d3d guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi SpellRare ctermfg=237 ctermbg=NONE guifg=#3d3d3d guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi StatusLine ctermfg=237 ctermbg=252 guifg=#3d3d3d guibg=#cccccd guisp=NONE cterm=NONE gui=NONE
@@ -116,14 +116,14 @@ finish
 " Color: background_alt     #cccccd    ~
 " Color: foreground         #3d3d3d    ~
 " Color: foreground_alt     #727272    ~
-" Color: diff_change        #003c8f    ~
-" Color: diff_add           #255d00    ~
-" Color: warning            #c17900    ~
+" Color: yellow             #003c8f    ~
+" Color: blue               #255d00    ~
+" Color: green              #4c6641    ~
 " Color: error              #875053    ~
 " Color: comment            #aa672f    ~
 " Color: string             #4c6641    ~
 " ALEErrorSign     error            background
-" ALEWarningSign   warning             background
+" ALEWarningSign   yellow             background
 " Normal           foreground          background
 " Terminal         foreground          background
 " ColorColumn      fg                  none
@@ -132,10 +132,10 @@ finish
 " CursorColumn     foreground          none
 " CursorLine       foreground          background_alt    
 " CursorLineNr     foreground          none
-" DiffAdd          diff_add               none
-" DiffChange       diff_change                none
+" DiffAdd          green                none
+" DiffChange       yellow                     none
 " DiffDelete       error            none
-" DiffText         warning             none
+" DiffText         yellow             none
 " Directory        foreground          none
 " EndOfBuffer      background          none
 " ErrorMsg         error          none
@@ -157,7 +157,7 @@ finish
 " SignColumn       foreground          background
 " SpecialKey       foreground          none
 " SpellBad         error            none
-" SpellCap         warning             none
+" SpellCap         yellow             none
 " SpellLocal       foreground          none
 " SpellRare        foreground          none
 " StatusLine       foreground          background_alt     

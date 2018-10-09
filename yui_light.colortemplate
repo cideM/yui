@@ -17,9 +17,9 @@ Color: background         #ddddde    ~
 Color: background_alt     #cccccd    ~
 Color: foreground         #3d3d3d    ~
 Color: foreground_alt     #727272    ~
-Color: diff_change        #003c8f    ~
-Color: diff_add           #255d00    ~
-Color: warning            #c17900    ~
+Color: yellow             #003c8f    ~
+Color: blue               #255d00    ~
+Color: green              #4c6641    ~
 Color: error              #875053    ~
 Color: comment            #aa672f    ~
 Color: string             #4c6641    ~
@@ -29,7 +29,7 @@ Color: string             #4c6641    ~
 # Default highlight groups {{{
 # Group          Foreground          Background        Attributes
 ALEErrorSign     error            background
-ALEWarningSign   warning             background
+ALEWarningSign   yellow             background
 Normal           foreground          background
 Terminal         foreground          background
 ColorColumn      fg                  none
@@ -38,10 +38,10 @@ Cursor           foreground          none
 CursorColumn     foreground          none
 CursorLine       foreground          background_alt    
 CursorLineNr     foreground          none
-DiffAdd          diff_add               none
-DiffChange       diff_change                none
+DiffAdd          green                none
+DiffChange       yellow                     none
 DiffDelete       error            none
-DiffText         warning             none
+DiffText         yellow             none
 Directory        foreground          none
 EndOfBuffer      background          none
 ErrorMsg         error          none
@@ -63,7 +63,7 @@ Search           foreground          background_alt
 SignColumn       foreground          background
 SpecialKey       foreground          none
 SpellBad         error            none
-SpellCap         warning             none
+SpellCap         yellow             none
 SpellLocal       foreground          none
 SpellRare        foreground          none
 StatusLine       foreground          background_alt     

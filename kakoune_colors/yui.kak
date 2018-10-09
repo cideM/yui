@@ -4,9 +4,9 @@
 
 evaluate-commands %sh{
     foreground="rgb:eeeeed"
-    foreground_alt="rgb:6d6d6d"
+    foreground_alt="rgb:9a9a9a"
     background="rgb:383838"
-    background_alt="rgb:454545"
+    background_alt="rgb:585858"
     string="rgb:c8cc92"
     error="rgb:ed6a5a"
     comment="rgb:f1ab86"
