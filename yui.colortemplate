@@ -14,7 +14,7 @@ Background: dark
 # Color name              GUI        Base256    Base16 (optional)
 Color: background         #383838    ~
 Color: background_alt     #585858    ~
-Color: foreground         #eeeeed    ~
+Color: foreground         #cdcdcd    ~
 Color: foreground_alt     #9a9a9a    ~
 Color: red                #ed6a7a    ~
 Color: blue               #81d4fa    ~

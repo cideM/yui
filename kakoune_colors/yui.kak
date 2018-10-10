@@ -3,7 +3,7 @@
 ##
 
 evaluate-commands %sh{
-    foreground="rgb:eeeeed"
+    foreground="rgb:cdcdcd"
     foreground_alt="rgb:9a9a9a"
     background="rgb:383838"
     background_alt="rgb:585858"
