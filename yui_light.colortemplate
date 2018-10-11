@@ -12,7 +12,6 @@ Background: light
 
 # Color palette {{{
 # Color name              GUI        Base256    Base16 (optional)
-# FFF8F0
 Color: background         #ddddde    ~
 Color: background_alt     #cccccd    ~
 Color: foreground         #3d3d3d    ~

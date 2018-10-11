@@ -2,7 +2,7 @@
 " Author:       Florian B <yuuki@protonmail.com>
 " Maintainer:   Florian B <yuuki@protonmail.com>
 " License:      Vim License (see `:help license`)
-" Last Updated: Wed Oct 10 15:02:43 2018
+" Last Updated: Thu Oct 11 19:33:19 2018
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < 256)
@@ -40,7 +40,7 @@ hi FoldColumn ctermfg=252 ctermbg=240 guifg=#cdcdcd guibg=#585858 guisp=NONE cte
 hi Folded ctermfg=247 ctermbg=NONE guifg=#9a9a9a guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi IncSearch ctermfg=252 ctermbg=240 guifg=#cdcdcd guibg=#585858 guisp=NONE cterm=NONE,underline gui=NONE,underline
 hi LineNr ctermfg=247 ctermbg=237 guifg=#9a9a9a guibg=#383838 guisp=NONE cterm=NONE gui=NONE
-hi MatchParen ctermfg=252 ctermbg=NONE guifg=#cdcdcd guibg=NONE guisp=NONE cterm=NONE,bold,underline gui=NONE,bold,underline
+hi MatchParen ctermfg=204 ctermbg=NONE guifg=#ed6a7a guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
 hi ModeMsg ctermfg=252 ctermbg=NONE guifg=#cdcdcd guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi MoreMsg ctermfg=252 ctermbg=NONE guifg=#cdcdcd guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi NonText ctermfg=252 ctermbg=NONE guifg=#cdcdcd guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -116,99 +116,99 @@ finish
 " Color: background_alt     #585858    ~
 " Color: foreground         #cdcdcd    ~
 " Color: foreground_alt     #9a9a9a    ~
-" Color: red                #ed6a7a    ~
-" Color: blue               #81d4fa    ~
-" Color: green              #c8cc92    ~
-" Color: yellow             #ffd740    ~
+" Color: error              #ed6a7a    ~
+" Color: diff_change        #81d4fa    ~
+" Color: diff_add           #c8cc92    ~
+" Color: warning            #ffd740    ~
 " Color: string             #c8cc92    ~
 " Color: comment            #f1ab86    ~
-" ALEErrorSign     red                 background
-" ALEWarningSign   yellow              background
-" Normal           foreground          background
-" Terminal         foreground          background
-" ColorColumn      fg                  none
-" Conceal          foreground_alt   none
-" Cursor           foreground          none
-" CursorColumn     foreground          none
-" CursorLine       foreground          background_alt
-" CursorLineNr     foreground          none
-" DiffAdd          green               none
-" DiffChange       blue                none
-" DiffDelete       red                 none
-" DiffText         yellow              none
-" Directory        foreground          none
-" EndOfBuffer      background          none
-" ErrorMsg         red                 none
-" FoldColumn       foreground          background_alt
-" Folded           foreground_alt   none
-" IncSearch        foreground          background_alt underline
-" LineNr           foreground_alt   background
-" MatchParen       foreground          none underline, bold
-" ModeMsg          foreground          none
-" MoreMsg          foreground          none
-" NonText          foreground          none
-" Pmenu            foreground          background_alt
-" PmenuSbar        foreground          background_alt
-" PmenuSel         foreground          background_alt underline
-" PmenuThumb       foreground          background_alt
-" Question         foreground          none
+" ALEErrorSign         error                      background
+" ALEWarningSign       warning                    background
+" Normal               foreground                 background
+" Terminal             foreground                 background
+" ColorColumn          fg                         none
+" Conceal              foreground_alt             none
+" Cursor               foreground                 none
+" CursorColumn         foreground                 none
+" CursorLine           foreground                 background_alt
+" CursorLineNr         foreground                 none
+" DiffAdd              diff_add                   none
+" DiffChange           diff_change                none
+" DiffDelete           error                      none
+" DiffText             warning                    none
+" Directory            foreground                 none
+" EndOfBuffer          background                 none
+" ErrorMsg             error                      none
+" FoldColumn           foreground                 background_alt
+" Folded               foreground_alt             none
+" IncSearch            foreground                 background_alt  underline
+" LineNr               foreground_alt             background
+" MatchParen           error                      none            bold
+" ModeMsg              foreground                 none
+" MoreMsg              foreground                 none
+" NonText              foreground                 none
+" Pmenu                foreground                 background_alt
+" PmenuSbar            foreground                 background_alt
+" PmenuSel             foreground                 background_alt  underline
+" PmenuThumb           foreground                 background_alt
+" Question             foreground                 none
 " QuickFixLine     ->  Search
-" Search           foreground          background_alt
-" SignColumn       foreground          background
-" SpecialKey       foreground          none
-" SpellBad         red                 none
-" SpellCap         yellow              none
-" SpellLocal       foreground          none
-" SpellRare        foreground          none
-" StatusLine       foreground          background_alt 
-" StatusLineNC     foreground_alt   background_alt
-" StatusLineTerm   -> StatusLine
-" StatusLineTermNC -> StatusLineNC
-" TabLine          foreground          background_alt
-" TabLineFill      foreground          background
-" TabLineSel       foreground          background_alt  underline
-" Title            foreground          none
-" VertSplit        none                none
-" Visual           foreground          background_alt
-" VisualNOS        foreground          none
-" WarningMsg       foreground          none
-" WildMenu         foreground          background_alt underline
-" Boolean        -> Constant
-" Character      -> Constant
-" Comment        comment               none     italic
-" Conditional    -> Statement
-" Constant       foreground            none
-" Define         -> PreProc
-" Debug          -> Special
-" Delimiter      -> Special
-" Error          foreground            none           reverse
-" Exception      -> Statement
-" Float          -> Constant
-" Function       -> Identifier
-" Identifier     foreground            none
-" Ignore         foreground            none
-" Include        -> PreProc
-" Keyword        -> Statement
-" Label          -> Statement
-" Macro          -> PreProc
-" Number         -> Constant
-" Operator       -> Statement
-" PreCondit      -> PreProc
-" PreProc        foreground            none
-" Repeat         -> Statement
-" Special        foreground            none
-" SpecialChar    -> Special
-" SpecialComment -> Comment
-" Statement      foreground            none
-" StorageClass   -> Type
-" String         string                none  
-" Structure      -> Type
-" Tag            -> Special
-" Todo           foreground            none
-" Type           foreground            none
-" Typedef        -> Type
-" Underlined     foreground            none
-" lCursor          -> Cursor
-" CursorIM         none                fg
-" ToolbarLine      none                none
-" ToolbarButton    foreground          none
+" Search               foreground                 background_alt
+" SignColumn           foreground                 background
+" SpecialKey           foreground                 none
+" SpellBad             error                      none
+" SpellCap             warning                    none
+" SpellLocal           foreground                 none
+" SpellRare            foreground                 none
+" StatusLine           foreground                 background_alt 
+" StatusLineNC         foreground_alt             background_alt
+" StatusLineTerm   ->  StatusLine
+" StatusLineTermNC ->  StatusLineNC
+" TabLine              foreground                 background_alt
+" TabLineFill          foreground                 background
+" TabLineSel           foreground                 background_alt  underline
+" Title                foreground                 none
+" VertSplit            none                       none
+" Visual               foreground                 background_alt
+" VisualNOS            foreground                 none
+" WarningMsg           foreground                 none
+" WildMenu             foreground                 background_alt  underline
+" Boolean        ->    Constant
+" Character      ->    Constant
+" Comment              comment                    none            italic
+" Conditional    ->    Statement
+" Constant             foreground                 none
+" Define         ->    PreProc
+" Debug          ->    Special
+" Delimiter      ->    Special
+" Error                foreground                 none            reverse
+" Exception      ->    Statement
+" Float          ->    Constant
+" Function       ->    Identifier
+" Identifier           foreground                 none
+" Ignore               foreground                 none
+" Include        ->    PreProc
+" Keyword        ->    Statement
+" Label          ->    Statement
+" Macro          ->    PreProc
+" Number         ->    Constant
+" Operator       ->    Statement
+" PreCondit      ->    PreProc
+" PreProc              foreground                 none
+" Repeat         ->    Statement
+" Special              foreground                 none
+" SpecialChar    ->    Special
+" SpecialComment ->    Comment
+" Statement            foreground                 none
+" StorageClass   ->    Type
+" String               string                     none  
+" Structure      ->    Type
+" Tag            ->    Special
+" Todo                 foreground                 none
+" Type                 foreground                 none
+" Typedef        ->    Type
+" Underlined           foreground                 none
+" lCursor          ->  Cursor
+" CursorIM             none                       fg
+" ToolbarLine          none                       none
+" ToolbarButton        foreground                 none
