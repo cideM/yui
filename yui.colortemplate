@@ -17,6 +17,7 @@ Color: background_alt     #303030    ~
 Color: foreground         #a6a6a6    ~
 Color: foreground_alt     #626262    ~
 Color: red                #e04d24    ~
+Color: white              #ffffff    ~
 Color: green              #57d8a7    ~
 Color: yellow             #f9df8b    ~
 
@@ -45,7 +46,7 @@ FoldColumn           foreground                 background_alt
 Folded               foreground_alt             none
 IncSearch            foreground                 background_alt  underline
 LineNr               foreground_alt             background
-MatchParen           red                        none            bold
+MatchParen           white                      none            bold
 ModeMsg              foreground                 none
 MoreMsg              foreground                 none
 NonText              foreground                 none
@@ -78,7 +79,7 @@ WildMenu             foreground                 background_alt  underline
 # Other conventional group names (see `:help group-name`)
 Boolean        ->    Constant
 Character      ->    Constant
-Comment              red                        none            italic
+Comment              white                      none            italic
 Conditional    ->    Statement
 Constant             foreground                 none
 Define         ->    PreProc
@@ -104,7 +105,7 @@ SpecialChar    ->    Special
 SpecialComment ->    Comment
 Statement            foreground                 none
 StorageClass   ->    Type
-String               green                      none  
+String               white                      none  
 Structure      ->    Type
 Tag            ->    Special
 Todo                 foreground                 none

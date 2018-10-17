@@ -7,9 +7,8 @@ evaluate-commands %sh{
     foreground_alt="rgb:626262"
     background="rgb:202020"
     background_alt="rgb:303030"
-    string="rgb:57D8A7"
-    error="rgb:e04d24"
-    comment="rgb:e04d24"
+    red="rgb:e04d24"
+    white="rgb:ffffff"
 
     echo "
         face global value ${foreground}
@@ -17,11 +16,11 @@ evaluate-commands %sh{
         face global variable ${foreground}
         face global module ${foreground}
         face global function ${foreground}
-        face global string ${string}
+        face global string ${white}
         face global keyword ${foreground}
         face global operator ${foreground}
         face global attribute ${foreground}
-        face global comment ${comment}+i
+        face global comment ${white}+i
         face global meta ${foreground}
         face global builtin ${foreground}
     "
@@ -54,14 +53,14 @@ evaluate-commands %sh{
         face global MenuBackground ${foreground},${background_alt}
         face global MenuInfo ${foreground}
         face global Information ${foreground},${background_alt}
-        face global Error ${error},${background_alt}+b
+        face global Error ${red},${background_alt}+b
         face global StatusLine ${foreground},${background_alt}+b
         face global StatusLineMode ${foreground}
         face global StatusLineInfo ${foreground}
         face global StatusLineValue ${foreground}
         face global StatusCursor ${background},${foreground}
         face global Prompt ${foreground},${background_alt}
-        face global MatchingChar ${error},${background}+bF
+        face global MatchingChar ${white},${background}+bF
         face global BufferPadding ${foreground},${background}
     "
 }

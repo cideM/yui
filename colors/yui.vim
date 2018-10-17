@@ -2,7 +2,7 @@
 " Author:       Florian B <yuuki@protonmail.com>
 " Maintainer:   Florian B <yuuki@protonmail.com>
 " License:      Vim License (see `:help license`)
-" Last Updated: Wed Oct 17 23:22:04 2018
+" Last Updated: Wed Oct 17 23:31:57 2018
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < 256)
@@ -40,7 +40,7 @@ hi FoldColumn ctermfg=248 ctermbg=236 guifg=#a6a6a6 guibg=#303030 guisp=NONE cte
 hi Folded ctermfg=241 ctermbg=NONE guifg=#626262 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi IncSearch ctermfg=248 ctermbg=236 guifg=#a6a6a6 guibg=#303030 guisp=NONE cterm=NONE,underline gui=NONE,underline
 hi LineNr ctermfg=241 ctermbg=234 guifg=#626262 guibg=#202020 guisp=NONE cterm=NONE gui=NONE
-hi MatchParen ctermfg=196 ctermbg=NONE guifg=#e04d24 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi MatchParen ctermfg=231 ctermbg=NONE guifg=#ffffff guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
 hi ModeMsg ctermfg=248 ctermbg=NONE guifg=#a6a6a6 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi MoreMsg ctermfg=248 ctermbg=NONE guifg=#a6a6a6 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi NonText ctermfg=248 ctermbg=NONE guifg=#a6a6a6 guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -72,7 +72,7 @@ hi WarningMsg ctermfg=248 ctermbg=NONE guifg=#a6a6a6 guibg=NONE guisp=NONE cterm
 hi WildMenu ctermfg=248 ctermbg=236 guifg=#a6a6a6 guibg=#303030 guisp=NONE cterm=NONE,underline gui=NONE,underline
 hi! link Boolean Constant
 hi! link Character Constant
-hi Comment ctermfg=196 ctermbg=NONE guifg=#e04d24 guibg=NONE guisp=NONE cterm=NONE,italic gui=NONE,italic
+hi Comment ctermfg=231 ctermbg=NONE guifg=#ffffff guibg=NONE guisp=NONE cterm=NONE,italic gui=NONE,italic
 hi! link Conditional Statement
 hi Constant ctermfg=248 ctermbg=NONE guifg=#a6a6a6 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link Define PreProc
@@ -98,7 +98,7 @@ hi! link SpecialChar Special
 hi! link SpecialComment Comment
 hi Statement ctermfg=248 ctermbg=NONE guifg=#a6a6a6 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link StorageClass Type
-hi String ctermfg=79 ctermbg=NONE guifg=#57d8a7 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi String ctermfg=231 ctermbg=NONE guifg=#ffffff guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link Structure Type
 hi! link Tag Special
 hi Todo ctermfg=248 ctermbg=NONE guifg=#a6a6a6 guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -117,6 +117,7 @@ finish
 " Color: foreground         #a6a6a6    ~
 " Color: foreground_alt     #626262    ~
 " Color: red                #e04d24    ~
+" Color: white              #ffffff    ~
 " Color: green              #57d8a7    ~
 " Color: yellow             #f9df8b    ~
 " ALEErrorSign         red                        background
@@ -140,7 +141,7 @@ finish
 " Folded               foreground_alt             none
 " IncSearch            foreground                 background_alt  underline
 " LineNr               foreground_alt             background
-" MatchParen           red                        none            bold
+" MatchParen           white                      none            bold
 " ModeMsg              foreground                 none
 " MoreMsg              foreground                 none
 " NonText              foreground                 none
@@ -172,7 +173,7 @@ finish
 " WildMenu             foreground                 background_alt  underline
 " Boolean        ->    Constant
 " Character      ->    Constant
-" Comment              red                        none            italic
+" Comment              white                      none            italic
 " Conditional    ->    Statement
 " Constant             foreground                 none
 " Define         ->    PreProc
@@ -198,7 +199,7 @@ finish
 " SpecialComment ->    Comment
 " Statement            foreground                 none
 " StorageClass   ->    Type
-" String               green                      none  
+" String               white                      none  
 " Structure      ->    Type
 " Tag            ->    Special
 " Todo                 foreground                 none
