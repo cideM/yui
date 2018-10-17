@@ -3,13 +3,13 @@
 ##
 
 evaluate-commands %sh{
-    foreground="rgb:cdcdcd"
-    foreground_alt="rgb:9a9a9a"
-    background="rgb:383838"
-    background_alt="rgb:585858"
-    string="rgb:c8cc92"
-    error="rgb:ed6a5a"
-    comment="rgb:f1ab86"
+    foreground="rgb:a6a6a6"
+    foreground_alt="rgb:626262"
+    background="rgb:202020"
+    background_alt="rgb:303030"
+    string="rgb:57D8A7"
+    error="rgb:e04d24"
+    comment="rgb:e04d24"
 
     echo "
         face global value ${foreground}

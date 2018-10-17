@@ -12,23 +12,20 @@ Background: dark
 
 # Color palette {{{
 # Color name              GUI        Base256    Base16 (optional)
-Color: background         #383838    ~
-Color: background_alt     #585858    ~
-Color: foreground         #cdcdcd    ~
-Color: foreground_alt     #9a9a9a    ~
-Color: error              #ed6a7a    ~
-Color: diff_change        #81d4fa    ~
-Color: diff_add           #c8cc92    ~
-Color: warning            #ffd740    ~
-Color: string             #c8cc92    ~
-Color: comment            #f1ab86    ~
+Color: background         #202020    ~
+Color: background_alt     #303030    ~
+Color: foreground         #a6a6a6    ~
+Color: foreground_alt     #626262    ~
+Color: red                #e04d24    ~
+Color: green              #57d8a7    ~
+Color: yellow             #f9df8b    ~
 
 # }}}
 
 # Default highlight groups {{{
 # Group              Foreground                 Background    Attributes
-ALEErrorSign         error                      background
-ALEWarningSign       warning                    background
+ALEErrorSign         red                        background
+ALEWarningSign       yellow                     background
 Normal               foreground                 background
 Terminal             foreground                 background
 ColorColumn          fg                         none
@@ -37,18 +34,18 @@ Cursor               foreground                 none
 CursorColumn         foreground                 none
 CursorLine           foreground                 background_alt
 CursorLineNr         foreground                 none
-DiffAdd              diff_add                   none
-DiffChange           diff_change                none
-DiffDelete           error                      none
-DiffText             warning                    none
+DiffAdd              background                 green
+DiffChange           background                 yellow
+DiffDelete           background                 red
+DiffText             background                 yellow          underline
 Directory            foreground                 none
 EndOfBuffer          background                 none
-ErrorMsg             error                      none
+ErrorMsg             red                        none
 FoldColumn           foreground                 background_alt
 Folded               foreground_alt             none
 IncSearch            foreground                 background_alt  underline
 LineNr               foreground_alt             background
-MatchParen           error                      none            bold
+MatchParen           red                        none            bold
 ModeMsg              foreground                 none
 MoreMsg              foreground                 none
 NonText              foreground                 none
@@ -61,8 +58,8 @@ QuickFixLine     ->  Search
 Search               foreground                 background_alt
 SignColumn           foreground                 background
 SpecialKey           foreground                 none
-SpellBad             error                      none
-SpellCap             warning                    none
+SpellBad             red                        none
+SpellCap             yellow                     none
 SpellLocal           foreground                 none
 SpellRare            foreground                 none
 StatusLine           foreground                 background_alt 
@@ -73,7 +70,7 @@ TabLine              foreground                 background_alt
 TabLineFill          foreground                 background
 TabLineSel           foreground                 background_alt  underline
 Title                foreground                 none
-VertSplit            none                       none
+VertSplit            foreground_alt             none
 Visual               foreground                 background_alt
 VisualNOS            foreground                 none
 WarningMsg           foreground                 none
@@ -81,7 +78,7 @@ WildMenu             foreground                 background_alt  underline
 # Other conventional group names (see `:help group-name`)
 Boolean        ->    Constant
 Character      ->    Constant
-Comment              comment                    none            italic
+Comment              red                        none            italic
 Conditional    ->    Statement
 Constant             foreground                 none
 Define         ->    PreProc
@@ -107,7 +104,7 @@ SpecialChar    ->    Special
 SpecialComment ->    Comment
 Statement            foreground                 none
 StorageClass   ->    Type
-String               string                     none  
+String               green                      none  
 Structure      ->    Type
 Tag            ->    Special
 Todo                 foreground                 none

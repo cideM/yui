@@ -6,4 +6,3 @@
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	/8e098045/
 g:colors_name	colors/yui.vim	/^let g:colors_name = 'yui'$/;"	v
-g:colors_name	colors/yui_light.vim	/^let g:colors_name = 'yui_light'$/;"	v
