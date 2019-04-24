@@ -8,38 +8,39 @@ Author:     Florian B <yuuki@protonmail.com>
 Maintainer: Florian B <yuuki@protonmail.com>
 # }}}
 
-Background: dark
+Background: light
 
 # Color palette {{{
 # Color name              GUI        Base256    Base16 (optional)
-Color: background         #202020    ~
-Color: background_alt     #404040    ~
-Color: foreground         #c3c3c3    ~
+Color: background         #efeae5    ~
+Color: background_alt     #f3f2ec    ~
+Color: status_active      #7a6b66    ~
+Color: status_inactive    #bbb5af    ~
+Color: foreground         #404040    ~
 Color: foreground_alt     #737373    ~
-Color: red                #e04d24    ~
+Color: red                #d50711    ~
 Color: white              #ffffff    ~
-Color: green              #57d8a7    ~
-Color: yellow             #f9df8b    ~
-Color: comment            #a7b544    ~
-Color: blue               #8fbcff    ~
+Color: green              #007a41    ~
+Color: orange             #e96c3e    ~
+Color: blue               #0067c2    ~
+Color: purple             #af0bc1    ~
+Color: black              #000000    ~
  
 # }}}
 
 # Default highlight groups {{{
 # Group              Foreground                 Background    Attributes
-ALEErrorSign         red                        none
-ALEWarningSign       yellow                     none
 Normal               foreground                 background
 Terminal             foreground                 background
-ColorColumn          fg                         none
+ColorColumn          foreground                 none
 Conceal              foreground_alt             none
 Cursor               foreground                 none
 CursorColumn         none                       background_alt
-CursorLine           none                       none underline
-CursorLineNr         none                       none underline
+CursorLine           none                       background_alt 
+CursorLineNr         none                       background_alt
 DiffAdd              green                      none
 diffAdded   -> DiffAdd
-DiffChange           yellow none
+DiffChange           purple none
 diffChanged -> DiffChange
 DiffDelete           red    none
 diffRemoved -> DiffDelete
@@ -49,48 +50,49 @@ EndOfBuffer          foreground_alt             none
 ErrorMsg             red                        none
 FoldColumn           foreground_alt             none
 Folded               foreground_alt             none
-IncSearch            background                 white
-Search               white                      foreground_alt
-LineNr               foreground_alt             none
-MatchParen           white                      none            underline
+IncSearch            white                      orange
+Search               none                       white
+LineNr               none                       none
+MatchParen           none                       none            underline bold
 ModeMsg              foreground                 none
 MoreMsg              foreground                 none
 NonText              foreground                 none
-Pmenu                foreground                 background_alt
-PmenuSbar            foreground                 background_alt
-PmenuSel             background                 foreground
-PmenuThumb           foreground                 background_alt
+Pmenu                foreground                 white
+PmenuSbar            foreground                 status_inactive
+PmenuSel             orange                     white
+PmenuThumb           foreground                 white
 Question             foreground                 none
 QuickFixLine     ->  Search
 SignColumn           foreground                 background
 SpecialKey           foreground                 none
 SpellBad             red                        none
-SpellCap             yellow                     none
+SpellCap             purple                     none
 SpellLocal           foreground                 none
 SpellRare            foreground                 none
-StatusLine           background                 white
-StatusLineNC         background                 foreground
+StatusLine           white                      status_active
+StatusLineNC         foreground_alt             white
 StatusLineTerm   ->  StatusLine
 StatusLineTermNC ->  StatusLineNC
-TabLine              foreground                 none
-TabLineFill          foreground                 none
-TabLineSel           background                 white
-Title                foreground                 none
+TabLine              foreground                 white
+TabLineFill          none                       white
+TabLineSel           white                      status_active
+# Title is e.g., the window count in tab line
+Title                none                       none
 VertSplit            foreground_alt             none
-Visual               background                 foreground
-VisualNOS            foreground                 none
+Visual               black                      white
+VisualNOS            black                      white
 WarningMsg           foreground                 none
-WildMenu             background                 white  bold reverse
+WildMenu             orange                     white
 # Other conventional group names (see `:help group-name`)
 Boolean        ->    Constant
 Character      ->    Constant
-Comment              comment                      none            italic
+Comment              orange                     none
 Conditional    ->    Statement
 Constant             foreground                 none
 Define         ->    PreProc
 Debug          ->    Special
 Delimiter      ->    Special
-Error                red                 none
+Error                red                        none
 Exception      ->    Statement
 Float          ->    Constant
 Function       ->    Identifier
@@ -110,10 +112,10 @@ SpecialChar    ->    Special
 SpecialComment ->    Comment
 Statement            foreground                 none
 StorageClass   ->    Type
-String               white                      none italic
+String               blue                       none
 Structure      ->    Type
 Tag            ->    Special
-Todo                 comment                       none italic underline
+Todo                 orange                     none
 Type                 foreground                 none
 Typedef        ->    Type
 Underlined           foreground                 none

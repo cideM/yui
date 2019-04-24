@@ -2,7 +2,7 @@
 " Author:       Florian B <yuuki@protonmail.com>
 " Maintainer:   Florian B <yuuki@protonmail.com>
 " License:      Vim License (see `:help license`)
-" Last Updated: Wed Feb 20 13:51:31 2019
+" Last Updated: Wed Apr 24 20:14:33 2019
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < 256)
@@ -10,7 +10,7 @@ if !(has('termguicolors') && &termguicolors) && !has('gui_running')
   finish
 endif
 
-set background=dark
+set background=light
 
 hi clear
 if exists('syntax_on')
@@ -19,74 +19,72 @@ endif
 
 let g:colors_name = 'yui'
 
-hi ALEErrorSign ctermfg=196 ctermbg=NONE guifg=#e04d24 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi ALEWarningSign ctermfg=222 ctermbg=NONE guifg=#f9df8b guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi Normal ctermfg=251 ctermbg=234 guifg=#c3c3c3 guibg=#202020 guisp=NONE cterm=NONE gui=NONE
-hi Terminal ctermfg=251 ctermbg=234 guifg=#c3c3c3 guibg=#202020 guisp=NONE cterm=NONE gui=NONE
-hi ColorColumn ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi Normal ctermfg=238 ctermbg=255 guifg=#404040 guibg=#efeae5 guisp=NONE cterm=NONE gui=NONE
+hi Terminal ctermfg=238 ctermbg=255 guifg=#404040 guibg=#efeae5 guisp=NONE cterm=NONE gui=NONE
+hi ColorColumn ctermfg=238 ctermbg=NONE guifg=#404040 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi Conceal ctermfg=243 ctermbg=NONE guifg=#737373 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi Cursor ctermfg=251 ctermbg=NONE guifg=#c3c3c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi CursorColumn ctermfg=NONE ctermbg=238 guifg=NONE guibg=#404040 guisp=NONE cterm=NONE gui=NONE
-hi CursorLine ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE,underline gui=NONE,underline
-hi CursorLineNr ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE,underline gui=NONE,underline
-hi DiffAdd ctermfg=79 ctermbg=NONE guifg=#57d8a7 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi Cursor ctermfg=238 ctermbg=NONE guifg=#404040 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi CursorColumn ctermfg=NONE ctermbg=255 guifg=NONE guibg=#f3f2ec guisp=NONE cterm=NONE gui=NONE
+hi CursorLine ctermfg=NONE ctermbg=255 guifg=NONE guibg=#f3f2ec guisp=NONE cterm=NONE gui=NONE
+hi CursorLineNr ctermfg=NONE ctermbg=255 guifg=NONE guibg=#f3f2ec guisp=NONE cterm=NONE gui=NONE
+hi DiffAdd ctermfg=29 ctermbg=NONE guifg=#007a41 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link diffAdded DiffAdd
-hi DiffChange ctermfg=222 ctermbg=NONE guifg=#f9df8b guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi DiffChange ctermfg=127 ctermbg=NONE guifg=#af0bc1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link diffChanged DiffChange
-hi DiffDelete ctermfg=196 ctermbg=NONE guifg=#e04d24 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi DiffDelete ctermfg=160 ctermbg=NONE guifg=#d50711 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link diffRemoved DiffDelete
-hi DiffText ctermfg=111 ctermbg=NONE guifg=#8fbcff guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi Directory ctermfg=251 ctermbg=NONE guifg=#c3c3c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi DiffText ctermfg=25 ctermbg=NONE guifg=#0067c2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi Directory ctermfg=238 ctermbg=NONE guifg=#404040 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi EndOfBuffer ctermfg=243 ctermbg=NONE guifg=#737373 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi ErrorMsg ctermfg=196 ctermbg=NONE guifg=#e04d24 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi ErrorMsg ctermfg=160 ctermbg=NONE guifg=#d50711 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi FoldColumn ctermfg=243 ctermbg=NONE guifg=#737373 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi Folded ctermfg=243 ctermbg=NONE guifg=#737373 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi IncSearch ctermfg=234 ctermbg=231 guifg=#202020 guibg=#ffffff guisp=NONE cterm=NONE gui=NONE
-hi Search ctermfg=231 ctermbg=243 guifg=#ffffff guibg=#737373 guisp=NONE cterm=NONE gui=NONE
-hi LineNr ctermfg=243 ctermbg=NONE guifg=#737373 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi MatchParen ctermfg=231 ctermbg=NONE guifg=#ffffff guibg=NONE guisp=NONE cterm=NONE,underline gui=NONE,underline
-hi ModeMsg ctermfg=251 ctermbg=NONE guifg=#c3c3c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi MoreMsg ctermfg=251 ctermbg=NONE guifg=#c3c3c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi NonText ctermfg=251 ctermbg=NONE guifg=#c3c3c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi Pmenu ctermfg=251 ctermbg=238 guifg=#c3c3c3 guibg=#404040 guisp=NONE cterm=NONE gui=NONE
-hi PmenuSbar ctermfg=251 ctermbg=238 guifg=#c3c3c3 guibg=#404040 guisp=NONE cterm=NONE gui=NONE
-hi PmenuSel ctermfg=234 ctermbg=251 guifg=#202020 guibg=#c3c3c3 guisp=NONE cterm=NONE gui=NONE
-hi PmenuThumb ctermfg=251 ctermbg=238 guifg=#c3c3c3 guibg=#404040 guisp=NONE cterm=NONE gui=NONE
-hi Question ctermfg=251 ctermbg=NONE guifg=#c3c3c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi IncSearch ctermfg=231 ctermbg=202 guifg=#ffffff guibg=#e96c3e guisp=NONE cterm=NONE gui=NONE
+hi Search ctermfg=NONE ctermbg=231 guifg=NONE guibg=#ffffff guisp=NONE cterm=NONE gui=NONE
+hi LineNr ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi MatchParen ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE,bold,underline gui=NONE,bold,underline
+hi ModeMsg ctermfg=238 ctermbg=NONE guifg=#404040 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi MoreMsg ctermfg=238 ctermbg=NONE guifg=#404040 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi NonText ctermfg=238 ctermbg=NONE guifg=#404040 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi Pmenu ctermfg=238 ctermbg=231 guifg=#404040 guibg=#ffffff guisp=NONE cterm=NONE gui=NONE
+hi PmenuSbar ctermfg=238 ctermbg=249 guifg=#404040 guibg=#bbb5af guisp=NONE cterm=NONE gui=NONE
+hi PmenuSel ctermfg=202 ctermbg=231 guifg=#e96c3e guibg=#ffffff guisp=NONE cterm=NONE gui=NONE
+hi PmenuThumb ctermfg=238 ctermbg=231 guifg=#404040 guibg=#ffffff guisp=NONE cterm=NONE gui=NONE
+hi Question ctermfg=238 ctermbg=NONE guifg=#404040 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link QuickFixLine Search
-hi SignColumn ctermfg=251 ctermbg=234 guifg=#c3c3c3 guibg=#202020 guisp=NONE cterm=NONE gui=NONE
-hi SpecialKey ctermfg=251 ctermbg=NONE guifg=#c3c3c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi SpellBad ctermfg=196 ctermbg=NONE guifg=#e04d24 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi SpellCap ctermfg=222 ctermbg=NONE guifg=#f9df8b guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi SpellLocal ctermfg=251 ctermbg=NONE guifg=#c3c3c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi SpellRare ctermfg=251 ctermbg=NONE guifg=#c3c3c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi StatusLine ctermfg=234 ctermbg=231 guifg=#202020 guibg=#ffffff guisp=NONE cterm=NONE gui=NONE
-hi StatusLineNC ctermfg=234 ctermbg=251 guifg=#202020 guibg=#c3c3c3 guisp=NONE cterm=NONE gui=NONE
+hi SignColumn ctermfg=238 ctermbg=255 guifg=#404040 guibg=#efeae5 guisp=NONE cterm=NONE gui=NONE
+hi SpecialKey ctermfg=238 ctermbg=NONE guifg=#404040 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi SpellBad ctermfg=160 ctermbg=NONE guifg=#d50711 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi SpellCap ctermfg=127 ctermbg=NONE guifg=#af0bc1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi SpellLocal ctermfg=238 ctermbg=NONE guifg=#404040 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi SpellRare ctermfg=238 ctermbg=NONE guifg=#404040 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi StatusLine ctermfg=231 ctermbg=242 guifg=#ffffff guibg=#7a6b66 guisp=NONE cterm=NONE gui=NONE
+hi StatusLineNC ctermfg=243 ctermbg=231 guifg=#737373 guibg=#ffffff guisp=NONE cterm=NONE gui=NONE
 hi! link StatusLineTerm StatusLine
 hi! link StatusLineTermNC StatusLineNC
-hi TabLine ctermfg=251 ctermbg=NONE guifg=#c3c3c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi TabLineFill ctermfg=251 ctermbg=NONE guifg=#c3c3c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi TabLineSel ctermfg=234 ctermbg=231 guifg=#202020 guibg=#ffffff guisp=NONE cterm=NONE gui=NONE
-hi Title ctermfg=251 ctermbg=NONE guifg=#c3c3c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi TabLine ctermfg=238 ctermbg=231 guifg=#404040 guibg=#ffffff guisp=NONE cterm=NONE gui=NONE
+hi TabLineFill ctermfg=NONE ctermbg=231 guifg=NONE guibg=#ffffff guisp=NONE cterm=NONE gui=NONE
+hi TabLineSel ctermfg=231 ctermbg=242 guifg=#ffffff guibg=#7a6b66 guisp=NONE cterm=NONE gui=NONE
+hi Title ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi VertSplit ctermfg=243 ctermbg=NONE guifg=#737373 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi Visual ctermfg=234 ctermbg=251 guifg=#202020 guibg=#c3c3c3 guisp=NONE cterm=NONE gui=NONE
-hi VisualNOS ctermfg=251 ctermbg=NONE guifg=#c3c3c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi WarningMsg ctermfg=251 ctermbg=NONE guifg=#c3c3c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi WildMenu ctermfg=234 ctermbg=231 guifg=#202020 guibg=#ffffff guisp=NONE cterm=NONE,bold,reverse gui=NONE,bold,reverse
+hi Visual ctermfg=16 ctermbg=231 guifg=#000000 guibg=#ffffff guisp=NONE cterm=NONE gui=NONE
+hi VisualNOS ctermfg=16 ctermbg=231 guifg=#000000 guibg=#ffffff guisp=NONE cterm=NONE gui=NONE
+hi WarningMsg ctermfg=238 ctermbg=NONE guifg=#404040 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi WildMenu ctermfg=202 ctermbg=231 guifg=#e96c3e guibg=#ffffff guisp=NONE cterm=NONE gui=NONE
 hi! link Boolean Constant
 hi! link Character Constant
-hi Comment ctermfg=143 ctermbg=NONE guifg=#a7b544 guibg=NONE guisp=NONE cterm=NONE,italic gui=NONE,italic
+hi Comment ctermfg=202 ctermbg=NONE guifg=#e96c3e guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link Conditional Statement
-hi Constant ctermfg=251 ctermbg=NONE guifg=#c3c3c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi Constant ctermfg=238 ctermbg=NONE guifg=#404040 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link Define PreProc
 hi! link Debug Special
 hi! link Delimiter Special
-hi Error ctermfg=196 ctermbg=NONE guifg=#e04d24 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi Error ctermfg=160 ctermbg=NONE guifg=#d50711 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link Exception Statement
 hi! link Float Constant
 hi! link Function Identifier
-hi Identifier ctermfg=251 ctermbg=NONE guifg=#c3c3c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi Ignore ctermfg=251 ctermbg=NONE guifg=#c3c3c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi Identifier ctermfg=238 ctermbg=NONE guifg=#404040 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi Ignore ctermfg=238 ctermbg=NONE guifg=#404040 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link Include PreProc
 hi! link Keyword Statement
 hi! link Label Statement
@@ -94,50 +92,51 @@ hi! link Macro PreProc
 hi! link Number Constant
 hi! link Operator Statement
 hi! link PreCondit PreProc
-hi PreProc ctermfg=251 ctermbg=NONE guifg=#c3c3c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi PreProc ctermfg=238 ctermbg=NONE guifg=#404040 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link Repeat Statement
-hi Special ctermfg=251 ctermbg=NONE guifg=#c3c3c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi Special ctermfg=238 ctermbg=NONE guifg=#404040 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link SpecialChar Special
 hi! link SpecialComment Comment
-hi Statement ctermfg=251 ctermbg=NONE guifg=#c3c3c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi Statement ctermfg=238 ctermbg=NONE guifg=#404040 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link StorageClass Type
-hi String ctermfg=231 ctermbg=NONE guifg=#ffffff guibg=NONE guisp=NONE cterm=NONE,italic gui=NONE,italic
+hi String ctermfg=25 ctermbg=NONE guifg=#0067c2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link Structure Type
 hi! link Tag Special
-hi Todo ctermfg=143 ctermbg=NONE guifg=#a7b544 guibg=NONE guisp=NONE cterm=NONE,italic,underline gui=NONE,italic,underline
-hi Type ctermfg=251 ctermbg=NONE guifg=#c3c3c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi Todo ctermfg=202 ctermbg=NONE guifg=#e96c3e guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi Type ctermfg=238 ctermbg=NONE guifg=#404040 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link Typedef Type
-hi Underlined ctermfg=251 ctermbg=NONE guifg=#c3c3c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi Underlined ctermfg=238 ctermbg=NONE guifg=#404040 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link lCursor Cursor
 hi CursorIM ctermfg=NONE ctermbg=fg guifg=NONE guibg=fg guisp=NONE cterm=NONE gui=NONE
 hi ToolbarLine ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi ToolbarButton ctermfg=251 ctermbg=NONE guifg=#c3c3c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi ToolbarButton ctermfg=238 ctermbg=NONE guifg=#404040 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 finish
 
-" Background: dark
-" Color: background         #202020    ~
-" Color: background_alt     #404040    ~
-" Color: foreground         #c3c3c3    ~
+" Background: light
+" Color: background         #efeae5    ~
+" Color: background_alt     #f3f2ec    ~
+" Color: status_active      #7a6b66    ~
+" Color: status_inactive    #bbb5af    ~
+" Color: foreground         #404040    ~
 " Color: foreground_alt     #737373    ~
-" Color: red                #e04d24    ~
+" Color: red                #d50711    ~
 " Color: white              #ffffff    ~
-" Color: green              #57d8a7    ~
-" Color: yellow             #f9df8b    ~
-" Color: comment            #a7b544    ~
-" Color: blue               #8fbcff    ~
-" ALEErrorSign         red                        none
-" ALEWarningSign       yellow                     none
+" Color: green              #007a41    ~
+" Color: orange             #e96c3e    ~
+" Color: blue               #0067c2    ~
+" Color: purple             #af0bc1    ~
+" Color: black              #000000    ~
 " Normal               foreground                 background
 " Terminal             foreground                 background
-" ColorColumn          fg                         none
+" ColorColumn          foreground                 none
 " Conceal              foreground_alt             none
 " Cursor               foreground                 none
 " CursorColumn         none                       background_alt
-" CursorLine           none                       none underline
-" CursorLineNr         none                       none underline
+" CursorLine           none                       background_alt 
+" CursorLineNr         none                       background_alt
 " DiffAdd              green                      none
 " diffAdded   -> DiffAdd
-" DiffChange           yellow none
+" DiffChange           purple none
 " diffChanged -> DiffChange
 " DiffDelete           red    none
 " diffRemoved -> DiffDelete
@@ -147,47 +146,47 @@ finish
 " ErrorMsg             red                        none
 " FoldColumn           foreground_alt             none
 " Folded               foreground_alt             none
-" IncSearch            background                 white
-" Search               white                      foreground_alt
-" LineNr               foreground_alt             none
-" MatchParen           white                      none            underline
+" IncSearch            white                      orange
+" Search               none                       white
+" LineNr               none                       none
+" MatchParen           none                       none            underline bold
 " ModeMsg              foreground                 none
 " MoreMsg              foreground                 none
 " NonText              foreground                 none
-" Pmenu                foreground                 background_alt
-" PmenuSbar            foreground                 background_alt
-" PmenuSel             background                 foreground
-" PmenuThumb           foreground                 background_alt
+" Pmenu                foreground                 white
+" PmenuSbar            foreground                 status_inactive
+" PmenuSel             orange                     white
+" PmenuThumb           foreground                 white
 " Question             foreground                 none
 " QuickFixLine     ->  Search
 " SignColumn           foreground                 background
 " SpecialKey           foreground                 none
 " SpellBad             red                        none
-" SpellCap             yellow                     none
+" SpellCap             purple                     none
 " SpellLocal           foreground                 none
 " SpellRare            foreground                 none
-" StatusLine           background                 white
-" StatusLineNC         background                 foreground
+" StatusLine           white                      status_active
+" StatusLineNC         foreground_alt             white
 " StatusLineTerm   ->  StatusLine
 " StatusLineTermNC ->  StatusLineNC
-" TabLine              foreground                 none
-" TabLineFill          foreground                 none
-" TabLineSel           background                 white
-" Title                foreground                 none
+" TabLine              foreground                 white
+" TabLineFill          none                       white
+" TabLineSel           white                      status_active
+" Title                none                       none
 " VertSplit            foreground_alt             none
-" Visual               background                 foreground
-" VisualNOS            foreground                 none
+" Visual               black                      white
+" VisualNOS            black                      white
 " WarningMsg           foreground                 none
-" WildMenu             background                 white  bold reverse
+" WildMenu             orange                     white
 " Boolean        ->    Constant
 " Character      ->    Constant
-" Comment              comment                      none            italic
+" Comment              orange                     none
 " Conditional    ->    Statement
 " Constant             foreground                 none
 " Define         ->    PreProc
 " Debug          ->    Special
 " Delimiter      ->    Special
-" Error                red                 none
+" Error                red                        none
 " Exception      ->    Statement
 " Float          ->    Constant
 " Function       ->    Identifier
@@ -207,10 +206,10 @@ finish
 " SpecialComment ->    Comment
 " Statement            foreground                 none
 " StorageClass   ->    Type
-" String               white                      none italic
+" String               blue                       none
 " Structure      ->    Type
 " Tag            ->    Special
-" Todo                 comment                       none italic underline
+" Todo                 orange                     none
 " Type                 foreground                 none
 " Typedef        ->    Type
 " Underlined           foreground                 none
