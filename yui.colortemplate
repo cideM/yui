@@ -14,7 +14,7 @@ Background: light
 # Color name                   GUI        Base256    Base16 (optional)
 Color: black                   #72645f    ~
 Color: red                     #d50711    ~
-Color: green                   #007a41    ~
+Color: green                   #336f15    ~
 
 # vvv No yellow since not enough contrast
 Color: purple                  #af0bc1    ~
@@ -136,16 +136,16 @@ verbatim
   let g:terminal_color_8    = "#9f918c"
   let g:terminal_color_1    = "#e96c3e"
   let g:terminal_color_9    = "#e96c3e"
-  let g:terminal_color_2    = "#007a41"
-  let g:terminal_color_10   = "#007a41"
+  let g:terminal_color_2    = "#336f15"
+  let g:terminal_color_10   = "#336f15"
   let g:terminal_color_3    = "#0067c2"
   let g:terminal_color_11   = "#0067c2"
   let g:terminal_color_4    = "#af0bc1"
   let g:terminal_color_12   = "#af0bc1"
-  let g:terminal_color_5    = "#538e10"
-  let g:terminal_color_13   = "#538e10"
-  let g:terminal_color_6    = "#0095b3"
-  let g:terminal_color_14   = "#0095b3"
+  let g:terminal_color_5    = "#72645f"
+  let g:terminal_color_13   = "#72645f"
+  let g:terminal_color_6    = "#72645f"
+  let g:terminal_color_14   = "#72645f"
   let g:terminal_color_7    = "#efeae5"
   let g:terminal_color_15   = "#ffffff"
 endverbatim
