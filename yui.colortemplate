@@ -11,33 +11,35 @@ Maintainer: Florian B <yuuki@protonmail.com>
 Background: light
 
 # Color palette {{{
-# Color name              GUI        Base256    Base16 (optional)
-Color: background         #efeae5    ~
-Color: background_alt     #f3f2ec    ~
-Color: status_active      #7a6b66    ~
-Color: status_inactive    #bbb5af    ~
-Color: foreground         #404040    ~
-Color: foreground_alt     #737373    ~
-Color: red                #d50711    ~
-Color: white              #ffffff    ~
-Color: green              #007a41    ~
-Color: orange             #e96c3e    ~
-Color: blue               #0067c2    ~
-Color: purple             #af0bc1    ~
-Color: black              #000000    ~
- 
+# Color name                   GUI        Base256    Base16 (optional)
+Color: black                   #72645f    ~
+Color: red                     #d50711    ~
+Color: green                   #007a41    ~
+
+# vvv No yellow since not enough contrast
+Color: purple                  #af0bc1    ~
+Color: blue                    #0067c2    ~
+Color: white                   #efeae5    ~
+Color: brightblack             #9f918c    ~
+Color: brightwhite             #ffffff    ~
+
+Color: orange                  #e96c3e    ~
+Color: brown                   #7a6b66    ~
+
+# vvv Almost invisible
+Color: brightestblack          #d2bdb7    ~
 # }}}
 
 # Default highlight groups {{{
 # Group              Foreground                 Background    Attributes
-Normal               foreground                 background
-Terminal             foreground                 background
-ColorColumn          foreground                 none
-Conceal              foreground_alt             none
-Cursor               foreground                 none
-CursorColumn         none                       background_alt
-CursorLine           none                       background_alt 
-CursorLineNr         none                       background_alt
+Normal               black                 white
+Terminal             black                 white
+ColorColumn          black                 none
+Conceal              brightblack             none
+Cursor               black                 none
+CursorColumn         none                       brightwhite
+CursorLine           none                       brightwhite 
+CursorLineNr         none                       brightwhite
 DiffAdd              green                      none
 diffAdded   -> DiffAdd
 DiffChange           purple none
@@ -45,50 +47,50 @@ diffChanged -> DiffChange
 DiffDelete           red    none
 diffRemoved -> DiffDelete
 DiffText             blue                       none
-Directory            foreground                 none
-EndOfBuffer          foreground_alt             none
+Directory            black                 none
+EndOfBuffer          brightblack             none
 ErrorMsg             red                        none
-FoldColumn           foreground_alt             none
-Folded               foreground_alt             none
-IncSearch            white                      orange
-Search               none                       white
-LineNr               none                       none
+FoldColumn           brightblack             none
+Folded               brightestblack    none
+IncSearch            brightwhite                      orange
+Search               none                       brightwhite
+LineNr               brightestblack    none
 MatchParen           none                       none            underline bold
-ModeMsg              foreground                 none
-MoreMsg              foreground                 none
-NonText              foreground                 none
-Pmenu                foreground                 white
-PmenuSbar            foreground                 status_inactive
-PmenuSel             orange                     white
-PmenuThumb           foreground                 white
-Question             foreground                 none
+ModeMsg              black                 none
+MoreMsg              black                 none
+NonText              black                 none
+Pmenu                black                 brightwhite
+PmenuSbar            black                 brown
+PmenuSel             orange                     brightwhite
+PmenuThumb           black                 brightwhite
+Question             black                 none
 QuickFixLine     ->  Search
-SignColumn           foreground                 background
-SpecialKey           foreground                 none
+SignColumn           black                 white
+SpecialKey           black                 none
 SpellBad             red                        none
 SpellCap             purple                     none
-SpellLocal           foreground                 none
-SpellRare            foreground                 none
-StatusLine           white                      status_active
-StatusLineNC         foreground_alt             white
+SpellLocal           black                 none
+SpellRare            black                 none
+StatusLine           brightwhite                      brown
+StatusLineNC         brightblack             brightwhite
 StatusLineTerm   ->  StatusLine
 StatusLineTermNC ->  StatusLineNC
-TabLine              foreground                 white
-TabLineFill          none                       white
-TabLineSel           white                      status_active
+TabLine              black                 brightwhite
+TabLineFill          none                       brightwhite
+TabLineSel           brightwhite                      brown
 # Title is e.g., the window count in tab line
 Title                none                       none
-VertSplit            foreground_alt             none
-Visual               black                      white
-VisualNOS            black                      white
-WarningMsg           foreground                 none
-WildMenu             orange                     white
+VertSplit            brightblack             none
+Visual               none                       brightwhite
+VisualNOS            none                       brightwhite
+WarningMsg           black                 none
+WildMenu             orange                     brightwhite
 # Other conventional group names (see `:help group-name`)
 Boolean        ->    Constant
 Character      ->    Constant
 Comment              orange                     none
 Conditional    ->    Statement
-Constant             foreground                 none
+Constant             black                 none
 Define         ->    PreProc
 Debug          ->    Special
 Delimiter      ->    Special
@@ -96,8 +98,8 @@ Error                red                        none
 Exception      ->    Statement
 Float          ->    Constant
 Function       ->    Identifier
-Identifier           foreground                 none
-Ignore               foreground                 none
+Identifier           black                 none
+Ignore               black                 none
 Include        ->    PreProc
 Keyword        ->    Statement
 Label          ->    Statement
@@ -105,25 +107,46 @@ Macro          ->    PreProc
 Number         ->    Constant
 Operator       ->    Statement
 PreCondit      ->    PreProc
-PreProc              foreground                 none
+PreProc              black                 none
 Repeat         ->    Statement
-Special              foreground                 none
+Special              black                 none
 SpecialChar    ->    Special
 SpecialComment ->    Comment
-Statement            foreground                 none
+Statement            black                 none
 StorageClass   ->    Type
 String               blue                       none
 Structure      ->    Type
 Tag            ->    Special
 Todo                 orange                     none
-Type                 foreground                 none
+Type                 black                 none
 Typedef        ->    Type
-Underlined           foreground                 none
+Underlined           black                 none
 # See `:help lCursor`
 lCursor          ->  Cursor
 # See `:help CursorIM`
 CursorIM             none                       fg
 # See `:help window-toolbar`
 ToolbarLine          none                       none
-ToolbarButton        foreground                 none
+ToolbarButton        black                 none
+# }}}
+
+# Terminal colors {{{
+verbatim
+  let g:terminal_color_0    = "#72645f"
+  let g:terminal_color_8    = "#9f918c"
+  let g:terminal_color_1    = "#e96c3e"
+  let g:terminal_color_9    = "#e96c3e"
+  let g:terminal_color_2    = "#007a41"
+  let g:terminal_color_10   = "#007a41"
+  let g:terminal_color_3    = "#0067c2"
+  let g:terminal_color_11   = "#0067c2"
+  let g:terminal_color_4    = "#af0bc1"
+  let g:terminal_color_12   = "#af0bc1"
+  let g:terminal_color_5    = "#538e10"
+  let g:terminal_color_13   = "#538e10"
+  let g:terminal_color_6    = "#0095b3"
+  let g:terminal_color_14   = "#0095b3"
+  let g:terminal_color_7    = "#efeae5"
+  let g:terminal_color_15   = "#ffffff"
+endverbatim
 # }}}
