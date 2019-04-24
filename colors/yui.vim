@@ -2,7 +2,7 @@
 " Author:       Florian B <yuuki@protonmail.com>
 " Maintainer:   Florian B <yuuki@protonmail.com>
 " License:      Vim License (see `:help license`)
-" Last Updated: Wed Apr 24 20:54:26 2019
+" Last Updated: Wed Apr 24 20:58:45 2019
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < 256)
@@ -27,7 +27,7 @@ hi Cursor ctermfg=241 ctermbg=NONE guifg=#72645f guibg=NONE guisp=NONE cterm=NON
 hi CursorColumn ctermfg=NONE ctermbg=231 guifg=NONE guibg=#ffffff guisp=NONE cterm=NONE gui=NONE
 hi CursorLine ctermfg=NONE ctermbg=231 guifg=NONE guibg=#ffffff guisp=NONE cterm=NONE gui=NONE
 hi CursorLineNr ctermfg=NONE ctermbg=231 guifg=NONE guibg=#ffffff guisp=NONE cterm=NONE gui=NONE
-hi DiffAdd ctermfg=29 ctermbg=NONE guifg=#007a41 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi DiffAdd ctermfg=22 ctermbg=NONE guifg=#336f15 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link diffAdded DiffAdd
 hi DiffChange ctermfg=127 ctermbg=NONE guifg=#af0bc1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link diffChanged DiffChange
@@ -114,16 +114,16 @@ let g:terminal_color_0    = "#72645f"
 let g:terminal_color_8    = "#9f918c"
 let g:terminal_color_1    = "#e96c3e"
 let g:terminal_color_9    = "#e96c3e"
-let g:terminal_color_2    = "#007a41"
-let g:terminal_color_10   = "#007a41"
+let g:terminal_color_2    = "#336f15"
+let g:terminal_color_10   = "#336f15"
 let g:terminal_color_3    = "#0067c2"
 let g:terminal_color_11   = "#0067c2"
 let g:terminal_color_4    = "#af0bc1"
 let g:terminal_color_12   = "#af0bc1"
-let g:terminal_color_5    = "#538e10"
-let g:terminal_color_13   = "#538e10"
-let g:terminal_color_6    = "#0095b3"
-let g:terminal_color_14   = "#0095b3"
+let g:terminal_color_5    = "#72645f"
+let g:terminal_color_13   = "#72645f"
+let g:terminal_color_6    = "#72645f"
+let g:terminal_color_14   = "#72645f"
 let g:terminal_color_7    = "#efeae5"
 let g:terminal_color_15   = "#ffffff"
 finish
@@ -131,7 +131,7 @@ finish
 " Background: light
 " Color: black                   #72645f    ~
 " Color: red                     #d50711    ~
-" Color: green                   #007a41    ~
+" Color: green                   #336f15    ~
 " Color: purple                  #af0bc1    ~
 " Color: blue                    #0067c2    ~
 " Color: white                   #efeae5    ~
