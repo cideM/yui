@@ -15,16 +15,17 @@ Background: light
 Color: black                   #72645f    ~
 Color: red                     #d50711    ~
 Color: green                   #336f15    ~
+Color: blue                    #125ea9    ~
+Color: green_background        #e8ffd1    ~
+Color: red_background          #ffe5db    ~
+Color: yellow_background       #f9ffa3    ~
+Color: blue_background         #e0f3ff    ~
 
-# vvv No yellow since not enough contrast
-Color: purple                  #af0bc1    ~
-Color: blue                    #0067c2    ~
 Color: white                   #efeae5    ~
 Color: brightblack             #9f918c    ~
 Color: brightwhite             #ffffff    ~
 
 Color: orange                  #e96c3e    ~
-Color: brown                   #7a6b66    ~
 
 # vvv Almost invisible
 Color: brightestblack          #d2bdb7    ~
@@ -32,52 +33,52 @@ Color: brightestblack          #d2bdb7    ~
 
 # Default highlight groups {{{
 # Group              Foreground                 Background    Attributes
-Normal               black                 white
-Terminal             black                 white
-ColorColumn          black                 none
-Conceal              brightblack             none
-Cursor               black                 none
+Normal               black                      white
+Terminal             black                      white
+ColorColumn          black                      none
+Conceal              brightblack                none
+Cursor               black                      none
 CursorColumn         none                       brightwhite
 CursorLine           none                       brightwhite 
 CursorLineNr         none                       brightwhite
-DiffAdd              green                      none
+DiffAdd              none                       green_background
 diffAdded   -> DiffAdd
-DiffChange           purple none
+DiffChange           none                       yellow_background
 diffChanged -> DiffChange
-DiffDelete           red    none
+DiffDelete           none                       red_background    
 diffRemoved -> DiffDelete
-DiffText             blue                       none
-Directory            black                 none
-EndOfBuffer          brightblack             none
-ErrorMsg             red                        none
-FoldColumn           brightblack             none
-Folded               brightestblack    none
-IncSearch            brightwhite                      orange
-Search               none                       brightwhite
-LineNr               brightestblack    none
+DiffText             none                       blue_background
+Directory            black                      none
+EndOfBuffer          brightblack                none
+ErrorMsg             none                       red_background
+FoldColumn           brightblack                none
+Folded               brightestblack             none
+IncSearch            brightwhite                orange
+Search               orange                     brightwhite
+LineNr               brightestblack             none
 MatchParen           none                       none            underline bold
-ModeMsg              black                 none
-MoreMsg              black                 none
-NonText              black                 none
-Pmenu                black                 brightwhite
-PmenuSbar            black                 brown
+ModeMsg              black                      none
+MoreMsg              black                      none
+NonText              black                      none
+Pmenu                black                      brightwhite
+PmenuSbar            brightwhite                black
 PmenuSel             orange                     brightwhite
-PmenuThumb           black                 brightwhite
-Question             black                 none
+PmenuThumb           black                      brightwhite
+Question             black                      none
 QuickFixLine     ->  Search
-SignColumn           black                 white
-SpecialKey           black                 none
-SpellBad             red                        none
-SpellCap             purple                     none
-SpellLocal           black                 none
-SpellRare            black                 none
-StatusLine           brightwhite                      brown
-StatusLineNC         brightblack             brightwhite
+SignColumn           black                      white
+SpecialKey           black                      none
+SpellBad             none                       red_background
+SpellCap             none                       none undercurl
+SpellLocal           black                      none
+SpellRare            black                      none
+StatusLine           brightwhite                black
+StatusLineNC         brightblack                brightwhite
 StatusLineTerm   ->  StatusLine
 StatusLineTermNC ->  StatusLineNC
-TabLine              black                 brightwhite
+TabLine              black                      brightwhite
 TabLineFill          none                       brightwhite
-TabLineSel           brightwhite                      brown
+TabLineSel           brightwhite                black
 # Title is e.g., the window count in tab line
 Title                none                       none
 VertSplit            brightblack             none
@@ -88,18 +89,18 @@ WildMenu             orange                     brightwhite
 # Other conventional group names (see `:help group-name`)
 Boolean        ->    Constant
 Character      ->    Constant
-Comment              orange                     none
+Comment              brightblack                 none italic
 Conditional    ->    Statement
-Constant             black                 none
+Constant             black                       none
 Define         ->    PreProc
 Debug          ->    Special
 Delimiter      ->    Special
-Error                red                        none
+Error                none                        red_background undercurl
 Exception      ->    Statement
 Float          ->    Constant
 Function       ->    Identifier
-Identifier           black                 none
-Ignore               black                 none
+Identifier           black                       none
+Ignore               black                       none
 Include        ->    PreProc
 Keyword        ->    Statement
 Label          ->    Statement
@@ -107,46 +108,47 @@ Macro          ->    PreProc
 Number         ->    Constant
 Operator       ->    Statement
 PreCondit      ->    PreProc
-PreProc              black                 none
+PreProc              black                       none
 Repeat         ->    Statement
-Special              black                 none
+Special              black                       none
 SpecialChar    ->    Special
 SpecialComment ->    Comment
-Statement            black                 none
+Statement            black                       none
 StorageClass   ->    Type
-String               blue                       none
+String               orange                      none
 Structure      ->    Type
 Tag            ->    Special
-Todo                 orange                     none
-Type                 black                 none
+Todo                 none                        none underline
+Type                 black                       none italic
 Typedef        ->    Type
-Underlined           black                 none
+Underlined           black                       none
 # See `:help lCursor`
 lCursor          ->  Cursor
 # See `:help CursorIM`
-CursorIM             none                       fg
+CursorIM             none                        fg
 # See `:help window-toolbar`
-ToolbarLine          none                       none
-ToolbarButton        black                 none
+ToolbarLine          none                        none
+ToolbarButton        black                       none
 # }}}
 
 # Terminal colors {{{
 verbatim
+  " Normal black
   let g:terminal_color_0    = "#72645f"
-  let g:terminal_color_8    = "#9f918c"
-  let g:terminal_color_1    = "#e96c3e"
-  let g:terminal_color_9    = "#e96c3e"
+  " Red
+  let g:terminal_color_1    = "#d50711"
+  " Green
   let g:terminal_color_2    = "#336f15"
-  let g:terminal_color_10   = "#336f15"
-  let g:terminal_color_3    = "#0067c2"
-  let g:terminal_color_11   = "#0067c2"
-  let g:terminal_color_4    = "#af0bc1"
-  let g:terminal_color_12   = "#af0bc1"
-  let g:terminal_color_5    = "#72645f"
-  let g:terminal_color_13   = "#72645f"
-  let g:terminal_color_6    = "#72645f"
-  let g:terminal_color_14   = "#72645f"
-  let g:terminal_color_7    = "#efeae5"
-  let g:terminal_color_15   = "#ffffff"
+  " Yellow (Theme uses orange because yellow isn't legible on the light background)
+  let g:terminal_color_3    = "#e96c3e"
+  " Blue
+  let g:terminal_color_4    = "#125ea9"
+
+  let a = 5
+
+  while a <= 256
+    execute "let g:terminal_color_" . a . ' = "#72645f"'
+    let a += 1
+  endwhile
 endverbatim
 # }}}
