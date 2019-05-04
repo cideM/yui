@@ -2,7 +2,7 @@
 " Author:       Florian B <yuuki@protonmail.com>
 " Maintainer:   Florian B <yuuki@protonmail.com>
 " License:      Vim License (see `:help license`)
-" Last Updated: Sat 04 May 2019 03:19:07 PM CEST
+" Last Updated: Sat 04 May 2019 03:30:45 PM CEST
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < 256)
@@ -103,7 +103,7 @@ hi String ctermfg=202 ctermbg=NONE guifg=#e96c3e guibg=NONE guisp=NONE cterm=NON
 hi! link Structure Type
 hi! link Tag Special
 hi Todo ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE,underline gui=NONE,underline
-hi Type ctermfg=241 ctermbg=NONE guifg=#72645f guibg=NONE guisp=NONE cterm=NONE,bold,italic gui=NONE,bold,italic
+hi Type ctermfg=241 ctermbg=NONE guifg=#72645f guibg=NONE guisp=NONE cterm=NONE,italic gui=NONE,italic
 hi! link Typedef Type
 hi Underlined ctermfg=241 ctermbg=NONE guifg=#72645f guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link lCursor Cursor
@@ -166,7 +166,7 @@ finish
 " IncSearch            brightwhite                orange
 " Search               orange                     brightwhite
 " LineNr               brightestblack             none
-" MatchParen           none                       none            underline bold
+" MatchParen           none                       none                           underline,bold
 " ModeMsg              black                      none
 " MoreMsg              black                      none
 " NonText              black                      none
@@ -179,7 +179,7 @@ finish
 " SignColumn           black                      white
 " SpecialKey           black                      none
 " SpellBad             none                       red_background
-" SpellCap             none                       none undercurl
+" SpellCap             none                       none                           undercurl
 " SpellLocal           black                      none
 " SpellRare            black                      none
 " StatusLine           brightwhite                black
@@ -197,13 +197,13 @@ finish
 " WildMenu             orange                     brightwhite
 " Boolean        ->    Constant
 " Character      ->    Constant
-" Comment              brightblack                 none italic
+" Comment              brightblack                 none                          italic
 " Conditional    ->    Statement
 " Constant             black                       none
 " Define         ->    PreProc
 " Debug          ->    Special
 " Delimiter      ->    Special
-" Error                none                        red_background undercurl
+" Error                none                        red_background                undercurl
 " Exception      ->    Statement
 " Float          ->    Constant
 " Function       ->    Identifier
@@ -226,8 +226,8 @@ finish
 " String               orange                      none
 " Structure      ->    Type
 " Tag            ->    Special
-" Todo                 none                        none underline
-" Type                 black                       none italic bold
+" Todo                 none                        none                          underline
+" Type                 black                       none                          italic
 " Typedef        ->    Type
 " Underlined           black                       none
 " lCursor          ->  Cursor

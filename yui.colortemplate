@@ -32,7 +32,7 @@ Color: brightestblack          #d2bdb7    ~
 # }}}
 
 # Default highlight groups {{{
-# Group              Foreground                 Background    Attributes
+# Group              Foreground                 Background                     Attributes
 Normal               black                      white
 Terminal             black                      white
 ColorColumn          black                      none
@@ -56,7 +56,7 @@ Folded               brightestblack             none
 IncSearch            brightwhite                orange
 Search               orange                     brightwhite
 LineNr               brightestblack             none
-MatchParen           none                       none            underline bold
+MatchParen           none                       none                           underline,bold
 ModeMsg              black                      none
 MoreMsg              black                      none
 NonText              black                      none
@@ -69,7 +69,7 @@ QuickFixLine     ->  Search
 SignColumn           black                      white
 SpecialKey           black                      none
 SpellBad             none                       red_background
-SpellCap             none                       none undercurl
+SpellCap             none                       none                           undercurl
 SpellLocal           black                      none
 SpellRare            black                      none
 StatusLine           brightwhite                black
@@ -89,13 +89,13 @@ WildMenu             orange                     brightwhite
 # Other conventional group names (see `:help group-name`)
 Boolean        ->    Constant
 Character      ->    Constant
-Comment              brightblack                 none italic
+Comment              brightblack                 none                          italic
 Conditional    ->    Statement
 Constant             black                       none
 Define         ->    PreProc
 Debug          ->    Special
 Delimiter      ->    Special
-Error                none                        red_background undercurl
+Error                none                        red_background                undercurl
 Exception      ->    Statement
 Float          ->    Constant
 Function       ->    Identifier
@@ -118,8 +118,8 @@ StorageClass   ->    Type
 String               orange                      none
 Structure      ->    Type
 Tag            ->    Special
-Todo                 none                        none underline
-Type                 black                       none italic bold
+Todo                 none                        none                          underline
+Type                 black                       none                          italic
 Typedef        ->    Type
 Underlined           black                       none
 # See `:help lCursor`
