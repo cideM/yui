@@ -119,7 +119,7 @@ String               orange                      none
 Structure      ->    Type
 Tag            ->    Special
 Todo                 none                        none underline
-Type                 black                       none italic
+Type                 black                       none italic bold
 Typedef        ->    Type
 Underlined           black                       none
 # See `:help lCursor`

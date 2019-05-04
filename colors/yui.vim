@@ -2,7 +2,7 @@
 " Author:       Florian B <yuuki@protonmail.com>
 " Maintainer:   Florian B <yuuki@protonmail.com>
 " License:      Vim License (see `:help license`)
-" Last Updated: Sat 04 May 2019 03:14:46 PM CEST
+" Last Updated: Sat 04 May 2019 03:19:07 PM CEST
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < 256)
@@ -103,7 +103,7 @@ hi String ctermfg=202 ctermbg=NONE guifg=#e96c3e guibg=NONE guisp=NONE cterm=NON
 hi! link Structure Type
 hi! link Tag Special
 hi Todo ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE,underline gui=NONE,underline
-hi Type ctermfg=241 ctermbg=NONE guifg=#72645f guibg=NONE guisp=NONE cterm=NONE,italic gui=NONE,italic
+hi Type ctermfg=241 ctermbg=NONE guifg=#72645f guibg=NONE guisp=NONE cterm=NONE,bold,italic gui=NONE,bold,italic
 hi! link Typedef Type
 hi Underlined ctermfg=241 ctermbg=NONE guifg=#72645f guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link lCursor Cursor
@@ -227,7 +227,7 @@ finish
 " Structure      ->    Type
 " Tag            ->    Special
 " Todo                 none                        none underline
-" Type                 black                       none italic
+" Type                 black                       none italic bold
 " Typedef        ->    Type
 " Underlined           black                       none
 " lCursor          ->  Cursor
