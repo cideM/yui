@@ -2,7 +2,7 @@
 " Author:       Florian B <yuuki@protonmail.com>
 " Maintainer:   Florian B <yuuki@protonmail.com>
 " License:      Vim License (see `:help license`)
-" Last Updated: Sat 04 May 2019 03:30:45 PM CEST
+" Last Updated: Thu May  9 11:27:05 2019
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < 256)
@@ -98,9 +98,9 @@ hi Special ctermfg=241 ctermbg=NONE guifg=#72645f guibg=NONE guisp=NONE cterm=NO
 hi! link SpecialChar Special
 hi! link SpecialComment Comment
 hi Statement ctermfg=241 ctermbg=NONE guifg=#72645f guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi! link StorageClass Type
+hi StorageClass ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi String ctermfg=202 ctermbg=NONE guifg=#e96c3e guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi! link Structure Type
+hi Structure ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link Tag Special
 hi Todo ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE,underline gui=NONE,underline
 hi Type ctermfg=241 ctermbg=NONE guifg=#72645f guibg=NONE guisp=NONE cterm=NONE,italic gui=NONE,italic
@@ -121,7 +121,16 @@ let g:terminal_color_3    = "#e96c3e"
 " Blue
 let g:terminal_color_4    = "#125ea9"
 
-let a = 5
+let g:terminal_color_5    = "#72645f"
+let g:terminal_color_6    = "#72645f"
+let g:terminal_color_7    = "#72645f"
+let g:terminal_color_8    = "#72645f"
+let g:terminal_color_9    = "#d50711"
+let g:terminal_color_10    = "#336f15"
+let g:terminal_color_11    = "#e96c3e"
+let g:terminal_color_12    = "#125ea9"
+
+let a = 13
 
 while a <= 256
   execute "let g:terminal_color_" . a . ' = "#72645f"'
@@ -149,13 +158,13 @@ finish
 " Conceal              brightblack                none
 " Cursor               black                      none
 " CursorColumn         none                       brightwhite
-" CursorLine           none                       brightwhite 
+" CursorLine           none                       brightwhite
 " CursorLineNr         none                       brightwhite
 " DiffAdd              none                       green_background
 " diffAdded   -> DiffAdd
 " DiffChange           none                       yellow_background
 " diffChanged -> DiffChange
-" DiffDelete           none                       red_background    
+" DiffDelete           none                       red_background
 " diffRemoved -> DiffDelete
 " DiffText             none                       blue_background
 " Directory            black                      none
@@ -222,9 +231,9 @@ finish
 " SpecialChar    ->    Special
 " SpecialComment ->    Comment
 " Statement            black                       none
-" StorageClass   ->    Type
+" StorageClass         none                        none
 " String               orange                      none
-" Structure      ->    Type
+" Structure            none                        none
 " Tag            ->    Special
 " Todo                 none                        none                          underline
 " Type                 black                       none                          italic

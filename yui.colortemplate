@@ -39,13 +39,13 @@ ColorColumn          black                      none
 Conceal              brightblack                none
 Cursor               black                      none
 CursorColumn         none                       brightwhite
-CursorLine           none                       brightwhite 
+CursorLine           none                       brightwhite
 CursorLineNr         none                       brightwhite
 DiffAdd              none                       green_background
 diffAdded   -> DiffAdd
 DiffChange           none                       yellow_background
 diffChanged -> DiffChange
-DiffDelete           none                       red_background    
+DiffDelete           none                       red_background
 diffRemoved -> DiffDelete
 DiffText             none                       blue_background
 Directory            black                      none
@@ -114,9 +114,9 @@ Special              black                       none
 SpecialChar    ->    Special
 SpecialComment ->    Comment
 Statement            black                       none
-StorageClass   ->    Type
+StorageClass         none                        none
 String               orange                      none
-Structure      ->    Type
+Structure            none                        none
 Tag            ->    Special
 Todo                 none                        none                          underline
 Type                 black                       none                          italic
@@ -144,7 +144,16 @@ verbatim
   " Blue
   let g:terminal_color_4    = "#125ea9"
 
-  let a = 5
+  let g:terminal_color_5    = "#72645f"
+  let g:terminal_color_6    = "#72645f"
+  let g:terminal_color_7    = "#72645f"
+  let g:terminal_color_8    = "#72645f"
+  let g:terminal_color_9    = "#d50711"
+  let g:terminal_color_10    = "#336f15"
+  let g:terminal_color_11    = "#e96c3e"
+  let g:terminal_color_12    = "#125ea9"
+
+  let a = 13
 
   while a <= 256
     execute "let g:terminal_color_" . a . ' = "#72645f"'
