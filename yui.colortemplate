@@ -144,7 +144,16 @@ verbatim
   " Blue
   let g:terminal_color_4    = "#125ea9"
 
-  let a = 5
+  let g:terminal_color_5    = "#72645f"
+  let g:terminal_color_6    = "#72645f"
+  let g:terminal_color_7    = "#72645f"
+  let g:terminal_color_8    = "#72645f"
+  let g:terminal_color_9    = "#d50711"
+  let g:terminal_color_10    = "#336f15"
+  let g:terminal_color_11    = "#e96c3e"
+  let g:terminal_color_12    = "#125ea9"
+
+  let a = 13
 
   while a <= 256
     execute "let g:terminal_color_" . a . ' = "#72645f"'

@@ -2,7 +2,11 @@
 " Author:       Florian B <yuuki@protonmail.com>
 " Maintainer:   Florian B <yuuki@protonmail.com>
 " License:      Vim License (see `:help license`)
+<<<<<<< HEAD
 " Last Updated: Thu 30 May 2019 12:32:22 PM CEST
+=======
+" Last Updated: Thu May  9 11:27:05 2019
+>>>>>>> b306dd796fbccc3cacde14d3616d0ad23034a022
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < 256)
@@ -98,9 +102,15 @@ hi Special ctermfg=241 ctermbg=NONE guifg=#72645f guibg=NONE guisp=NONE cterm=NO
 hi! link SpecialChar Special
 hi! link SpecialComment Comment
 hi Statement ctermfg=241 ctermbg=NONE guifg=#72645f guibg=NONE guisp=NONE cterm=NONE gui=NONE
+<<<<<<< HEAD
 hi! link StorageClass Type
 hi String ctermfg=22 ctermbg=NONE guifg=#336f15 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link Structure Type
+=======
+hi StorageClass ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi String ctermfg=202 ctermbg=NONE guifg=#e96c3e guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi Structure ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE gui=NONE
+>>>>>>> b306dd796fbccc3cacde14d3616d0ad23034a022
 hi! link Tag Special
 hi Todo ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE,underline gui=NONE,underline
 hi Type ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -121,7 +131,16 @@ let g:terminal_color_3    = "#e96c3e"
 " Blue
 let g:terminal_color_4    = "#125ea9"
 
-let a = 5
+let g:terminal_color_5    = "#72645f"
+let g:terminal_color_6    = "#72645f"
+let g:terminal_color_7    = "#72645f"
+let g:terminal_color_8    = "#72645f"
+let g:terminal_color_9    = "#d50711"
+let g:terminal_color_10    = "#336f15"
+let g:terminal_color_11    = "#e96c3e"
+let g:terminal_color_12    = "#125ea9"
+
+let a = 13
 
 while a <= 256
   execute "let g:terminal_color_" . a . ' = "#72645f"'
@@ -222,9 +241,15 @@ finish
 " SpecialChar    ->    Special
 " SpecialComment ->    Comment
 " Statement            black                       none
+<<<<<<< HEAD
 " StorageClass   ->    Type
 " String               green                       none
 " Structure      ->    Type
+=======
+" StorageClass         none                        none
+" String               orange                      none
+" Structure            none                        none
+>>>>>>> b306dd796fbccc3cacde14d3616d0ad23034a022
 " Tag            ->    Special
 " Todo                 none                        none                          underline
 " Type                 none                        none
