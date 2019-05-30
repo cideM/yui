@@ -2,7 +2,7 @@
 " Author:       Florian B <yuuki@protonmail.com>
 " Maintainer:   Florian B <yuuki@protonmail.com>
 " License:      Vim License (see `:help license`)
-" Last Updated: Sat 04 May 2019 03:30:45 PM CEST
+" Last Updated: Thu 30 May 2019 12:32:22 PM CEST
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < 256)
@@ -73,7 +73,7 @@ hi WarningMsg ctermfg=241 ctermbg=NONE guifg=#72645f guibg=NONE guisp=NONE cterm
 hi WildMenu ctermfg=202 ctermbg=231 guifg=#e96c3e guibg=#ffffff guisp=NONE cterm=NONE gui=NONE
 hi! link Boolean Constant
 hi! link Character Constant
-hi Comment ctermfg=246 ctermbg=NONE guifg=#9f918c guibg=NONE guisp=NONE cterm=NONE,italic gui=NONE,italic
+hi Comment ctermfg=202 ctermbg=NONE guifg=#e96c3e guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link Conditional Statement
 hi Constant ctermfg=241 ctermbg=NONE guifg=#72645f guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link Define PreProc
@@ -99,11 +99,11 @@ hi! link SpecialChar Special
 hi! link SpecialComment Comment
 hi Statement ctermfg=241 ctermbg=NONE guifg=#72645f guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link StorageClass Type
-hi String ctermfg=202 ctermbg=NONE guifg=#e96c3e guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi String ctermfg=22 ctermbg=NONE guifg=#336f15 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link Structure Type
 hi! link Tag Special
 hi Todo ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE,underline gui=NONE,underline
-hi Type ctermfg=241 ctermbg=NONE guifg=#72645f guibg=NONE guisp=NONE cterm=NONE,italic gui=NONE,italic
+hi Type ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link Typedef Type
 hi Underlined ctermfg=241 ctermbg=NONE guifg=#72645f guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link lCursor Cursor
@@ -149,13 +149,13 @@ finish
 " Conceal              brightblack                none
 " Cursor               black                      none
 " CursorColumn         none                       brightwhite
-" CursorLine           none                       brightwhite 
+" CursorLine           none                       brightwhite
 " CursorLineNr         none                       brightwhite
 " DiffAdd              none                       green_background
 " diffAdded   -> DiffAdd
 " DiffChange           none                       yellow_background
 " diffChanged -> DiffChange
-" DiffDelete           none                       red_background    
+" DiffDelete           none                       red_background
 " diffRemoved -> DiffDelete
 " DiffText             none                       blue_background
 " Directory            black                      none
@@ -197,7 +197,7 @@ finish
 " WildMenu             orange                     brightwhite
 " Boolean        ->    Constant
 " Character      ->    Constant
-" Comment              brightblack                 none                          italic
+" Comment              orange                      none
 " Conditional    ->    Statement
 " Constant             black                       none
 " Define         ->    PreProc
@@ -223,11 +223,11 @@ finish
 " SpecialComment ->    Comment
 " Statement            black                       none
 " StorageClass   ->    Type
-" String               orange                      none
+" String               green                       none
 " Structure      ->    Type
 " Tag            ->    Special
 " Todo                 none                        none                          underline
-" Type                 black                       none                          italic
+" Type                 none                        none
 " Typedef        ->    Type
 " Underlined           black                       none
 " lCursor          ->  Cursor
