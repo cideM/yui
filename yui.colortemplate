@@ -1,12 +1,15 @@
-# vim: ft=colortemplate fdm=marker
+# vim: ft=colortemplate fdm=marker cc=22,42,60
 
 # Information {{{
-# Mandatory
 Full name:  Yui
 Short name: yui
 Author:     Florian B <yuuki@protonmail.com>
-Maintainer: Florian B <yuuki@protonmail.com>
+Neovim:     yes
 # }}}
+
+verbatim
+let s:italics = 1
+endverbatim
 
 Background: light
 
@@ -20,15 +23,41 @@ Color: green_background        #e8ffd1    ~
 Color: red_background          #ffe5db    ~
 Color: yellow_background       #f9ffa3    ~
 Color: blue_background         #e0f3ff    ~
-
 Color: white                   #efeae5    ~
 Color: brightblack             #9f918c    ~
 Color: brightwhite             #ffffff    ~
 
-Color: orange                  #e96c3e    ~
-
 # vvv Almost invisible
 Color: brightestblack          #d2bdb7    ~
+# }}}
+
+# Common linked groups {{{
+EndOfBuffer       -> NonText
+QuickFixLine      -> Search
+Boolean           -> Constant
+Character         -> Constant
+Conditional       -> Statement
+Define            -> PreProc
+Debug             -> Special
+Delimiter         -> Special
+Exception         -> Statement
+Float             -> Number
+Function          -> Identifier
+Include           -> PreProc
+Keyword           -> Statement
+Label             -> Statement
+Macro             -> PreProc
+Number            -> Constant
+Operator          -> Statement
+PreCondit         -> PreProc
+Repeat            -> Statement
+SpecialChar       -> Special
+SpecialComment    -> Special
+StorageClass      -> Type
+String            -> Constant
+Structure         -> Type
+Tag               -> Special
+Typedef           -> Type
 # }}}
 
 # Default highlight groups {{{
@@ -42,32 +71,29 @@ CursorColumn         none                       brightwhite
 CursorLine           none                       brightwhite
 CursorLineNr         none                       brightwhite
 DiffAdd              none                       green_background
-diffAdded   -> DiffAdd
 DiffChange           none                       yellow_background
-diffChanged -> DiffChange
 DiffDelete           none                       red_background
-diffRemoved -> DiffDelete
 DiffText             none                       blue_background
 Directory            black                      none
-EndOfBuffer          brightblack                none
 ErrorMsg             none                       red_background
 FoldColumn           brightblack                none
 Folded               brightestblack             none
-IncSearch            brightwhite                orange
-Search               orange                     brightwhite
+IncSearch            brightwhite                black
+Search               black                      brightwhite
 LineNr               brightestblack             none
 MatchParen           none                       none                           underline,bold
 ModeMsg              black                      none
 MoreMsg              black                      none
 NonText              black                      none
 Pmenu                black                      brightwhite
-PmenuSbar            brightwhite                black
-PmenuSel             orange                     brightwhite
+PmenuSbar            black                      brightwhite
+PmenuSel             black                      brightwhite                    underline
 PmenuThumb           black                      brightwhite
+PreProc              black                      none
 Question             black                      none
-QuickFixLine     ->  Search
 SignColumn           black                      white
 SpecialKey           black                      none
+Special              black                      none
 SpellBad             none                       red_background
 SpellCap             none                       none                           undercurl
 SpellLocal           black                      none
@@ -81,47 +107,20 @@ TabLineFill          none                       brightwhite
 TabLineSel           brightwhite                black
 # Title is e.g., the window count in tab line
 Title                none                       none
-VertSplit            brightblack             none
+VertSplit            brightblack                none
 Visual               none                       brightwhite
 VisualNOS            none                       brightwhite
-WarningMsg           black                 none
-WildMenu             orange                     brightwhite
-# Other conventional group names (see `:help group-name`)
-Boolean        ->    Constant
-Character      ->    Constant
-Comment              orange                      none
-Conditional    ->    Statement
-Constant             black                       none
-Define         ->    PreProc
-Debug          ->    Special
-Delimiter      ->    Special
-Error                none                        red_background                undercurl
-Exception      ->    Statement
-Float          ->    Constant
-Function       ->    Identifier
-Identifier           black                       none
-Ignore               black                       none
-Include        ->    PreProc
-Keyword        ->    Statement
-Label          ->    Statement
-Macro          ->    PreProc
-Number         ->    Constant
-Operator       ->    Statement
-PreCondit      ->    PreProc
-PreProc              black                       none
-Repeat         ->    Statement
-Special              black                       none
-SpecialChar    ->    Special
-SpecialComment ->    Comment
-Statement            black                       none
-StorageClass   ->    Type
-String               green                       none
-Structure      ->    Type
-Tag            ->    Special
-Todo                 none                        none                          underline
-Type                 none                        none
-Typedef        ->    Type
-Underlined           black                       none
+WarningMsg           black                      none
+WildMenu             none                       brightwhite                    underline
+Comment              black                      none                          italic
+Constant             black                      none                          bold
+Error                none                       red_background                undercurl
+Identifier           black                      none
+Ignore               black                      none
+Statement            black                      none
+Todo                 none                       none                          underline
+Type                 none                       none
+Underlined           black                      none
 # See `:help lCursor`
 lCursor          ->  Cursor
 # See `:help CursorIM`
@@ -132,32 +131,6 @@ ToolbarButton        black                       none
 # }}}
 
 # Terminal colors {{{
-verbatim
-  " Normal black
-  let g:terminal_color_0    = "#72645f"
-  " Red
-  let g:terminal_color_1    = "#d50711"
-  " Green
-  let g:terminal_color_2    = "#336f15"
-  " Yellow (Theme uses orange because yellow isn't legible on the light background)
-  let g:terminal_color_3    = "#e96c3e"
-  " Blue
-  let g:terminal_color_4    = "#125ea9"
-
-  let g:terminal_color_5    = "#72645f"
-  let g:terminal_color_6    = "#72645f"
-  let g:terminal_color_7    = "#72645f"
-  let g:terminal_color_8    = "#72645f"
-  let g:terminal_color_9    = "#d50711"
-  let g:terminal_color_10    = "#336f15"
-  let g:terminal_color_11    = "#e96c3e"
-  let g:terminal_color_12    = "#125ea9"
-
-  let a = 13
-
-  while a <= 256
-    execute "let g:terminal_color_" . a . ' = "#72645f"'
-    let a += 1
-  endwhile
-endverbatim
+Term colors: black red green black blue black black black
+Term colors: black red green black blue black black black
 # }}}
