@@ -20,9 +20,21 @@ Color: red                     #d50711    ~
 Color: green                   #336f15    ~
 Color: blue                    #125ea9    ~
 Color: green_background        #e8ffd1    ~
-Color: red_background          #ffe5db    ~
+# To be used in conjunction with green_background
+Color: green_foreground        #408000    ~
+
+Color: red_background          #ffe0e0    ~
+# To be used in conjunction with red_background
+Color: red_foreground          #a7111d    ~
+
 Color: yellow_background       #f9ffa3    ~
+# To be used in conjunction with yellow_background
+Color: yellow_foreground       #7b6a3d    ~
+
 Color: blue_background         #e0f3ff    ~
+# To be used in conjunction with blue_foreground
+Color: blue_foreground         #00588f    ~
+
 Color: white                   #efeae5    ~
 Color: brightblack             #9f918c    ~
 Color: brightwhite             #ffffff    ~
@@ -70,12 +82,16 @@ Cursor               black                      none
 CursorColumn         none                       brightwhite
 CursorLine           none                       brightwhite
 CursorLineNr         none                       brightwhite
-DiffAdd              none                       green_background
-DiffChange           none                       yellow_background
-DiffDelete           none                       red_background
-DiffText             none                       blue_background
+DiffAdd              green_foreground           green_background
+diffAdded            -> DiffAdd
+DiffChange           yellow_foreground          yellow_background
+diffChanged          -> DiffChange
+DiffDelete           red_foreground             red_background
+diffRemoved          -> DiffDelete
+diffComment          -> Comment
+DiffText             blue_foreground            blue_background
 Directory            black                      none
-ErrorMsg             none                       red_background
+ErrorMsg             red_foreground             red_background
 FoldColumn           brightblack                none
 Folded               brightestblack             none
 IncSearch            brightwhite                black
@@ -94,7 +110,7 @@ Question             black                      none
 SignColumn           black                      white
 SpecialKey           black                      none
 Special              black                      none
-SpellBad             none                       red_background
+SpellBad             red_foreground             red_background
 SpellCap             none                       none                           undercurl
 SpellLocal           black                      none
 SpellRare            black                      none
@@ -114,7 +130,7 @@ WarningMsg           black                      none
 WildMenu             none                       brightwhite                    underline
 Comment              black                      none                          italic
 Constant             black                      none                          bold
-Error                none                       red_background                undercurl
+Error                red_foreground             red_background                undercurl
 Identifier           black                      none
 Ignore               black                      none
 Statement            black                      none
