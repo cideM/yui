@@ -101,10 +101,10 @@ MatchParen           none                       none                           u
 ModeMsg              black                      none
 MoreMsg              black                      none
 NonText              black                      none
-Pmenu                black                      brightwhite
-PmenuSbar            black                      brightwhite
-PmenuSel             black                      brightwhite                    underline
-PmenuThumb           black                      brightwhite
+Pmenu                -> StatusLine
+PmenuSbar            black                      black
+PmenuSel             -> WildMenu
+PmenuThumb           none                       brightwhite
 PreProc              black                      none
 Question             black                      none
 SignColumn           black                      white
@@ -114,20 +114,20 @@ SpellBad             red_foreground             red_background
 SpellCap             none                       none                           undercurl
 SpellLocal           black                      none
 SpellRare            black                      none
-StatusLine           brightwhite                black
-StatusLineNC         brightblack                brightwhite
+StatusLine           black                      brightwhite
+StatusLineNC         brightblack                white
 StatusLineTerm   ->  StatusLine
 StatusLineTermNC ->  StatusLineNC
-TabLine              black                      brightwhite
+TabLine              -> StatusLine
 TabLineFill          none                       brightwhite
-TabLineSel           brightwhite                black
+TabLineSel           -> WildMenu
 # Title is e.g., the window count in tab line
 Title                none                       none
 VertSplit            brightblack                none
 Visual               none                       brightwhite
 VisualNOS            none                       brightwhite
 WarningMsg           black                      none
-WildMenu             none                       brightwhite                    underline
+WildMenu             green_foreground           green_background
 Comment              black                      none                          italic
 Constant             black                      none                          bold
 Error                red_foreground             red_background                undercurl
