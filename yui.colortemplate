@@ -102,9 +102,9 @@ ModeMsg              black                      none
 MoreMsg              black                      none
 NonText              black                      none
 Pmenu                -> StatusLine
-PmenuSbar            black                      black
+PmenuSbar            -> StatusLine
 PmenuSel             -> WildMenu
-PmenuThumb           none                       brightwhite
+PmenuThumb           none                       green_background
 PreProc              black                      none
 Question             black                      none
 SignColumn           black                      white
