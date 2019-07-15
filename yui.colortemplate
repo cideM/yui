@@ -115,7 +115,7 @@ SpellCap             none                       none                           u
 SpellLocal           black                      none
 SpellRare            black                      none
 StatusLine           black                      brightwhite
-StatusLineNC         brightblack                white
+StatusLineNC         brightwhite                brightestblack
 StatusLineTerm   ->  StatusLine
 StatusLineTermNC ->  StatusLineNC
 TabLine              -> StatusLine
