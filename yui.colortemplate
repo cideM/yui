@@ -35,16 +35,6 @@ Color: blue_background         #e0f3ff    ~
 # To be used in conjunction with blue_foreground
 Color: blue_foreground         #00588f    ~
 
-# Currently not used. Wanted to use for comments but background colors can be
-# tricky, since apparently they're easily overriden by other groups even though
-# these groups don't define a background
-Color: pink_background         #fdddf5    ~
-Color: pink_foreground         #8C036c    ~
-
-Color: magenta                 #af04cd    ~
-
-Color: whatever                #016f6a    ~
-
 Color: white                   #efeae5    ~
 Color: brightblack             #9f918c    ~
 Color: brightwhite             #ffffff    ~
@@ -111,8 +101,8 @@ MatchParen           none                       none                           u
 ModeMsg              black                      none
 MoreMsg              black                      none
 NonText              black                      none
-Pmenu                -> StatusLineNC
-PmenuSbar            -> StatusLineNC
+Pmenu                -> StatusLine
+PmenuSbar            -> StatusLine
 PmenuSel             -> WildMenu
 PmenuThumb           none                       green_background
 PreProc              black                      none
@@ -124,11 +114,11 @@ SpellBad             red_foreground             red_background
 SpellCap             none                       none                           undercurl
 SpellLocal           black                      none
 SpellRare            black                      none
-StatusLine           pink_foreground            pink_background
-StatusLineNC         black                      brightwhite
+StatusLine           black                      brightwhite
+StatusLineNC         brightblack                white
 StatusLineTerm   ->  StatusLine
 StatusLineTermNC ->  StatusLineNC
-TabLine              -> StatusLineNC
+TabLine              -> StatusLine
 TabLineFill          none                       brightwhite
 TabLineSel           -> WildMenu
 # Title is e.g., the window count in tab line
@@ -138,7 +128,7 @@ Visual               none                       brightwhite
 VisualNOS            none                       brightwhite
 WarningMsg           black                      none
 WildMenu             green_foreground           green_background
-Comment              none                       none               italic
+Comment              black                      none                          italic
 Constant             black                      none                          bold
 Error                red_foreground             red_background                undercurl
 Identifier           black                      none
