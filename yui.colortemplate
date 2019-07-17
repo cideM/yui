@@ -38,6 +38,7 @@ Color: blue_foreground         #00588f    ~
 Color: white                   #efeae5    ~
 Color: brightblack             #9f918c    ~
 Color: brightwhite             #ffffff    ~
+Color: statusline_nc           #EAE0D6    ~
 
 # vvv Almost invisible
 Color: brightestblack          #d2bdb7    ~
@@ -115,7 +116,7 @@ SpellCap             none                       none                           u
 SpellLocal           black                      none
 SpellRare            black                      none
 StatusLine           black                      brightwhite
-StatusLineNC         brightwhite                brightestblack
+StatusLineNC         black                      statusline_nc
 StatusLineTerm   ->  StatusLine
 StatusLineTermNC ->  StatusLineNC
 TabLine              -> StatusLine
@@ -149,4 +150,10 @@ ToolbarButton        black                       none
 # Terminal colors {{{
 Term colors: black red green black blue black black black
 Term colors: black red green black blue black black black
+# }}}
+
+# JS {{{
+# Often get false positives for this one. Also why should my color scheme have
+# anything to do with errors
+jsParensError -> Normal
 # }}}
