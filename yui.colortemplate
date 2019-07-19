@@ -157,3 +157,10 @@ Term colors: black red green black blue black black black
 # anything to do with errors
 jsParensError -> Normal
 # }}}
+
+# Markdown {{{
+mkdHeading  black white underline
+mkdItalic black white italic
+mkdCode -> Normal
+mkdCodeDelimiter -> Normal
+# }}}
