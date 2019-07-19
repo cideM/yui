@@ -102,8 +102,8 @@ MatchParen           none                       none                           u
 ModeMsg              black                      none
 MoreMsg              black                      none
 NonText              black                      none
-Pmenu                -> StatusLine
-PmenuSbar            -> StatusLine
+Pmenu                black                      brightwhite
+PmenuSbar            black                      brightwhite
 PmenuSel             -> WildMenu
 PmenuThumb           none                       green_background
 PreProc              black                      none
