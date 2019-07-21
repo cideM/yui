@@ -5,9 +5,9 @@ All syntax differentiation is achieved through font styles, so your terminal nee
 
 Shades are used for things like dimming folded text.
 
-![Screenshot #1](./yui_1.png)
-![Screenshot #2](./yui_2.png)
-![Screenshot #3](./yui_3.png)
-![Screenshot #4](./yui_4.png)
-![Screenshot #5](./yui_5.png)
-![Screenshot #6](./yui_6.png)
+![Screenshot #1](./public/yui_1.png)
+![Screenshot #2](./public/yui_2.png)
+![Screenshot #3](./public/yui_3.png)
+![Screenshot #4](./public/yui_4.png)
+![Screenshot #5](./public/yui_5.png)
+![Screenshot #6](./public/yui_6.png)

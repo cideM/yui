@@ -92,7 +92,7 @@ diffRemoved          -> DiffDelete
 diffComment          -> Comment
 DiffText             blue_foreground            blue_background
 Directory            black                      none
-ErrorMsg             red_foreground             red_background                 
+ErrorMsg             red_foreground             red_background
 FoldColumn           brightblack                none
 Folded               brightestblack             none
 IncSearch            brightwhite                black
@@ -131,7 +131,7 @@ WarningMsg           yellow_foreground          yellow_background
 WildMenu             green_foreground           green_background
 Comment              black                      none                          italic
 Constant             black                      none                          bold
-Error                red_foreground             red_background                
+Error                red_foreground             red_background
 Identifier           black                      none
 Ignore               black                      none
 Statement            black                      none
@@ -159,7 +159,7 @@ jsParensError -> Normal
 # }}}
 
 # Markdown {{{
-mkdHeading  black white underline
+mkdHeading  black white bold
 mkdItalic black white italic
 mkdCode -> Normal
 mkdCodeDelimiter -> Normal

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Yui - Minimal, light vim/neovim color scheme</title>
+    <meta name="author" content="Florian Beeres" />
+    <meta name="description" content="Yui is a minimal, light color scheme" />
+    <meta
+      name="keywords"
+      content="colorscheme,vim,neovim,color scheme,minimal,light"
+    />
+    <link rel="stylesheet" href="index.css" type="text/css" />
+  </head>
+  <body class="white_background black textwidth center pa1">
+    <h1 class="text-center">Yui</h1>
+    <p>
+      Experimental color scheme without any colors, except what's required to
+      display a meaningful `diff`. All syntax differentiation is achieved
+      through font styles, so your terminal needs to support bold and italic
+      text.
+    </p>
+    <p>Shades are used for things like dimming folded text.</p>
+    <h2>Examples</h2>
+    <h3>Diffs</h3>
+    <div>
+      <pre>
+<code>set termguicolors</code>
+<code>set shiftwidth=2</code>
+<code>set <span class="yellow_foreground yellow_background">inccommand</span>=split</code>
+<code>set <span class="green_foreground green_background">shiftround</span></code>
+<code>set shortmess+=c</code>
+<code><span class="red_background red_foreground">---------------</span></code>
+<code>set wildignore+=*/.git/*,</code>
+            <code>\tags,</code>
+            <code>\*/nod<span class="blue_background blue_foreground">e_</span>modules/*,</code>
+            <code>\*/build/*,</code>
+      </pre>
+    </div>
+    <h3>Comments</h3>
+    <pre>
+<code><span class="italic">-- | Split a cube into 8 smaller</span></code>
+<code><span class="italic">-- | cubes. If the length of the</span> </code>
+<code><span class="italic">-- | cube is 1, return all 8</span> </code>
+<code><span class="italic">-- | points within that cube</span> </code>
+<code><span class="italic">-- |(== cubes of length 0)</span> </code>
+<code>partitionCube</code>
+  <code>:: Cube</code>
+  <code>-> V.Vector Cube</code>
+<code>partitionCube (Cube point 1)</code>
+  <code>= V.map (\p -> Cube p 0) $</code>
+  <code>V.fromList</code>
+    </pre>
+    <h3>Slash search</h3>
+    <pre>
+<span class="black_background brightwhite">first match</span>
+
+<span class="brightwhite_background">other match</span>
+
+<span class="brightwhite_background">other match</span>
+    </pre>
+    <h3>UI Elements</h3>
+    <h4>PMenu</h4>
+    <ul class="relative">
+      <li class="black brightwhite_background">Item</li>
+      <li class="black green_foreground green_background">Item</li>
+      <li class="black brightwhite_background">Item</li>
+      <li class="black brightwhite_background">Item</li>
+      <li class="black brightwhite_background">Item</li>
+    </ul>
+    <h4>Focused Status Line</h4>
+    <p>Showing tab completion.</p>
+    <div class="flex space-between brightwhite_background scale2">
+      <span>Item</span> <span>Item</span> <span>Item</span> <span>Item</span>
+      <span>Item</span> <span>Item</span
+      ><span class="green_background green_foreground">Item</span
+      ><span>Item</span>
+    </div>
+    <h4>Unfocused Status Line</h4>
+    <div class="flex space-between statusline_nc scale2 mv1">
+      <span>index.css [master]</span><span> 43%</span>
+    </div>
+    <h2>Screenshots</h2>
+    <img class="mw100" src="yui_1.png" alt="Visual selection" />
+    <img class="mw100" src="yui_2.png" alt="PMenu" />
+    <img class="mw100" src="yui_3.png" alt="Split window" />
+    <img class="mw100" src="yui_4.png" alt="Haskell" />
+    <img class="mw100" src="yui_5.png" alt="Diffs" />
+    <img class="mw100" src="yui_6.png" alt="Wildmenu" />
+  </body>
+</html>
