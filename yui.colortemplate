@@ -164,3 +164,8 @@ mkdItalic black white italic
 mkdCode -> Normal
 mkdCodeDelimiter -> Normal
 # }}}
+
+# Help {{{
+helpHyperTextJump -> Comment
+helpExample -> Normal
+# }}}
