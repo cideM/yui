@@ -1,4 +1,4 @@
-# Yui
+# Yui | ユイ
 
 ## Description
 
@@ -8,6 +8,14 @@ Experimental color scheme without any colors, except what's required to display 
 All syntax differentiation is achieved through font styles, so your terminal needs to support bold and italic text.
 
 Shades are used for things like dimming folded text.
+
+## TODO
+
+- [ ] Links in Markdown should have an underline
+- [ ] Headings in Markdown should be bold
+- [ ] Bold in Markdown should be bold
+- [ ] Italic in Markdown should be italic
+- [ ] Add option for making comments orange
 
 ## Something Looks Weird!
 
