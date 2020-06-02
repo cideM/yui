@@ -179,10 +179,19 @@ jsParensError -> Normal
 # }}}
 
 # Markdown {{{
-mkdHeading  black white bold
-mkdItalic black white italic
-mkdCode -> Normal
+mkdHeading       black white bold
+mkdItalic        black white italic
+mkdCode          -> Normal
 mkdCodeDelimiter -> Normal
+
+markdownBold     black white bold
+markdownUrl      black white underline
+markdownItalic   -> mkdItalic
+markdownLinkText -> Normal
+markdownH1       -> mkdHeading
+markdownH2       -> mkdHeading
+markdownH3       -> mkdHeading
+markdownH4       -> mkdHeading
 # }}}
 
 # Help {{{
