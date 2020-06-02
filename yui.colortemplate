@@ -61,103 +61,103 @@ Color: brightestblack          #d2bdb7    ~
 Variant: gui 256
 
 # Common linked groups {{{
-EndOfBuffer       -> NonText
-QuickFixLine      -> Search
-Boolean           -> Constant
-Character         -> Constant
-Conditional       -> Statement
-Define            -> PreProc
-Debug             -> Special
-Delimiter         -> Special
-Exception         -> Statement
-Float             -> Number
-Function          -> Identifier
-Include           -> PreProc
-Keyword           -> Statement
-Label             -> Statement
-Macro             -> PreProc
-Number            -> Constant
-Operator          -> Statement
-PreCondit         -> PreProc
-Repeat            -> Statement
-SpecialChar       -> Special
-SpecialComment    -> Special
-StorageClass      -> Type
-String            -> Constant
-Structure         -> Type
-Tag               -> Special
-Typedef           -> Type
+EndOfBuffer    -> NonText
+QuickFixLine   -> Search
+Boolean        -> Constant
+Character      -> Constant
+Conditional    -> Statement
+Define         -> PreProc
+Debug          -> Special
+Delimiter      -> Special
+Exception      -> Statement
+Float          -> Number
+Function       -> Identifier
+Include        -> PreProc
+Keyword        -> Statement
+Label          -> Statement
+Macro          -> PreProc
+Number         -> Constant
+Operator       -> Statement
+PreCondit      -> PreProc
+Repeat         -> Statement
+SpecialChar    -> Special
+SpecialComment -> Special
+StorageClass   -> Type
+String         -> Constant
+Structure      -> Type
+Tag            -> Special
+Typedef        -> Type
 # }}}
 
 # Default highlight groups {{{
-# Group              Foreground                 Background                     Attributes
-Normal               black                      white
-Terminal             black                      white
-ColorColumn          black                      none
-Conceal              brightblack                none
-Cursor               black                      none
-CursorColumn         none                       brightwhite
-CursorLine           none                       brightwhite
-CursorLineNr         none                       brightwhite
-DiffAdd              green_foreground           green_background
-diffAdded            -> DiffAdd
-DiffChange           yellow_foreground          yellow_background
-diffChanged          -> DiffChange
-DiffDelete           red_foreground             red_background
-diffRemoved          -> DiffDelete
-diffComment          -> Comment
-DiffText             blue_foreground            blue_background
-Directory            black                      none
-ErrorMsg             red_foreground             red_background
-FoldColumn           brightblack                none
-Folded               brightestblack             none
-IncSearch            brightwhite                black
-Search               black                      brightwhite
-LineNr               brightestblack             none
-MatchParen           none                       none                           underline,bold
-ModeMsg              black                      none
-MoreMsg              black                      none
-NonText              black                      none
-Pmenu                black                      brightwhite
-PmenuSbar            black                      brightwhite
-PmenuSel             -> WildMenu
-PmenuThumb           none                       green_background
-PreProc              black                      none
-Question             black                      none
-SignColumn           black                      white
-SpecialKey           black                      none
-Special              black                      none
-SpellBad             red_foreground             red_background
-SpellCap             none                       none                           undercurl
-SpellLocal           black                      none
-SpellRare            black                      none
-StatusLine           black                      brightwhite
-StatusLineNC         black                      statusline_nc
+# Group          Foreground                 Background                     Attributes
+Normal           black                      white
+Terminal         black                      white
+ColorColumn      black                      none
+Conceal          brightblack                none
+Cursor           black                      none
+CursorColumn     none                       brightwhite
+CursorLine       none                       brightwhite
+CursorLineNr     none                       brightwhite
+DiffAdd          green_foreground           green_background
+diffAdded        -> DiffAdd
+DiffChange       yellow_foreground          yellow_background
+diffChanged      -> DiffChange
+DiffDelete       red_foreground             red_background
+diffRemoved      -> DiffDelete
+diffComment      -> Comment
+DiffText         blue_foreground            blue_background
+Directory        black                      none
+ErrorMsg         red_foreground             red_background
+FoldColumn       brightblack                none
+Folded           brightestblack             none
+IncSearch        brightwhite                black
+Search           black                      brightwhite
+LineNr           brightestblack             none
+MatchParen       none                       none                           underline,bold
+ModeMsg          black                      none
+MoreMsg          black                      none
+NonText          black                      none
+Pmenu            black                      brightwhite
+PmenuSbar        black                      brightwhite
+PmenuSel         -> WildMenu
+PmenuThumb       none                       green_background
+PreProc          black                      none
+Question         black                      none
+SignColumn       black                      white
+SpecialKey       black                      none
+Special          black                      none
+SpellBad         red_foreground             red_background
+SpellCap         none                       none                           undercurl
+SpellLocal       black                      none
+SpellRare        black                      none
+StatusLine       black                      brightwhite
+StatusLineNC     black                      statusline_nc
 StatusLineTerm   ->  StatusLine
 StatusLineTermNC ->  StatusLineNC
-TabLine              -> StatusLine
-TabLineFill          none                       brightwhite
-TabLineSel           -> WildMenu
+TabLine          -> StatusLine
+TabLineFill      none                       brightwhite
+TabLineSel       -> WildMenu
 # Title is e.g., the window count in tab line
-Title                none                       none
-VertSplit            brightblack                none
-Visual               none                       brightwhite
-VisualNOS            none                       brightwhite
-WarningMsg           yellow_foreground          yellow_background
-WildMenu             green_foreground           green_background
+Title      none                       none
+VertSplit  brightblack                none
+Visual     none                       brightwhite
+VisualNOS  none                       brightwhite
+WarningMsg yellow_foreground          yellow_background
+WildMenu   green_foreground           green_background
+Constant   black                      none                          bold
+Error      red_foreground             red_background
+Identifier black                      none
+Ignore     black                      none
+Statement  black                      none
+Todo       none                       none                          underline
+Type       none                       none
+Underlined black                      none
 #if get(g:, '@optionprefix_emphasized_comments', 0)
   Comment              orange                    none                          italic
 #else
   Comment              black                     none                          italic
 #endif
-Constant             black                      none                          bold
-Error                red_foreground             red_background
-Identifier           black                      none
-Ignore               black                      none
-Statement            black                      none
-Todo                 none                       none                          underline
-Type                 none                       none
-Underlined           black                      none
 # See `:help lCursor`
 lCursor          ->  Cursor
 # See `:help CursorIM`
