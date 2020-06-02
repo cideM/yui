@@ -9,6 +9,11 @@ All syntax differentiation is achieved through font styles, so your terminal nee
 
 Shades are used for things like dimming folded text.
 
+## Options
+
+* `yui_emphasized_comments`: when set to `1`, comments are orange, otherwise they are faded, as before. Defaults to `0`
+    * Example: `let g:yui_emphasized_comments = 1`
+
 ## TODO
 
 - [ ] Links in Markdown should have an underline

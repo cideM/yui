@@ -1,0 +1,10 @@
+===========================================================================
+Yui options                                *yui-options*
+
+                                                 *g:yui_emphasized_comments*
+
+Set to 1 if you want a comments to be emphasized by making them orange. Takes
+effect only in the terminal.
+>
+  let g:yui_emphasized_comments = 0
+<

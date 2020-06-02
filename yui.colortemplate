@@ -1,5 +1,3 @@
-# vim: ft=colortemplate fdm=marker cc=22,42,60
-
 # Information {{{
 Full name:  Yui
 Short name: yui
@@ -10,6 +8,19 @@ Neovim:     yes
 verbatim
 let s:italics = 1
 endverbatim
+
+documentation
+===========================================================================
+@fullname options                                *@shortname-options*
+
+                                                 *g:@shortname_emphasized_comments*
+
+Set to 1 if you want a comments to be emphasized by making them orange. Takes
+effect only in the terminal.
+>
+  let g:@shortname_emphasized_comments = 0
+<
+enddocumentation
 
 Background: light
 
@@ -22,6 +33,9 @@ Color: blue                    #125ea9    ~
 Color: green_background        #e8ffd1    ~
 # To be used in conjunction with green_background
 Color: green_foreground        #408000    ~
+
+# Taken from the ads for the Rams notebook
+Color: orange                  #E44C22    ~
 
 Color: red_background          #ffe0e0    ~
 # To be used in conjunction with red_background
@@ -43,6 +57,8 @@ Color: statusline_nc           #EAE0D6    ~
 # vvv Almost invisible
 Color: brightestblack          #d2bdb7    ~
 # }}}
+
+Variant: gui 256
 
 # Common linked groups {{{
 EndOfBuffer       -> NonText
@@ -129,7 +145,11 @@ Visual               none                       brightwhite
 VisualNOS            none                       brightwhite
 WarningMsg           yellow_foreground          yellow_background
 WildMenu             green_foreground           green_background
-Comment              black                      none                          italic
+#if get(g:, '@optionprefix_emphasized_comments', 0)
+  Comment              orange                    none                          italic
+#else
+  Comment              black                     none                          italic
+#endif
 Constant             black                      none                          bold
 Error                red_foreground             red_background
 Identifier           black                      none
