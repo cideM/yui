@@ -14,14 +14,6 @@ Shades are used for things like dimming folded text.
 * `yui_emphasized_comments`: when set to `1`, comments are orange, otherwise they are faded, as before. Defaults to `0`
     * Example: `let g:yui_emphasized_comments = 1`
 
-## TODO
-
-- [ ] Links in Markdown should have an underline
-- [ ] Headings in Markdown should be bold
-- [ ] Bold in Markdown should be bold
-- [ ] Italic in Markdown should be italic
-- [ ] Add option for making comments orange
-
 ## Something Looks Weird!
 
 This is not yet a finished color scheme. If you spot any issues, please create an issue! Ideally you include an example file and/or screenshot.
