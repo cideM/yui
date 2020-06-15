@@ -5,14 +5,12 @@ All syntax differentiation is achieved through font styles, so your terminal nee
 
 Shades are used for things like dimming folded text.
 
+This is not yet a finished color scheme. If you spot any issues, please create an issue! Ideally you include an example file and/or screenshot.
+
 ## Options
 
 * `yui_emphasized_comments`: when set to `1`, comments are orange, otherwise they are faded, as before. Defaults to `0`
     * Example: `let g:yui_emphasized_comments = 1`
-
-## Something Looks Weird!
-
-This is not yet a finished color scheme. If you spot any issues, please create an issue! Ideally you include an example file and/or screenshot.
 
 ## Screenshots
 
