@@ -26,4 +26,6 @@ This is not yet a finished color scheme. If you spot any issues, please create a
 ![Screenshot #4](./public/yui_4.png)
 ![Screenshot #5](./public/yui_5.png)
 ![Screenshot #6](./public/yui_6.png)
+
+With `let g:yui_emphasized_comments = 1`
 ![Screenshot #7](./public/yui_7.png)
