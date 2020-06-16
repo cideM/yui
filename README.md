@@ -14,12 +14,9 @@ This is not yet a finished color scheme. If you spot any issues, please create a
 
 ## Screenshots
 
-![Screenshot #1](./public/yui_1.png)
-![Screenshot #2](./public/yui_2.png)
-![Screenshot #3](./public/yui_3.png)
-![Screenshot #4](./public/yui_4.png)
-![Screenshot #5](./public/yui_5.png)
-![Screenshot #6](./public/yui_6.png)
-
-With `let g:yui_emphasized_comments = 1`
-![Screenshot #7](./public/yui_7.png)
+![Screenshot #1](./screenshots/yui_1.png)
+![Screenshot #2](./screenshots/yui_2.png)
+![Screenshot #3](./screenshots/yui_3.png)
+![Screenshot #4](./screenshots/yui_4.png)
+![Screenshot #5](./screenshots/yui_5.png)
+![Screenshot #6](./screenshots/yui_6.png)
