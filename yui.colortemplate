@@ -195,6 +195,6 @@ markdownH4       -> mkdHeading
 # }}}
 
 # Help {{{
-helpHyperTextJump -> Comment
+helpHyperTextJump black white underline
 helpExample -> Normal
 # }}}
