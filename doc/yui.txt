@@ -1,10 +1,28 @@
 ===========================================================================
-Yui options                                *yui-options*
+Changelog:                                       *yui-changelog*
 
-                                                 *g:yui_emphasized_comments*
+0.5.0: Add yui_comments option
 
-Set to 1 if you want a comments to be emphasized by making them orange. Takes
-effect only in the terminal.
+
+===========================================================================
+Yui options                                  *yui-options*
+
+                                     *g:yui_emphasized_comments*
+
+Deprecated: Please use *g:yui_comments* instead.
+
+Set to 1 if you want comments to be emphasized by making them orange. 
 >
   let g:yui_emphasized_comments = 0
+<
+
+                                                *g:yui_comments*
+
+Set to 'emphasize' if you want comments to be emphasized by making them orange.
+Set to 'fade' to make comments less visible. The default is 'normal', which
+causes comments to be italic but with the same color as normal text.
+*g:yui_emphasized_comments* takes precedence to preserve backwards
+compatibility.
+>
+  let g:yui_comments = 'emphasize'
 <

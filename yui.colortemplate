@@ -3,6 +3,7 @@ Full name:  Yui
 Short name: yui
 Author:     Florian B <yuuki@protonmail.com>
 Neovim:     yes
+Version:    0.5.0
 # }}}
 
 verbatim
@@ -11,14 +12,33 @@ endverbatim
 
 documentation
 ===========================================================================
-@fullname options                                *@shortname-options*
+Changelog:                                       *@shortname-changelog*
 
-                                                 *g:@shortname_emphasized_comments*
+0.5.0: Add @shortname_comments option
 
-Set to 1 if you want a comments to be emphasized by making them orange. Takes
-effect only in the terminal.
+YUI | ユイ
+
+===========================================================================
+@fullname options                                  *@shortname-options*
+
+                                     *g:@shortname_emphasized_comments*
+
+Deprecated: Please use *g:@shortname_comments* instead.
+
+Set to 1 if you want comments to be emphasized by making them orange. 
 >
   let g:@shortname_emphasized_comments = 0
+<
+
+                                                *g:@shortname_comments*
+
+Set to 'emphasize' if you want comments to be emphasized by making them orange.
+Set to 'fade' to make comments less visible. The default is 'normal', which
+causes comments to be italic but with the same color as normal text.
+*g:@shortname_emphasized_comments* takes precedence to preserve backwards
+compatibility.
+>
+  let g:@shortname_comments = 'emphasize'
 <
 enddocumentation
 
@@ -153,11 +173,15 @@ Statement  black                      none
 Todo       none                       none                          underline
 Type       none                       none
 Underlined black                      none
-#if get(g:, '@optionprefix_emphasized_comments', 0)
+
+#if get(g:, '@optionprefix_comments', 'normal') ==? 'emphasize' || get(g:, '@optionprefix_emphasized_comments', 0)
   Comment              orange                    none                          italic
-#else
+#elseif get(g:, '@optionprefix_comments', 'normal') ==? 'fade'
+  Comment              brightestblack            none                          italic
+#elseif get(g:, '@optionprefix_comments', 'normal') ==? 'normal'
   Comment              black                     none                          italic
 #endif
+
 # See `:help lCursor`
 lCursor          ->  Cursor
 # See `:help CursorIM`
