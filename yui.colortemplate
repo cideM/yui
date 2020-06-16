@@ -11,12 +11,13 @@ let s:italics = 1
 endverbatim
 
 documentation
+
+YUI | ユイ
+
 ===========================================================================
 Changelog:                                       *@shortname-changelog*
 
 0.5.0: Add @shortname_comments option
-
-YUI | ユイ
 
 ===========================================================================
 @fullname options                                  *@shortname-options*
