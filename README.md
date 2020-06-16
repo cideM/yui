@@ -9,8 +9,24 @@ This is not yet a finished color scheme. If you spot any issues, please create a
 
 ## Options
 
-* `yui_emphasized_comments`: when set to `1`, comments are orange, otherwise they are faded, as before. Defaults to `0`
-    * Example: `let g:yui_emphasized_comments = 1`
+This information can also be found in the help, `:help yui`
+
+### `yui_comments`
+
+Values: `"normal"` `"emphasize"` `"fade"`
+
+* `fade` makes comments less visible
+* `emphasize` makes comments more visible and is equivalent to `yui_emphasized_comments = 1`
+* `normal` is the default and does not affect comment visibility
+* `yui_emphasized_comments` takes precedence for backwards compatibility
+
+### `yui_emphasized_comments`
+
+Values: `0` `1`
+
+* When set to `1`, comments are orange, otherwise they are faded, as before. Defaults to `0`
+* *Deprecated* please use `yui_comments`
+
 
 ## Screenshots
 
