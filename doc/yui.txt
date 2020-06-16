@@ -3,13 +3,14 @@ Changelog:                                       *yui-changelog*
 
 0.5.0: Add yui_comments option
 
+YUI | ユイ
 
 ===========================================================================
 Yui options                                  *yui-options*
 
                                      *g:yui_emphasized_comments*
 
-Deprecated: Please use *g:yui_comments* instead.
+Deprecated: Please use |g:yui_comments| instead.
 
 Set to 1 if you want comments to be emphasized by making them orange. 
 >

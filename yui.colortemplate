@@ -23,7 +23,7 @@ YUI | ユイ
 
                                      *g:@shortname_emphasized_comments*
 
-Deprecated: Please use *g:@shortname_comments* instead.
+Deprecated: Please use |g:@shortname_comments| instead.
 
 Set to 1 if you want comments to be emphasized by making them orange. 
 >
