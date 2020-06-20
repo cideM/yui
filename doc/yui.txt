@@ -4,6 +4,7 @@ YUI | ユイ
 ===========================================================================
 Changelog:                                       *yui-changelog*
 
+0.6.0: Add purple background for search results (Search and IncSearch)
 0.5.0: Add yui_comments option
 
 ===========================================================================
