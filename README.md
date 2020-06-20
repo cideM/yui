@@ -29,8 +29,10 @@ Values: `0` `1`
 
 ## Changelog
 
+* 0.7.0: Use Constant for helpCommand and helpBacktick (makes both bold)
+  instead of defaulting to Comments
 * 0.6.0: Add purple background for search results (Search and IncSearch)
-* 0.5.0: Add @shortname_comments option
+* 0.5.0: Add `@shortname_comments` option
 
 ## Screenshots
 

@@ -3,7 +3,7 @@ Full name:  Yui
 Short name: yui
 Author:     Florian B <yuuki@protonmail.com>
 Neovim:     yes
-Version:    0.6.0
+Version:    0.7.0
 # }}}
 
 verbatim
@@ -17,6 +17,8 @@ YUI | ユイ
 ===========================================================================
 Changelog:                                       *@shortname-changelog*
 
+0.7.0: Use Constant for helpCommand and helpBacktick (makes both bold)
+       instead of defaulting to Comments
 0.6.0: Add purple background for search results (Search and IncSearch)
 0.5.0: Add @shortname_comments option
 
@@ -227,4 +229,6 @@ markdownH4       -> mkdHeading
 # Help {{{
 helpHyperTextJump black white underline
 helpExample -> Normal
+helpCommand -> Constant
+helpBacktick -> Constant
 # }}}
