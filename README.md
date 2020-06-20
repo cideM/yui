@@ -40,3 +40,4 @@ Values: `0` `1`
 ![Screenshot #4](./screenshots/yui_4.png)
 ![Screenshot #5](./screenshots/yui_5.png)
 ![Screenshot #6](./screenshots/yui_6.png)
+![Screenshot #7](./screenshots/yui_7.png)
