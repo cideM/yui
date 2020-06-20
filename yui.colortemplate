@@ -3,7 +3,7 @@ Full name:  Yui
 Short name: yui
 Author:     Florian B <yuuki@protonmail.com>
 Neovim:     yes
-Version:    0.5.0
+Version:    0.6.0
 # }}}
 
 verbatim
@@ -17,6 +17,7 @@ YUI | ユイ
 ===========================================================================
 Changelog:                                       *@shortname-changelog*
 
+0.6.0: Add purple background for search results (Search and IncSearch)
 0.5.0: Add @shortname_comments option
 
 ===========================================================================
@@ -65,6 +66,10 @@ Color: red_foreground          #a7111d    ~
 Color: yellow_background       #f9ffa3    ~
 # To be used in conjunction with yellow_background
 Color: yellow_foreground       #7b6a3d    ~
+
+Color: purple_background       #5438DC    ~
+# To be used in conjunction with purple_background
+Color: purple_foreground       #DCD7F9    ~
 
 Color: blue_background         #e0f3ff    ~
 # To be used in conjunction with blue_foreground
@@ -132,8 +137,8 @@ Directory        black                      none
 ErrorMsg         red_foreground             red_background
 FoldColumn       brightblack                none
 Folded           brightestblack             none
-IncSearch        brightwhite                black
-Search           black                      brightwhite
+IncSearch        purple_foreground          purple_background          
+Search           purple_background          purple_foreground
 LineNr           brightestblack             none
 MatchParen       none                       none                           underline,bold
 ModeMsg          black                      none

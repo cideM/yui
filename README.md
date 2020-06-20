@@ -27,6 +27,10 @@ Values: `0` `1`
 * When set to `1`, comments are orange, otherwise they are faded, as before. Defaults to `0`
 * *Deprecated* please use `yui_comments`
 
+## Changelog
+
+* 0.6.0: Add purple background for search results (Search and IncSearch)
+* 0.5.0: Add @shortname_comments option
 
 ## Screenshots
 
