@@ -3,7 +3,7 @@ Full name:  Yui
 Short name: yui
 Author:     Florian B <yuuki@protonmail.com>
 Neovim:     yes
-Version:    0.7.0
+Version:    0.8.0
 # }}}
 
 verbatim
@@ -17,6 +17,7 @@ YUI | ユイ
 ===========================================================================
 Changelog:                                       *@shortname-changelog*
 
+0.8.0: Add Whitespace and SpecialKey and link to LineNr
 0.7.0: Use Constant for helpCommand and helpBacktick (makes both bold)
        instead of defaulting to Comments
 0.6.0: Add purple background for search results (Search and IncSearch)
@@ -153,7 +154,7 @@ PmenuThumb       none                       green_background
 PreProc          black                      none
 Question         black                      none
 SignColumn       black                      white
-SpecialKey       black                      none
+SpecialKey       -> LineNr
 Special          black                      none
 SpellBad         red_foreground             red_background
 SpellCap         none                       none                           undercurl
@@ -181,6 +182,7 @@ Statement  black                      none
 Todo       none                       none                          underline
 Type       none                       none
 Underlined black                      none
+Whitespace -> LineNr
 
 #if get(g:, '@optionprefix_comments', 'normal') ==? 'emphasize' || get(g:, '@optionprefix_emphasized_comments', 0)
   Comment              orange                    none                          italic

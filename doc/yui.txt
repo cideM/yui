@@ -4,6 +4,7 @@ YUI | ユイ
 ===========================================================================
 Changelog:                                       *yui-changelog*
 
+0.8.0: Add Whitespace and SpecialKey and link to LineNr
 0.7.0: Use Constant for helpCommand and helpBacktick (makes both bold)
        instead of defaulting to Comments
 0.6.0: Add purple background for search results (Search and IncSearch)
