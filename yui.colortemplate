@@ -249,6 +249,22 @@ markdownH3       -> mkdHeading
 markdownH4       -> mkdHeading
 # }}}
 
+# Neovim Language Server {{{
+InfoMsg                                  purple_background purple_foreground
+LspDiagnosticsError                   -> ErrorMsg
+LspDiagnosticsErrorSign               -> ErrorMsg
+LspDiagnosticsErrorSignFloating       -> ErrorMsg
+LspDiagnosticsWarning                 -> WarningMsg
+LspDiagnosticsWarningSign             -> WarningMsg
+LspDiagnosticsWarningSignFloating     -> WarningMsg
+LspDiagnosticsHint                    -> InfoMsg
+LspDiagnosticsHintSign                -> InfoMsg
+LspDiagnosticsHintSignFloating        -> InfoMsg
+LspDiagnosticsInformation             -> InfoMsg
+LspDiagnosticsInformationSign         -> InfoMsg
+LspDiagnosticsInformationSignFloating -> InfoMsg
+# }}}
+
 # Help {{{
 helpHyperTextJump black white underline
 helpExample -> Normal

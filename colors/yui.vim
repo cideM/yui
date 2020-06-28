@@ -169,6 +169,19 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
   hi! link markdownH2 mkdHeading
   hi! link markdownH3 mkdHeading
   hi! link markdownH4 mkdHeading
+  hi InfoMsg guifg=#5438DC guibg=#DCD7F9 guisp=NONE gui=NONE cterm=NONE
+  hi! link LspDiagnosticsError ErrorMsg
+  hi! link LspDiagnosticsErrorSign ErrorMsg
+  hi! link LspDiagnosticsErrorSignFloating ErrorMsg
+  hi! link LspDiagnosticsWarning WarningMsg
+  hi! link LspDiagnosticsWarningSign WarningMsg
+  hi! link LspDiagnosticsWarningSignFloating WarningMsg
+  hi! link LspDiagnosticsHint InfoMsg
+  hi! link LspDiagnosticsHintSign InfoMsg
+  hi! link LspDiagnosticsHintSignFloating InfoMsg
+  hi! link LspDiagnosticsInformation InfoMsg
+  hi! link LspDiagnosticsInformationSign InfoMsg
+  hi! link LspDiagnosticsInformationSignFloating InfoMsg
   hi helpHyperTextJump guifg=#72645f guibg=#efeae5 guisp=NONE gui=underline cterm=underline
   hi! link helpExample Normal
   hi! link helpCommand Constant
@@ -307,6 +320,19 @@ if s:t_Co >= 256
   hi! link markdownH2 mkdHeading
   hi! link markdownH3 mkdHeading
   hi! link markdownH4 mkdHeading
+  hi InfoMsg ctermfg=57 ctermbg=189 cterm=NONE
+  hi! link LspDiagnosticsError ErrorMsg
+  hi! link LspDiagnosticsErrorSign ErrorMsg
+  hi! link LspDiagnosticsErrorSignFloating ErrorMsg
+  hi! link LspDiagnosticsWarning WarningMsg
+  hi! link LspDiagnosticsWarningSign WarningMsg
+  hi! link LspDiagnosticsWarningSignFloating WarningMsg
+  hi! link LspDiagnosticsHint InfoMsg
+  hi! link LspDiagnosticsHintSign InfoMsg
+  hi! link LspDiagnosticsHintSignFloating InfoMsg
+  hi! link LspDiagnosticsInformation InfoMsg
+  hi! link LspDiagnosticsInformationSign InfoMsg
+  hi! link LspDiagnosticsInformationSignFloating InfoMsg
   hi helpHyperTextJump ctermfg=241 ctermbg=255 cterm=underline
   hi! link helpExample Normal
   hi! link helpCommand Constant
