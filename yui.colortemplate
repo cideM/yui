@@ -45,6 +45,17 @@ compatibility.
 >
   let g:@shortname_comments = 'emphasize'
 <
+
+                                                    *g:@shortname_folds*
+
+Default: "fade"
+
+Set to 'emphasize' if you want folded text to be emphasized by giving it a more
+visible background and foreground color combination. Set to 'fade' to make folded
+text less visible.
+>
+  let g:@shortname_folds = 'emphasize'
+<
 enddocumentation
 
 Background: light
@@ -52,6 +63,7 @@ Background: light
 # Color palette {{{
 # Color name                   GUI        Base256    Base16 (optional)
 Color: black                   #72645f    ~
+Color: black2                  #85766F    ~
 Color: red                     #d50711    ~
 Color: green                   #336f15    ~
 Color: blue                    #125ea9    ~
@@ -81,10 +93,11 @@ Color: blue_foreground         #00588f    ~
 Color: white                   #efeae5    ~
 Color: brightblack             #9f918c    ~
 Color: brightwhite             #ffffff    ~
-Color: statusline_nc           #EAE0D6    ~
+Color: brown2                  #eae0d6    ~
+Color: statusline_nc           #F7F3F3    ~
 
 # vvv Almost invisible
-Color: brightestblack          #d2bdb7    ~
+Color: brightestblack          #c0a49b    ~
 # }}}
 
 Variant: gui 256
@@ -138,8 +151,6 @@ diffComment      -> Comment
 DiffText         blue_foreground            blue_background
 Directory        black                      none
 ErrorMsg         red_foreground             red_background
-FoldColumn       brightblack                none
-Folded           brightestblack             none
 IncSearch        purple_foreground          purple_background          
 Search           purple_background          purple_foreground
 LineNr           brightestblack             none
@@ -190,6 +201,14 @@ Whitespace -> LineNr
   Comment              brightestblack            none                          italic
 #elseif get(g:, '@optionprefix_comments', 'normal') ==? 'normal'
   Comment              black                     none                          italic
+#endif
+
+#if get(g:, '@optionprefix_folds', 'fade') ==? 'emphasize'
+  FoldColumn       black2                brown2
+  Folded           black2                brown2
+#elseif get(g:, '@optionprefix_folds', 'fade') ==? 'fade'
+  FoldColumn       brightestblack             none
+  Folded           brightestblack             none
 #endif
 
 # See `:help lCursor`

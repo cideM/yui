@@ -32,3 +32,14 @@ compatibility.
 >
   let g:yui_comments = 'emphasize'
 <
+
+                                                    *g:yui_folds*
+
+Default: "fade"
+
+Set to 'emphasize' if you want folded text to be emphasized by giving it a more
+visible background and foreground color combination. Set to 'fade' to make folded
+text less visible.
+>
+  let g:yui_folds = 'emphasize'
+<
