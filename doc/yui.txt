@@ -4,6 +4,7 @@ YUI | ユイ
 ===========================================================================
 Changelog:                                       *yui-changelog*
 
+0.9.0: Add yui_folds option and overhaul folded text in general
 0.8.0: Add Whitespace and SpecialKey and link to LineNr
 0.7.0: Use Constant for helpCommand and helpBacktick (makes both bold)
        instead of defaulting to Comments
@@ -31,4 +32,15 @@ causes comments to be italic but with the same color as normal text.
 compatibility.
 >
   let g:yui_comments = 'emphasize'
+<
+
+                                                    *g:yui_folds*
+
+Default: "fade"
+
+Set to 'emphasize' if you want folded text to be emphasized by giving it a more
+visible background and foreground color combination. Set to 'fade' to make folded
+text less visible.
+>
+  let g:yui_folds = 'emphasize'
 <
