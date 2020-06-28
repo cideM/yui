@@ -3,7 +3,7 @@ Full name:  Yui
 Short name: yui
 Author:     Florian B <yuuki@protonmail.com>
 Neovim:     yes
-Version:    0.8.0
+Version:    0.9.0
 # }}}
 
 verbatim
@@ -17,6 +17,7 @@ YUI | ユイ
 ===========================================================================
 Changelog:                                       *@shortname-changelog*
 
+0.9.0: Add @shortname_folds option and overhaul folded text in general
 0.8.0: Add Whitespace and SpecialKey and link to LineNr
 0.7.0: Use Constant for helpCommand and helpBacktick (makes both bold)
        instead of defaulting to Comments

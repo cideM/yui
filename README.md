@@ -1,4 +1,17 @@
 # Yui | ユイ
+<!-- vim-markdown-toc GFM -->
+
+* [Intro](#intro)
+* [Options](#options)
+    * [`g:yui_folds`](#gyui_folds)
+    * [`g:yui_comments`](#gyui_comments)
+    * [`g:yui_emphasized_comments`](#gyui_emphasized_comments)
+* [Changelog](#changelog)
+* [Screenshots](#screenshots)
+
+<!-- vim-markdown-toc -->
+
+## Intro
 
 Experimental color scheme without any colors, except what's required to display a meaningful `diff`.
 All syntax differentiation is achieved through font styles, so your terminal needs to support bold and italic text.
@@ -11,28 +24,34 @@ This is not yet a finished color scheme. If you spot any issues, please create a
 
 This information can also be found in the help, `:help yui`
 
-### `yui_comments`
+### `g:yui_folds`
 
-Values: `"normal"` `"emphasize"` `"fade"`
+- `fade` (**default**): makes folded text less visible
+- `emphasize`: gives folded text a distinct background color
 
-* `fade` makes comments less visible
-* `emphasize` makes comments more visible and is equivalent to `yui_emphasized_comments = 1`
-* `normal` is the default and does not affect comment visibility
-* `yui_emphasized_comments` takes precedence for backwards compatibility
+### `g:yui_comments`
 
-### `yui_emphasized_comments`
+`g:yui_emphasized_comments` takes precedence for backwards compatibility
 
-Values: `0` `1`
+- `fade`: makes comments less visible
+- `emphasize`: makes comments more visible and is equivalent to `yui_emphasized_comments = 1`
+- `normal` (**default**): does not affect comment visibility
 
-* When set to `1`, comments are orange, otherwise they are faded, as before. Defaults to `0`
-* *Deprecated* please use `yui_comments`
+### `g:yui_emphasized_comments`
+
+**DEPRECATED**: Use `g:yui_comments` instead
+
+- `1`: comments are orange
+- `0` (**default**): comments are faded, as before
 
 ## Changelog
 
-* 0.7.0: Use Constant for helpCommand and helpBacktick (makes both bold)
+- 0.9.0: Add `g:yui_folds` option and overhaul folded text in general
+- 0.8.0: Add Whitespace and SpecialKey and link to LineNr
+- 0.7.0: Use Constant for helpCommand and helpBacktick (makes both bold)
   instead of defaulting to Comments
-* 0.6.0: Add purple background for search results (Search and IncSearch)
-* 0.5.0: Add `@shortname_comments` option
+- 0.6.0: Add purple background for search results (Search and IncSearch)
+- 0.5.0: Add `g:yui_comments` option
 
 ## Screenshots
 
