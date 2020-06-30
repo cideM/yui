@@ -46,6 +46,7 @@ This information can also be found in the help, `:help yui`
 
 ## Changelog
 
+- 0.11.0: Add some WhichKey colors
 - 0.10.0: Add colors for neovim LSP
 - 0.9.1: Fix Cursor color which did not specify a background
 - 0.9.0: Add `g:yui_folds` option and overhaul folded text in general

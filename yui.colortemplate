@@ -3,7 +3,7 @@ Full name:  Yui
 Short name: yui
 Author:     Florian B <yuuki@protonmail.com>
 Neovim:     yes
-Version:    0.10.0
+Version:    0.11.0
 # }}}
 
 verbatim
@@ -17,6 +17,7 @@ YUI | ユイ
 ===========================================================================
 Changelog:                                       *@shortname-changelog*
 
+0.11.0: Add some WhichKey colors
 0.10.0: Add colors for neovim LSP
 0.9.1: Fix Cursor color which did not specify a background
 0.9.0: Add @shortname_folds option and overhaul folded text in general
@@ -76,7 +77,6 @@ Color: green_foreground        #408000    ~
 
 # Taken from the ads for the Rams notebook
 Color: orange                  #E44C22    ~
-
 Color: red_background          #ffe0e0    ~
 # To be used in conjunction with red_background
 Color: red_foreground          #a7111d    ~
@@ -271,4 +271,9 @@ helpHyperTextJump black white underline
 helpExample -> Normal
 helpCommand -> Constant
 helpBacktick -> Constant
+# }}}
+
+# Which Key {{{
+WhichKeySeparator -> Pmenu
+WhichKeyFloating -> Pmenu
 # }}}
