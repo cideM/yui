@@ -274,6 +274,6 @@ helpBacktick -> Constant
 # }}}
 
 # Which Key {{{
-WhichKeySeparator -> Pmenu
+WhichKeySeperator -> Pmenu
 WhichKeyFloating -> Pmenu
 # }}}
