@@ -3,7 +3,7 @@ Full name:  Yui
 Short name: yui
 Author:     Florian B <yuuki@protonmail.com>
 Neovim:     yes
-Version:    0.9.1
+Version:    0.10.0
 # }}}
 
 verbatim
@@ -17,6 +17,7 @@ YUI | ユイ
 ===========================================================================
 Changelog:                                       *@shortname-changelog*
 
+0.10.0: Add colors for neovim LSP
 0.9.1: Fix Cursor color which did not specify a background
 0.9.0: Add @shortname_folds option and overhaul folded text in general
 0.8.0: Add Whitespace and SpecialKey and link to LineNr
@@ -247,6 +248,22 @@ markdownH1       -> mkdHeading
 markdownH2       -> mkdHeading
 markdownH3       -> mkdHeading
 markdownH4       -> mkdHeading
+# }}}
+
+# Neovim Language Server {{{
+InfoMsg                                  purple_background purple_foreground
+LspDiagnosticsError                   -> ErrorMsg
+LspDiagnosticsErrorSign               -> ErrorMsg
+LspDiagnosticsErrorSignFloating       -> ErrorMsg
+LspDiagnosticsWarning                 -> WarningMsg
+LspDiagnosticsWarningSign             -> WarningMsg
+LspDiagnosticsWarningSignFloating     -> WarningMsg
+LspDiagnosticsHint                    -> InfoMsg
+LspDiagnosticsHintSign                -> InfoMsg
+LspDiagnosticsHintSignFloating        -> InfoMsg
+LspDiagnosticsInformation             -> InfoMsg
+LspDiagnosticsInformationSign         -> InfoMsg
+LspDiagnosticsInformationSignFloating -> InfoMsg
 # }}}
 
 # Help {{{
