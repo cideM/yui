@@ -46,6 +46,8 @@ This information can also be found in the help, `:help yui`
 
 ## Changelog
 
+- 0.12.0: Adjust WhichKeySeperator color so it's normal FG without bg
+- 0.11.1: Fix typo in WhichKeySeperator
 - 0.11.0: Add some WhichKey colors
 - 0.10.0: Add colors for neovim LSP
 - 0.9.1: Fix Cursor color which did not specify a background

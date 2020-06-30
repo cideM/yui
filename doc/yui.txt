@@ -4,6 +4,7 @@ YUI | ユイ
 ===========================================================================
 Changelog:                                       *yui-changelog*
 
+0.11.1: Fix typo in WhichKeySeperator
 0.11.0: Add some WhichKey colors
 0.10.0: Add colors for neovim LSP
 0.9.1: Fix Cursor color which did not specify a background
