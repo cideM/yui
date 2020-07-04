@@ -3,7 +3,7 @@ Full name:  Yui
 Short name: yui
 Author:     Florian B <yuuki@protonmail.com>
 Neovim:     yes
-Version:    0.12.0
+Version:    0.13.0
 # }}}
 
 verbatim
@@ -17,6 +17,7 @@ YUI | ユイ
 ===========================================================================
 Changelog:                                       *@shortname-changelog*
 
+0.13.0: Adjust LspDiagnostics colors
 0.12.0: Adjust WhichKeySeperator color so it's normal FG without bg
 0.11.1: Fix typo in WhichKeySeperator
 0.11.0: Add some WhichKey colors
@@ -254,18 +255,18 @@ markdownH4       -> mkdHeading
 
 # Neovim Language Server {{{
 InfoMsg                                  purple_background purple_foreground
-LspDiagnosticsError                   -> ErrorMsg
+LspDiagnosticsError                   -> NormalFloat
 LspDiagnosticsErrorSign               -> ErrorMsg
-LspDiagnosticsErrorSignFloating       -> ErrorMsg
-LspDiagnosticsWarning                 -> WarningMsg
+LspDiagnosticsErrorSignFloating       -> NormalFloat
+LspDiagnosticsWarning                 -> NormalFloat
 LspDiagnosticsWarningSign             -> WarningMsg
-LspDiagnosticsWarningSignFloating     -> WarningMsg
-LspDiagnosticsHint                    -> InfoMsg
+LspDiagnosticsWarningSignFloating     -> NormalFloat
+LspDiagnosticsHint                    -> NormalFloat
 LspDiagnosticsHintSign                -> InfoMsg
-LspDiagnosticsHintSignFloating        -> InfoMsg
-LspDiagnosticsInformation             -> InfoMsg
+LspDiagnosticsHintSignFloating        -> NormalFloat
+LspDiagnosticsInformation             -> NormalFloat
 LspDiagnosticsInformationSign         -> InfoMsg
-LspDiagnosticsInformationSignFloating -> InfoMsg
+LspDiagnosticsInformationSignFloating -> NormalFloat
 # }}}
 
 # Help {{{

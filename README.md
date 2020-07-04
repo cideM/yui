@@ -46,6 +46,7 @@ This information can also be found in the help, `:help yui`
 
 ## Changelog
 
+- 0.13.0: Adjust LspDiagnostics colors
 - 0.12.0: Adjust WhichKeySeperator color so it's normal FG without bg
 - 0.11.1: Fix typo in WhichKeySeperator
 - 0.11.0: Add some WhichKey colors
