@@ -280,3 +280,8 @@ helpBacktick -> Constant
 WhichKeySeperator black none
 WhichKeyFloating -> Pmenu
 # }}}
+
+# Vim-dirvish {{{
+DirvishArg none none underline
+DirvishPathTail none none bold
+# }}}

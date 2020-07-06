@@ -4,6 +4,7 @@ YUI | ユイ
 ===========================================================================
 Changelog:                                       *yui-changelog*
 
+0.13.0: Adjust LspDiagnostics colors
 0.12.0: Adjust WhichKeySeperator color so it's normal FG without bg
 0.11.1: Fix typo in WhichKeySeperator
 0.11.0: Add some WhichKey colors
