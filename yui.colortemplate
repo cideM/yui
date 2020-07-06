@@ -3,7 +3,7 @@ Full name:  Yui
 Short name: yui
 Author:     Florian B <yuuki@protonmail.com>
 Neovim:     yes
-Version:    0.13.0
+Version:    0.14.0
 # }}}
 
 verbatim
@@ -17,6 +17,7 @@ YUI | ユイ
 ===========================================================================
 Changelog:                                       *@shortname-changelog*
 
+0.14.0: Add vim-dirvish colors
 0.13.0: Adjust LspDiagnostics colors
 0.12.0: Adjust WhichKeySeperator color so it's normal FG without bg
 0.11.1: Fix typo in WhichKeySeperator
