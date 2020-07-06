@@ -239,13 +239,13 @@ jsParensError -> Normal
 # }}}
 
 # Markdown {{{
-mkdHeading       black white bold
-mkdItalic        black white italic
+mkdHeading       black none bold
+mkdItalic        black none italic
 mkdCode          -> Normal
 mkdCodeDelimiter -> Normal
 
-markdownBold     black white bold
-markdownUrl      black white underline
+markdownBold     black none bold
+markdownUrl      black none underline
 markdownItalic   -> mkdItalic
 markdownLinkText -> Normal
 markdownH1       -> mkdHeading
