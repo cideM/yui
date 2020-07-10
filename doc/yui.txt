@@ -51,3 +51,14 @@ text less visible.
 >
   let g:yui_folds = 'emphasize'
 <
+
+                                                    *g:yui_line_numbers*
+
+Default: "fade"
+
+Set to 'emphasize' if you want line numbers and signcolumn to be emphasized by
+giving it a more visible background and foreground color combination. Set to
+'fade' to make folded text less visible.
+>
+  let g:yui_line_numbers = 'emphasize'
+<
