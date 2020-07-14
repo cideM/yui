@@ -48,7 +48,7 @@ Set to 1 if you want comments to be emphasized by making them orange.
 Set to 'emphasize' if you want comments to be emphasized by making them orange.
 Set to 'fade' to make comments less visible. The default is 'normal', which
 causes comments to be italic but with the same color as normal text.
-*g:@shortname_emphasized_comments* takes precedence to preserve backwards
+g:@shortname_emphasized_comments takes precedence to preserve backwards
 compatibility.
 >
   let g:@shortname_comments = 'emphasize'
