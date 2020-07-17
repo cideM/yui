@@ -64,6 +64,17 @@ text less visible.
 >
   let g:@shortname_folds = 'emphasize'
 <
+
+                                                    *g:@shortname_line_numbers*
+
+Default: "fade"
+
+Set to 'emphasize' if you want line numbers and signcolumn to be emphasized by
+giving it a more visible background and foreground color combination. Set to
+'fade' to make folded text less visible.
+>
+  let g:@shortname_line_numbers = 'emphasize'
+<
 enddocumentation
 
 Background: light
@@ -160,7 +171,6 @@ Directory        black                      none
 ErrorMsg         red_foreground             red_background
 IncSearch        purple_foreground          purple_background          
 Search           purple_background          purple_foreground
-LineNr           brightestblack             none
 MatchParen       none                       none                           underline,bold
 ModeMsg          black                      none
 MoreMsg          black                      none
@@ -171,8 +181,7 @@ PmenuSel         -> WildMenu
 PmenuThumb       none                       green_background
 PreProc          black                      none
 Question         black                      none
-SignColumn       black                      white
-SpecialKey       -> LineNr
+SpecialKey       brightestblack             none
 Special          black                      none
 SpellBad         red_foreground             red_background
 SpellCap         none                       none                           undercurl
@@ -200,7 +209,7 @@ Statement  black                      none
 Todo       none                       none                          underline
 Type       none                       none
 Underlined black                      none
-Whitespace -> LineNr
+Whitespace brightestblack             none
 
 #if get(g:, '@optionprefix_comments', 'normal') ==? 'emphasize' || get(g:, '@optionprefix_emphasized_comments', 0)
   Comment              orange                    none                          italic
@@ -216,6 +225,14 @@ Whitespace -> LineNr
 #elseif get(g:, '@optionprefix_folds', 'fade') ==? 'fade'
   FoldColumn       brightestblack             none
   Folded           brightestblack             none
+#endif
+
+#if get(g:, '@optionprefix_line_numbers', 'fade') ==? 'emphasize'
+  SignColumn       black2                     brown2
+  LineNr           black2                     brown2
+#elseif get(g:, '@optionprefix_line_numbers', 'fade') ==? 'fade'
+  SignColumn       black                      white
+  LineNr           brightestblack             none
 #endif
 
 # See `:help lCursor`

@@ -29,6 +29,11 @@ This information can also be found in the help, `:help yui`
 - `fade` (**default**): makes folded text less visible
 - `emphasize`: gives folded text a distinct background color
 
+### `g:yui_line_numbers`
+
+- `fade` (**default**): makes line numbers and signcolumn text less visible
+- `emphasize`: gives line numbers and signcolumn text a distinct background color
+
 ### `g:yui_comments`
 
 `g:yui_emphasized_comments` takes precedence for backwards compatibility
