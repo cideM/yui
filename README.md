@@ -51,6 +51,7 @@ This information can also be found in the help, `:help yui`
 
 ## Changelog
 
+- 0.14.1: Fix duplicate helptag
 - 0.14.0: Add vim-dirvish colors
 - 0.13.0: Adjust LspDiagnostics colors
 - 0.12.0: Adjust WhichKeySeperator color so it's normal FG without bg

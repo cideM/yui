@@ -4,6 +4,7 @@ YUI | ユイ
 ===========================================================================
 Changelog:                                       *yui-changelog*
 
+0.14.1: Fix duplicate helptag
 0.14.0: Add vim-dirvish colors
 0.13.0: Adjust LspDiagnostics colors
 0.12.0: Adjust WhichKeySeperator color so it's normal FG without bg
@@ -35,7 +36,7 @@ Set to 1 if you want comments to be emphasized by making them orange.
 Set to 'emphasize' if you want comments to be emphasized by making them orange.
 Set to 'fade' to make comments less visible. The default is 'normal', which
 causes comments to be italic but with the same color as normal text.
-*g:yui_emphasized_comments* takes precedence to preserve backwards
+g:yui_emphasized_comments takes precedence to preserve backwards
 compatibility.
 >
   let g:yui_comments = 'emphasize'
