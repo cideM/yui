@@ -3,7 +3,7 @@ Full name:  Yui
 Short name: yui
 Author:     Florian B <yuuki@protonmail.com>
 Neovim:     yes
-Version:    0.15.0
+Version:    0.16.0
 # }}}
 
 verbatim
@@ -17,6 +17,7 @@ YUI | ユイ
 ===========================================================================
 Changelog:                                       *@shortname-changelog*
 
+0.16.0: Add magenta and cyan and use for Term colors
 0.15.0: Add signcolumn customization option
 0.14.0: Add vim-dirvish colors
 0.13.0: Adjust LspDiagnostics colors
@@ -114,6 +115,10 @@ Color: brightblack             #9f918c    ~
 Color: brightwhite             #ffffff    ~
 Color: brown2                  #eae0d6    ~
 Color: statusline_nc           #F7F3F3    ~
+
+Color: magenta                 #9600CC    ~
+
+Color: cyan                    #007575    ~
 
 # vvv Almost invisible
 Color: brightestblack          #c0a49b    ~
@@ -246,8 +251,9 @@ ToolbarButton        black                       none
 # }}}
 
 # Terminal colors {{{
-Term colors: black red green black blue black black black
-Term colors: black red green black blue black black black
+#            black red green yellow             blue            magenta cyan  white
+Term colors: black red green yellow_foreground  blue_foreground magenta cyan  white
+Term colors: black red green yellow_foreground  blue_foreground magenta cyan  white
 # }}}
 
 # JS {{{

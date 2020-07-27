@@ -1,16 +1,3 @@
-# Yui | ユイ
-<!-- vim-markdown-toc GFM -->
-
-* [Intro](#intro)
-* [Options](#options)
-    * [`g:yui_folds`](#gyui_folds)
-    * [`g:yui_comments`](#gyui_comments)
-    * [`g:yui_emphasized_comments`](#gyui_emphasized_comments)
-* [Changelog](#changelog)
-* [Screenshots](#screenshots)
-
-<!-- vim-markdown-toc -->
-
 ## Intro
 
 Experimental color scheme without any colors, except what's required to display a meaningful `diff`.
@@ -20,6 +7,17 @@ Shades are used for things like dimming folded text.
 
 This is not yet a finished color scheme. If you spot any issues, please create an issue! Ideally you include an example file and/or screenshot.
 
+<!-- vim-markdown-toc GFM -->
+
+* [Options](#options)
+    * [`g:yui_folds`](#gyui_folds)
+    * [`g:yui_line_numbers`](#gyui_line_numbers)
+    * [`g:yui_comments`](#gyui_comments)
+    * [`g:yui_emphasized_comments`](#gyui_emphasized_comments)
+* [Changelog](#changelog)
+* [Screenshots](#screenshots)
+
+<!-- vim-markdown-toc -->
 ## Options
 
 This information can also be found in the help, `:help yui`
@@ -51,6 +49,7 @@ This information can also be found in the help, `:help yui`
 
 ## Changelog
 
+- 0.16.0: Add magenta and cyan and use for Term colors
 - 0.15.0: Add signcolumn customization option
 - 0.14.1: Fix duplicate helptag
 - 0.14.0: Add vim-dirvish colors

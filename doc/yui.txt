@@ -4,6 +4,7 @@ YUI | ユイ
 ===========================================================================
 Changelog:                                       *yui-changelog*
 
+0.16.0: Add magenta and cyan and use for Term colors
 0.15.0: Add signcolumn customization option
 0.14.0: Add vim-dirvish colors
 0.13.0: Adjust LspDiagnostics colors
