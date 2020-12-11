@@ -114,7 +114,7 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
   hi! link TabLineSel WildMenu
   hi Title guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
   hi VertSplit guifg=#9f918c guibg=NONE guisp=NONE gui=NONE cterm=NONE
-  if get(g: 'yui_visual', 'normal') ==? 'dark'
+  if get(g:, 'yui_visual', 'normal') ==? 'dark'
     hi Visual guifg=NONE guibg=#d1c9c0 guisp=NONE gui=NONE cterm=NONE
     hi VisualNOS guifg=NONE guibg=#d1c9c0 guisp=NONE gui=NONE cterm=NONE
   endif
@@ -276,7 +276,7 @@ if s:t_Co >= 256
   hi! link TabLineSel WildMenu
   hi Title ctermfg=NONE ctermbg=NONE cterm=NONE
   hi VertSplit ctermfg=246 ctermbg=NONE cterm=NONE
-  if get(g: 'yui_visual', 'normal') ==? 'dark'
+  if get(g:, 'yui_visual', 'normal') ==? 'dark'
     hi Visual ctermfg=NONE ctermbg=252 cterm=NONE
     hi VisualNOS ctermfg=NONE ctermbg=252 cterm=NONE
   endif
