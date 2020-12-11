@@ -117,6 +117,9 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
   if get(g:, 'yui_visual', 'normal') ==? 'dark'
     hi Visual guifg=NONE guibg=#d1c9c0 guisp=NONE gui=NONE cterm=NONE
     hi VisualNOS guifg=NONE guibg=#d1c9c0 guisp=NONE gui=NONE cterm=NONE
+  elseif get(g:, 'yui_visual', 'normal') ==? 'normal'
+    hi Visual guifg=NONE guibg=#ffffff guisp=NONE gui=NONE cterm=NONE
+    hi VisualNOS guifg=NONE guibg=#ffffff guisp=NONE gui=NONE cterm=NONE
   endif
   hi WarningMsg guifg=#7b6a3d guibg=#f9ffa3 guisp=NONE gui=NONE cterm=NONE
   hi WildMenu guifg=#408000 guibg=#e8ffd1 guisp=NONE gui=NONE cterm=NONE
@@ -279,6 +282,9 @@ if s:t_Co >= 256
   if get(g:, 'yui_visual', 'normal') ==? 'dark'
     hi Visual ctermfg=NONE ctermbg=252 cterm=NONE
     hi VisualNOS ctermfg=NONE ctermbg=252 cterm=NONE
+  elseif get(g:, 'yui_visual', 'normal') ==? 'normal'
+    hi Visual ctermfg=NONE ctermbg=231 cterm=NONE
+    hi VisualNOS ctermfg=NONE ctermbg=231 cterm=NONE
   endif
   hi WarningMsg ctermfg=94 ctermbg=229 cterm=NONE
   hi WildMenu ctermfg=28 ctermbg=194 cterm=NONE
