@@ -7,6 +7,10 @@ Shades are used for things like dimming folded text.
 
 This is not yet a finished color scheme. If you spot any issues, please create an issue! Ideally you include an example file and/or screenshot.
 
+### Rewrite V1
+
+This colors scheme was created because I couldn't find anything like it. I mostly improvised and hacked things together without having a proper colors palette. I'd like to make several significant changes, which includes better constrast, a slightly less brownish tone, and more 3rd party plugin support. I've created a `v2` branch (name doesn't matter) which you can already try out
+
 <!-- vim-markdown-toc GFM -->
 
 * [Options](#options)
