@@ -39,6 +39,7 @@ let g:colors_name = 'yui'
 " #5137e1 - Purple
 " #627CAC - Blue/Grey
 " #DCD7F9 - Light Purple
+" #ECE9FC - Light Purple 95%
 " #DBF9FF - Light Cyan
 " #FFF5C4 - Light Yellow
 " #E3FFB3 - Light Green
@@ -145,7 +146,7 @@ hi! Normal guibg=#F5F1F0 guifg=#534946 guisp=NONE
   hi! Whitespace guifg=#B9AFAC guibg=NONE guisp=NONE gui=NONE
   " v-- I'm not really sure how this is different from Whitespace
   hi! link SpecialKey Whitespace
-  hi! link Visual Search
+  hi! Visual guibg=#ECE9FC guifg=#5137e1 guisp=NONE gui=NONE
   " v-- I don't know which actions trigger VisualNOS
   hi! link VisualNOS Visual
   hi! link Question Normal
