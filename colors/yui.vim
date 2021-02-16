@@ -97,10 +97,9 @@ hi! Normal guibg=#F5F1F0 guifg=#534946 guisp=NONE
   hi! TabLine guibg=NONE guifg=NONE gui=NONE guisp=NONE
   hi! link TabLineFill TabLine
   " v-- This also applies to a lot of stuff in :ts, better not underline it
-  hi! TabLineSel guibg=NONE guifg=NONE guisp=NONE gui=bold,none
+  hi! link TabLineSel Visual
   " v-- This is for the number of panes in the current tab shown in the top
   " left corner
-  hi! link Title TabLineSel
 
 " -------------- Folds --------------------------
   " v-- AA
@@ -201,6 +200,8 @@ endif
 " -------------- XML ----------------------------
   hi! link xmlProcessingDelim Normal
   hi xmlTagName guifg=NONE guibg=NONE guisp=NONE gui=NONE
+
+  hi! link Title Normal
 
 " -------------- Vim Script ---------------------
   " v-- These are normally linked to Type, which is italicized, leading to
