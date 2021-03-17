@@ -37,9 +37,11 @@ let g:colors_name = 'yui'
 " #751400 - Red
 " #304D00 - Green
 " #5137e1 - Purple
+" #4932CB - Purple Shade 10%
 " #627CAC - Blue/Grey
 " #DCD7F9 - Light Purple
-" #ECE9FC - Light Purple 95%
+" #C6C2E0 - Light Purple Shade 10%
+" #B0ACC7 - Light Purple Shade 20%
 " #DBF9FF - Light Cyan
 " #FFF5C4 - Light Yellow
 " #E3FFB3 - Light Green
@@ -91,7 +93,7 @@ hi! Normal guibg=#F5F1F0 guifg=#534946 guisp=NONE
   hi! StatusLine guifg=bg guibg=fg gui=bold guisp=NONE
   hi! StatusLineNC guibg=#E0D4D1 guifg=fg gui=NONE guisp=NONE
   " hi! WildMenu guibg=#FFFFFF guifg=fg guisp=NONE gui=NONE
-  hi! WildMenu guibg=#5137e1 guifg=#DCD7F9 guisp=NONE gui=NONE
+  hi! WildMenu guibg=#5137e1 guifg=#C6C2E0 guisp=NONE gui=NONE
 
 " -------------- Tabline ------------------------
   " v-- AA only but okay since it's not supposed to be in focus
@@ -112,7 +114,7 @@ hi! Normal guibg=#F5F1F0 guifg=#534946 guisp=NONE
   hi! Pmenu guifg=NONE guibg=#EBE2E0 guisp=NONE gui=NONE
   hi! PmenuThumb guifg=NONE guibg=fg guisp=NONE gui=NONE
   hi! link PmenuSbar PMenu
-  hi! PmenuSel guibg=#5137e1 guifg=#DCD7F9 guisp=NONE gui=NONE
+  hi! PmenuSel guibg=#5137e1 guifg=#C6C2E0 guisp=NONE gui=NONE
 
 " -------------- Terminal -----------------------
   hi! link TermCursor Cursor
@@ -146,7 +148,7 @@ hi! Normal guibg=#F5F1F0 guifg=#534946 guisp=NONE
   hi! Whitespace guifg=#B9AFAC guibg=NONE guisp=NONE gui=NONE
   " v-- I'm not really sure how this is different from Whitespace
   hi! link SpecialKey Whitespace
-  hi! Visual guibg=#ECE9FC guifg=#5137e1 guisp=NONE gui=NONE
+  hi! Visual guibg=#DCD7F9 guifg=#5137e1 guisp=NONE gui=NONE
   " v-- I don't know which actions trigger VisualNOS
   hi! link VisualNOS Visual
   hi! link Question Normal
@@ -171,7 +173,7 @@ endif
   hi! DiffDelete guifg=#751400 guibg=#FFCABF guisp=NONE gui=NONE
 
 " -------------- Search & Replace ---------------
-  hi! Search guibg=#DCD7F9 guifg=#5137e1 guisp=NONE gui=NONE
+  hi! Search guibg=#C6C2E0 guifg=#4932CB guisp=NONE gui=NONE
   " hi! IncSearch guibg=#DBEAFF guifg=#004AB3 guisp=NONE gui=NONE
   hi! IncSearch guibg=#5137e1 guifg=#DCD7F9 guisp=NONE gui=bold
   " hi! Search guibg=#E0D4D1 guifg=NONE guisp=NONE gui=NONE
