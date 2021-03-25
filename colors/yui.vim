@@ -263,9 +263,21 @@ endif
 " -------------- LSP ----------------------------
    hi! link LspDiagnosticsDefaultError Error
    hi! link LspDiagnosticsDefaultWarning WarningMsg
+   hi! link LspDiagnosticsUnderlineError Error
 
 " -------------- Git ----------------------------
   hi! link diffAdded DiffAdd
   hi! link diffRemoved DiffDelete
   hi! link diffComment Comment
   hi! link diffChanged DiffChange
+
+" -------------- gitigns ------------------------
+  hi! link GitSignsAdd DiffAdd
+  hi! link GitSignsAddNr DiffAdd
+  hi! link GitSignsAddLn DiffAdd
+  hi! link GitSignsChange DiffChange
+  hi! link GitSignsChangeNr DiffChange
+  hi! link GitSignsChangeLn DiffChange
+  hi! link GitSignsDelete DiffDelete
+  hi! link GitSignsDeleteNr DiffDelete
+  hi! link GitSignsDeleteLn DiffDelete
