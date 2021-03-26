@@ -43,8 +43,9 @@ let g:colors_name = 'yui'
 " #C6C2E0 - Light Purple Shade 10%
 " #B0ACC7 - Light Purple Shade 20%
 " #DBF9FF - Light Cyan
-" #FFF5C4 - Light Yellow
-" #E3FFB3 - Light Green
+" #FFF566 - Light Yellow
+" #e6ddb0 - Light Yellow 10% shade
+" #A4EE87 - Light Green
 " #FFDBE7 - Light Magenta
 " #DBEAFF - Light Blue
 " #FFCABF - Light Red
@@ -143,7 +144,7 @@ hi! Normal guibg=#F5F1F0 guifg=#534946 guisp=NONE
   " This is not just a different hue from the other light palette colors, it's
   " also slightly more saturated. Yellow is really hard to see on a light grey
   " background.
-  hi! WarningMsg guibg=#FFF5C4 guifg=#4D4000 gui=NONE
+  hi! WarningMsg guibg=#FFF566 guifg=#4D4000 gui=NONE
   " v-- Not even AA since I want these characters to fade away
   hi! Whitespace guifg=#B9AFAC guibg=NONE guisp=NONE gui=NONE
   " v-- I'm not really sure how this is different from Whitespace
@@ -167,9 +168,9 @@ if !has('nvim')
 endif
 
 " -------------- Diffs --------------------------
-  hi! DiffAdd guifg=#304D00 guibg=#E3FFB3 guisp=NONE gui=NONE
-  hi! DiffChange guifg=#4D4000 guibg=#FFF5C4 guisp=NONE gui=NONE
-  hi! DiffText guifg=#4D4000 guibg=#FFF5C4 guisp=NONE gui=bold
+  hi! DiffAdd guifg=#304D00 guibg=#A4EE87 guisp=NONE gui=NONE
+  hi! DiffChange guifg=#4D4000 guibg=#FFF566 guisp=NONE gui=NONE
+  hi! DiffText guifg=#4D4000 guibg=#FFF566 guisp=NONE gui=bold
   hi! DiffDelete guifg=#751400 guibg=#FFCABF guisp=NONE gui=NONE
 
 " -------------- Search & Replace ---------------
@@ -281,3 +282,6 @@ endif
   hi! link GitSignsDelete DiffDelete
   hi! link GitSignsDeleteNr DiffDelete
   hi! link GitSignsDeleteLn DiffDelete
+
+" -------------- indenline ----------------------
+  hi! link IndentBlanklineChar VertSplit
