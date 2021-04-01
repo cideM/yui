@@ -6,14 +6,14 @@ Changelog:                                       *yui-changelog*
 
 0.19: Start adding some XML groups
 0.18: Overhaul entire theme
-	  - Better contrast for Normal
-	  - Active StatusLine is now dark
-	  - Use purple for all selection things (Visual, Search, 
-		PMenu, WildMenu, TabLine)
-	  - Get rid of some duplicate but slightly different colors
-	  - Make MatchParen stand out more
-	  - Make sure all colors have a 256 color value
-	  - Add 'bg' option to comments
+      - Better contrast for Normal
+      - Active StatusLine is now dark
+      - Use purple for all selection things (Visual, Search, 
+        PMenu, WildMenu, TabLine)
+      - Get rid of some duplicate but slightly different colors
+      - Make MatchParen stand out more
+      - Make sure all colors have a 256 color value
+      - Add 'bg' option to comments
 0.17: Remove Colortemplate
 0.16: Add magenta and cyan and use for Term colors
 0.15: Add signcolumn customization option
@@ -32,24 +32,25 @@ Changelog:                                       *yui-changelog*
 
 ===========================================================================
 Yui options                                     *yui-options*
-												*g:yui_emphasized_comments*
+                                                *g:yui_emphasized_comments*
 
 Deprecated: Please use |g:yui_comments| instead.
 
 Set to 1 if you want comments to be emphasized by making them orange. 
+
 >
   let g:yui_emphasized_comments = 0
 <
 
                                                 *g:yui_comments*
 
-Set to 'emphasize' if you want comments to be emphasized by making them orange.
-Set to 'fade' to make comments less visible. Set to 'bg' to make comments
-non-italic but have a different background to make them stand out. The default
-is 'normal', which causes comments to be italic but with the same color as
-normal text.
-g:yui_emphasized_comments takes precedence to preserve backwards
-compatibility.
+- 'emphasize': orange text
+- 'fade': text less visible
+- 'bg': text non-italic but different background
+- 'normal': Default. Italic text, same color as Normal text
+
+g:yui_emphasized_comments takes precedence to preserve backwards compatibility.
+
 >
   let g:yui_comments = 'emphasize'
 <
@@ -58,9 +59,9 @@ compatibility.
 
 Default: "fade"
 
-Set to 'emphasize' if you want folded text to be emphasized by giving it a more
-visible background and foreground color combination. Set to 'fade' to make folded
-text less visible.
+- 'emphasize': more visible background and foreground color combination
+- 'fade': text less visible
+
 >
   let g:yui_folds = 'emphasize'
 <
@@ -72,6 +73,7 @@ Default: "fade"
 Set to 'emphasize' if you want line numbers and signcolumn to be emphasized by
 giving it a more visible background and foreground color combination. Set to
 'fade' to make folded text less visible.
+
 >
   let g:yui_line_numbers = 'emphasize'
 <
