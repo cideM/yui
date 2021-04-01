@@ -271,3 +271,7 @@ hi   helpHeadline             guifg=NONE    ctermfg=NONE guibg=NONE    ctermbg=N
 hi! link helpExample                  Normal
 hi! link helpCommand                  Constant
 hi! link helpBacktick                 Constant
+
+" -------------- XML ----------------------------
+hi! link xmlProcessingDelim Normal
+hi xmlTagName guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=NONE gui=NONE cterm=NONE

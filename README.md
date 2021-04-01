@@ -1,3 +1,5 @@
+# YUI
+
 ## Intro
 
 Experimental color scheme without any colors, except what's required to display a meaningful `diff`.
@@ -37,6 +39,7 @@ This information can also be found in the help, `:help yui`
 
 ## Changelog
 
+- 0.19: Start adding some XML groups
 - 0.18: Overhaul entire theme
 		- Better contrast for Normal
 		- Active StatusLine is now dark

@@ -1,9 +1,10 @@
 
-YUI | ユイ
+YUI | ユイ | 0.19
 
 ===========================================================================
 Changelog:                                       *yui-changelog*
 
+0.19: Start adding some XML groups
 0.18: Overhaul entire theme
 	  - Better contrast for Normal
 	  - Active StatusLine is now dark
