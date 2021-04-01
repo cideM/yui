@@ -32,6 +32,7 @@ Changelog:                                       *yui-changelog*
 
 ===========================================================================
 Yui options                                     *yui-options*
+
                                                 *g:yui_emphasized_comments*
 
 Deprecated: Please use |g:yui_comments| instead.
