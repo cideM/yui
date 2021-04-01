@@ -4,6 +4,15 @@ YUI | ユイ
 ===========================================================================
 Changelog:                                       *yui-changelog*
 
+0.18: Overhaul entire theme
+	  - Better contrast for Normal
+	  - Active StatusLine is now dark
+	  - Use purple for all selection things (Visual, Search, 
+		PMenu, WildMenu, TabLine)
+	  - Get rid of some duplicate but slightly different colors
+	  - Make MatchParen stand out more
+	  - Make sure all colors have a 256 color value
+	  - Add 'bg' option to comments
 0.17: Remove Colortemplate
 0.16: Add magenta and cyan and use for Term colors
 0.15: Add signcolumn customization option
@@ -34,8 +43,10 @@ Set to 1 if you want comments to be emphasized by making them orange.
                                                 *g:yui_comments*
 
 Set to 'emphasize' if you want comments to be emphasized by making them orange.
-Set to 'fade' to make comments less visible. The default is 'normal', which
-causes comments to be italic but with the same color as normal text.
+Set to 'fade' to make comments less visible. Set to 'bg' to make comments
+non-italic but have a different background to make them stand out. The default
+is 'normal', which causes comments to be italic but with the same color as
+normal text.
 g:yui_emphasized_comments takes precedence to preserve backwards
 compatibility.
 >

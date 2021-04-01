@@ -5,23 +5,6 @@ All syntax differentiation is achieved through font styles, so your terminal nee
 
 Shades are used for things like dimming folded text.
 
-This is not yet a finished color scheme. If you spot any issues, please create an issue! Ideally you include an example file and/or screenshot.
-
-### Rewrite V1
-
-This colors scheme was created because I couldn't find anything like it. I mostly improvised and hacked things together without having a proper colors palette. I'd like to make several significant changes, which includes better constrast, a slightly less brownish tone, and more 3rd party plugin support. I've created a `v2` branch (name doesn't matter) which you can already try out
-
-<!-- vim-markdown-toc GFM -->
-
-* [Options](#options)
-    * [`g:yui_folds`](#gyui_folds)
-    * [`g:yui_line_numbers`](#gyui_line_numbers)
-    * [`g:yui_comments`](#gyui_comments)
-    * [`g:yui_emphasized_comments`](#gyui_emphasized_comments)
-* [Changelog](#changelog)
-* [Screenshots](#screenshots)
-
-<!-- vim-markdown-toc -->
 ## Options
 
 This information can also be found in the help, `:help yui`
@@ -43,6 +26,7 @@ This information can also be found in the help, `:help yui`
 - `fade`: makes comments less visible
 - `emphasize`: makes comments more visible and is equivalent to `yui_emphasized_comments = 1`
 - `normal` (**default**): does not affect comment visibility
+- `bg`: make comments stand out by giving them a background. Text is not italic.
 
 ### `g:yui_emphasized_comments`
 
@@ -53,22 +37,30 @@ This information can also be found in the help, `:help yui`
 
 ## Changelog
 
-- 0.16.0: Add magenta and cyan and use for Term colors
-- 0.15.0: Add signcolumn customization option
-- 0.14.1: Fix duplicate helptag
-- 0.14.0: Add vim-dirvish colors
-- 0.13.0: Adjust LspDiagnostics colors
-- 0.12.0: Adjust WhichKeySeperator color so it's normal FG without bg
-- 0.11.1: Fix typo in WhichKeySeperator
-- 0.11.0: Add some WhichKey colors
-- 0.10.0: Add colors for neovim LSP
-- 0.9.1: Fix Cursor color which did not specify a background
-- 0.9.0: Add `g:yui_folds` option and overhaul folded text in general
-- 0.8.0: Add Whitespace and SpecialKey and link to LineNr
-- 0.7.0: Use Constant for helpCommand and helpBacktick (makes both bold)
-  instead of defaulting to Comments
-- 0.6.0: Add purple background for search results (Search and IncSearch)
-- 0.5.0: Add `g:yui_comments` option
+- 0.18: Overhaul entire theme
+		- Better contrast for Normal
+		- Active StatusLine is now dark
+		- Use purple for all selection things (Visual, Search, 
+		  PMenu, WildMenu, TabLine)
+		- Get rid of some duplicate but slightly different colors
+		- Make MatchParen stand out more
+		- Make sure all colors have a 256 color value
+		- Add 'bg' option to comments
+- 0.17: Remove Colortemplate
+- 0.16: Add magenta and cyan and use for Term colors
+- 0.15: Add signcolumn customization option
+- 0.14: Add vim-dirvish colors
+- 0.13: Adjust LspDiagnostics colors
+- 0.12: Adjust WhichKeySeperator color so it's normal FG without bg
+- 0.11: Add some WhichKey colors and fix typo in WhichKeySeperator
+- 0.10: Add colors for neovim LSP
+- 0.9:  Fix Cursor color which did not specify a background
+        Add yui_folds option and overhaul folded text in general
+- 0.8:  Add Whitespace and SpecialKey and link to LineNr
+- 0.7:  Use Constant for helpCommand and helpBacktick (makes both bold) instead of
+        defaulting to Comments
+- 0.6:  Add purple background for search results (Search and IncSearch)
+- 0.5:  Add `yui_comments` option
 
 ## Screenshots
 
