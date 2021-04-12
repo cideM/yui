@@ -204,9 +204,11 @@ hi! link WildMenu                     Visual
 hi! link Title                        Normal
 
 " -------------- LSP ----------------------------
-hi! link LspDiagnosticsDefaultError   Error
-hi! link LspDiagnosticsDefaultWarning WarningMsg
-hi! link LspDiagnosticsUnderlineError Error
+hi! link LspDiagnosticsDefaultError       Error
+hi! link LspDiagnosticsDefaultInformation Normal
+hi! link LspDiagnosticsDefaultHint        Normal
+hi! link LspDiagnosticsDefaultWarning     WarningMsg
+hi! link LspDiagnosticsUnderlineError     Error
 
 " -------------- gitigns ------------------------
 hi! link GitSignsAdd                  DiffAdd
