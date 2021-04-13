@@ -242,15 +242,15 @@ hi! link vimHiCTermFgBg               Normal
 hi!  link                     vimHiGuiFgBg  Normal
 
 " -------------- Markdown -----------------------
-hi   mkdHeading               guifg=NONE    ctermfg=NONE guibg=NONE    ctermbg=NONE guisp=NONE    gui=underline cterm=underline
-hi   mkdItalic                guifg=NONE    ctermfg=NONE guibg=NONE    ctermbg=NONE guisp=NONE    gui=italic    cterm=italic
-hi   markdownBold             guifg=NONE    ctermfg=NONE guibg=NONE    ctermbg=NONE guisp=NONE    gui=bold      cterm=bold
-hi   markdownUrl              guifg=NONE    ctermfg=NONE guibg=NONE    ctermbg=NONE guisp=NONE    gui=underline cterm=underline
-hi   markdownHeadingDelimiter guifg=NONE    ctermfg=NONE guibg=NONE    ctermbg=NONE guisp=NONE    gui=underline cterm=NONE
-hi! link mkdCode                      Normal
-hi! link mkdCodeDelimiter             Normal
+hi  mkdHeading               guifg=NONE    ctermfg=NONE guibg=NONE    ctermbg=NONE guisp=NONE    gui=underline cterm=underline
+hi  mkdItalic                guifg=NONE    ctermfg=NONE guibg=NONE    ctermbg=NONE guisp=NONE    gui=italic    cterm=italic
+hi  markdownBold             guifg=NONE    ctermfg=NONE guibg=NONE    ctermbg=NONE guisp=NONE    gui=bold      cterm=bold
+hi  markdownUrl              guifg=NONE    ctermfg=NONE guibg=NONE    ctermbg=NONE guisp=NONE    gui=underline cterm=underline
+hi  markdownHeadingDelimiter guifg=NONE    ctermfg=NONE guibg=NONE    ctermbg=NONE guisp=NONE    gui=underline cterm=NONE
+hi  mkdCode                           guifg=#635954 ctermfg=241  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
+hi  mkdCodeDelimiter                  guifg=#635954 ctermfg=241  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
 hi! link markdownItalic               mkdItalic
-hi! link markdownLinkText             Normal
+hi  markdownLinkText                  guifg=#635954 ctermfg=241  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
 hi! link markdownH1                   mkdHeading
 hi! link markdownH1Delimiter          markdownHeadingDelimiter
 hi! link markdownH2                   mkdHeading

@@ -39,6 +39,8 @@ This information can also be found in the help, `:help yui`
 
 ## Changelog
 
+- 0.22: Don't force BG colors for markdown because it doesn't work well with
+        Neovim popup windows
 - 0.21: Force LSP popup background to NONE
 - 0.20: Add LspDiagnosticsDefaultHint and LspDiagnosticsDefaultInformation
 - 0.19: Start adding some XML groups
