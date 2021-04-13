@@ -39,6 +39,7 @@ This information can also be found in the help, `:help yui`
 
 ## Changelog
 
+- 0.21: Force LSP popup background to NONE
 - 0.20: Add LspDiagnosticsDefaultHint and LspDiagnosticsDefaultInformation
 - 0.19: Start adding some XML groups
 - 0.18: Overhaul entire theme

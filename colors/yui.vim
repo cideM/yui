@@ -205,8 +205,8 @@ hi! link Title                        Normal
 
 " -------------- LSP ----------------------------
 hi! link LspDiagnosticsDefaultError       Error
-hi! link LspDiagnosticsDefaultInformation Normal
-hi! link LspDiagnosticsDefaultHint        Normal
+hi! LspDiagnosticsDefaultInformation      guifg=#635954 ctermfg=241  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
+hi! link LspDiagnosticsDefaultHint        LspDiagnosticsDefaultInformation
 hi! link LspDiagnosticsDefaultWarning     WarningMsg
 hi! link LspDiagnosticsUnderlineError     Error
 
