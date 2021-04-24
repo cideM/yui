@@ -281,3 +281,4 @@ hi xmlTagName guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=NONE gui=NON
 " -------------- nvim-hlslens -------------------
 hi! link HlSearchLensNear StatusLine
 hi! link HlSearchLens StatusLineNC
+hi! link HlSearchNear Search

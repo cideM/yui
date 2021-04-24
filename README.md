@@ -39,6 +39,8 @@ This information can also be found in the help, `:help yui`
 
 ## Changelog
 
+- 0.24: link HlSearchNear to Search, otherwise cursor is inverted and hard to
+  see
 - 0.23: Add colors for nvim-hlslens
 - 0.22: Don't force BG colors for markdown because it doesn't work well with
         Neovim popup windows
