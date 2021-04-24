@@ -277,3 +277,7 @@ hi! link helpBacktick                 Constant
 " -------------- XML ----------------------------
 hi! link xmlProcessingDelim Normal
 hi xmlTagName guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=NONE gui=NONE cterm=NONE
+
+" -------------- nvim-hlslens -------------------
+hi! link HlSearchLensNear StatusLine
+hi! link HlSearchLens StatusLineNC

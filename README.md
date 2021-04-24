@@ -39,6 +39,7 @@ This information can also be found in the help, `:help yui`
 
 ## Changelog
 
+- 0.23: Add colors for nvim-hlslens
 - 0.22: Don't force BG colors for markdown because it doesn't work well with
         Neovim popup windows
 - 0.21: Force LSP popup background to NONE
