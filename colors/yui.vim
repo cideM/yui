@@ -10,7 +10,7 @@
 " yellow_background #f9ffa3 229 hsl(64°,  100%, 82%)
 " yellow_foreground #7b6a3d 94  hsl(44°,  34%,  36%)
 " purple5           #DCD7F9 189 hsl(249°, 74%,  91%)
-" purple4           #b5abf2 147 hsl(248°, 73%,  81%)
+" purple4           #cdc5f6 147 hsl(249,  74%,  87%)
 " purple3           #7864e8 99  hsl(249°, 74%,  65%)
 " purple            #5137e1 62  hsl(249°, 74%,  55%)
 " purple2           #371ec8 19  hsl(249°, 74%,  45%)
@@ -103,7 +103,7 @@ hi   PmenuThumb               guifg=NONE    ctermfg=NONE guibg=fg      ctermbg=f
 hi   PreProc                  guifg=fg      ctermfg=fg   guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 hi   Question                 guifg=fg      ctermfg=fg   guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 hi   Search                   guifg=#5137e1 ctermfg=62   guibg=#DCD7F9 ctermbg=189  guisp=NONE    gui=NONE      cterm=NONE
-hi   Visual                   guifg=#371ec8 ctermfg=19   guibg=#b5abf2 ctermbg=147  guisp=NONE    gui=NONE      cterm=NONE
+hi   Visual                   guifg=#371ec8 ctermfg=19   guibg=#cdc5f6 ctermbg=147  guisp=NONE    gui=NONE      cterm=NONE
 hi   Special                  guifg=fg      ctermfg=fg   guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 hi   SpecialKey               guifg=#b4aba7 ctermfg=249  guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 hi   SpellBad                 guifg=#a7111d ctermfg=124  guibg=#ffe0e0 ctermbg=224  guisp=NONE    gui=NONE      cterm=NONE
