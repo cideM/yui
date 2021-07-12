@@ -74,7 +74,7 @@ else
 endif
 
 hi   Normal                   guifg=#635954 ctermfg=241  guibg=#efeae5 ctermbg=254  guisp=NONE    gui=NONE      cterm=NONE
-hi   ColorColumn              guifg=fg      ctermfg=fg   guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
+hi   ColorColumn              guifg=fg      ctermfg=fg   guibg=#e8e0d9    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 hi   Conceal                  guifg=#cfbfb0 ctermfg=251  guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 hi   Constant                 guifg=#292523 ctermfg=236  guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 hi   CursorColumn             guifg=NONE    ctermfg=NONE guibg=#fbfaf9 ctermbg=255  guisp=NONE    gui=NONE      cterm=NONE
