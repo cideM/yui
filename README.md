@@ -39,6 +39,7 @@ This information can also be found in the help, `:help yui`
 
 ## Changelog
 
+- 0.26: Make ColorColumn visible and make Visual bg a bit lighter
 - 0.25: Link LspDiagnosticsDefaultInformation to DiffText so it can be better
   differentiated from the surrounding text
 - 0.24: link HlSearchNear to Search, otherwise cursor is inverted and hard to
