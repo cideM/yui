@@ -204,10 +204,32 @@ hi! link WildMenu                     Visual
 hi! link Title                        Normal
 
 " -------------- LSP ----------------------------
-hi! link LspDiagnosticsDefaultError       Error
-hi! link LspDiagnosticsDefaultHint        LspDiagnosticsDefaultInformation
-hi! link LspDiagnosticsDefaultWarning     WarningMsg
-hi! link LspDiagnosticsDefaultInformation DiffText
+hi! link DiagnosticsError           Error
+hi! link DiagnosticWarn             WarningMsg
+hi! link DiagnosticInfo             DiffText
+hi! link DiagnosticHint             Normal
+hi! link DiagnosticVirtualTextError Error
+hi! link DiagnosticVirtualTextWarn  WarningMsg
+hi! link DiagnosticVirtualTextInfo  DiffText
+hi! link DiagnosticVirtualTextHint  Normal
+hi! link DiagnosticUnderlineError   Error
+hi! link DiagnosticUnderlineWarn    WarningMsg
+hi! link DiagnosticUnderlineInfo    DiffText
+hi! link DiagnosticUnderlineHint    Normal
+hi! link DiagnosticFloatingError    Error
+hi! link DiagnosticFloatingWarn     WarningMsg
+hi! link DiagnosticFloatingInfo     DiffText
+hi! link DiagnosticFloatingHint     Normal
+hi! link DiagnosticSignError        Error
+hi! link DiagnosticSignWarn         WarningMsg
+hi! link DiagnosticSignInfo         DiffText
+hi! link DiagnosticSignHint         Normal
+
+hi! link LspDiagnosticsDefaultError       DiagnosticError
+hi! link LspDiagnosticsDefaultHint        DiagnosticHint
+hi! link LspDiagnosticsDefaultWarning     DiagnosticWarning
+hi! link LspDiagnosticsDefaultInformation DiagnosticInfo
+
 hi! link LspDiagnosticsUnderlineError     Error
 
 " -------------- gitigns ------------------------

@@ -4,6 +4,18 @@ YUI | ユイ | 0.19
 ===========================================================================
 Changelog:                                       *yui-changelog*
 
+0.28: Update Diagnostic colors for Neovim 0.6
+0.27: Link Exception, Operator, Label, Keyword and Repeat to Normal to remove italic
+0.26: Make ColorColumn visible and make Visual bg a bit lighter
+0.25: Link LspDiagnosticsDefaultInformation to DiffText so it can be better
+differentiated from the surrounding text
+0.24: link HlSearchNear to Search, otherwise cursor is inverted and hard to
+see
+0.23: Add colors for nvim-hlslens
+0.22: Don't force BG colors for markdown because it doesn't work well with
+      Neovim popup windows
+0.21: Force LSP popup background to NONE
+0.20: Add LspDiagnosticsDefaultHint and LspDiagnosticsDefaultInformation
 0.19: Start adding some XML groups
 0.18: Overhaul entire theme
       - Better contrast for Normal
