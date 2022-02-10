@@ -227,7 +227,7 @@ hi! link DiagnosticSignHint         Normal
 
 hi! link LspDiagnosticsDefaultError       DiagnosticError
 hi! link LspDiagnosticsDefaultHint        DiagnosticHint
-hi! link LspDiagnosticsDefaultWarning     DiagnosticWarning
+hi! link LspDiagnosticsDefaultWarning     DiagnosticWarn
 hi! link LspDiagnosticsDefaultInformation DiagnosticInfo
 
 hi! link LspDiagnosticsUnderlineError     Error

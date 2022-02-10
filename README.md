@@ -39,6 +39,7 @@ This information can also be found in the help, `:help yui`
 
 ## Changelog
 
+- 0.29: Fix typo where DiagnosticWarning was used instead of DiagnosticWarn
 - 0.28: Update Diagnostic colors for Neovim 0.6
 - 0.27: Link Exception, Operator, Label, Keyword and Repeat to Normal to remove italic
 - 0.26: Make ColorColumn visible and make Visual bg a bit lighter
