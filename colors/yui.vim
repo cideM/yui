@@ -9,13 +9,18 @@
 " red_foreground    #a7111d 124 hsl(355°, 82%,  36%)
 " yellow_background #f9ffa3 229 hsl(64°,  100%, 82%)
 " yellow_foreground #7b6a3d 94  hsl(44°,  34%,  36%)
+" purple6           #fdfcfe 189 hsl(270°, 49%,  99%)
 " purple5           #DCD7F9 189 hsl(249°, 74%,  91%)
 " purple4           #cdc5f6 147 hsl(249,  74%,  87%)
 " purple3           #7864e8 99  hsl(249°, 74%,  65%)
 " purple            #5137e1 62  hsl(249°, 74%,  55%)
 " purple2           #371ec8 19  hsl(249°, 74%,  45%)
-" blue_background   #e0f3ff 195 hsl(203°, 100%, 94%)
-" blue_foreground   #00588f 25  hsl(203°, 100%, 28%)
+" blue_background   #268bd2 195 hsl(203°, 100%, 94%)
+" blue_foreground   #e6f2fa 25  hsl(203°, 100%, 28%)
+" blue2             #268bd2 33  added with the new lightline plugin, arguably
+"                               looks better than the current blue
+"                               TODO: use instead of current blue
+" blue3             #e6f2fa 195 see above comment
 " white5            #fbfaf9 255 hsl(30°,  24%,  98%)
 " white             #efeae5 254 hsl(30°,  24%,  92%) BACKGROUND
 " white2            #e8e0d9 253 hsl(30°,  24%,  88%)
@@ -304,3 +309,26 @@ hi xmlTagName guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=NONE gui=NON
 hi! link HlSearchLensNear StatusLine
 hi! link HlSearchLens StatusLineNC
 hi! link HlSearchNear Search
+
+" -------------- lightline    -------------------
+let lightline_enabled = get(g:, 'yui_lightline', v:false)
+if lightline_enabled == v:true
+  let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
+  let s:p.normal.left = [ ['#e8ffd1', '#408000', 241, 254 ], ['#efeae5', '#7f726c', 241, 254 ] ]
+  let s:p.normal.right = [ ['#efeae5', '#635954', 241, 254 ], ['#efeae5', '#7f726c', 241, 254 ], [ '#292523', '#b4aba7', 245, 236 ] ]
+  let s:p.normal.middle = [ [ '#635954', '#b4aba7', 245, 236 ] ]
+  let s:p.insert.left =  [ ['#e6f2fa', '#268bd2', 195, 25 ], ['#efeae5', '#7f726c', 241, 254 ] ]
+  let s:p.visual.left = [ [ '#fdfcfe', '#5137e1', 124, 231 ], ['#efeae5', '#7f726c', 241, 254 ] ]
+  let s:p.replace.left = [ [ '#ffffff', '#e44c22', 57, 231 ], ['#efeae5', '#7f726c', 241, 254 ] ]
+  let s:p.normal.error = [ [ '#ffe0e0', '#a7111d', 224, 124 ] ]
+  let s:p.normal.warning = [ [ '#f9ffa3', '#7b6a3d', 229, 94 ] ]
+  let s:p.inactive.right = [ [ '#7f726c', '#cfbfb0', 233, 235 ], [ '#7f726c', '#cfbfb0', 233, 235 ], [ '#7f726c', '#cfbfb0', 233, 235 ] ]
+  let s:p.inactive.left = s:p.inactive.right[1:]
+  let s:p.inactive.middle = [ [ '#7f726c', '#dcd1c6', 233, 235 ] ]
+  let s:p.tabline.left = s:p.inactive.middle
+  let s:p.tabline.tabsel = s:p.normal.left[1:]
+  let s:p.tabline.middle = [ [ '#635954', '#efeae5', 254, 241] ]
+  let s:p.tabline.right = s:p.normal.left[1:]
+
+  let g:lightline#colorscheme#yui#palette = s:p
+endif
