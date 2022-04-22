@@ -7,9 +7,32 @@ All syntax differentiation is achieved through font styles, so your terminal nee
 
 Shades are used for things like dimming folded text.
 
+## Supported Plugins
+
+- `nvim-hlslens`
+- `lightline`: if you use `lightline` and have `yui` set as a color scheme,
+  `yui` will automatically set the `lightline` color palette (see `yui_lightline` option)
+- `dirvish`
+- `vim-sneak`
+- `gitsigns`
+
 ## Options
 
 This information can also be found in the help, `:help yui`
+
+### `g:yui_lightline`
+
+- `v:false` (**default**): do not register the `yui` palette with `lightline`
+- `v:true`: register the `yui` palette with `lightline`. You still need
+  to set the lightline color scheme to `yui`.
+
+```vimscript
+let g:yui_lightline = v:true
+colorscheme yui
+let g:lightline = {
+  \ 'colorscheme': 'yui'
+  \ }
+```
 
 ### `g:yui_folds`
 
@@ -39,6 +62,7 @@ This information can also be found in the help, `:help yui`
 
 ## Changelog
 
+- 0.30: Add lightline support
 - 0.29: Fix typo where DiagnosticWarning was used instead of DiagnosticWarn
 - 0.28: Update Diagnostic colors for Neovim 0.6
 - 0.27: Link Exception, Operator, Label, Keyword and Repeat to Normal to remove italic

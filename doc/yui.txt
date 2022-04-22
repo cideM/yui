@@ -1,9 +1,10 @@
 
-YUI | ユイ | 0.29
+YUI | ユイ | 0.30
 
 ===========================================================================
 Changelog:                                       *yui-changelog*
 
+0.30: Add lightline support
 0.29: Fix typo where DiagnosticWarning was used instead of DiagnosticWarn
 0.28: Update Diagnostic colors for Neovim 0.6
 0.27: Link Exception, Operator, Label, Keyword and Repeat to Normal to remove italic
@@ -45,6 +46,18 @@ see
 
 ===========================================================================
 Yui options                                     *yui-options*
+
+                                                *g:yui_lightline*
+
+Default: v:false
+
+- v:true: register the "yui" lightline color palette. You still need to
+  set the lightline colorscheme to "yui" as well.
+
+>
+  let g:yui_lightline = v:true
+  let g:lightline.colorscheme = 'yui'
+<
 
                                                 *g:yui_emphasized_comments*
 
