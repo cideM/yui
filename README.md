@@ -15,6 +15,7 @@ Shades are used for things like dimming folded text.
 - `dirvish`
 - `vim-sneak`
 - `gitsigns`
+- `conflict-marker.vim`
 
 ## Options
 
@@ -62,6 +63,7 @@ let g:lightline = {
 
 ## Changelog
 
+- 0.31: Add conflict-marker.vim support
 - 0.30: Add lightline support
 - 0.29: Fix typo where DiagnosticWarning was used instead of DiagnosticWarn
 - 0.28: Update Diagnostic colors for Neovim 0.6

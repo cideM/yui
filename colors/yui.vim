@@ -332,3 +332,13 @@ if lightline_enabled == v:true
 
   let g:lightline#colorscheme#yui#palette = s:p
 endif
+
+" -------------- conflict-marker.vim ------------
+hi! link ConflictMarkerBegin DiffAdd
+hi! link ConflictMarkerOurs DiffAdd
+hi! link ConflictMarkerCommonAncestors
+" ConflictMarkerCommonAncestors |||||||
+" ConflictMarkerCommonAncestorsHunk actual diff content
+" ConflictMarkerSeparator ========
+hi! link ConflictMarkerTheirs DiffText
+hi! link ConflictMarkerEnd DiffText
