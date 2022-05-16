@@ -336,7 +336,7 @@ endif
 " -------------- conflict-marker.vim ------------
 hi! link ConflictMarkerBegin DiffAdd
 hi! link ConflictMarkerOurs DiffAdd
-hi! link ConflictMarkerCommonAncestors
+" hi! link ConflictMarkerCommonAncestors
 " ConflictMarkerCommonAncestors |||||||
 " ConflictMarkerCommonAncestorsHunk actual diff content
 " ConflictMarkerSeparator ========
