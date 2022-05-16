@@ -63,6 +63,7 @@ let g:lightline = {
 
 ## Changelog
 
+- 0.32: Fix bug
 - 0.31: Add conflict-marker.vim support
 - 0.30: Add lightline support
 - 0.29: Fix typo where DiagnosticWarning was used instead of DiagnosticWarn
