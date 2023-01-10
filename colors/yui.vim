@@ -1,32 +1,32 @@
-" black2            #7f726c 138 hsl(20°,  8%,   46%)
-" black3            #b4aba7 249 hsl(20°,  8%,   68%)
-" black             #635954 241 hsl(20°,  8%,   36%) FOREGROUND
-" black4            #292523 236 hsl(20°,  8%,   15%)
-" green_background  #e8ffd1 193 hsl(90°,  100%, 91%)
-" green_foreground  #408000 70  hsl(90°,  100%, 25%)
-" orange            #E44C22 166 hsl(13°,  78%,  51%)
-" red_background    #ffe0e0 224 hsl(0°,   100%, 94%)
-" red_foreground    #a7111d 124 hsl(355°, 82%,  36%)
-" yellow_background #f9ffa3 229 hsl(64°,  100%, 82%)
-" yellow_foreground #7b6a3d 94  hsl(44°,  34%,  36%)
-" purple6           #fdfcfe 189 hsl(270°, 49%,  99%)
-" purple5           #DCD7F9 189 hsl(249°, 74%,  91%)
-" purple4           #cdc5f6 147 hsl(249,  74%,  87%)
-" purple3           #7864e8 99  hsl(249°, 74%,  65%)
-" purple            #5137e1 62  hsl(249°, 74%,  55%)
-" purple2           #371ec8 19  hsl(249°, 74%,  45%)
-" blue_background   #268bd2 195 hsl(203°, 100%, 94%)
-" blue_foreground   #e6f2fa 25  hsl(203°, 100%, 28%)
-" blue2             #268bd2 33  added with the new lightline plugin, arguably
-"                               looks better than the current blue
-"                               TODO: use instead of current blue
-" blue3             #e6f2fa 195 see above comment
-" white5            #fbfaf9 255 hsl(30°,  24%,  98%)
-" white             #efeae5 254 hsl(30°,  24%,  92%) BACKGROUND
-" white2            #e8e0d9 253 hsl(30°,  24%,  88%)
-" white3            #dcd1c6 252 hsl(30°,  24%,  82%)
-" white4            #cfbfb0 251 hsl(29°,  24%,  75%)
-" cyan              #007575 66  hsl(180°, 100%, 23%)
+" | Color             | HEX    | Number | HSL                  | Notes      |
+" | ----------------- | ------ | ------ | -------------------- | ---------- |
+" | black_15          | 292523 | 236    | hsl(20°,  8%,   15%) |            |
+" | black_36          | 635954 | 241    | hsl(20°,  8%,   36%) | FOREGROUND |
+" | black_46          | 7f726c | 138    | hsl(20°,  8%,   46%) |            |
+" | black_68          | b4aba7 | 249    | hsl(20°,  8%,   68%) |            |
+" | green_25          | 408000 | 70     | hsl(90°,  100%, 25%) |            |
+" | green_91          | e8ffd1 | 193    | hsl(90°,  100%, 91%) |            |
+" | orange_51         | E44C22 | 166    | hsl(13°,  78%,  51%) |            |
+" | red_36            | a7111d | 124    | hsl(355°, 82%,  36%) | TODO       |
+" | red_94            | ffe0e0 | 224    | hsl(0°,   100%, 94%) | TODO       |
+" | yellow_36         | 7b6a3d | 94     | hsl(44°,  34%,  36%) | TODO       |
+" | yellow_82         | f9ffa3 | 229    | hsl(64°,  100%, 82%) | TODO       |
+" | purple_45         | 371ec8 | 19     | hsl(249°, 74%,  45%) |            |
+" | purple_55         | 5137e1 | 62     | hsl(249°, 74%,  55%) |            |
+" | purple_65         | 7864e8 | 99     | hsl(249°, 74%,  65%) |            |
+" | purple_87         | cdc5f6 | 147    | hsl(249,  74%,  87%) |            |
+" | purple_91         | DCD7F9 | 189    | hsl(249°, 74%,  91%) |            |
+" | purple_99         | fdfcfe | 189    | hsl(270°, 49%,  99%) | TODO       |
+" | blue_28           | e6f2fa | 25     | hsl(203°, 100%, 28%) |            |
+" | blue_94           | 268bd2 | 195    | hsl(203°, 100%, 94%) |            |
+" | blue2             | 268bd2 | 33     |                      | TODO       |
+" | blue3             | e6f2fa | 195    |                      | TODO       |
+" | white_75          | cfbfb0 | 251    | hsl(29°,  24%,  75%) | TODO       |
+" | white_82          | dcd1c6 | 252    | hsl(30°,  24%,  82%) |            |
+" | white_88          | e8e0d9 | 253    | hsl(30°,  24%,  88%) |            |
+" | white_92          | efeae5 | 254    | hsl(30°,  24%,  92%) | BACKGROUND |
+" | white_98          | fbfaf9 | 255    | hsl(30°,  24%,  98%) |            |
+" | cyan_23           | 007575 | 66     | hsl(180°, 100%, 23%) |            |
 
 set background=light
 
