@@ -127,7 +127,6 @@ hi   Underlined               guifg=fg      ctermfg=fg   guibg=NONE    ctermbg=N
 hi   VertSplit                guifg=#cfbfb0 ctermfg=251  guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 hi   VisualNOS                guifg=NONE    ctermfg=NONE guibg=#fbfaf9 ctermbg=255  guisp=NONE    gui=NONE      cterm=NONE
 hi   WarningMsg               guifg=#7b6a3d ctermfg=94   guibg=#f9ffa3 ctermbg=229  guisp=NONE    gui=NONE      cterm=NONE
-hi   WhichKeySeperator        guifg=fg      ctermfg=fg   guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 hi   Whitespace               guifg=#b4aba7 ctermfg=249  guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 
 " These are Vim only
@@ -202,7 +201,6 @@ hi! link TabLineSel                   Search
 hi! link TabLineFill                  TabLine
 hi! link lCursor                      Cursor
 hi! link jsParensError                Normal
-hi! link WhichKeyFloating             Pmenu
 hi! link PmenuSbar                    Pmenu
 hi! link Substitute                   IncSearch
 hi! link WildMenu                     Visual
@@ -342,3 +340,6 @@ hi! link ConflictMarkerOurs DiffAdd
 " ConflictMarkerSeparator ========
 hi! link ConflictMarkerTheirs DiffText
 hi! link ConflictMarkerEnd DiffText
+" -------------- which-key ----------------------
+hi       WhichKeySeperator guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE guisp=NONE gui=NONE cterm=NONE
+hi! link WhichKeyFloating  Pmenu
