@@ -16,6 +16,7 @@ Shades are used for things like dimming folded text.
 - `vim-sneak`
 - `gitsigns`
 - `conflict-marker.vim`
+- `which-key`
 
 ## Options
 
