@@ -172,17 +172,12 @@ hi! link Conditional                  Statement
 hi! link Define                       PreProc
 hi! link Debug                        Special
 hi! link Delimiter                    Special
-hi! link Exception                    Normal
 hi! link Float                        Number
 hi! link Function                     Identifier
 hi! link Include                      PreProc
-hi! link Keyword                      Normal
-hi! link Label                        Normal
 hi! link Macro                        PreProc
 hi! link Number                       Constant
-hi! link Operator                     Normal
 hi! link PreCondit                    PreProc
-hi! link Repeat                       Normal
 hi! link SpecialChar                  Special
 hi! link SpecialComment               Special
 hi! link StorageClass                 Type
@@ -200,11 +195,16 @@ hi! link StatusLineTermNC             StatusLineNC
 hi! link TabLineSel                   Search
 hi! link TabLineFill                  TabLine
 hi! link lCursor                      Cursor
-hi! link jsParensError                Normal
 hi! link PmenuSbar                    Pmenu
 hi! link Substitute                   IncSearch
 hi! link WildMenu                     Visual
-hi! link Title                        Normal
+hi Operator                     guifg=#635954 ctermfg=241  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
+hi Repeat                       guifg=#635954 ctermfg=241  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
+hi jsParensError                guifg=#635954 ctermfg=241  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
+hi Title                        guifg=#635954 ctermfg=241  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
+hi Exception                    guifg=#635954 ctermfg=241  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
+hi Keyword                      guifg=#635954 ctermfg=241  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
+hi Label                        guifg=#635954 ctermfg=241  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
 
 " -------------- LSP ----------------------------
 hi! link DiagnosticsError           Error
@@ -227,7 +227,6 @@ hi! link DiagnosticSignError        Error
 hi! link DiagnosticSignWarn         WarningMsg
 hi! link DiagnosticSignInfo         DiffText
 hi! link DiagnosticSignHint         Normal
-
 hi! link LspDiagnosticsDefaultError       DiagnosticError
 hi! link LspDiagnosticsDefaultHint        DiagnosticHint
 hi! link LspDiagnosticsDefaultWarning     DiagnosticWarn
@@ -340,6 +339,15 @@ hi! link ConflictMarkerOurs DiffAdd
 " ConflictMarkerSeparator ========
 hi! link ConflictMarkerTheirs DiffText
 hi! link ConflictMarkerEnd DiffText
+
+" -------------- treesitter-context  ------------
+" The foreground colors are taken from actual Treesitter highlight groups. You
+" can only set the background color. On the other hand, setting guifg on the
+" TreesitterContextBottom group also seems to affect some of the other color?
+" It's unclear to me how this is supposed to work.
+hi TreesitterContextBottom gui=underline
+hi! link TreesitterContext Pmenu
+
 " -------------- which-key ----------------------
 hi       WhichKeySeperator guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE guisp=NONE gui=NONE cterm=NONE
 hi! link WhichKeyFloating  Pmenu
