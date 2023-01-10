@@ -1,3 +1,4 @@
+" https://hslpicker.com/
 " | Color             | HEX    | Number | HSL                  | Notes      |
 " | ----------------- | ------ | ------ | -------------------- | ---------- |
 " | black_15          | 292523 | 236    | hsl(20°,  8%,   15%) |            |
@@ -7,21 +8,18 @@
 " | green_25          | 408000 | 70     | hsl(90°,  100%, 25%) |            |
 " | green_91          | e8ffd1 | 193    | hsl(90°,  100%, 91%) |            |
 " | orange_51         | E44C22 | 166    | hsl(13°,  78%,  51%) |            |
-" | red_36            | a7111d | 124    | hsl(355°, 82%,  36%) | TODO       |
-" | red_94            | ffe0e0 | 224    | hsl(0°,   100%, 94%) | TODO       |
-" | yellow_36         | 7b6a3d | 94     | hsl(44°,  34%,  36%) | TODO       |
-" | yellow_82         | f9ffa3 | 229    | hsl(64°,  100%, 82%) | TODO       |
+" | red_36            | a7111d | 124    | hsl(355°, 82%,  36%) |            |
+" | red_94            | fce3e5 | 224    | hsl(355°, 82%,  94%) |            |
+" | yellow_26         | 7c8500 | 94     | hsl(64°,  100%, 26%) |            |
+" | yellow_82         | f9ffa3 | 229    | hsl(64°,  100%, 82%) |            |
 " | purple_45         | 371ec8 | 19     | hsl(249°, 74%,  45%) |            |
 " | purple_55         | 5137e1 | 62     | hsl(249°, 74%,  55%) |            |
 " | purple_65         | 7864e8 | 99     | hsl(249°, 74%,  65%) |            |
 " | purple_87         | cdc5f6 | 147    | hsl(249,  74%,  87%) |            |
 " | purple_91         | DCD7F9 | 189    | hsl(249°, 74%,  91%) |            |
-" | purple_99         | fdfcfe | 189    | hsl(270°, 49%,  99%) | TODO       |
-" | blue_28           | e6f2fa | 25     | hsl(203°, 100%, 28%) |            |
-" | blue_94           | 268bd2 | 195    | hsl(203°, 100%, 94%) |            |
-" | blue2             | 268bd2 | 33     |                      | TODO       |
-" | blue3             | e6f2fa | 195    |                      | TODO       |
-" | white_75          | cfbfb0 | 251    | hsl(29°,  24%,  75%) | TODO       |
+" | blue_91           | d8ebf8 | 195    | hsl(205°, 69%,  91%) |            |
+" | blue_28           | 165079 | 25     | hsl(205°, 69%,  28%) |            |
+" | white_75          | cfbfb0 | 251    | hsl(30°,  24%,  75%) |            |
 " | white_82          | dcd1c6 | 252    | hsl(30°,  24%,  82%) |            |
 " | white_88          | e8e0d9 | 253    | hsl(30°,  24%,  88%) |            |
 " | white_92          | efeae5 | 254    | hsl(30°,  24%,  92%) | BACKGROUND |
@@ -45,7 +43,7 @@ if has('nvim')
   let g:terminal_color_0 = '#635954'
   let g:terminal_color_1 = '#a7111d'
   let g:terminal_color_2 = '#408000'
-  let g:terminal_color_3 = '#7b6a3d'
+  let g:terminal_color_3 = '#7c8500'
   let g:terminal_color_4 = '#00588f'
   let g:terminal_color_5 = '#5137e1'
   let g:terminal_color_6 = '#007575'
@@ -53,7 +51,7 @@ if has('nvim')
   let g:terminal_color_8 = '#635954'
   let g:terminal_color_9 = '#a7111d'
   let g:terminal_color_10 = '#408000'
-  let g:terminal_color_11 = '#7b6a3d'
+  let g:terminal_color_11 = '#7c8500'
   let g:terminal_color_12 = '#00588f'
   let g:terminal_color_13 = '#7864e8'
   let g:terminal_color_14 = '#007575'
@@ -63,7 +61,7 @@ else
 	\'#635954', 
 	\'#a7111d', 
 	\'#408000', 
-	\'#7b6a3d',
+	\'#7c8500',
 	\'#00588f',
 	\'#5137e1',
 	\'#007575',
@@ -71,7 +69,7 @@ else
 	\'#635954',
 	\'#a7111d',
 	\'#408000',
-	\'#7b6a3d',
+	\'#7c8500',
 	\'#00588f',
 	\'#7864e8',
 	\'#007575',
@@ -88,12 +86,12 @@ hi   CursorIM                 guifg=NONE    ctermfg=NONE guibg=fg      ctermbg=f
 hi   CursorLine               guifg=fg      ctermfg=fg   guibg=#fbfaf9 ctermbg=255  guisp=NONE    gui=NONE      cterm=NONE
 hi   CursorLineNr             guifg=fg      ctermfg=fg   guibg=#fbfaf9 ctermbg=255  guisp=NONE    gui=NONE      cterm=NONE
 hi   DiffAdd                  guifg=#408000 ctermfg=70   guibg=#e8ffd1 ctermbg=193  guisp=NONE    gui=NONE      cterm=NONE
-hi   DiffChange               guifg=#7b6a3d ctermfg=94   guibg=#f9ffa3 ctermbg=229  guisp=NONE    gui=NONE      cterm=NONE
-hi   DiffDelete               guifg=#a7111d ctermfg=124  guibg=#ffe0e0 ctermbg=224  guisp=NONE    gui=NONE      cterm=NONE
-hi   DiffText                 guifg=#00588f ctermfg=25   guibg=#e0f3ff ctermbg=195  guisp=NONE    gui=NONE      cterm=NONE
+hi   DiffChange               guifg=#7c8500 ctermfg=94   guibg=#f9ffa3 ctermbg=229  guisp=NONE    gui=NONE      cterm=NONE
+hi   DiffDelete               guifg=#a7111d ctermfg=124  guibg=#fce3e5 ctermbg=224  guisp=NONE    gui=NONE      cterm=NONE
+hi   DiffText                 guifg=#165079 ctermfg=25   guibg=#d8ebf8 ctermbg=195  guisp=NONE    gui=NONE      cterm=NONE
 hi   Directory                guifg=fg      ctermfg=fg   guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
-hi   Error                    guifg=#a7111d ctermfg=124  guibg=#ffe0e0 ctermbg=224  guisp=NONE    gui=NONE      cterm=NONE
-hi   ErrorMsg                 guifg=#a7111d ctermfg=124  guibg=#ffe0e0 ctermbg=224  guisp=NONE    gui=NONE      cterm=NONE
+hi   Error                    guifg=#a7111d ctermfg=124  guibg=#fce3e5 ctermbg=224  guisp=NONE    gui=NONE      cterm=NONE
+hi   ErrorMsg                 guifg=#a7111d ctermfg=124  guibg=#fce3e5 ctermbg=224  guisp=NONE    gui=NONE      cterm=NONE
 hi   Identifier               guifg=fg      ctermfg=fg   guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 hi   Ignore                   guifg=fg      ctermfg=fg   guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 hi   IncSearch                guifg=#DCD7F9 ctermfg=189  guibg=#5137e1 ctermbg=62   guisp=NONE    gui=NONE      cterm=NONE
@@ -111,7 +109,7 @@ hi   Search                   guifg=#5137e1 ctermfg=62   guibg=#DCD7F9 ctermbg=1
 hi   Visual                   guifg=#371ec8 ctermfg=19   guibg=#cdc5f6 ctermbg=147  guisp=NONE    gui=NONE      cterm=NONE
 hi   Special                  guifg=fg      ctermfg=fg   guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 hi   SpecialKey               guifg=#b4aba7 ctermfg=249  guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
-hi   SpellBad                 guifg=#a7111d ctermfg=124  guibg=#ffe0e0 ctermbg=224  guisp=NONE    gui=NONE      cterm=NONE
+hi   SpellBad                 guifg=#a7111d ctermfg=124  guibg=#fce3e5 ctermbg=224  guisp=NONE    gui=NONE      cterm=NONE
 hi   SpellCap                 guifg=NONE    ctermfg=NONE guibg=NONE    ctermbg=NONE guisp=#a7111d gui=undercurl cterm=undercurl
 hi   SpellLocal               guifg=fg      ctermfg=fg   guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 hi   SpellRare                guifg=fg      ctermfg=NONE guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
@@ -126,7 +124,7 @@ hi   Type                     guifg=NONE    ctermfg=NONE guibg=NONE    ctermbg=N
 hi   Underlined               guifg=fg      ctermfg=fg   guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 hi   VertSplit                guifg=#cfbfb0 ctermfg=251  guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 hi   VisualNOS                guifg=NONE    ctermfg=NONE guibg=#fbfaf9 ctermbg=255  guisp=NONE    gui=NONE      cterm=NONE
-hi   WarningMsg               guifg=#7b6a3d ctermfg=94   guibg=#f9ffa3 ctermbg=229  guisp=NONE    gui=NONE      cterm=NONE
+hi   WarningMsg               guifg=#7c8500 ctermfg=94   guibg=#f9ffa3 ctermbg=229  guisp=NONE    gui=NONE      cterm=NONE
 hi   Whitespace               guifg=#b4aba7 ctermfg=249  guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 
 " These are Vim only
@@ -314,11 +312,11 @@ if lightline_enabled == v:true
   let s:p.normal.left = [ ['#e8ffd1', '#408000', 241, 254 ], ['#efeae5', '#7f726c', 241, 254 ] ]
   let s:p.normal.right = [ ['#efeae5', '#635954', 241, 254 ], ['#efeae5', '#7f726c', 241, 254 ], [ '#292523', '#b4aba7', 245, 236 ] ]
   let s:p.normal.middle = [ [ '#635954', '#b4aba7', 245, 236 ] ]
-  let s:p.insert.left =  [ ['#e6f2fa', '#268bd2', 195, 25 ], ['#efeae5', '#7f726c', 241, 254 ] ]
-  let s:p.visual.left = [ [ '#fdfcfe', '#5137e1', 124, 231 ], ['#efeae5', '#7f726c', 241, 254 ] ]
+  let s:p.insert.left =  [ ['#d8ebf8', '#165079', 195, 25 ], ['#efeae5', '#7f726c', 241, 254 ] ]
+  let s:p.visual.left = [ [ '#DCD7F9', '#5137e1', 124, 231 ], ['#efeae5', '#7f726c', 241, 254 ] ]
   let s:p.replace.left = [ [ '#ffffff', '#e44c22', 57, 231 ], ['#efeae5', '#7f726c', 241, 254 ] ]
-  let s:p.normal.error = [ [ '#ffe0e0', '#a7111d', 224, 124 ] ]
-  let s:p.normal.warning = [ [ '#f9ffa3', '#7b6a3d', 229, 94 ] ]
+  let s:p.normal.error = [ [ '#fce3e5', '#a7111d', 224, 124 ] ]
+  let s:p.normal.warning = [ [ '#f9ffa3', '#7c8500', 229, 94 ] ]
   let s:p.inactive.right = [ [ '#7f726c', '#cfbfb0', 233, 235 ], [ '#7f726c', '#cfbfb0', 233, 235 ], [ '#7f726c', '#cfbfb0', 233, 235 ] ]
   let s:p.inactive.left = s:p.inactive.right[1:]
   let s:p.inactive.middle = [ [ '#7f726c', '#dcd1c6', 233, 235 ] ]
