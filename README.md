@@ -61,49 +61,6 @@ let g:lightline = {
 - `1`: comments are orange
 - `0` (**default**): comments are faded, as before
 
-## Changelog
-
-- Fix bug
-- Add conflict-marker.vim support
-- Add lightline support
-- Fix typo where DiagnosticWarning was used instead of DiagnosticWarn
-- Update Diagnostic colors for Neovim 0.6
-- Link Exception, Operator, Label, Keyword and Repeat to Normal to remove italic
-- Make ColorColumn visible and make Visual bg a bit lighter
-- Link LspDiagnosticsDefaultInformation to DiffText so it can be better
-  differentiated from the surrounding text
-- link HlSearchNear to Search, otherwise cursor is inverted and hard to see
-- Add colors for nvim-hlslens
-- Don't force BG colors for markdown because it doesn't work well with
-  Neovim popup windows
-- Force LSP popup background to NONE
-- Add LspDiagnosticsDefaultHint and LspDiagnosticsDefaultInformation
-- Start adding some XML groups
-- Overhaul entire theme
-    - Better contrast for Normal
-    - Active StatusLine is now dark
-    - Use purple for all selection things (Visual, Search, 
-      PMenu, WildMenu, TabLine)
-    - Get rid of some duplicate but slightly different colors
-    - Make MatchParen stand out more
-    - Make sure all colors have a 256 color value
-    - Add 'bg' option to comments
-- Remove Colortemplate
-- Add magenta and cyan and use for Term colors
-- Add signcolumn customization option
-- Add vim-dirvish colors
-- Adjust LspDiagnostics colors
-- Adjust WhichKeySeperator color so it's normal FG without bg
-- Add some WhichKey colors and fix typo in WhichKeySeperator
-- Add colors for neovim LSP
-- Fix Cursor color which did not specify a background
-  Add yui_folds option and overhaul folded text in general
-- Add Whitespace and SpecialKey and link to LineNr
-- Use Constant for helpCommand and helpBacktick (makes both bold) instead of
-  defaulting to Comments
-- Add purple background for search results (Search and IncSearch)
-- Add `yui_comments` option
-
 ## Screenshots
 
 ![Screenshot #1](./screenshots/yui_1.png)
