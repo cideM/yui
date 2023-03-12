@@ -77,7 +77,7 @@ else
 endif
 
 hi   Normal                   guifg=#635954 ctermfg=241  guibg=#efeae5 ctermbg=254  guisp=NONE    gui=NONE      cterm=NONE
-hi   ColorColumn              guifg=fg      ctermfg=fg   guibg=#e8e0d9    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
+hi   ColorColumn              guifg=fg      ctermfg=fg   guibg=#e8e0d9 ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 hi   Conceal                  guifg=#cfbfb0 ctermfg=251  guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 hi   Constant                 guifg=#292523 ctermfg=236  guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 hi   CursorColumn             guifg=NONE    ctermfg=NONE guibg=#fbfaf9 ctermbg=255  guisp=NONE    gui=NONE      cterm=NONE
@@ -116,7 +116,7 @@ hi   SpellRare                guifg=fg      ctermfg=NONE guibg=NONE    ctermbg=N
 hi   Statement                guifg=fg      ctermfg=fg   guibg=NONE    ctermbg=NONE guisp=NONE    gui=italic    cterm=italic
 hi   StatusLine               guifg=bg      ctermfg=bg   guibg=fg      ctermbg=fg   guisp=NONE    gui=bold      cterm=NONE
 hi   StatusLineNC             guifg=fg      ctermfg=fg   guibg=#dcd1c6 ctermbg=252  guisp=NONE    gui=NONE      cterm=NONE
-hi   Terminal                 guifg=fg      ctermfg=fg   guibg=#efeae5 ctermbg=254  guisp=NONE    gui=NONE      cterm=NONE
+hi   Terminal                 guifg=fg      ctermfg=fg   guibg=bg      ctermbg=bg   guisp=NONE    gui=NONE      cterm=NONE
 hi   Todo                     guifg=NONE    ctermfg=NONE guibg=NONE    ctermbg=NONE guisp=NONE    gui=underline cterm=underline
 hi   ToolbarButton            guifg=fg      ctermfg=fg   guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 hi   ToolbarLine              guifg=NONE    ctermfg=NONE guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
@@ -141,7 +141,7 @@ elseif comments ==? 'fade'
 elseif comments ==? 'normal'
   hi Comment                  guifg=#7f726c ctermfg=241  guibg=NONE    ctermbg=NONE guisp=NONE    gui=italic    cterm=italic
 elseif comments ==? 'bg'
-  hi Comment                  guifg=fg      ctermfg=241  guibg=#e8e0d9 ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
+  hi Comment                  guifg=fg      ctermfg=fg  guibg=#e8e0d9 ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 endif
 
 let folds = get(g:, 'yui_folds', 'fade')
@@ -158,7 +158,7 @@ if linenr ==? 'emphasize'
   hi SignColumn               guifg=#7f726c ctermfg=243  guibg=#dcd1c6 ctermbg=254  guisp=NONE    gui=NONE      cterm=NONE
   hi LineNr                   guifg=#7f726c ctermfg=243  guibg=#dcd1c6 ctermbg=254  guisp=NONE    gui=NONE      cterm=NONE
 elseif linenr ==? 'fade'
-  hi SignColumn               guifg=#635954 ctermfg=241  guibg=#efeae5 ctermbg=255  guisp=NONE    gui=NONE      cterm=NONE
+  hi SignColumn               guifg=fg      ctermfg=fg   guibg=bg      ctermbg=255  guisp=NONE    gui=NONE      cterm=NONE
   hi LineNr                   guifg=#b4aba7 ctermfg=181  guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 endif
 
@@ -196,13 +196,13 @@ hi! link lCursor                      Cursor
 hi! link PmenuSbar                    Pmenu
 hi! link Substitute                   IncSearch
 hi! link WildMenu                     Visual
-hi Operator                     guifg=#635954 ctermfg=241  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
-hi Repeat                       guifg=#635954 ctermfg=241  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
-hi jsParensError                guifg=#635954 ctermfg=241  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
-hi Title                        guifg=#635954 ctermfg=241  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
-hi Exception                    guifg=#635954 ctermfg=241  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
-hi Keyword                      guifg=#635954 ctermfg=241  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
-hi Label                        guifg=#635954 ctermfg=241  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
+hi Operator                     guifg=fg ctermfg=fg  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
+hi Repeat                       guifg=fg ctermfg=fg  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
+hi jsParensError                guifg=fg ctermfg=fg  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
+hi Title                        guifg=fg ctermfg=fg  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
+hi Exception                    guifg=fg ctermfg=fg  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
+hi Keyword                      guifg=fg ctermfg=fg  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
+hi Label                        guifg=fg ctermfg=fg  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
 
 " -------------- LSP ----------------------------
 hi! link DiagnosticsError           Error
@@ -269,10 +269,10 @@ hi  mkdItalic                guifg=NONE    ctermfg=NONE guibg=NONE    ctermbg=NO
 hi  markdownBold             guifg=NONE    ctermfg=NONE guibg=NONE    ctermbg=NONE guisp=NONE    gui=bold      cterm=bold
 hi  markdownUrl              guifg=NONE    ctermfg=NONE guibg=NONE    ctermbg=NONE guisp=NONE    gui=underline cterm=underline
 hi  markdownHeadingDelimiter guifg=NONE    ctermfg=NONE guibg=NONE    ctermbg=NONE guisp=NONE    gui=underline cterm=NONE
-hi  mkdCode                           guifg=#635954 ctermfg=241  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
-hi  mkdCodeDelimiter                  guifg=#635954 ctermfg=241  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
+hi  mkdCode                           guifg=fg ctermfg=fg  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
+hi  mkdCodeDelimiter                  guifg=fg ctermfg=fg  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
 hi! link markdownItalic               mkdItalic
-hi  markdownLinkText                  guifg=#635954 ctermfg=241  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
+hi  markdownLinkText                  guifg=fg ctermfg=fg  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
 hi! link markdownH1                   mkdHeading
 hi! link markdownH1Delimiter          markdownHeadingDelimiter
 hi! link markdownH2                   mkdHeading
