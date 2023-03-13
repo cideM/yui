@@ -83,6 +83,8 @@ endif
 "======== UI COLORS =========
 
 hi        Normal                      guifg=#635954 ctermfg=241  guibg=#efeae5 ctermbg=254  guisp=NONE    gui=NONE      cterm=NONE
+hi        NormalNC                    guifg=#7f726c ctermfg=246  guibg=#efeae5 ctermbg=254  guisp=NONE    gui=NONE      cterm=NONE
+hi        MsgArea                     guifg=#7f726c ctermfg=246  guibg=#e8e0d9 ctermbg=253  guisp=NONE    gui=NONE      cterm=NONE
 hi        ColorColumn                 guifg=fg      ctermfg=fg   guibg=#e8e0d9 ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 hi        Conceal                     guifg=#cfbfb0 ctermfg=251  guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 hi        Constant                    guifg=#292523 ctermfg=236  guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
@@ -112,6 +114,7 @@ hi        PmenuThumb                  guifg=NONE    ctermfg=NONE guibg=fg      c
 hi        PreProc                     guifg=fg      ctermfg=fg   guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 hi        Question                    guifg=fg      ctermfg=fg   guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 hi        Search                      guifg=#5137e1 ctermfg=62   guibg=#DCD7F9 ctermbg=189  guisp=NONE    gui=NONE      cterm=NONE
+hi        CurSearch                   guifg=#DCD7F9 ctermfg=189  guibg=#7864e8 ctermbg=99   guisp=NONE    gui=NONE      cterm=NONE
 hi        Visual                      guifg=#371ec8 ctermfg=19   guibg=#cdc5f6 ctermbg=147  guisp=NONE    gui=NONE      cterm=NONE
 hi        Special                     guifg=fg      ctermfg=fg   guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
 hi        SpecialKey                  guifg=#b4aba7 ctermfg=249  guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
@@ -132,6 +135,13 @@ hi        VertSplit                   guifg=#cfbfb0 ctermfg=251  guibg=NONE    c
 hi        VisualNOS                   guifg=NONE    ctermfg=NONE guibg=#fbfaf9 ctermbg=255  guisp=NONE    gui=NONE      cterm=NONE
 hi        WarningMsg                  guifg=#7c8500 ctermfg=94   guibg=#f9ffa3 ctermbg=229  guisp=NONE    gui=NONE      cterm=NONE
 hi        Whitespace                  guifg=#b4aba7 ctermfg=249  guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
+hi        Tooltip                     guifg=fg                   guibg=#e8e0d9
+hi        Menu                        guifg=fg                   guibg=#e8e0d9
+hi        Scrollbar                   guifg=NONE                 guibg=#e8e0d9
+hi        Title                       guifg=fg ctermfg=fg        guibg=NONE    ctermbg=NONE guisp=NONE    gui=NONE      cterm=NONE
+hi!  link WinBar           TabLineSel
+hi!  link WinBarNC         TabLine
+hi!  link MsgSeparator     VertSplit
 hi!  link EndOfBuffer      NonText
 hi!  link QuickFixLine     Search
 hi!  link diffAdded        DiffAdd
@@ -146,11 +156,7 @@ hi!  link TabLineFill      TabLine
 hi!  link lCursor          Cursor
 hi!  link PmenuSbar        Pmenu
 hi!  link WildMenu         Visual
-
-if !has('nvim')
-  hi Tooltip                  guifg=fg      ctermfg=fg   guibg=#e8e0d9 ctermbg=253  guisp=NONE    gui=NONE      cterm=NONE
-  hi Menu                     guifg=fg      ctermfg=fg   guibg=#e8e0d9 ctermbg=253  guisp=NONE    gui=NONE      cterm=NONE
-endif
+hi!  link NormalFloat      Normal
 
 let folds = get(g:, 'yui_folds', 'fade')
 if folds ==? 'emphasize'
