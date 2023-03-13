@@ -235,7 +235,6 @@ hi! link Substitute       IncSearch
 hi       Operator                     guifg=fg ctermfg=fg  guibg=NONE ctermbg=NONE  guisp=NONE gui=NONE cterm=NONE
 hi       Repeat                       guifg=fg ctermfg=fg  guibg=NONE ctermbg=NONE  guisp=NONE gui=NONE cterm=NONE
 hi       jsParensError                guifg=fg ctermfg=fg  guibg=NONE ctermbg=NONE  guisp=NONE gui=NONE cterm=NONE
-hi       Title                        guifg=fg ctermfg=fg  guibg=NONE ctermbg=NONE  guisp=NONE gui=NONE cterm=NONE
 hi       Exception                    guifg=fg ctermfg=fg  guibg=NONE ctermbg=NONE  guisp=NONE gui=NONE cterm=NONE
 hi       Keyword                      guifg=fg ctermfg=fg  guibg=NONE ctermbg=NONE  guisp=NONE gui=NONE cterm=NONE
 hi       Label                        guifg=fg ctermfg=fg  guibg=NONE ctermbg=NONE  guisp=NONE gui=NONE cterm=NONE
