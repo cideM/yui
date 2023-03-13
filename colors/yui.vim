@@ -321,20 +321,50 @@ hi! link HlSearchNear Search
 let lightline_enabled = get(g:, 'yui_lightline', v:false)
 if lightline_enabled == v:true
   let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
-  let s:p.normal.left = [ ['#e8ffd1', '#408000', 241, 254 ], ['#efeae5', '#7f726c', 241, 254 ] ]
-  let s:p.normal.right = [ ['#efeae5', '#635954', 241, 254 ], ['#efeae5', '#7f726c', 241, 254 ], [ '#292523', '#b4aba7', 245, 236 ] ]
-  let s:p.normal.middle = [ [ '#635954', '#b4aba7', 245, 236 ] ]
-  let s:p.insert.left =  [ ['#d8ebf8', '#165079', 195, 25 ], ['#efeae5', '#7f726c', 241, 254 ] ]
-  let s:p.visual.left = [ [ '#DCD7F9', '#5137e1', 124, 231 ], ['#efeae5', '#7f726c', 241, 254 ] ]
-  let s:p.replace.left = [ [ '#ffffff', '#e44c22', 57, 231 ], ['#efeae5', '#7f726c', 241, 254 ] ]
-  let s:p.normal.error = [ [ '#fce3e5', '#a7111d', 224, 124 ] ]
-  let s:p.normal.warning = [ [ '#f9ffa3', '#7c8500', 229, 94 ] ]
-  let s:p.inactive.right = [ [ '#7f726c', '#cfbfb0', 233, 235 ], [ '#7f726c', '#cfbfb0', 233, 235 ], [ '#7f726c', '#cfbfb0', 233, 235 ] ]
+  let s:p.normal.left = [
+        \['#e8ffd1', '#408000', 241, 254],
+        \['#efeae5', '#7f726c', 241, 254]
+        \]
+  let s:p.normal.right = [
+        \['#efeae5', '#635954', 241, 254],
+        \['#efeae5', '#7f726c', 241, 254],
+        \['#292523', '#b4aba7', 245, 236]
+        \]
+  let s:p.normal.middle = [
+        \[ '#635954', '#b4aba7', 245, 236]
+        \]
+  let s:p.insert.left =  [ 
+        \['#d8ebf8', '#165079', 195, 25],
+        \['#efeae5', '#7f726c', 241, 254]
+        \]
+  let s:p.visual.left = [
+        \['#DCD7F9', '#5137e1', 124, 231],
+        \['#efeae5', '#7f726c', 241, 254]
+        \]
+  let s:p.replace.left = [
+        \['#ffffff', '#e44c22', 57, 231],
+        \['#efeae5', '#7f726c', 241, 254]
+        \]
+  let s:p.normal.error = [
+        \['#fce3e5', '#a7111d', 224, 124]
+        \]
+  let s:p.normal.warning = [
+        \['#f9ffa3', '#7c8500', 229, 94]
+        \]
+  let s:p.inactive.right = [
+        \['#7f726c', '#cfbfb0', 233, 235],
+        \['#7f726c', '#cfbfb0', 233, 235],
+        \['#7f726c', '#cfbfb0', 233, 235]
+        \]
   let s:p.inactive.left = s:p.inactive.right[1:]
-  let s:p.inactive.middle = [ [ '#7f726c', '#dcd1c6', 233, 235 ] ]
+  let s:p.inactive.middle = [
+        \['#7f726c', '#dcd1c6', 233, 235]
+        \]
   let s:p.tabline.left = s:p.inactive.middle
   let s:p.tabline.tabsel = s:p.normal.left[1:]
-  let s:p.tabline.middle = [ [ '#635954', '#efeae5', 254, 241] ]
+  let s:p.tabline.middle = [
+        \['#635954', '#efeae5', 254, 241]
+        \]
   let s:p.tabline.right = s:p.normal.left[1:]
 
   let g:lightline#colorscheme#yui#palette = s:p
