@@ -196,7 +196,7 @@ endif
 " > For example, the default highlighting for |hl-DiagnosticSignError| is linked
 " > to |hl-DiagnosticError|.
 
-hi! link DiagnosticsError           Error
+hi! link DiagnosticError           Error
 hi! link DiagnosticWarn             WarningMsg
 hi! link DiagnosticInfo             DiffText
 hi DiagnosticHint                                guifg=#635954 ctermfg=241  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
