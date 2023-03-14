@@ -156,7 +156,6 @@ hi!  link TabLineFill      TabLine
 hi!  link lCursor          Cursor
 hi!  link PmenuSbar        Pmenu
 hi!  link WildMenu         Visual
-hi!  link NormalFloat      Normal
 
 let folds = get(g:, 'yui_folds', 'fade')
 if folds ==? 'emphasize'
