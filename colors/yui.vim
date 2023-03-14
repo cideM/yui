@@ -208,11 +208,6 @@ hi! link DiagnosticSignError        Error
 hi! link DiagnosticSignWarn         WarningMsg
 hi! link DiagnosticSignInfo         DiffText
 hi! link DiagnosticSignHint         Normal
-hi! link LspDiagnosticsDefaultError       DiagnosticError
-hi! link LspDiagnosticsDefaultHint        DiagnosticHint
-hi! link LspDiagnosticsDefaultWarning     DiagnosticWarn
-hi! link LspDiagnosticsDefaultInformation DiagnosticInfo
-hi! link LspDiagnosticsUnderlineError     Error
 hi! link LspSignatureActiveParameter Search
 
 "======== SYNTAX ============
