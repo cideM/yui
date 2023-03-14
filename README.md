@@ -1,66 +1,31 @@
 # YUI
 
-## Intro
+A truly minimal color scheme inspired by the [Field Notes "Rams"
+Notebook](https://fieldnotesbrand.com/products/rams).
 
-Experimental color scheme without any colors, except what's required to display a meaningful `diff`.
-All syntax differentiation is achieved through font styles, so your terminal needs to support bold and italic text.
+## Documentation
 
-Shades are used for things like dimming folded text.
+Please check [the plugin documentation in the help text](./doc/yui.txt) with
+`:h yui.txt`
 
 ## Supported Plugins
 
+Make sure to check [the plugin documentation in the help text](./doc/yui.txt)
+with `h:yui.txt` for further information on some of these integrations.
+
 - `nvim-hlslens`
-- `lightline`: if you use `lightline` and have `yui` set as a color scheme,
-  `yui` will automatically set the `lightline` color palette (see `yui_lightline` option)
+- `lightline`
+- `fugitive`
 - `dirvish`
 - `vim-sneak`
 - `gitsigns`
 - `conflict-marker.vim`
 - `which-key`
+- `leap`
 
-## Options
+## Contributing
 
-This information can also be found in the help, `:help yui`
-
-### `g:yui_lightline`
-
-- `v:false` (**default**): do not register the `yui` palette with `lightline`
-- `v:true`: register the `yui` palette with `lightline`. You still need
-  to set the lightline color scheme to `yui`.
-
-```vimscript
-let g:yui_lightline = v:true
-colorscheme yui
-let g:lightline = {
-  \ 'colorscheme': 'yui'
-  \ }
-```
-
-### `g:yui_folds`
-
-- `fade` (**default**): makes folded text less visible
-- `emphasize`: gives folded text a distinct background color
-
-### `g:yui_line_numbers`
-
-- `fade` (**default**): makes line numbers and signcolumn text less visible
-- `emphasize`: gives line numbers and signcolumn text a distinct background color
-
-### `g:yui_comments`
-
-`g:yui_emphasized_comments` takes precedence for backwards compatibility
-
-- `fade`: makes comments less visible
-- `emphasize`: makes comments more visible and is equivalent to `yui_emphasized_comments = 1`
-- `normal` (**default**): does not affect comment visibility
-- `bg`: make comments stand out by giving them a background. Text is not italic.
-
-### `g:yui_emphasized_comments`
-
-**DEPRECATED**: Use `g:yui_comments` instead
-
-- `1`: comments are orange
-- `0` (**default**): comments are faded, as before
+Please see [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ## Screenshots
 

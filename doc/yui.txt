@@ -1,63 +1,76 @@
+*yui.txt*                             A minimal colorscheme for Vim and Neovim
 
 YUI | ユイ
 
-===========================================================================
-Yui options                                     *yui-options*
+==============================================================================
+OPTIONS                                                          *yui-options*
 
-                                                *g:yui_lightline*
+                                                                 *g:yui_folds*
 
-Default: v:false
+g:yui_folds~
 
-- v:true: register the "yui" lightline color palette. You still need to
-  set the lightline colorscheme to "yui" as well.
+How folds should be displayed
+* 'emphasize':                                        Make folds more visible
+* 'fade':                                            Fade out folds (default)
 
->
+Example: >
+  let g:yui_folds = 'fade'
+<
+
+------------------------------------------------------------------------------
+                                                          *g:yui_line_numbers*
+
+g:yui_line_numbers~
+
+How line numbers should be displayed
+* 'emphasize':                                 Make line numbers more visible
+* 'fade':                                     Fade out line numbers (default)
+
+Example: >
+  let g:yui_line_numbers = 'fade'
+<
+
+------------------------------------------------------------------------------
+                                                   *g:yui_emphasized_comments*
+
+g:yui_emphasized_comments~
+
+DEPRECATED: Use |yui_comments| instead
+
+Whether to emphasize comments
+* 0:                                                Do not emphasize comments
+* 1:                                                       Emphasize comments
+
+Example: >
+  let g:yui_emphasized_comments = 0
+<
+
+------------------------------------------------------------------------------
+                                                              *g:yui_comments*
+
+g:yui_comments~
+
+How comments should be displayed
+* 'bg':                                 Make comments have a background color
+* 'emphasize':                                             Emphasize comments
+* 'fade':                                                   Fade out comments
+* 'normal':                               Do not emphasize comments (default)
+
+Example: >
+  let g:yui_comments = 'normal'
+<
+
+------------------------------------------------------------------------------
+                                                             *g:yui_lightline*
+
+g:yui_lightline~
+
+Whether to use the lightline theme
+* v:true:                                             Use the lightline theme
+
+Example: >
   let g:yui_lightline = v:true
   let g:lightline.colorscheme = 'yui'
 <
 
-                                                *g:yui_emphasized_comments*
-
-Deprecated: Please use |g:yui_comments| instead.
-
-Set to 1 if you want comments to be emphasized by making them orange. 
-
->
-  let g:yui_emphasized_comments = 0
-<
-
-                                                *g:yui_comments*
-
-- 'emphasize': orange text
-- 'fade': text less visible
-- 'bg': text non-italic but different background
-- 'normal': Default. Italic text, same color as Normal text
-
-g:yui_emphasized_comments takes precedence to preserve backwards compatibility.
-
->
-  let g:yui_comments = 'emphasize'
-<
-
-                                                *g:yui_folds*
-
-Default: "fade"
-
-- 'emphasize': more visible background and foreground color combination
-- 'fade': text less visible
-
->
-  let g:yui_folds = 'emphasize'
-<
-
-                                                *g:yui_line_numbers*
-
-Default: "fade"
-
-Set to 'emphasize' if you want line numbers and signcolumn to be emphasized by
-giving it a more visible background and foreground color combination. Set to
-'fade' to make folded text less visible.
-
->
-  let g:yui_line_numbers = 'emphasize'
-<
+ vim:tw=78:et:ft=help:norl:
