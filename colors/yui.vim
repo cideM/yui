@@ -199,7 +199,7 @@ endif
 hi! link DiagnosticsError           Error
 hi! link DiagnosticWarn             WarningMsg
 hi! link DiagnosticInfo             DiffText
-hi! link DiagnosticHint             Normal
+hi DiagnosticHint                                guifg=#635954 ctermfg=241  guibg=NONE ctermbg=NONE  guisp=NONE    gui=NONE      cterm=NONE
 hi! link DiagnosticUnderlineError   Error
 hi! link DiagnosticUnderlineWarn    WarningMsg
 hi! link DiagnosticUnderlineInfo    DiffText
