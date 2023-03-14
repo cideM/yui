@@ -187,27 +187,23 @@ elseif comments ==? 'bg'
 endif
 
 "======== LSP ===============
+" Check :help diagnostic-highlights
+"
+" > By default, highlights for signs, floating windows, and virtual text are
+" > linked to the corresponding default highlight. Underline highlights are
+" > not linked and use their own default highlight groups.
+"
+" > For example, the default highlighting for |hl-DiagnosticSignError| is linked
+" > to |hl-DiagnosticError|.
 
 hi! link DiagnosticsError           Error
 hi! link DiagnosticWarn             WarningMsg
 hi! link DiagnosticInfo             DiffText
 hi! link DiagnosticHint             Normal
-hi! link DiagnosticVirtualTextError Error
-hi! link DiagnosticVirtualTextWarn  WarningMsg
-hi! link DiagnosticVirtualTextInfo  DiffText
-hi! link DiagnosticVirtualTextHint  Normal
 hi! link DiagnosticUnderlineError   Error
 hi! link DiagnosticUnderlineWarn    WarningMsg
 hi! link DiagnosticUnderlineInfo    DiffText
 hi! link DiagnosticUnderlineHint    Normal
-hi! link DiagnosticFloatingError    Error
-hi! link DiagnosticFloatingWarn     WarningMsg
-hi! link DiagnosticFloatingInfo     DiffText
-hi! link DiagnosticFloatingHint     Normal
-hi! link DiagnosticSignError        Error
-hi! link DiagnosticSignWarn         WarningMsg
-hi! link DiagnosticSignInfo         DiffText
-hi! link DiagnosticSignHint         Normal
 hi! link LspSignatureActiveParameter Search
 
 "======== SYNTAX ============
