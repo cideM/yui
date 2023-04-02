@@ -29,10 +29,9 @@ Please see [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ## Screenshots
 
-![Screenshot #1](./screenshots/yui_1.png)
-![Screenshot #2](./screenshots/yui_2.png)
-![Screenshot #3](./screenshots/yui_3.png)
-![Screenshot #4](./screenshots/yui_4.png)
-![Screenshot #5](./screenshots/yui_5.png)
-![Screenshot #6](./screenshots/yui_6.png)
-![Screenshot #7](./screenshots/yui_7.png)
+![Screenshot #1](screenshots/yui2.png)
+![Screenshot #2](screenshots/yui3.png)
+![Screenshot #3](screenshots/yui4.png)
+![Screenshot #4](screenshots/yui5.png)
+![Screenshot #5](screenshots/yui6.png)
+![Screenshot #6](screenshots/yui7.png)
