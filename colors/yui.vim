@@ -156,16 +156,20 @@ hi NormalFloat guifg=fg ctermfg=fg guibg=#ebe4dd ctermbg=254
 
 " Diagnostic
 hi! link DiagnosticError Error
+hi DiagnosticFloatingError guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi DiagnosticFloatingHint guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi DiagnosticFloatingInfo guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi DiagnosticFloatingWarn guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi DiagnosticHint guifg=#5f503e ctermfg=239 guibg=NONE ctermbg=NONE
 hi! link DiagnosticInfo DiffText
 hi DiagnosticSignError guifg=#350303 ctermfg=233 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi DiagnosticSignHint guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi DiagnosticSignHint guifg=#5f503e ctermfg=239 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi DiagnosticSignInfo guifg=#4a5054 ctermfg=239 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi DiagnosticSignWarn guifg=#7c4f18 ctermfg=94 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi! link DiagnosticUnderlineError Error
-hi! link DiagnosticUnderlineHint Normal
-hi! link DiagnosticUnderlineInfo DiffText
-hi! link DiagnosticUnderlineWarn WarningMsg
+hi DiagnosticUnderlineError guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#350303 gui=undercurl cterm=undercurl
+hi DiagnosticUnderlineHint guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#5f503e gui=undercurl cterm=undercurl
+hi DiagnosticUnderlineInfo guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#4a5054 gui=undercurl cterm=undercurl
+hi DiagnosticUnderlineWarn guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#7c4f18 gui=undercurl cterm=undercurl
 hi! link DiagnosticWarn WarningMsg
 
 " LSP
