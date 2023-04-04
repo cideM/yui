@@ -272,13 +272,13 @@ M.groups = {
 		{ name = "helpOption", guifg = "NONE", guibg = "NONE", gui = "bold" },
 		{ name = "helpSectionDelim", guifg = c.black4, guibg = "NONE", gui = "NONE" },
 		{ name = "helpSpecial", guifg = "NONE", guibg = "NONE", gui = "bold" },
-    { name = "helpURL", guifg = "NONE", guibg = "NONE", gui = "underline" },
+		{ name = "helpURL", guifg = "NONE", guibg = "NONE", gui = "underline" },
 	},
 
 	{
 		"Help Text TS",
-    { name = "@text.literal", link = "helpExample" },
-    { name = "@text.reference", link = "helpOption" },
+		{ name = "@text.literal", link = "helpExample" },
+		{ name = "@text.reference", link = "helpOption" },
 	},
 
 	{
