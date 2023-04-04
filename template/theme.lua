@@ -297,7 +297,20 @@ M.make_lightline = function(config)
 
 	for _, mode in ipairs(config_keys) do
 		local part = config[mode]
-		for name, lightline_groups in pairs(part) do
+
+		local names = {}
+		for name in pairs(part) do
+			table.insert(names, name)
+		end
+
+		-- Sort the names so that the lightline colors are defined in a predictable order
+		-- to avoid Git diffs due to random key order when iterating over a table.
+		table.sort(names, function(a, b)
+			return a > b
+		end)
+
+		for _, name in ipairs(names) do
+			local lightline_groups = part[name]
 			table.insert(lightline_lines, string.format("let s:p.%s.%s = [", mode, name))
 
 			for _, colors in ipairs(lightline_groups) do

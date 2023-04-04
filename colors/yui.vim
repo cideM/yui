@@ -353,11 +353,13 @@ if s:yui_lightline_value ==? v:true
 		\['#fdfcfb', '#ed3f1c', 231, 202],
 		\['#f6f3f0', '#72604b', 255, 59],
 		\]
-	let s:p.normal.error = [
-		\['#350303', '#f8acac', 233, 217],
-		\]
 	let s:p.normal.warning = [
 		\['#fef0e8', '#7c4f18', 255, 94],
+		\]
+	let s:p.normal.right = [
+		\['#f6f3f0', '#5f503e', 255, 239],
+		\['#f6f3f0', '#72604b', 255, 59],
+		\['#453a2c', '#867159', 237, 95],
 		\]
 	let s:p.normal.middle = [
 		\['#5f503e', '#867159', 239, 95],
@@ -366,24 +368,22 @@ if s:yui_lightline_value ==? v:true
 		\['#e2dba3', '#4e4b36', 187, 238],
 		\['#f6f3f0', '#72604b', 255, 59],
 		\]
-	let s:p.normal.right = [
-		\['#f6f3f0', '#5f503e', 255, 239],
-		\['#f6f3f0', '#72604b', 255, 59],
-		\['#453a2c', '#867159', 237, 95],
+	let s:p.normal.error = [
+		\['#350303', '#f8acac', 233, 217],
 		\]
 	let s:p.insert.left = [
 		\['#d9e0e3', '#4a5054', 253, 239],
 		\['#f6f3f0', '#72604b', 255, 59],
 		\]
+	let s:p.inactive.right = [
+		\['#72604b', '#d6c7b6', 59, 187],
+		\['#72604b', '#d6c7b6', 59, 187],
+		\['#72604b', '#d6c7b6', 59, 187],
+		\]
 	let s:p.inactive.middle = [
 		\['#72604b', '#e0d5ca', 59, 188],
 		\]
 	let s:p.inactive.left = [
-		\['#72604b', '#d6c7b6', 59, 187],
-		\['#72604b', '#d6c7b6', 59, 187],
-		\]
-	let s:p.inactive.right = [
-		\['#72604b', '#d6c7b6', 59, 187],
 		\['#72604b', '#d6c7b6', 59, 187],
 		\['#72604b', '#d6c7b6', 59, 187],
 		\]
