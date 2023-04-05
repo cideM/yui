@@ -13,7 +13,7 @@ let g:colors_name = 'yui'
   
 if has('nvim')
 	let g:terminal_color_0 = '#5f503e'
-	let g:terminal_color_1 = '#f8acac'
+	let g:terminal_color_1 = '#350303'
 	let g:terminal_color_2 = '#4e4b36'
 	let g:terminal_color_3 = '#7c4f18'
 	let g:terminal_color_4 = '#00588f'
@@ -21,7 +21,7 @@ if has('nvim')
 	let g:terminal_color_6 = '#4a5054'
 	let g:terminal_color_7 = '#f6f3f0'
 	let g:terminal_color_8 = '#5f503e'
-	let g:terminal_color_9 = '#f8acac'
+	let g:terminal_color_9 = '#350303'
 	let g:terminal_color_10 = '#4e4b36'
 	let g:terminal_color_11 = '#7c4f18'
 	let g:terminal_color_12 = '#00588f'
@@ -31,7 +31,7 @@ if has('nvim')
 else
   let g:terminal_ansi_colors = [
 	\'#5f503e',
-	\'#f8acac',
+	\'#350303',
 	\'#4e4b36',
 	\'#7c4f18',
 	\'#00588f',
@@ -39,7 +39,7 @@ else
 	\'#4a5054',
 	\'#f6f3f0',
 	\'#5f503e',
-	\'#f8acac',
+	\'#350303',
 	\'#4e4b36',
 	\'#7c4f18',
 	\'#00588f',
