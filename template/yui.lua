@@ -522,7 +522,7 @@ Use the lightline theme]],
 
 M.term_colors = {
 	c.black2,
-	c.light_red,
+	c.dark_red,
 	c.dark_green,
 	c.dark_yellow,
 	"#00588f",
@@ -530,7 +530,7 @@ M.term_colors = {
 	c.dark_blue,
 	c.white4,
 	c.black2,
-	c.light_red,
+	c.dark_red,
 	c.dark_green,
 	c.dark_yellow,
 	"#00588f",
