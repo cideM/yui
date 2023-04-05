@@ -361,6 +361,12 @@ M.groups = {
 		{ name = "LeapLabelSecondary", guifg = c.light_yellow, guibg = c.dark_yellow, gui = "none" },
 		{ name = "LeapLabelSelected", guifg = c.dark_red, guibg = c.light_red, gui = "none" },
 	},
+
+	{
+		"Telescope",
+		{ name = "TelescopeMatching", guifg = c.accent5, guibg = c.accent3, gui = "NONE" },
+		{ name = "TelescopeSelection", guifg = c.accent2, guibg = c.accent5, gui = "NONE" },
+	}
 }
 
 local lightline = {
