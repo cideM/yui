@@ -292,6 +292,10 @@ hi LeapLabelSecondary guifg=#fef0e8 ctermfg=255 guibg=#7c4f18 ctermbg=94 gui=non
 hi LeapLabelSelected guifg=#350303 ctermfg=233 guibg=#f8acac ctermbg=217 gui=none cterm=none
 hi LeapMatch guifg=#4a5054 ctermfg=239 guibg=#d9e0e3 ctermbg=253 gui=none cterm=none
 
+" Telescope
+hi TelescopeMatching guifg=#dcd7f9 ctermfg=189 guibg=#8368e7 ctermbg=98 gui=NONE cterm=NONE
+hi TelescopeSelection guifg=#6132d7 ctermfg=62 guibg=#dcd7f9 ctermbg=189 gui=NONE cterm=NONE
+
 " yui_folds
 let s:yui_folds_value = get(g:, 'yui_folds', 'fade')
 if s:yui_folds_value ==? 'fade'
