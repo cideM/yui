@@ -371,24 +371,24 @@ M.groups = {
 
 local lightline = {
 	normal = {
-		left = { { c.light_green, c.dark_green }, { c.white4, c.black3 } },
-		right = { { c.white4, c.black2 }, { c.white4, c.black3 }, { c.black1, c.black4 } },
-		middle = { { c.black2, c.black4 } },
+		left = { { c.light_green, c.dark_green }, { c.white3, c.black4 } },
+		right = { { c.white3, c.black2 }, { c.white3, c.black4 }, { c.white3, c.black4 } },
+		middle = { { c.black2, c.white2 } },
 		error = { { c.dark_red, c.light_red } },
 		warning = { { c.light_yellow, c.dark_yellow } },
 	},
 	insert = {
-		left = { { c.light_blue, c.dark_blue }, { c.white4, c.black3 } },
+		left = { { c.light_blue, c.dark_blue }, { c.white3, c.black4 } },
 	},
 	visual = {
-		left = { { c.accent5, c.accent2 }, { c.white4, c.black3 } },
+		left = { { c.accent5, c.accent2 }, { c.white3, c.black4 } },
 	},
 	replace = {
-		left = { { c.white5, c.alternative_accent }, { c.white4, c.black3 } },
+		left = { { c.white5, c.alternative_accent }, { c.white3, c.black4 } },
 	},
 	inactive = {
-		right = { { c.black3, c.white1 }, { c.black3, c.white1 }, { c.black3, c.white1 } },
-		middle = { { c.black3, c.white2 } },
+		right = { { c.black4, c.white1 }, { c.black3, c.white1 }, { c.black4, c.white1 } },
+		middle = { { c.black4, c.white2 } },
 	},
 	tabline = {
 		middle = { { c.black2, c.white4 } },
