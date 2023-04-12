@@ -521,4 +521,104 @@ M.make_docs = function(option_groups)
 	return table.concat(docs, "\n")
 end
 
+-- Generate color config in appropriate format for Alacritty terminal emulator.
+-- make_alacritty takes a table of 16 colors and returns a string that defines
+-- the terminal colors for Alacritty. The colors should be in the format #RRGGBB.
+--
+-- The returned string will be in the following format:
+-- colors:
+--   primary:
+--     background: '#f6f3f0'
+--     foreground: '#5f503e'
+-- 
+--   selection:
+--     background: '#b4a8f2'
+--     text: '#3b1c89'
+-- 
+--   cursor:
+--     text: '#f6f3f0'
+--     cursor: '#526eff'
+-- 
+--   normal:
+--     black: '#5f503e'
+--     red: '#350303'
+--     green: '#4e4b36'
+--     yellow: '#7c4f18'
+--     blue: '#00588f'
+--     magenta: '#6132d7'
+--     cyan: '#4a5054'
+--     white: '#f6f3f0'
+-- 
+--   bright:
+--     black: '#5f503e'
+--     red: '#350303'
+--     green: '#4e4b36'
+--     yellow: '#7c4f18'
+--     blue: '#00588f'
+--     magenta: '#8368e7'
+--     cyan: '#4a5054'
+--     white: '#f6f3f0'
+M.make_alacritty = function(term_colors, highlight_blocks)
+	if #term_colors ~= 16 then
+		error(string.format("Unexpected number (%d) of term colors, must be 16", #term_colors))
+	end
+
+	local colornames = {"black", "red", "green", "yellow", "blue", "magenta", "cyan", "white"}
+	local alacritty = {}
+
+	-- Start of the color config
+	table.insert(alacritty, "colors:")
+    
+	-- Insert primary.background and primary.foreground
+	table.insert(
+		alacritty,
+		string.format("  primary:\n    background: '%s'\n    foreground: '%s'", term_colors[8], term_colors[1])
+    )
+
+	-- Insert cursor.text and cursor.cursor
+	-- We need to store this beautiful blue somewhere
+	table.insert(
+		alacritty,
+		string.format("\n  cursor:\n    text: '%s'\n    cursor: '%s'", term_colors[8], "#526eff")
+	)
+	
+	-- Insert selection.background and selection.text
+	local select_fg, select_bg = "", ""
+
+	for _, block in ipairs(highlight_blocks) do
+		for _, hi in ipairs(block) do
+			if "Visual" == hi.name then
+				select_fg = hi.guifg
+				select_bg = hi.guibg
+				break
+			end
+		end
+	end
+
+	if select_fg == "" or select_bg == "" then
+		error("Can't get colors for selected text")
+	end
+
+	table.insert(
+		alacritty,
+		string.format("\n  selection:\n    background: '%s'\n    text: '%s'", select_bg, select_fg)
+	)
+
+	-- Insert 16 colors in the format #RRGGBB for normal and bright variants
+	table.insert(alacritty, "\n  normal:")
+	for i, color in ipairs(term_colors) do
+		if i - #colornames < 1 then
+			table.insert(alacritty, string.format("    %s: '%s'", colornames[i], color))
+		else
+			if i - #colornames == 1 then
+				table.insert(alacritty, "\n  bright:")
+			end
+
+			table.insert(alacritty, string.format("    %s: '%s'", colornames[i - #colornames], color))
+		end
+	end
+
+	return table.concat(alacritty, "\n")
+end
+
 return M
