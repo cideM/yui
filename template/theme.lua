@@ -344,22 +344,29 @@ M.make_lightline = function(config)
 	return out
 end
 
--- make_theme takes as arguments a list of terminal colors, option groups and blocks of highlight
--- groups. A block is table where the first value is the name of the block, and all subsequent
--- values are tables that can be passed to either make_hi or make_opt_hi. The returned string will
--- be in the following format:
+-- make_theme takes as arguments a list of terminal colors, option groups and
+-- blocks of highlight groups. A block is table with a 'name', 'groups' and
+-- optional 'features' field. The returned string will be in the following
+-- format:
 --
 -- " block_name
 -- hi ...
 -- hi ...
 --
--- The block name is either the first value in the list (highlight_blocks) or the name of the
--- option group (option_groups). The option groups are sorted by name to avoid unnecessary Git
--- diffs.
+-- The option groups are sorted by name to avoid unnecessary Git diffs.
+--
+-- The 'features' field is a string that is turned into a simple if statement
+--
+-- features = [[has('nvim')]]
+--
+-- becomes the following vimscript:
+-- 
+-- if has('nvim')
+--  hi ...
+-- endif
 --
 -- Highlight groups are sorted by name as a convention only. The first
--- highlight group in the first block must be Normal, and it will be sorted to
--- the top of the list.
+-- highlight group in the first block must be Normal.
 M.make_theme = function(term_colors, option_groups, highlight_blocks)
 	local out = {
 		[[
@@ -391,9 +398,24 @@ let g:colors_name = 'yui'
 			end
 			return a.name < b.name
 		end)
-		for _, group in ipairs(block.groups) do
-			table.insert(out, M.make_hi(group))
+
+		if block.features ~= nil then
+			table.insert(out, string.format("if %s", block.features))
 		end
+
+		for _, group in ipairs(block.groups) do
+			local vim_hi = M.make_hi(group)
+			local line = vim_hi
+			if block.features ~= nil then
+				line = string.format("\t%s", vim_hi)
+			end
+			table.insert(out, line)
+		end
+
+		if block.features ~= nil then
+			table.insert(out, "endif")
+		end
+
 		table.insert(out, "")
 	end
 

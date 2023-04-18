@@ -314,6 +314,7 @@ M.groups = {
 
 	{
 		name = "Help Text TS",
+		features = [[has('nvim')]],
 		groups = {
 			{ name = "@text.literal", link = "helpExample" },
 			{ name = "@text.reference", link = "helpOption" },
