@@ -437,29 +437,73 @@ M.groups = {
 	},
 }
 
+-- higher index = darker, meaning lightline components towards the side of the
+-- statusline should use higher indexes
+local lightline_bg_shades = {}
+local lightline_fg_shades = {}
+
+-- Find StatusLine color
+for _, block in ipairs(M.groups) do
+	for _, highlight in ipairs(block.groups) do
+		if type(highlight) == "table" and highlight.name == "StatusLine" then
+			-- StatusLine uses "reverse", hence the bg = fg
+			local base_bg = highlight.guifg
+			local base_fg = highlight.guibg
+
+			-- Since we darken the background towards the sides, we should lighten
+			-- the StatusLine color a bit, otherwise it'll get very dark towards
+			-- the sides
+			for i, factor in ipairs({ 5, 0, -5 }) do
+				lightline_bg_shades[i] = lightness(base_bg, factor)
+				lightline_fg_shades[i] = lightness(base_fg, factor)
+			end
+			break
+		end
+	end
+end
+
+local lightline_bg_shades_inactive = {
+	lightline_bg_shades[1],
+	lightline_bg_shades[1],
+	lightline_bg_shades[1],
+}
+local lightline_fg_shades_inactive = {
+	lightness(lightline_fg_shades[1], 15),
+	lightness(lightline_fg_shades[1], 15),
+	lightness(lightline_fg_shades[1], 15),
+}
+
 local lightline = {
 	normal = {
-		left = { { c.light_green, c.dark_green }, { c.white4, c.black3 } },
-		right = { { c.white4, c.black2 }, { c.white4, c.black3 }, { c.black1, c.black4 } },
-		middle = { { c.black2, c.black4 } },
-		error = { { c.dark_red, c.light_red } },
+		left = { { c.dark_green, c.light_green }, { lightline_fg_shades[2], lightline_bg_shades[2] } },
+		right = {
+			{ lightline_fg_shades[3], lightline_bg_shades[3] },
+			{ lightline_fg_shades[3], lightline_bg_shades[3] },
+			{ lightline_fg_shades[2], lightline_bg_shades[2] },
+		},
+		middle = { { lightline_fg_shades[1], lightline_bg_shades[1] } },
+		error = { { c.light_red, c.dark_red } },
 		warning = { { c.light_yellow, c.dark_yellow } },
 	},
 	insert = {
-		left = { { c.light_blue, c.dark_blue }, { c.white4, c.black3 } },
+		left = { { c.dark_blue, c.light_blue }, { lightline_fg_shades[2], lightline_bg_shades[2] } },
 	},
 	visual = {
-		left = { { c.accent5, c.accent2 }, { c.white4, c.black3 } },
+		left = { { c.accent5, c.accent2 }, { lightline_fg_shades[2], lightline_bg_shades[2] } },
 	},
 	replace = {
-		left = { { c.white5, c.alternative_accent }, { c.white4, c.black3 } },
+		left = { { c.white5, c.alternative_accent }, { lightline_fg_shades[2], lightline_bg_shades[2] } },
 	},
 	inactive = {
-		right = { { c.black3, c.white1 }, { c.black3, c.white1 }, { c.black3, c.white1 } },
-		middle = { { c.black3, c.white2 } },
+		right = {
+			{ lightline_fg_shades_inactive[3], lightline_bg_shades_inactive[3] },
+			{ lightline_fg_shades_inactive[3], lightline_bg_shades_inactive[3] },
+			{ lightline_fg_shades_inactive[2], lightline_bg_shades_inactive[2] },
+		},
+		middle = { { lightline_fg_shades_inactive[1], lightline_bg_shades_inactive[1] } },
 	},
 	tabline = {
-		middle = { { c.black2, c.white4 } },
+		middle = { { lightline_fg_shades[1], lightline_bg_shades[1] } },
 	},
 }
 lightline.inactive.left = { table.unpack(lightline.inactive.right, 2) }

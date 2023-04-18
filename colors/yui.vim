@@ -344,54 +344,54 @@ if s:yui_lightline_value ==? v:true
 	let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 	let s:p.visual.left = [
 		\['#dcd7f9', '#6132d7', 189, 62],
-		\['#f6f3f0', '#72604b', 255, 59],
+		\['#453a2c', '#e0d5ca', 237, 188],
 		\]
 	let s:p.tabline.tabsel = [
-		\['#f6f3f0', '#72604b', 255, 59],
+		\['#453a2c', '#e0d5ca', 237, 188],
 		\]
 	let s:p.tabline.middle = [
-		\['#5f503e', '#f6f3f0', 239, 255],
+		\['#524535', '#eae4dd', 238, 254],
 		\]
 	let s:p.tabline.left = [
-		\['#72604b', '#e0d5ca', 59, 188],
+		\['#7a6851', '#eae4dd', 95, 254],
 		\]
 	let s:p.replace.left = [
 		\['#fdfcfb', '#ed3f1c', 231, 202],
-		\['#f6f3f0', '#72604b', 255, 59],
+		\['#453a2c', '#e0d5ca', 237, 188],
 		\]
 	let s:p.normal.warning = [
 		\['#fef0e8', '#7c4f18', 255, 94],
 		\]
 	let s:p.normal.right = [
-		\['#f6f3f0', '#5f503e', 255, 239],
-		\['#f6f3f0', '#72604b', 255, 59],
-		\['#453a2c', '#867159', 237, 95],
+		\['#392f23', '#d6c6b6', 236, 187],
+		\['#392f23', '#d6c6b6', 236, 187],
+		\['#453a2c', '#e0d5ca', 237, 188],
 		\]
 	let s:p.normal.middle = [
-		\['#5f503e', '#867159', 239, 95],
+		\['#524535', '#eae4dd', 238, 254],
 		\]
 	let s:p.normal.left = [
-		\['#e2dba3', '#4e4b36', 187, 238],
-		\['#f6f3f0', '#72604b', 255, 59],
+		\['#4e4b36', '#e2dba3', 238, 187],
+		\['#453a2c', '#e0d5ca', 237, 188],
 		\]
 	let s:p.normal.error = [
-		\['#350303', '#f8acac', 233, 217],
+		\['#f8acac', '#350303', 217, 233],
 		\]
 	let s:p.insert.left = [
-		\['#d9e0e3', '#4a5054', 253, 239],
-		\['#f6f3f0', '#72604b', 255, 59],
+		\['#4a5054', '#d9e0e3', 239, 253],
+		\['#453a2c', '#e0d5ca', 237, 188],
 		\]
 	let s:p.inactive.right = [
-		\['#72604b', '#d6c7b6', 59, 187],
-		\['#72604b', '#d6c7b6', 59, 187],
-		\['#72604b', '#d6c7b6', 59, 187],
+		\['#7a6851', '#eae4dd', 95, 254],
+		\['#7a6851', '#eae4dd', 95, 254],
+		\['#7a6851', '#eae4dd', 95, 254],
 		\]
 	let s:p.inactive.middle = [
-		\['#72604b', '#e0d5ca', 59, 188],
+		\['#7a6851', '#eae4dd', 95, 254],
 		\]
 	let s:p.inactive.left = [
-		\['#72604b', '#d6c7b6', 59, 187],
-		\['#72604b', '#d6c7b6', 59, 187],
+		\['#7a6851', '#eae4dd', 95, 254],
+		\['#7a6851', '#eae4dd', 95, 254],
 		\]
 	let g:lightline#colorscheme#yui#palette = s:p
 endif
