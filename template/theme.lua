@@ -382,9 +382,8 @@ let g:colors_name = 'yui'
 	table.insert(out, "")
 
 	for _, block in ipairs(highlight_blocks) do
-		local block_name = table.remove(block, 1)
-		table.insert(out, string.format('" %s', block_name))
-		table.sort(block, function(a, b)
+		table.insert(out, string.format('" %s', block.name))
+		table.sort(block.groups, function(a, b)
 			if "Normal" == a.name then
 				return true
 			elseif "Normal" == b.name then
@@ -392,7 +391,7 @@ let g:colors_name = 'yui'
 			end
 			return a.name < b.name
 		end)
-		for _, group in pairs(block) do
+		for _, group in ipairs(block.groups) do
 			table.insert(out, M.make_hi(group))
 		end
 		table.insert(out, "")
