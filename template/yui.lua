@@ -140,7 +140,7 @@ M.groups = {
 			{ name = "ToolbarLine", guifg = "NONE", guibg = "NONE" },
 			{ name = "Type", guifg = "NONE", guibg = "NONE", gui = "italic" },
 			{ name = "Underlined", guifg = "fg", guibg = "NONE", gui = "underline" },
-			{ name = "VertSplit", guifg = c.white1, guibg = "NONE" },
+			{ name = "VertSplit", guifg = c.white1, guibg = "NONE", gui = "NONE" },
 			{ name = "VisualNOS", guifg = "NONE", guibg = c.white5 },
 			{ name = "WarningMsg", link = "DiffChange" },
 			{ name = "Whitespace", guifg = c.black4, guibg = "NONE" },
