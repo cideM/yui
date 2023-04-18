@@ -138,7 +138,7 @@ hi Tooltip guifg=fg ctermfg=fg guibg=#ebe4dd ctermbg=254
 hi Type guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=italic cterm=italic
 hi! link Typedef Type
 hi Underlined guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline cterm=underline
-hi VertSplit guifg=#d6c7b6 ctermfg=187 guibg=NONE ctermbg=NONE
+hi VertSplit guifg=#d6c7b6 ctermfg=187 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Visual guifg=#3b1c89 ctermfg=54 guibg=#b4a8f2 ctermbg=147
 hi VisualNOS guifg=NONE ctermfg=NONE guibg=#fdfcfb ctermbg=231
 hi! link WarningMsg DiffChange
