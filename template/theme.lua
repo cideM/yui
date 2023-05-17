@@ -38,6 +38,22 @@ local allowed_attrs = {
 	NONE = true,
 }
 
+-- indent_string indents a string by a given amount. If the string contains
+-- multiple lines, then each line is indented by the given amount. If it's a
+-- single line, then the indent is prepended to the string.
+local function indent_string(s, indent)
+	if s:find("\n") then
+		local indented_lines = {}
+		for line in s:gmatch("[^\n]+") do
+			table.insert(indented_lines, indent .. line)
+		end
+
+		return table.concat(indented_lines, "\n")
+	else
+		return indent .. s
+	end
+end
+
 -- This is a helper function to make a highlight group. It takes a table with the following keys:
 --
 --   name: the name of the highlight group
