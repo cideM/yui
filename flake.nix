@@ -30,11 +30,10 @@
           '';
 
           src = pkgs.lib.cleanSourceWith {
-            # Remove files that have the infix "screenshots" in their path and
-            # remove the folders "colors" and "doc"
             filter = path: type:
               !(pkgs.lib.hasInfix "screenshots" path)
               && !(pkgs.lib.hasInfix "colors/" path)
+              && !(pkgs.lib.hasInfix "autoload/" path)
               && !(pkgs.lib.hasInfix "doc/" path);
             src = ./.;
           };

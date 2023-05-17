@@ -1,5 +1,6 @@
--- This file is a port of https://raw.githubusercontent.com/tmux/tmux/master/colour.c
+-- This file is mostly a port of https://raw.githubusercontent.com/tmux/tmux/master/colour.c
 -- Also see the PR adding this functionality: https://github.com/tmux/tmux/pull/432
+local hsluv = require("hsluv")
 
 local M = {}
 
@@ -69,6 +70,13 @@ end
 
 M.hex_to_256 = function(hex)
 	return M.color_find_256(M.hex_to_rgb(hex))
+end
+
+-- lightness is not part of the original tmux file
+M.lightness = function(color, amount)
+	local color_hsluv = hsluv.hex_to_hsluv(color)
+	color_hsluv[3] = color_hsluv[3] + amount
+	return hsluv.hsluv_to_hex(color_hsluv)
 end
 
 return M
