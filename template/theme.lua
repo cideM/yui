@@ -232,30 +232,21 @@ M.make_opt_hi = function(opt)
 		return a > b
 	end)
 
-	local is_first = true
+	local cond = M.Cond {}
 	for _, rhs in ipairs(right_hand_if_sorted) do
 		local groups = opt.cases[rhs].groups
-		local line = is_first and string.format("if s:%s ==? %s", var_name_vim, rhs)
-			or string.format("elseif s:%s ==? %s", var_name_vim, rhs)
 
-		table.insert(lines, line)
+		table.insert(cond, M.And { string.format("s:%s ==? %s", var_name_vim, rhs) })
 
+		local value = {}
 		for _, hl_group in ipairs(groups) do
-			if type(hl_group) == "string" then
-				-- Split the string into multiple lines and indent each line by a tab,
-				-- so the generated vimscript file is more readable
-				for l in hl_group:gmatch("[^\n]+") do
-					table.insert(lines, "\t" .. l)
-				end
-			else
-				table.insert(lines, "\t" .. M.make_hi(hl_group))
-			end
+			table.insert(value, type(hl_group) == "string" and hl_group or M.make_hi(hl_group))
 		end
 
-		is_first = false
+		table.insert(cond, table.concat(value, "\n"))
 	end
 
-	table.insert(lines, "endif")
+	table.insert(lines, tostring(cond))
 
 	return table.concat(lines, "\n")
 end
@@ -265,7 +256,7 @@ end
 --
 -- The returned string will be in the following format:
 --
--- if has('nvim')
+-- if (has('nvim'))
 --  let g:terminal_color_0 = '#RRGGBB'
 --  ...
 -- else
@@ -274,27 +265,20 @@ end
 --   ...]
 -- endif
 M.make_term = function(term_colors)
-	local nvim, vim = {}, {}
+	local nvim, vim = {}, { "let g:terminal_ansi_colors = [" }
 	for i, color in ipairs(term_colors) do
-		table.insert(nvim, string.format("\tlet g:terminal_color_%d = '%s'", i - 1, color))
+		table.insert(nvim, string.format("let g:terminal_color_%d = '%s'", i - 1, color))
 		local is_last = i == #term_colors
 		table.insert(vim, string.format("\t\\'%s'%s", color, (is_last and "]" or ",")))
 	end
 
-	local s = string.format(
-		[[
-if has('nvim')
-%s
-else
-  let g:terminal_ansi_colors = [
-%s
-endif
-  ]],
+	local cond = M.Cond {
+		M.And { "has('nvim')" },
 		table.concat(nvim, "\n"),
-		table.concat(vim, "\n")
-	)
+		table.concat(vim, "\n"),
+	}
 
-	return s
+	return tostring(cond)
 end
 
 -- make_lightline takes a table of key/value pairs and returns a table of strings that can be used
@@ -428,24 +412,21 @@ let g:colors_name = 'yui'
 			return a.name < b.name
 		end)
 
-		if block.features ~= nil then
-			local vim_condition = tostring(block.features:map(function(feature)
-				return "has('" .. feature .. "')"
-			end))
-			table.insert(out, string.format("if %s", vim_condition))
-		end
-
+		local hl_groups = {}
 		for _, group in ipairs(block.groups) do
-			local vim_hi = M.make_hi(group)
-			local line = vim_hi
-			if block.features ~= nil then
-				line = string.format("\t%s", vim_hi)
-			end
-			table.insert(out, line)
+			table.insert(hl_groups, M.make_hi(group))
 		end
 
 		if block.features ~= nil then
-			table.insert(out, "endif")
+			local cond = M.Cond {
+				block.features:map(function(s)
+					return "has('" .. s .. "')"
+				end),
+				table.concat(hl_groups, "\n"),
+			}
+			table.insert(out, tostring(cond))
+		else
+			table.insert(out, table.concat(hl_groups, "\n"))
 		end
 
 		table.insert(out, "")
@@ -667,6 +648,54 @@ function Or:new(init)
 end
 
 function Or:map(fn)
+	return conditional_map(self, fn)
+end
+
+local Cond = {}
+M.Cond = Cond
+
+local cond_mt = {
+	__tostring = function(self)
+		assert(#self >= 2, "Conditionals must have at least two arguments")
+		local out = {}
+		for i = 1, #self, 2 do
+			if i == #self then
+				local value = self[i]
+				table.insert(out, "else")
+				table.insert(out, indent_string(value, "\t"))
+				break
+			end
+
+			local prefix = "if"
+			if i > 1 then
+				prefix = "elseif"
+			end
+			local condition, value = self[i], self[i + 1]
+			table.insert(out, string.format("%s %s", prefix, condition))
+			table.insert(out, indent_string(value, "\t"))
+		end
+		table.insert(out, "endif")
+		return table.concat(out, "\n")
+	end,
+	__index = Cond,
+}
+
+setmetatable(Cond, {
+	__call = function(cls, ...)
+		return cls:new(...)
+	end,
+})
+
+function Cond:new(init)
+	local t = {}
+	for _, v in ipairs(init) do
+		table.insert(t, v)
+	end
+	setmetatable(t, cond_mt)
+	return t
+end
+
+function Cond:map(fn)
 	return conditional_map(self, fn)
 end
 

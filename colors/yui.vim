@@ -11,7 +11,7 @@ endif
 
 let g:colors_name = 'yui'
   
-if has('nvim')
+if (has('nvim'))
 	let g:terminal_color_0 = '#5f503e'
 	let g:terminal_color_1 = '#350303'
 	let g:terminal_color_2 = '#4e4b36'
@@ -29,25 +29,24 @@ if has('nvim')
 	let g:terminal_color_14 = '#4a5054'
 	let g:terminal_color_15 = '#f6f3f0'
 else
-  let g:terminal_ansi_colors = [
-	\'#5f503e',
-	\'#350303',
-	\'#4e4b36',
-	\'#7c4f18',
-	\'#00588f',
-	\'#6132d7',
-	\'#4a5054',
-	\'#f6f3f0',
-	\'#5f503e',
-	\'#350303',
-	\'#4e4b36',
-	\'#7c4f18',
-	\'#00588f',
-	\'#8368e7',
-	\'#4a5054',
-	\'#f6f3f0']
+	let g:terminal_ansi_colors = [
+		\'#5f503e',
+		\'#350303',
+		\'#4e4b36',
+		\'#7c4f18',
+		\'#00588f',
+		\'#6132d7',
+		\'#4a5054',
+		\'#f6f3f0',
+		\'#5f503e',
+		\'#350303',
+		\'#4e4b36',
+		\'#7c4f18',
+		\'#00588f',
+		\'#8368e7',
+		\'#4a5054',
+		\'#f6f3f0']
 endif
-  
 
 " UI & Syntax
 hi Normal guifg=#5f503e ctermfg=239 guibg=#f6f3f0 ctermbg=255
@@ -300,47 +299,47 @@ hi TelescopeSelection guifg=#6132d7 ctermfg=62 guibg=#dcd7f9 ctermbg=189 gui=NON
 
 " yui_folds
 let s:yui_folds_value = get(g:, 'yui_folds', 'fade')
-if s:yui_folds_value ==? 'fade'
+if (s:yui_folds_value ==? 'fade')
 	hi FoldColumn guifg=#867159 ctermfg=95 guibg=NONE ctermbg=NONE
 	hi Folded guifg=#867159 ctermfg=95 guibg=NONE ctermbg=NONE
-elseif s:yui_folds_value ==? 'emphasize'
+elseif (s:yui_folds_value ==? 'emphasize')
 	hi FoldColumn guifg=#72604b ctermfg=59 guibg=#e0d5ca ctermbg=188
 	hi Folded guifg=#72604b ctermfg=59 guibg=#e0d5ca ctermbg=188
 endif
 
 " yui_line_numbers
 let s:yui_line_numbers_value = get(g:, 'yui_line_numbers', 'fade')
-if s:yui_line_numbers_value ==? 'fade'
+if (s:yui_line_numbers_value ==? 'fade')
 	hi SignColumn guifg=fg ctermfg=fg guibg=bg ctermbg=bg
 	hi LineNr guifg=#867159 ctermfg=95 guibg=NONE ctermbg=NONE
-elseif s:yui_line_numbers_value ==? 'emphasize'
+elseif (s:yui_line_numbers_value ==? 'emphasize')
 	hi SignColumn guifg=#72604b ctermfg=59 guibg=#e0d5ca ctermbg=188
 	hi LineNr guifg=#72604b ctermfg=59 guibg=#e0d5ca ctermbg=188
 endif
 
 " yui_emphasized_comments
 let s:yui_emphasized_comments_value = get(g:, 'yui_emphasized_comments', 0)
-if s:yui_emphasized_comments_value ==? 1
+if (s:yui_emphasized_comments_value ==? 1)
 	hi Comment guifg=#ed3f1c ctermfg=202 guibg=NONE ctermbg=NONE gui=italic cterm=italic
-elseif s:yui_emphasized_comments_value ==? 0
+elseif (s:yui_emphasized_comments_value ==? 0)
 	hi Comment guifg=#72604b ctermfg=59 guibg=NONE ctermbg=NONE gui=italic cterm=italic
 endif
 
 " yui_comments
 let s:yui_comments_value = get(g:, 'yui_comments', 'normal')
-if s:yui_comments_value ==? 'normal'
+if (s:yui_comments_value ==? 'normal')
 	hi Comment guifg=#72604b ctermfg=59 guibg=NONE ctermbg=NONE gui=italic cterm=italic
-elseif s:yui_comments_value ==? 'fade'
+elseif (s:yui_comments_value ==? 'fade')
 	hi Comment guifg=#72604b ctermfg=59 guibg=NONE ctermbg=NONE gui=italic cterm=italic
-elseif s:yui_comments_value ==? 'emphasize'
+elseif (s:yui_comments_value ==? 'emphasize')
 	hi Comment guifg=#ed3f1c ctermfg=202 guibg=NONE ctermbg=NONE gui=italic cterm=italic
-elseif s:yui_comments_value ==? 'bg'
+elseif (s:yui_comments_value ==? 'bg')
 	hi Comment guifg=fg ctermfg=fg guibg=#ebe4dd ctermbg=254 gui=NONE cterm=NONE
 endif
 
 " yui_lightline
 let s:yui_lightline_value = get(g:, 'yui_lightline', v:false)
-if s:yui_lightline_value ==? v:true
+if (s:yui_lightline_value ==? v:true)
 	let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 	let s:p.visual.left = [
 		\['#dcd7f9', '#6132d7', 189, 62],
