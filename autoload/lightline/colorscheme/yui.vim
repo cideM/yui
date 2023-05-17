@@ -1,0 +1,16 @@
+let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
+let s:p.visual.left = [['#6132d7', '#dcd7f9', 62, 189], ['#453a2c', '#e0d5ca', 237, 188]]
+let s:p.tabline.tabsel = [['#453a2c', '#e0d5ca', 237, 188]]
+let s:p.tabline.middle = [['#524535', '#eae4dd', 238, 254]]
+let s:p.tabline.left = [['#7a6851', '#eae4dd', 95, 254]]
+let s:p.replace.left = [['#ed3f1c', '#fdfcfb', 202, 231], ['#453a2c', '#e0d5ca', 237, 188]]
+let s:p.normal.warning = [['#7c4f18', '#fef0e8', 94, 255]]
+let s:p.normal.right = [['#392f23', '#d6c6b6', 236, 187], ['#392f23', '#d6c6b6', 236, 187], ['#453a2c', '#e0d5ca', 237, 188]]
+let s:p.normal.middle = [['#524535', '#eae4dd', 238, 254]]
+let s:p.normal.left = [['#4e4b36', '#e2dba3', 238, 187], ['#453a2c', '#e0d5ca', 237, 188]]
+let s:p.normal.error = [['#350303', '#f8acac', 233, 217]]
+let s:p.insert.left = [['#4a5054', '#d9e0e3', 239, 253], ['#453a2c', '#e0d5ca', 237, 188]]
+let s:p.inactive.right = [['#7a6851', '#eae4dd', 95, 254], ['#7a6851', '#eae4dd', 95, 254], ['#7a6851', '#eae4dd', 95, 254]]
+let s:p.inactive.middle = [['#7a6851', '#eae4dd', 95, 254]]
+let s:p.inactive.left = [['#7a6851', '#eae4dd', 95, 254], ['#7a6851', '#eae4dd', 95, 254]]
+let g:lightline#colorscheme#yui#palette = lightline#colorscheme#fill(s:p)

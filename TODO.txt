@@ -1,3 +1,0 @@
-- [x] Remove italic from comments that are already colored. Italic comments
-  means ASCII art is hard.
-- [x] Update screenshots
