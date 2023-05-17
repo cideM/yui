@@ -153,9 +153,6 @@ M.make_hi = function(g)
 	return table.concat(buf, " ")
 end
 
--- let s:yui_lightline_value = get(g:, 'yui_lightline', v:false)
--- if yui_lightline_value ==? v:true
-
 -- This is a helper function to make a highlight group blocks whose value is determined by a global
 -- variable. It takes a table with the following keys:
 --
@@ -190,33 +187,6 @@ end
 --
 --  The keys in cases will be sorted in descending order, so that the longest keys are checked first.
 --  This is done to avoid Git diffs due to random key order when iterating over a table.
---
---  For example:
---
---  M.make_opt_hi {
---    name = "yui_lightline",
---    default = v:false,
---    description = "Whether to use the Yui lightline theme",
---    cases = {
---      v:true = {
---        groups = { name = "YuiLightline", guifg = "#ffffff", guibg = "#000000" }
---        description = "Use the Yui lightline theme"
---      },
---      v:false = {
---        groups = { name = "YuiLightlineInactive", guifg = "#ffffff", guibg = "#000000" }
---        description = "Use the Yui lightline theme"
---      },
---    },
---  }
---
---  will return:
---
---  let s:yui_lightline_value = get(g:, 'yui_lightline', v:false)
---  if s:yui_lightline_value ==? v:true
---    hi YuiLightline guifg=#ffffff guibg=#000000
---  elseif s:yui_lightline_value ==? v:false
---    hi YuiLightlineInactive guifg=#ffffff guibg=#000000
---  endif
 M.make_opt_hi = function(opt)
 	local var_name_vim = opt.name .. "_value"
 	local lines = {
@@ -368,16 +338,7 @@ end
 --
 -- The option groups are sorted by name to avoid unnecessary Git diffs.
 --
--- The 'features' field should use the Lua conditional primitives. For example:
---
--- Or{"nvim", And{"termguicolors", "gui_running"}}
---
--- becomes the following vimscript:
---
--- if (has('nvim') || (has('termguicolors') && has('gui_running')))
---  hi ...
--- endif
---
+-- The 'features' field should use the Lua conditional primitives.
 -- Highlight groups are sorted by name as a convention only. The first
 -- highlight group in the first block must be Normal.
 M.make_theme = function(term_colors, option_groups, highlight_blocks)
