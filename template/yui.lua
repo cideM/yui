@@ -128,7 +128,13 @@ M.groups = {
 			{ name = "Special", guifg = "fg", guibg = "NONE" },
 			{ name = "SpecialKey", guifg = "fg", guibg = "NONE" },
 			{ name = "SpellBad", link = "DiffDelete" },
-			{ name = "SpellCap", guifg = "NONE", guibg = "NONE", guisp = c.light_red, gui = "undercurl" },
+			{
+				name = "SpellCap",
+				guifg = "NONE",
+				guibg = "NONE",
+				guisp = c.light_red,
+				gui = "undercurl",
+			},
 			{ name = "SpellLocal", guifg = "fg", guibg = "NONE" },
 			{ name = "SpellRare", guifg = "fg", guibg = "NONE" },
 			{ name = "Statement", guifg = "fg", guibg = "NONE", gui = "italic" },
@@ -217,7 +223,13 @@ M.groups = {
 				gui = "undercurl",
 				guisp = c.dark_red,
 			},
-			{ name = "DiagnosticUnderlineHint", guifg = "NONE", guibg = "NONE", gui = "undercurl", guisp = c.black2 },
+			{
+				name = "DiagnosticUnderlineHint",
+				guifg = "NONE",
+				guibg = "NONE",
+				gui = "undercurl",
+				guisp = c.black2,
+			},
 			{
 				name = "DiagnosticUnderlineInfo",
 				guifg = "NONE",
@@ -274,7 +286,12 @@ M.groups = {
 			{ name = "markdownBold", guifg = "NONE", guibg = "NONE", gui = "bold" },
 			{ name = "markdownUrl", guifg = "NONE", guibg = "NONE", gui = "underline" },
 			{ name = "markdownUrl", guifg = "NONE", guibg = "NONE", gui = "underline" },
-			{ name = "markdownHeadingDelimiter", guifg = "NONE", guibg = "NONE", gui = "underline" },
+			{
+				name = "markdownHeadingDelimiter",
+				guifg = "NONE",
+				guibg = "NONE",
+				gui = "underline",
+			},
 			{ name = "mkCode", guifg = "fg", guibg = "NONE" },
 			{ name = "mkdCodeDelimiter", link = "mkCode" },
 			{ name = "markdownItalic", link = "mkItalic" },
@@ -332,8 +349,18 @@ M.groups = {
 	{
 		name = "fugitive",
 		groups = {
-			{ name = "fugitiveStagedSection", guifg = "fg", guibg = "NONE", gui = { "underline", "bold" } },
-			{ name = "fugitiveUnstagedSection", guifg = "fg", guibg = "NONE", gui = { "underline", "bold" } },
+			{
+				name = "fugitiveStagedSection",
+				guifg = "fg",
+				guibg = "NONE",
+				gui = { "underline", "bold" },
+			},
+			{
+				name = "fugitiveUnstagedSection",
+				guifg = "fg",
+				guibg = "NONE",
+				gui = { "underline", "bold" },
+			},
 			{ name = "diffAdded", link = "DiffAdd" },
 			{ name = "diffLine", guifg = "fg", guibg = "NONE", gui = "bold" },
 			{ name = "gitHashAbbrev", guifg = "fg", guibg = "NONE", gui = "underline" },
@@ -422,8 +449,18 @@ M.groups = {
 		name = "Leap",
 		groups = {
 			{ name = "LeapMatch", guifg = c.dark_blue, guibg = c.light_blue, gui = "none" },
-			{ name = "LeapLabelPrimary", guifg = "#ffffff", guibg = c.alternative_accent, gui = "bold" },
-			{ name = "LeapLabelSecondary", guifg = c.light_yellow, guibg = c.dark_yellow, gui = "none" },
+			{
+				name = "LeapLabelPrimary",
+				guifg = "#ffffff",
+				guibg = c.alternative_accent,
+				gui = "bold",
+			},
+			{
+				name = "LeapLabelSecondary",
+				guifg = c.light_yellow,
+				guibg = c.dark_yellow,
+				gui = "none",
+			},
 			{ name = "LeapLabelSelected", guifg = c.dark_red, guibg = c.light_red, gui = "none" },
 		},
 	},
@@ -572,7 +609,12 @@ Whether to emphasize comments]],
 				description = [[
 Emphasize comments]],
 				groups = {
-					{ name = "Comment", guifg = c.alternative_accent, guibg = "NONE", gui = "italic" },
+					{
+						name = "Comment",
+						guifg = c.alternative_accent,
+						guibg = "NONE",
+						gui = "italic",
+					},
 				},
 			},
 			[0] = {
@@ -594,7 +636,12 @@ How comments should be displayed]],
 				description = [[
 Emphasize comments]],
 				groups = {
-					{ name = "Comment", guifg = c.alternative_accent, guibg = "NONE", gui = "italic" },
+					{
+						name = "Comment",
+						guifg = c.alternative_accent,
+						guibg = "NONE",
+						gui = "italic",
+					},
 				},
 			},
 			["'fade'"] = {

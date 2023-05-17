@@ -64,7 +64,7 @@ M.make_hi = function(g)
 	if g.link then
 		table.insert(buf, string.format("hi! link %s %s", g.name, g.link))
 
-		for _, s in ipairs({ "guibg", "guifg", "gui", "guisp", "cterm" }) do
+		for _, s in ipairs { "guibg", "guifg", "gui", "guisp", "cterm" } do
 			assert(g[s] == nil, s .. " must be nil for link but was " .. tostring(g[s]))
 		end
 		goto done
@@ -76,7 +76,10 @@ M.make_hi = function(g)
 		if special_colors[g.guifg] then
 			table.insert(buf, string.format("guifg=%s ctermfg=%s", g.guifg, g.guifg))
 		else
-			table.insert(buf, string.format("guifg=%s ctermfg=%d", g.guifg, colour.hex_to_256(g.guifg)))
+			table.insert(
+				buf,
+				string.format("guifg=%s ctermfg=%d", g.guifg, colour.hex_to_256(g.guifg))
+			)
 		end
 	end
 
@@ -84,7 +87,10 @@ M.make_hi = function(g)
 		if special_colors[g.guibg] then
 			table.insert(buf, string.format("guibg=%s ctermbg=%s", g.guibg, g.guibg))
 		else
-			table.insert(buf, string.format("guibg=%s ctermbg=%d", g.guibg, colour.hex_to_256(g.guibg)))
+			table.insert(
+				buf,
+				string.format("guibg=%s ctermbg=%d", g.guibg, colour.hex_to_256(g.guibg))
+			)
 		end
 	end
 
@@ -319,7 +325,14 @@ M.make_lightline = function(config)
 
 				local line
 				if style ~= nil then
-					line = string.format("\t\\['%s', '%s', %d, %d, '%s'],", fg, bg, fg_code, bg_code, style)
+					line = string.format(
+						"\t\\['%s', '%s', %d, %d, '%s'],",
+						fg,
+						bg,
+						fg_code,
+						bg_code,
+						style
+					)
 				else
 					line = string.format("\t\\['%s', '%s', %d, %d],", fg, bg, fg_code, bg_code)
 				end
@@ -447,7 +460,10 @@ M.make_docs = function(option_groups)
 		-- 1. The string "*yui.txt*"
 		-- 2. As many spaces as necessary to make the line 78 characters long
 		-- 3. The string "A minimal colorscheme for Vim and Neovim"
-		string.format("*yui.txt*%sA minimal colorscheme for Vim and Neovim", string.rep(" ", line_length - 9 - 40)),
+		string.format(
+			"*yui.txt*%sA minimal colorscheme for Vim and Neovim",
+			string.rep(" ", line_length - 9 - 40)
+		),
 		"",
 		"YUI | ユイ",
 		"",
@@ -457,7 +473,10 @@ M.make_docs = function(option_groups)
 	-- insert the word OPTIONS, then as many spaces as necessary, then the
 	-- string '*yui-options*', so that the entire line is 78 characters
 	-- long. This is the format that Vim expects for help tags.
-	table.insert(docs, string.format("OPTIONS%s%s", string.rep(" ", line_length - 8 - 12), "*yui-options*"))
+	table.insert(
+		docs,
+		string.format("OPTIONS%s%s", string.rep(" ", line_length - 8 - 12), "*yui-options*")
+	)
 	table.insert(docs, "")
 
 	for i, group in ipairs(option_groups) do
