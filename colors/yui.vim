@@ -226,7 +226,7 @@ hi helpSpecial guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=bold cterm=bo
 hi helpURL guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=underline cterm=underline
 
 " Help Text TS
-if has('nvim')
+if (has('nvim'))
 	hi! link @text.literal helpExample
 	hi! link @text.reference helpOption
 endif

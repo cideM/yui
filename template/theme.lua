@@ -368,13 +368,13 @@ end
 --
 -- The option groups are sorted by name to avoid unnecessary Git diffs.
 --
--- The 'features' field is a string that is turned into a simple if statement
+-- The 'features' field should use the Lua conditional primitives. For example:
 --
--- features = [[has('nvim')]]
+-- Or{"nvim", And{"termguicolors", "gui_running"}}
 --
 -- becomes the following vimscript:
--- 
--- if has('nvim')
+--
+-- if (has('nvim') || (has('termguicolors') && has('gui_running')))
 --  hi ...
 -- endif
 --
@@ -413,7 +413,10 @@ let g:colors_name = 'yui'
 		end)
 
 		if block.features ~= nil then
-			table.insert(out, string.format("if %s", block.features))
+			local vim_condition = tostring(block.features:map(function(feature)
+				return "has('" .. feature .. "')"
+			end))
+			table.insert(out, string.format("if %s", vim_condition))
 		end
 
 		for _, group in ipairs(block.groups) do
@@ -559,6 +562,96 @@ M.make_docs = function(option_groups)
 	-- will then parse the modeline and fail on the closing quote and parenthesis.
 	table.insert(docs, " " .. "vim:tw=78:et:ft=help:norl:")
 	return table.concat(docs, "\n")
+end
+
+-- Lua Conditional Expressions
+-- The following code creates Lua data structures that represent Vim
+-- conditionals. I don't have much experience with Lua OOP and/or composition.
+-- I'm this code can be improved by extracting some shared functionality into a
+-- separate class.
+
+-- Map a function over each condition and return a new instance of the same
+-- type. The function is invoked recursively on any nested conditions.
+local conditional_map = function(self, fn)
+	local out = {}
+	for _, arg in ipairs(self) do
+		if type(arg) == "table" then
+			table.insert(out, arg:map(fn))
+		else
+			table.insert(out, fn(arg))
+		end
+	end
+	setmetatable(out, getmetatable(self))
+	return out
+end
+
+local And = {}
+M.And = And
+
+-- This is the metatable of every instance of And.
+local and_mt = {
+	__tostring = function(self)
+		local out = {}
+		for _, arg in ipairs(self) do
+			table.insert(out, tostring(arg))
+		end
+		return "(" .. table.concat(out, " && ") .. ")"
+	end,
+	__index = And,
+}
+
+-- We need to assign this to the base class so that we can
+-- call the table as a function.
+setmetatable(And, {
+	__call = function(self, ...)
+		return self:new(...)
+	end,
+})
+
+function And:new(init)
+	local t = {}
+	for _, v in ipairs(init) do
+		table.insert(t, v)
+	end
+	setmetatable(t, and_mt)
+	return t
+end
+
+function And:map(fn)
+	return conditional_map(self, fn)
+end
+
+local Or = {}
+M.Or = Or
+
+local or_mt = {
+	__tostring = function(self)
+		local out = {}
+		for _, arg in ipairs(self) do
+			table.insert(out, tostring(arg))
+		end
+		return "(" .. table.concat(out, " || ") .. ")"
+	end,
+	__index = Or,
+}
+
+setmetatable(Or, {
+	__call = function(cls, ...)
+		return cls:new(...)
+	end,
+})
+
+function Or:new(init)
+	local t = {}
+	for _, v in ipairs(init) do
+		table.insert(t, v)
+	end
+	setmetatable(t, or_mt)
+	return t
+end
+
+function Or:map(fn)
+	return conditional_map(self, fn)
 end
 
 return M
