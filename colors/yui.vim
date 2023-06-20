@@ -115,14 +115,14 @@ hi! link PreCondit PreProc
 hi! link SpecialChar Special
 hi! link SpecialComment Special
 hi! link StorageClass Type
-hi! link String Constant
+hi String guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
 hi! link Structure Type
 hi! link Tag Special
 hi! link Typedef Type
 hi! link Substitute IncSearch
 hi Operator guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 hi Repeat guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-hi Constant guifg=#453a2c ctermfg=237 guibg=NONE ctermbg=NONE
+hi Constant guifg=#453a2c ctermfg=237 guibg=NONE ctermbg=NONE gui=bold cterm=bold
 hi jsParensError guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 hi Exception guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 hi Keyword guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
