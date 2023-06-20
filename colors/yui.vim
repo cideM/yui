@@ -163,6 +163,8 @@ hi! link vimHiCTerm Normal
 hi! link vimHiCTermFgBg Normal
 hi! link vimHiGuiFgBg Normal
 
+" HTML
+hi htmlTagName guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 " Lua
 hi luaFuncKeyword guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
 hi luaRepeat guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold

@@ -313,6 +313,9 @@ local theme = Theme {
 	HLGroup { name = "vimHiGuiFgBg", link = "Normal" },
 	"",
 
+	[[" HTML]],
+	HLGroup { name = "htmlTagName", guifg = "fg", guibg = "NONE", gui = "NONE" },
+
 	[[" Lua]],
 	HLGroup { name = "luaFuncKeyword", guifg = "fg", guibg = "NONE", gui = "bold" },
 	HLGroup { name = "luaRepeat", guifg = "fg", guibg = "NONE", gui = "bold" },
