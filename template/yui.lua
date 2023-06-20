@@ -1,206 +1,208 @@
 local Theme = require("theme")
-local colour = require("colour")
 local Lightline = require("lightline")
-local Cond = require("condition")
-local And = require("and_or").And
 local HLGroup = require("hlgroup")
 local TerminalColors = require("terminal_colors")
 local ThemeOption = require("option").ThemeOption
+local Cond = require("condition")
+local lighten = require("colour").lightness
 
--- http://blog.presentandcorrect.com/rams-palettes
--- https://news.ycombinator.com/item?id=26318379
-local rams = {
-	dr01 = {
-		light_blue = "#aab7bf",
-		brown = "#736356",
-		white = "#bfb1a8",
-		red = "#ad1d1d",
-		black = "#261201",
-	},
-	dr03 = {
-		orange = "#bf7c2a",
-		taupe = "#c09c6f",
-		dark_gray = "#5f503e",
-		light_gray = "#9c9c9c",
-		white = "#e1e4e1",
-	},
-	dr04 = {
-		olive = "#84764b",
-		green = "#b7b183",
-		black = "#372e2d",
-		light_gray = "#bcb3a6",
-		white = "#dbd7d3",
-	},
-	dr06 = {
-		tangerine = "#ed8008",
-		orange = "#ed3f1c",
-		red = "#bf1b1b",
-		green = "#736b1e",
-		white = "#d9d2c6",
-	},
-}
-
-local old_yui_colors = {
+local colors = {
+	black = "#5f503e",
 	white = "#efeae5",
-	purple = "#dcd7f9",
+	accent = "#dcd7f9",
+	dark_blue = "#1E5571",
+	light_blue = "#E7F4F8",
+	dark_green = "#38551E",
+	light_green = "#DFF0D0",
+	dark_red = "#A50303",
+	light_red = "#F7D9D9",
+	dark_yellow = "#7E6901",
+	light_yellow = "#FEF0B4",
+	dark_cyan = "#37766F",
 }
 
-local palette = {
-	blue = rams.dr01.light_blue,
-	green = rams.dr04.green,
-	red = rams.dr01.red,
-	yellow = rams.dr03.orange,
-	black = rams.dr03.dark_gray,
-	white = old_yui_colors.white,
-	accent = old_yui_colors.purple,
-	alternative_accent = rams.dr06.orange,
+local p = {
+	fg = colors.black,
+	fg_muted = lighten(colors.black, 14),
+	fg_dim = lighten(colors.white, -12),
+	bg = lighten(colors.white, 3),
+	menu_fg = colors.black,
+	menu_bg = lighten(colors.white, -2),
+	statusline_fg = lighten(colors.black, -7),
+	statusline_bg = lighten(colors.white, -7),
+	success_bg = colors.light_green,
+	success_fg = colors.dark_green,
+	warning_bg = colors.light_yellow,
+	warning_fg = colors.dark_yellow,
+	error_bg = colors.light_red,
+	error_fg = colors.dark_red,
+	info_bg = colors.light_blue,
+	info_fg = colors.dark_blue,
+	focus_fg = lighten(colors.accent, -50),
+	focus_bg = lighten(colors.accent, 0),
 }
 
-local c = {
-	accent1 = colour.lightness(palette.accent, -65),
-	accent2 = colour.lightness(palette.accent, -50),
-	accent3 = colour.lightness(palette.accent, -35),
-	accent4 = colour.lightness(palette.accent, -15),
-	accent5 = colour.lightness(palette.accent, 0),
-	black1 = colour.lightness(palette.black, -10),
-	black2 = colour.lightness(palette.black, 0),
-	black3 = colour.lightness(palette.black, 7),
-	black4 = colour.lightness(palette.black, 14),
-	dark_blue = colour.lightness(palette.blue, -40),
-	dark_green = colour.lightness(palette.green, -40),
-	dark_red = colour.lightness(palette.red, -30),
-	dark_yellow = colour.lightness(palette.yellow, -20),
-	light_blue = colour.lightness(palette.blue, 15),
-	light_green = colour.lightness(palette.green, 15),
-	light_red = colour.lightness(palette.red, 40),
-	light_yellow = colour.lightness(palette.yellow, 38),
-	alternative_accent = colour.lightness(palette.alternative_accent, 0),
-	white1 = colour.lightness(palette.white, -12),
-	white2 = colour.lightness(palette.white, -7),
-	white3 = colour.lightness(palette.white, -2),
-	white4 = colour.lightness(palette.white, 3),
-	white5 = colour.lightness(palette.white, 6),
+local term_colors = TerminalColors {
+	p.fg,
+	p.error_fg,
+	p.success_fg,
+	p.warning_fg,
+	p.info_fg,
+	p.focus_fg,
+	colors.dark_cyan,
+	p.bg,
+	p.fg,
+	p.error_fg,
+	p.success_fg,
+	p.warning_fg,
+	p.info_fg,
+	p.focus_fg,
+	colors.dark_cyan,
+	p.bg,
 }
 
-local theme = Theme {
-	"set background=light",
+-- empty colors to force lookups to use the __index metamethod, which can
+-- then exit and warn you that you should from now on use the "palette" colors.
+colors = {}
+setmetatable(colors, {
+	__index = function()
+		print("get colors from palette instead")
+		os.exit(1)
+	end,
+})
 
-	Cond {
-		And {
-			"!has('gui_running')",
-			"&t_Co < 256",
-			"!has('nvim')",
-		},
-		"finish",
-	},
-
-	"hi clear",
-
-	Cond {
-		"exists('syntax_on')",
-		"syntax reset",
-	},
-
-	"let g:colors_name = 'yui'",
-
+local theme_colors = {
 	[[" Terminal Colors ]],
-	TerminalColors {
-		c.black2,
-		c.dark_red,
-		c.dark_green,
-		c.dark_yellow,
-		"#00588f",
-		c.accent2,
-		c.dark_blue,
-		c.white4,
-		c.black2,
-		c.dark_red,
-		c.dark_green,
-		c.dark_yellow,
-		"#00588f",
-		c.accent3,
-		c.dark_blue,
-		c.white4,
-	},
+	term_colors,
 
 	[[" UI & Syntax]],
-	HLGroup { name = "Normal", guifg = c.black2, guibg = c.white4 },
+	HLGroup { name = "Normal", guifg = p.fg, guibg = p.bg },
 	HLGroup { name = "NormalNC", link = "Normal" },
+	HLGroup {
+		name = "StatusLine",
+		guifg = p.statusline_fg,
+		guibg = p.statusline_bg,
+		gui = "NONE",
+	},
+	HLGroup {
+		name = "StatusLineNC",
+		guifg = lighten(p.statusline_fg, 7),
+		guibg = lighten(p.statusline_bg, 7),
+		gui = "NONE",
+	},
 	HLGroup { name = "MsgArea", link = "Normal" },
-	HLGroup { name = "ColorColumn", guifg = "fg", guibg = c.white3 },
-	HLGroup { name = "Conceal", guifg = c.white1, guibg = "NONE" },
-	HLGroup { name = "CursorColumn", guifg = "NONE", guibg = c.white5 },
+	HLGroup { name = "ColorColumn", guifg = "fg", guibg = lighten(p.bg, -4) },
+	HLGroup { name = "Conceal", guifg = "fg", guibg = "NONE", gui = "underline" },
+	HLGroup { name = "ToolbarButton", link = "TabLine" },
+	HLGroup { name = "ToolbarLine", link = "TabLineFill" },
+	HLGroup { name = "CursorColumn", guifg = "NONE", guibg = p.menu_bg },
 	HLGroup { name = "Cursor", guifg = "bg", guibg = "fg" },
-	HLGroup { name = "CursorIM", guifg = "NONE", guibg = "fg" },
-	HLGroup { name = "CursorLine", guifg = "NONE", guibg = c.white3, gui = "NONE" },
-	HLGroup { name = "CursorLineNr", guifg = "NONE", guibg = c.white3, gui = "NONE" },
-	HLGroup { name = "DiffAdd", guifg = c.dark_green, guibg = c.light_green },
-	HLGroup { name = "DiffChange", guifg = c.dark_yellow, guibg = c.light_yellow },
-	HLGroup { name = "DiffDelete", guifg = c.dark_red, guibg = c.light_red, gui = "NONE" },
-	HLGroup { name = "DiffText", guifg = c.dark_blue, guibg = c.light_blue },
+	HLGroup { name = "lCursor", link = "Cursor" },
+	HLGroup { name = "CursorIM", link = "Cursor" },
+	HLGroup { name = "CursorLine", guifg = "NONE", guibg = p.menu_bg, gui = "NONE" },
+	HLGroup { name = "CursorLineNr", guifg = "NONE", guibg = p.menu_bg, gui = "NONE" },
+	HLGroup { name = "CopilotSuggestion", guifg = p.fg_muted, guibg = "NONE" },
+	HLGroup { name = "DiffAdd", guifg = p.success_fg, guibg = p.success_bg },
+	HLGroup { name = "DiffChange", guifg = p.warning_fg, guibg = p.warning_bg },
+	HLGroup { name = "DiffDelete", guifg = p.error_fg, guibg = p.error_bg, gui = "NONE" },
+	HLGroup { name = "DiffText", guifg = p.info_fg, guibg = p.info_bg },
 	HLGroup { name = "Directory", guifg = "fg", guibg = "NONE" },
-	HLGroup { name = "Error", link = "DiffDelete" },
-	HLGroup { name = "ErrorMessage", link = "DiffDelete" },
-	HLGroup { name = "ErrorMsg", link = "DiffDelete" },
+	HLGroup { name = "ErrorMsg", guifg = p.error_fg, guibg = "NONE", gui = "bold" },
 	HLGroup { name = "Identifier", guifg = "fg", guibg = "NONE" },
 	HLGroup { name = "Ignore", guifg = "fg", guibg = "NONE" },
-	HLGroup { name = "IncSearch", guifg = c.accent5, guibg = c.accent2 },
-	HLGroup { name = "InfoMsg", guifg = c.accent2, guibg = c.accent5 },
-	HLGroup { name = "MatchParen", guifg = "NONE", guibg = c.white2 },
-	HLGroup { name = "TabLineSel", guifg = "fg", guibg = c.white2 },
-	HLGroup { name = "TabLine", link = "Pmenu" },
-	HLGroup { name = "TabLineFill", link = "StatusLineNC" },
-	HLGroup { name = "ModeMsg", guifg = "fg", guibg = "NONE" },
-	HLGroup { name = "MoreMsg", guifg = "fg", guibg = "NONE" },
-	HLGroup { name = "NonText", guifg = c.white1, guibg = "NONE" },
-	HLGroup { name = "Pmenu", guifg = "NONE", guibg = c.white3 },
-	HLGroup { name = "PmenuThumb", guifg = "NONE", guibg = "fg" },
+	HLGroup { name = "MatchParen", link = "CurSearch" },
+	HLGroup {
+		name = "WinBar",
+		guifg = "fg",
+		guibg = "NONE",
+		gui = { "underline" },
+		guisp = p.fg_muted,
+	},
+	HLGroup {
+		name = "WinBarNC",
+		guifg = p.fg_muted,
+		guibg = "NONE",
+		gui = "underline",
+		guisp = p.fg_dim,
+	},
+	HLGroup {
+		name = "TabLineSel",
+		guifg = p.statusline_fg,
+		guibg = p.statusline_bg,
+		gui = { "NONE" },
+	},
+	HLGroup {
+		name = "TabLine",
+		guifg = p.statusline_fg,
+		guibg = "NONE",
+		gui = "NONE",
+	},
+	HLGroup {
+		name = "TabLineFill",
+		guifg = p.statusline_fg,
+		guibg = "NONE",
+		gui = "NONE",
+	},
+	HLGroup { name = "ModeMsg", guifg = p.info_fg, guibg = p.info_bg, gui = "NONE" },
+	HLGroup { name = "MoreMsg", guifg = p.info_fg, guibg = p.info_bg, gui = "NONE" },
+	HLGroup { name = "WarningMsg", guifg = p.warning_fg, guibg = p.warning_bg, gui = "NONE" },
+	HLGroup { name = "NonText", guifg = p.fg_dim, guibg = "NONE" },
+	HLGroup { name = "Whitespace", guifg = p.fg_dim, guibg = "NONE" },
+	HLGroup { name = "Pmenu", guifg = p.menu_fg, guibg = p.menu_bg },
+	HLGroup { name = "PmenuSel", guifg = p.focus_fg, guibg = p.focus_bg, gui = "bold" },
+	HLGroup { name = "PmenuKind", guifg = p.menu_fg, guibg = p.menu_bg, gui = "italic" },
+	HLGroup { name = "PmenuKindSel", guifg = p.focus_fg, guibg = p.focus_bg, gui = "italic" },
+	HLGroup { name = "PmenuExtra", guifg = p.menu_fg, guibg = p.menu_bg },
+	HLGroup { name = "PmenuExtraSel", guifg = p.focus_fg, guibg = p.focus_bg },
+	HLGroup { name = "PmenuSbar", guifg = "NONE", guibg = p.menu_bg },
+	HLGroup { name = "PmenuThumb", guifg = "NONE", guibg = lighten(p.menu_bg, -10) },
 	HLGroup { name = "PreProc", guifg = "fg", guibg = "NONE" },
 	HLGroup { name = "Question", guifg = "fg", guibg = "NONE" },
-	HLGroup { name = "Search", guifg = c.accent2, guibg = c.accent5 },
-	HLGroup { name = "CurSearch", guifg = c.accent5, guibg = c.accent3 },
-	HLGroup { name = "Visual", guifg = c.accent1, guibg = c.accent4 },
-	HLGroup { name = "Special", guifg = "fg", guibg = "NONE" },
-	HLGroup { name = "SpecialKey", guifg = "fg", guibg = "NONE" },
-	HLGroup { name = "SpellBad", link = "DiffDelete" },
 	HLGroup {
-		name = "SpellCap",
-		guifg = "NONE",
-		guibg = "NONE",
-		guisp = c.light_red,
-		gui = "undercurl",
+		name = "CurSearch",
+		guifg = lighten(p.focus_fg, -8),
+		guibg = lighten(p.focus_bg, -8),
+		gui = "bold",
 	},
-	HLGroup { name = "SpellLocal", guifg = "fg", guibg = "NONE" },
-	HLGroup { name = "SpellRare", guifg = "fg", guibg = "NONE" },
+	HLGroup { name = "IncSearch", guifg = p.focus_bg, guibg = p.focus_fg, gui = "NONE" },
+	HLGroup {
+		name = "Search",
+		guifg = lighten(p.focus_fg, 0),
+		guibg = lighten(p.focus_bg, 0),
+		gui = "NONE",
+	},
+	HLGroup { name = "Visual", guifg = p.focus_fg, guibg = p.focus_bg },
+	HLGroup {
+		name = "VisualNOS",
+		guifg = lighten(p.focus_fg, 5),
+		guibg = lighten(p.focus_bg, 5),
+	},
+	HLGroup { name = "Special", guifg = "fg", guibg = "NONE" },
+	HLGroup { name = "SpecialKey", guifg = p.warning_fg, guibg = p.warning_bg },
+	HLGroup { name = "SpellBad", guifg = "fg", guibg = "NONE", gui = "undercurl" },
+	HLGroup { name = "SpellCap", link = "SpellBad" },
+	HLGroup { name = "SpellLocal", link = "SpellBad" },
+	HLGroup { name = "SpellRare", link = "SpellBad" },
 	HLGroup { name = "Statement", guifg = "fg", guibg = "NONE", gui = "italic" },
-	HLGroup { name = "StatusLine", guifg = c.white2, guibg = c.black1, gui = "reverse" },
-	HLGroup { name = "StatusLineNC", guifg = c.white3, guibg = c.black2 },
-	HLGroup { name = "Terminal", guifg = "fg", guibg = "bg" },
-	HLGroup { name = "Todo", link = "WarningMsg" },
-	HLGroup { name = "ToolbarButton", guifg = "fg", guibg = "NONE" },
-	HLGroup { name = "ToolbarLine", guifg = "NONE", guibg = "NONE" },
 	HLGroup { name = "Type", guifg = "NONE", guibg = "NONE", gui = "italic" },
 	HLGroup { name = "Underlined", guifg = "fg", guibg = "NONE", gui = "underline" },
-	HLGroup { name = "VertSplit", guifg = c.white1, guibg = "NONE", gui = "NONE" },
-	HLGroup { name = "VisualNOS", guifg = "NONE", guibg = c.white5 },
-	HLGroup { name = "WarningMsg", link = "DiffChange" },
-	HLGroup { name = "Whitespace", guifg = c.white1, guibg = "NONE" },
-	HLGroup { name = "Tooltip", guifg = "fg", guibg = c.white3 },
-	HLGroup { name = "Menu", guifg = "fg", guibg = c.white3 },
-	HLGroup { name = "Scrollbar", guifg = "NONE", guibg = c.white3 },
+	HLGroup { name = "VertSplit", guifg = p.fg_dim, guibg = "NONE", gui = "NONE" },
+	HLGroup { name = "Tooltip", guifg = p.menu_fg, guibg = p.menu_bg },
+	HLGroup { name = "Menu", guifg = p.menu_fg, guibg = p.menu_bg },
+	HLGroup { name = "Scrollbar", guifg = "NONE", guibg = p.menu_bg },
 	HLGroup { name = "Title", guifg = "fg", guibg = "NONE" },
-	HLGroup { name = "NormalNC", link = "Normal" },
-	HLGroup { name = "WinBar", link = "TabLineSel" },
-	HLGroup { name = "WinBarNC", link = "TabLine" },
 	HLGroup { name = "MsgSeparator", link = "VertSplit" },
 	HLGroup { name = "EndOfBuffer", link = "NonText" },
 	HLGroup { name = "QuickFixLine", link = "Search" },
-	HLGroup { name = "PmenuSel", link = "WildMenu" },
-	HLGroup { name = "StatusLineTerm", link = "StatusLine" },
-	HLGroup { name = "StatusLineTermNC", link = "StatusLineNC" },
-	HLGroup { name = "lCursor", link = "Cursor" },
-	HLGroup { name = "PmenuSbar", link = "Pmenu" },
-	HLGroup { name = "WildMenu", link = "Visual" },
+	Cond {
+		"!has('nvim')",
+		string.format(
+			"%s\n%s",
+			HLGroup { name = "StatusLineTerm", link = "StatusLine" },
+			HLGroup { name = "StatusLineTermNC", link = "StatusLineNC" }
+		),
+	},
+	HLGroup { name = "WildMenu", link = "IncSearch" },
 	HLGroup { name = "Boolean", link = "Constant" },
 	HLGroup { name = "Character", link = "Constant" },
 	HLGroup { name = "Conditional", link = "Statement" },
@@ -223,27 +225,32 @@ local theme = Theme {
 	HLGroup { name = "Substitute", link = "IncSearch" },
 	HLGroup { name = "Operator", guifg = "fg", guibg = "NONE" },
 	HLGroup { name = "Repeat", guifg = "fg", guibg = "NONE" },
-	HLGroup { name = "Constant", guifg = c.black1, guibg = "NONE", gui = "bold" },
+	HLGroup { name = "Constant", guifg = "fg", guibg = "NONE", gui = "bold" },
 	HLGroup { name = "jsParensError", guifg = "fg", guibg = "NONE" },
+	HLGroup { name = "Todo", guifg = p.warning_fg, guibg = p.warning_bg, gui = "bold" },
+	HLGroup { name = "Error", guifg = p.error_fg, guibg = "bg", gui = "bold" },
 	HLGroup { name = "Exception", guifg = "fg", guibg = "NONE" },
 	HLGroup { name = "Keyword", guifg = "fg", guibg = "NONE" },
 	HLGroup { name = "Label", guifg = "fg", guibg = "NONE" },
-	"",
-
 	[[" Floating Windows]],
-	HLGroup { name = "NormalFloat", guifg = "fg", guibg = c.white3 },
-	HLGroup { name = "FloatTitle", guifg = "fg", guibg = c.white3, gui = "bold" },
-	HLGroup { name = "FloatBorder", guifg = "fg", guibg = c.white3 },
+	HLGroup { name = "NormalFloat", guifg = "fg", guibg = "bg" },
+	HLGroup {
+		name = "FloatTitle",
+		guifg = "fg",
+		guibg = "bg",
+		gui = { "underline", "bold" },
+	},
+	HLGroup { name = "FloatBorder", guifg = "fg", guibg = "NONE" },
 	"",
 
 	[[" Diagnostic]],
-	HLGroup { name = "DiagnosticError", link = "Error" },
-	HLGroup { name = "DiagnosticHint", guifg = c.black2, guibg = "NONE" },
-	HLGroup { name = "DiagnosticInfo", link = "DiffText" },
-	HLGroup { name = "DiagnosticWarn", link = "WarningMsg" },
+	HLGroup { name = "DiagnosticError", guifg = p.error_fg, guibg = p.error_bg },
+	HLGroup { name = "DiagnosticHint", guifg = p.success_fg, guibg = p.success_bg },
+	HLGroup { name = "DiagnosticInfo", guifg = p.info_fg, guibg = p.info_bg },
+	HLGroup { name = "DiagnosticWarn", guifg = p.warning_fg, guibg = p.warning_bg },
 	HLGroup {
 		name = "DiagnosticFloatingError",
-		guifg = "NONE",
+		guifg = p.error_fg,
 		guibg = "NONE",
 		gui = "NONE",
 	},
@@ -255,45 +262,50 @@ local theme = Theme {
 		guifg = "NONE",
 		guibg = "NONE",
 		gui = "undercurl",
-		guisp = c.dark_red,
+		guisp = p.error_fg,
 	},
 	HLGroup {
 		name = "DiagnosticUnderlineHint",
 		guifg = "NONE",
 		guibg = "NONE",
 		gui = "undercurl",
-		guisp = c.black2,
+		guisp = p.success_fg,
 	},
 	HLGroup {
 		name = "DiagnosticUnderlineInfo",
 		guifg = "NONE",
 		guibg = "NONE",
 		gui = "undercurl",
-		guisp = c.dark_blue,
+		guisp = p.info_fg,
 	},
 	HLGroup {
 		name = "DiagnosticUnderlineWarn",
 		guifg = "NONE",
 		guibg = "NONE",
 		gui = "undercurl",
-		guisp = c.dark_yellow,
+		guisp = p.warning_fg,
 	},
 	HLGroup {
 		name = "DiagnosticSignError",
-		guifg = c.dark_red,
+		guifg = p.error_fg,
 		guibg = "NONE",
 		gui = "NONE",
 	},
-	HLGroup { name = "DiagnosticSignHint", guifg = c.black2, guibg = "NONE", gui = "NONE" },
+	HLGroup {
+		name = "DiagnosticSignHint",
+		guifg = p.succes_fg,
+		guibg = "NONE",
+		gui = "NONE",
+	},
 	HLGroup {
 		name = "DiagnosticSignInfo",
-		guifg = c.dark_blue,
+		guifg = p.info_fg,
 		guibg = "NONE",
 		gui = "NONE",
 	},
 	HLGroup {
 		name = "DiagnosticSignWarn",
-		guifg = c.dark_yellow,
+		guifg = p.warning_fg,
 		guibg = "NONE",
 		gui = "NONE",
 	},
@@ -304,6 +316,8 @@ local theme = Theme {
 	"",
 
 	[[" Vim Script]],
+	HLGroup { name = "vimCommand", guifg = "fg", guibg = "NONE", gui = "NONE" },
+	HLGroup { name = "vimFilter", guifg = "fg", guibg = "NONE", gui = "bold" },
 	HLGroup { name = "vimGroup", link = "Normal" },
 	HLGroup { name = "vimHiGui", link = "Normal" },
 	HLGroup { name = "vimHiKeyList", link = "Normal" },
@@ -319,8 +333,11 @@ local theme = Theme {
 	[[" Lua]],
 	HLGroup { name = "luaFuncKeyword", guifg = "fg", guibg = "NONE", gui = "bold" },
 	HLGroup { name = "luaRepeat", guifg = "fg", guibg = "NONE", gui = "bold" },
+	HLGroup { name = "luaParens", link = "Normal" },
 	HLGroup { name = "luaSpecialValue", guifg = "fg", guibg = "NONE", gui = "bold" },
 	HLGroup { name = "luaLocal", link = "Normal" },
+	HLGroup { name = "luaBraces", link = "Normal" },
+	HLGroup { name = "luaStatement", link = "Normal" },
 	HLGroup { name = "luaBuiltIn", guifg = "fg", guibg = "NONE", gui = "underline" },
 
 	[[" Typescript]],
@@ -359,10 +376,10 @@ local theme = Theme {
 	[["  Help Text]],
 	HLGroup { name = "helpBacktick", link = "Constant" },
 	HLGroup { name = "helpCommand", link = "Constant" },
-	HLGroup { name = "helpDeprecated", link = "Error" },
-	HLGroup { name = "helpExample", guifg = c.black1, guibg = c.white3, gui = "NONE" },
+	HLGroup { name = "helpDeprecated", link = "DiffDelete" },
+	HLGroup { name = "helpExample", guifg = "fg", guibg = "bg", gui = "bold" },
 	HLGroup { name = "helpHeader", guifg = "NONE", guibg = "NONE", gui = "bold" },
-	HLGroup { name = "helpHeadline", guifg = c.black1, guibg = "NONE", gui = { "bold" } },
+	HLGroup { name = "helpHeadline", guifg = "fg", guibg = "NONE", gui = { "bold" } },
 	HLGroup {
 		name = "helpHyperTextEntry",
 		guifg = "NONE",
@@ -372,7 +389,7 @@ local theme = Theme {
 	HLGroup { name = "helpHyperTextJump", guifg = "NONE", guibg = "NONE", gui = "underline" },
 	HLGroup { name = "helpNote", guifg = "NONE", guibg = "NONE", gui = "bold" },
 	HLGroup { name = "helpOption", guifg = "NONE", guibg = "NONE", gui = "bold" },
-	HLGroup { name = "helpSectionDelim", guifg = c.black4, guibg = "NONE", gui = "NONE" },
+	HLGroup { name = "helpSectionDelim", guifg = p.fg_dim, guibg = "NONE", gui = "NONE" },
 	HLGroup { name = "helpSpecial", guifg = "NONE", guibg = "NONE", gui = "bold" },
 	HLGroup { name = "helpURL", guifg = "NONE", guibg = "NONE", gui = "underline" },
 	"",
@@ -380,9 +397,7 @@ local theme = Theme {
 	Cond {
 		"has('nvim')",
 		string.format(
-			[[" Help Text TS
-%s
-%s]],
+			'" Help Text TS\n%s\n%s',
 			HLGroup { name = "@text.literal", link = "helpExample" },
 			HLGroup { name = "@text.reference", link = "helpOption" }
 		),
@@ -458,7 +473,29 @@ local theme = Theme {
 
 	[[" Treesitter Context]],
 	HLGroup { name = "TreesitterContextBottom", gui = "underline" },
-	HLGroup { name = "TreesitterContext", link = "Pmenu" },
+	HLGroup { name = "TreesitterContext", guifg = "fg", guibg = p.menu_bg, gui = "bold" },
+	"",
+
+	[[" Leap]],
+	HLGroup { name = "LeapMatch", guifg = p.success_fg, guibg = p.success_bg, gui = "NONE" },
+	HLGroup {
+		name = "LeapLabelPrimary",
+		guifg = p.info_fg,
+		guibg = p.info_bg,
+		gui = "bold",
+	},
+	HLGroup {
+		name = "LeapLabelSecondary",
+		guifg = lighten(p.info_fg, 6),
+		guibg = lighten(p.info_bg, 6),
+		gui = "NONE",
+	},
+	HLGroup {
+		name = "LeapLabelSelected",
+		guifg = p.focus_fg,
+		guibg = p.focus_bg,
+		gui = "NONE",
+	},
 	"",
 
 	[[" Which Key]],
@@ -466,42 +503,17 @@ local theme = Theme {
 	HLGroup { name = "WhichKeyFloating", link = "Pmenu" },
 	"",
 
-	[[" Leap]],
-	HLGroup { name = "LeapMatch", guifg = c.dark_blue, guibg = c.light_blue, gui = "NONE" },
-	HLGroup {
-		name = "LeapLabelPrimary",
-		guifg = "#ffffff",
-		guibg = c.alternative_accent,
-		gui = "bold",
-	},
-	HLGroup {
-		name = "LeapLabelSecondary",
-		guifg = c.light_yellow,
-		guibg = c.dark_yellow,
-		gui = "NONE",
-	},
-	HLGroup {
-		name = "LeapLabelSelected",
-		guifg = c.dark_red,
-		guibg = c.light_red,
-		gui = "NONE",
-	},
-	"",
-
 	[[" Telescope]],
 	HLGroup {
 		name = "TelescopeMatching",
-		guifg = c.accent5,
-		guibg = c.accent3,
-		gui = "NONE",
+		link = "CurSearch",
 	},
 	HLGroup {
 		name = "TelescopeSelection",
-		guifg = c.accent2,
-		guibg = c.accent5,
-		gui = "NONE",
+		link = "Search",
 	},
 	"",
+
 	ThemeOption {
 		name = "yui_folds",
 		description = "How folds should be displayed",
@@ -510,15 +522,15 @@ local theme = Theme {
 			["'emphasize'"] = {
 				description = "Make folds more visible",
 				groups = {
-					HLGroup { name = "FoldColumn", guifg = c.black3, guibg = c.white2 },
-					HLGroup { name = "Folded", guifg = c.black3, guibg = c.white2 },
+					HLGroup { name = "FoldColumn", guifg = p.menu_fg, guibg = p.menu_bg },
+					HLGroup { name = "Folded", guifg = p.menu_fg, guibg = p.menu_bg },
 				},
 			},
 			["'fade'"] = {
 				description = "Fade out folds",
 				groups = {
-					HLGroup { name = "FoldColumn", guifg = c.white1, guibg = "NONE" },
-					HLGroup { name = "Folded", guifg = c.white1, guibg = "NONE" },
+					HLGroup { name = "FoldColumn", guifg = p.fg_dim, guibg = "NONE" },
+					HLGroup { name = "Folded", guifg = p.fg_dim, guibg = "NONE" },
 				},
 			},
 		},
@@ -531,15 +543,15 @@ local theme = Theme {
 			["'emphasize'"] = {
 				description = "Make line numbers more visible",
 				groups = {
-					HLGroup { name = "SignColumn", guifg = c.black3, guibg = c.white2 },
-					HLGroup { name = "LineNr", guifg = c.black3, guibg = c.white2 },
+					HLGroup { name = "SignColumn", guifg = p.menu_fg, guibg = p.menu_bg },
+					HLGroup { name = "LineNr", guifg = p.menu_fg, guibg = p.menu_bg },
 				},
 			},
 			["'fade'"] = {
 				description = "Fade out line numbers",
 				groups = {
-					HLGroup { name = "SignColumn", guifg = "fg", guibg = "bg" },
-					HLGroup { name = "LineNr", guifg = c.black4, guibg = "NONE" },
+					HLGroup { name = "SignColumn", guifg = p.fg_dim, guibg = "NONE" },
+					HLGroup { name = "LineNr", guifg = p.fg_dim, guibg = "NONE" },
 				},
 			},
 		},
@@ -556,7 +568,7 @@ local theme = Theme {
 				groups = {
 					HLGroup {
 						name = "Comment",
-						guifg = c.alternative_accent,
+						guifg = p.focus_fg,
 						guibg = "NONE",
 						gui = "italic",
 					},
@@ -565,7 +577,7 @@ local theme = Theme {
 			[0] = {
 				description = "Do not emphasize comments",
 				groups = {
-					HLGroup { name = "Comment", guifg = c.black3, guibg = "NONE", gui = "italic" },
+					HLGroup { name = "Comment", guifg = p.fg_dim, guibg = "NONE", gui = "italic" },
 				},
 			},
 		},
@@ -580,7 +592,7 @@ local theme = Theme {
 				groups = {
 					HLGroup {
 						name = "Comment",
-						guifg = c.alternative_accent,
+						guifg = p.focus_fg,
 						guibg = "NONE",
 						gui = "italic",
 					},
@@ -589,19 +601,19 @@ local theme = Theme {
 			["'fade'"] = {
 				description = "Fade out comments",
 				groups = {
-					HLGroup { name = "Comment", guifg = c.black3, guibg = "NONE", gui = "italic" },
+					HLGroup { name = "Comment", guifg = p.fg_dim, guibg = "NONE", gui = "italic" },
 				},
 			},
 			["'normal'"] = {
 				description = "Do not emphasize comments",
 				groups = {
-					HLGroup { name = "Comment", guifg = c.black3, guibg = "NONE", gui = "italic" },
+					HLGroup { name = "Comment", guifg = "fg", guibg = "NONE", gui = "italic" },
 				},
 			},
 			["'bg'"] = {
 				description = "Make comments have a background color",
 				groups = {
-					HLGroup { name = "Comment", guifg = "fg", guibg = c.white3, gui = "NONE" },
+					HLGroup { name = "Comment", guifg = p.menu_fg, guibg = p.menu_bg, gui = "NONE" },
 				},
 			},
 		},
@@ -622,34 +634,13 @@ using lightline]],
 	},
 }
 
-local lightline = Lightline {
-	fg = c.black1,
-	bg = c.white2,
-	normal = {
-		bg = c.light_green,
-		fg = c.dark_green,
-	},
-	insert = {
-		bg = c.light_blue,
-		fg = c.dark_blue,
-	},
-	visual = {
-		bg = c.accent5,
-		fg = c.accent2,
-	},
-	replace = {
-		bg = c.white5,
-		fg = c.alternative_accent,
-	},
-	error = {
-		bg = c.light_red,
-		fg = c.dark_red,
-	},
-	warning = {
-		bg = c.light_yellow,
-		fg = c.dark_yellow,
-	},
+local theme = Theme {
+	name = "yui",
+	palette = p,
+	colors = theme_colors,
 }
+
+local lightline = Lightline(p)
 
 return {
 	theme = theme,

@@ -15,16 +15,13 @@ setmetatable(Lightline, {
 	end,
 })
 
-function Lightline:new(config)
-	local bg = config.bg
-	local fg = config.fg
-
+function Lightline:new(palette)
 	local bg_shades = {}
 	local fg_shades = {}
 
 	for i, factor in ipairs { 5, 0, -5 } do
-		bg_shades[i] = lighten(bg, factor)
-		fg_shades[i] = lighten(fg, factor)
+		bg_shades[i] = lighten(palette.statusline_bg, factor)
+		fg_shades[i] = lighten(palette.statusline_fg, factor)
 	end
 
 	-- higher index = darker, meaning lightline components towards the side of the
@@ -42,34 +39,11 @@ function Lightline:new(config)
 	}
 
 	local t = {
+		palette = palette,
 		bg_shades = bg_shades,
 		fg_shades = fg_shades,
 		bg_shades_inactive = bg_shades_inactive,
 		fg_shades_inactive = fg_shades_inactive,
-		insert = {
-			fg = config.insert.fg,
-			bg = config.insert.bg,
-		},
-		normal = {
-			fg = config.normal.fg,
-			bg = config.normal.bg,
-		},
-		visual = {
-			fg = config.visual.fg,
-			bg = config.visual.bg,
-		},
-		replace = {
-			fg = config.replace.fg,
-			bg = config.replace.bg,
-		},
-		error = {
-			fg = config.error.fg,
-			bg = config.error.bg,
-		},
-		warning = {
-			fg = config.warning.fg,
-			bg = config.warning.bg,
-		},
 	}
 
 	setmetatable(t, getmetatable(self))
@@ -77,11 +51,67 @@ function Lightline:new(config)
 end
 
 function Lightline:to_vim()
+	local fg_shades = self.fg_shades
+	local bg_shades = self.bg_shades
+	local fg_shades_inactive = self.fg_shades_inactive
+	local bg_shades_inactive = self.bg_shades_inactive
+
+	local config = {
+		normal = {
+			left = {
+				{ fg_shades[3], bg_shades[3] },
+				{ fg_shades[2], bg_shades[2] },
+			},
+			right = {
+				{ fg_shades[3], bg_shades[3] },
+				{ fg_shades[3], bg_shades[3] },
+				{ fg_shades[2], bg_shades[2] },
+			},
+			middle = { { fg_shades[1], bg_shades[1] } },
+			error = { { self.palette.error_fg, self.palette.error_bg } },
+			warning = { { self.palette.warning_fg, self.palette.warning_bg } },
+		},
+		insert = {
+			left = {
+				{ self.palette.info_fg, self.palette.info_bg },
+				{ fg_shades[2], bg_shades[2] },
+			},
+		},
+		visual = {
+			left = {
+				{ self.palette.focus_fg, self.palette.focus_bg },
+				{ fg_shades[2], bg_shades[2] },
+			},
+		},
+		replace = {
+			left = {
+				{ self.palette.warning_fg, self.palette.warning_bg },
+				{ fg_shades[2], bg_shades[2] },
+			},
+		},
+		inactive = {
+			left = {
+				{ fg_shades_inactive[3], bg_shades_inactive[3] },
+				{ fg_shades_inactive[3], bg_shades_inactive[3] },
+				{ fg_shades_inactive[2], bg_shades_inactive[2] },
+			},
+			right = {
+				{ fg_shades_inactive[3], bg_shades_inactive[3] },
+				{ fg_shades_inactive[3], bg_shades_inactive[3] },
+				{ fg_shades_inactive[2], bg_shades_inactive[2] },
+			},
+			middle = { { fg_shades_inactive[1], bg_shades_inactive[1] } },
+		},
+		tabline = {
+			left = { { self.palette.fg, self.palette.bg } },
+			middle = { { self.palette.fg, self.palette.bg } },
+			tabsel = { { self.palette.statusline_fg, self.palette.statusline_bg } },
+		},
+	}
+
 	local out = {
 		"let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}",
 	}
-
-	local config = self:config()
 
 	-- We want to iterate over keys in a table in a predictable and stable order
 	-- to avoid Git diffs due to random key order when iterating over a table.
@@ -136,62 +166,6 @@ function Lightline:to_vim()
 	table.insert(out, "let g:lightline#colorscheme#yui#palette = lightline#colorscheme#fill(s:p)")
 
 	return table.concat(out, "\n")
-end
-
-function Lightline:config()
-	local fg_shades = self.fg_shades
-	local bg_shades = self.bg_shades
-	local fg_shades_inactive = self.fg_shades_inactive
-	local bg_shades_inactive = self.bg_shades_inactive
-
-	local config = {
-		normal = {
-			left = {
-				{ self.normal.fg, self.normal.bg },
-				{ fg_shades[2], bg_shades[2] },
-			},
-			right = {
-				{ fg_shades[3], bg_shades[3] },
-				{ fg_shades[3], bg_shades[3] },
-				{ fg_shades[2], bg_shades[2] },
-			},
-			middle = { { fg_shades[1], bg_shades[1] } },
-			error = { { self.error.fg, self.error.bg } },
-			warning = { { self.warning.fg, self.warning.bg } },
-		},
-		insert = {
-			left = {
-				{ self.insert.fg, self.insert.bg },
-				{ fg_shades[2], bg_shades[2] },
-			},
-		},
-		visual = {
-			left = { { self.visual.fg, self.visual.bg }, { fg_shades[2], bg_shades[2] } },
-		},
-		replace = {
-			left = {
-				{ self.replace.fg, self.replace.bg },
-				{ fg_shades[2], bg_shades[2] },
-			},
-		},
-		inactive = {
-			right = {
-				{ fg_shades_inactive[3], bg_shades_inactive[3] },
-				{ fg_shades_inactive[3], bg_shades_inactive[3] },
-				{ fg_shades_inactive[2], bg_shades_inactive[2] },
-			},
-			middle = { { fg_shades_inactive[1], bg_shades_inactive[1] } },
-		},
-		tabline = {
-			middle = { { fg_shades[1], bg_shades[1] } },
-		},
-	}
-
-	config.inactive.left = { table.unpack(config.inactive.right, 2) }
-	config.tabline.left = config.inactive.middle
-	config.tabline.tabsel = { table.unpack(config.normal.left, 2) }
-
-	return config
 end
 
 return Lightline
