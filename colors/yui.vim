@@ -37,8 +37,8 @@ hi Conceal guifg=#d6c7b6 ctermfg=187 guibg=NONE ctermbg=NONE
 hi CursorColumn guifg=NONE ctermfg=NONE guibg=#fdfcfb ctermbg=231
 hi Cursor guifg=bg ctermfg=bg guibg=fg ctermbg=fg
 hi CursorIM guifg=NONE ctermfg=NONE guibg=fg ctermbg=fg
-hi CursorLine guifg=fg ctermfg=fg guibg=#fdfcfb ctermbg=231 gui=NONE cterm=NONE
-hi CursorLineNr guifg=fg ctermfg=fg guibg=#fdfcfb ctermbg=231 gui=NONE cterm=NONE
+hi CursorLine guifg=NONE ctermfg=NONE guibg=#ebe4dd ctermbg=254 gui=NONE cterm=NONE
+hi CursorLineNr guifg=NONE ctermfg=NONE guibg=#ebe4dd ctermbg=254 gui=NONE cterm=NONE
 hi DiffAdd guifg=#4e4b36 ctermfg=238 guibg=#e2dba3 ctermbg=187
 hi DiffChange guifg=#7c4f18 ctermfg=94 guibg=#fef0e8 ctermbg=255
 hi DiffDelete guifg=#350303 ctermfg=233 guibg=#f8acac ctermbg=217 gui=NONE cterm=NONE
