@@ -1,5 +1,7 @@
 local option = require("option")
 local strings = require("strings")
+local And = require("and_or").And
+local Cond = require("condition")
 
 local LINE_LEN = 78
 
@@ -17,15 +19,70 @@ setmetatable(Theme, {
 	end,
 })
 
-function Theme:new(init)
-	local t = init
+local required = {
+	"fg",
+	"fg_muted",
+	"fg_dim",
+	"bg",
+	"menu_fg",
+	"menu_bg",
+	"statusline_fg",
+	"statusline_bg",
+	"success_bg",
+	"success_fg",
+	"info_bg",
+	"info_fg",
+	"warning_bg",
+	"warning_fg",
+	"error_bg",
+	"error_fg",
+	"focus_fg",
+	"focus_bg",
+}
+
+function Theme:new(options)
+	local p = options.palette
+	assert(options.name, "name is required")
+	assert(p, "palette is required")
+
+	for _, v in ipairs(required) do
+		assert(p[v], string.format("palette.%s is required", v))
+	end
+
+	local t = {
+		name = options.name,
+		palette = p,
+		colors = {
+			"set background=light",
+			Cond {
+				And {
+					"!has('gui_running')",
+					"&t_Co < 256",
+					"!has('nvim')",
+				},
+				"finish",
+			},
+
+			"hi clear",
+
+			Cond {
+				"exists('syntax_on')",
+				"syntax reset",
+			},
+
+			string.format("let g:colors_name = '%s'", options.name),
+
+			table.unpack(options.colors),
+		},
+	}
+
 	setmetatable(t, getmetatable(self))
 	return t
 end
 
 function Theme:to_vim()
 	local buf = {}
-	for _, v in ipairs(self) do
+	for _, v in ipairs(self.colors) do
 		table.insert(buf, tostring(v))
 	end
 	return table.concat(buf, "\n")
@@ -42,7 +99,7 @@ function Theme:docs()
 
 	table.insert(docs, strings.space_between("OPTIONS", "*yui-options*", LINE_LEN))
 	table.insert(docs, "")
-	for i, v in ipairs(self) do
+	for i, v in ipairs(self.colors) do
 		if option.Is(v) then
 			table.insert(docs, v:docs(LINE_LEN))
 			if i > 1 then

@@ -145,7 +145,17 @@ function HLGroup:new(init)
 	end
 
 	if init.guisp then
-		assert(underlines[init.gui], "guisp can only be used with gui=underline")
+		local has_underline = underlines[init.gui]
+		if type(init.gui) == "table" then
+			for _, attr in ipairs(init.gui) do
+				if underlines[attr] then
+					has_underline = true
+					break
+				end
+			end
+		end
+
+		assert(has_underline, "guisp can only be used with gui=underline")
 		t.guisp = init.guisp
 	end
 
