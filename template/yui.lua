@@ -313,6 +313,13 @@ local theme = Theme {
 	HLGroup { name = "vimHiGuiFgBg", link = "Normal" },
 	"",
 
+	[[" Lua]],
+	HLGroup { name = "luaFuncKeyword", guifg = "fg", guibg = "NONE", gui = "bold" },
+	HLGroup { name = "luaRepeat", guifg = "fg", guibg = "NONE", gui = "bold" },
+	HLGroup { name = "luaSpecialValue", guifg = "fg", guibg = "NONE", gui = "bold" },
+	HLGroup { name = "luaLocal", link = "Normal" },
+	HLGroup { name = "luaBuiltIn", guifg = "fg", guibg = "NONE", gui = "underline" },
+
 	[[" Typescript]],
 	HLGroup { name = "typescriptParens", guifg = "fg", guibg = "NONE" },
 	"",

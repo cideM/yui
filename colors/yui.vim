@@ -163,6 +163,12 @@ hi! link vimHiCTerm Normal
 hi! link vimHiCTermFgBg Normal
 hi! link vimHiGuiFgBg Normal
 
+" Lua
+hi luaFuncKeyword guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
+hi luaRepeat guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
+hi luaSpecialValue guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
+hi! link luaLocal Normal
+hi luaBuiltIn guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline cterm=underline
 " Typescript
 hi typescriptParens guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 
