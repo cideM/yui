@@ -152,7 +152,7 @@ local theme = Theme {
 	HLGroup { name = "TabLineFill", link = "StatusLineNC" },
 	HLGroup { name = "ModeMsg", guifg = "fg", guibg = "NONE" },
 	HLGroup { name = "MoreMsg", guifg = "fg", guibg = "NONE" },
-	HLGroup { name = "NonText", guifg = "fg", guibg = "NONE" },
+	HLGroup { name = "NonText", guifg = c.white1, guibg = "NONE" },
 	HLGroup { name = "Pmenu", guifg = "NONE", guibg = c.white3 },
 	HLGroup { name = "PmenuThumb", guifg = "NONE", guibg = "fg" },
 	HLGroup { name = "PreProc", guifg = "fg", guibg = "NONE" },
@@ -184,7 +184,7 @@ local theme = Theme {
 	HLGroup { name = "VertSplit", guifg = c.white1, guibg = "NONE", gui = "NONE" },
 	HLGroup { name = "VisualNOS", guifg = "NONE", guibg = c.white5 },
 	HLGroup { name = "WarningMsg", link = "DiffChange" },
-	HLGroup { name = "Whitespace", guifg = c.black4, guibg = "NONE" },
+	HLGroup { name = "Whitespace", guifg = c.white1, guibg = "NONE" },
 	HLGroup { name = "Tooltip", guifg = "fg", guibg = c.white3 },
 	HLGroup { name = "Menu", guifg = "fg", guibg = c.white3 },
 	HLGroup { name = "Scrollbar", guifg = "NONE", guibg = c.white3 },
@@ -507,8 +507,8 @@ local theme = Theme {
 			["'fade'"] = {
 				description = "Fade out folds",
 				groups = {
-					HLGroup { name = "FoldColumn", guifg = c.black4, guibg = "NONE" },
-					HLGroup { name = "Folded", guifg = c.black4, guibg = "NONE" },
+					HLGroup { name = "FoldColumn", guifg = c.white1, guibg = "NONE" },
+					HLGroup { name = "Folded", guifg = c.white1, guibg = "NONE" },
 				},
 			},
 		},

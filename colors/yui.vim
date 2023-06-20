@@ -57,7 +57,7 @@ hi! link TabLine Pmenu
 hi! link TabLineFill StatusLineNC
 hi ModeMsg guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 hi MoreMsg guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-hi NonText guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
+hi NonText guifg=#d6c7b6 ctermfg=187 guibg=NONE ctermbg=NONE
 hi Pmenu guifg=NONE ctermfg=NONE guibg=#ebe4dd ctermbg=254
 hi PmenuThumb guifg=NONE ctermfg=NONE guibg=fg ctermbg=fg
 hi PreProc guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
@@ -83,7 +83,7 @@ hi Underlined guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline cterm=un
 hi VertSplit guifg=#d6c7b6 ctermfg=187 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi VisualNOS guifg=NONE ctermfg=NONE guibg=#fdfcfb ctermbg=231
 hi! link WarningMsg DiffChange
-hi Whitespace guifg=#867159 ctermfg=95 guibg=NONE ctermbg=NONE
+hi Whitespace guifg=#d6c7b6 ctermfg=187 guibg=NONE ctermbg=NONE
 hi Tooltip guifg=fg ctermfg=fg guibg=#ebe4dd ctermbg=254
 hi Menu guifg=fg ctermfg=fg guibg=#ebe4dd ctermbg=254
 hi Scrollbar guifg=NONE ctermfg=NONE guibg=#ebe4dd ctermbg=254
@@ -280,8 +280,8 @@ hi TelescopeSelection guifg=#6132d7 ctermfg=62 guibg=#dcd7f9 ctermbg=189 gui=NON
 " yui_folds
 let s:yui_folds_value = get(g:, 'yui_folds', 'fade')
 if s:yui_folds_value ==? 'fade'
-	hi FoldColumn guifg=#867159 ctermfg=95 guibg=NONE ctermbg=NONE
-	hi Folded guifg=#867159 ctermfg=95 guibg=NONE ctermbg=NONE
+	hi FoldColumn guifg=#d6c7b6 ctermfg=187 guibg=NONE ctermbg=NONE
+	hi Folded guifg=#d6c7b6 ctermfg=187 guibg=NONE ctermbg=NONE
 elseif s:yui_folds_value ==? 'emphasize'
 	hi FoldColumn guifg=#72604b ctermfg=59 guibg=#e0d5ca ctermbg=188
 	hi Folded guifg=#72604b ctermfg=59 guibg=#e0d5ca ctermbg=188
