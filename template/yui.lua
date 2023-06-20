@@ -599,7 +599,7 @@ local theme = Theme {
 	ThemeOption {
 		name = "yui_lightline",
 		default = "v:false",
-    deprecated = [[
+		deprecated = [[
 The lightline initialization is now done through
 an autoloaded function. You therefore no longer
 need to tell the yui theme whether or not you're
