@@ -36,6 +36,8 @@ hi StatusLineNC guifg=#5f503e ctermfg=239 guibg=#efeae5 ctermbg=255 gui=NONE cte
 hi! link MsgArea Normal
 hi ColorColumn guifg=fg ctermfg=fg guibg=#ede7e1 ctermbg=254
 hi Conceal guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline cterm=underline
+hi! link ToolbarButton TabLine
+hi! link ToolbarLine TabLineFill
 hi CursorColumn guifg=NONE ctermfg=NONE guibg=#ebe4dd ctermbg=254
 hi Cursor guifg=bg ctermfg=bg guibg=fg ctermbg=fg
 hi! link lCursor Cursor
