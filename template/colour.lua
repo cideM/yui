@@ -72,11 +72,43 @@ M.hex_to_256 = function(hex)
 	return M.color_find_256(M.hex_to_rgb(hex))
 end
 
--- lightness is not part of the original tmux file
+-- The code below this line is not part of the original tmux file!
+
 M.lightness = function(color, amount)
 	local color_hsluv = hsluv.hex_to_hsluv(color)
 	color_hsluv[3] = color_hsluv[3] + amount
 	return hsluv.hsluv_to_hex(color_hsluv)
+end
+
+local function luminance(c)
+	-- Copied from the TS code here: https://github.com/ricokahler/color2k/blob/main/src/parseToRgba.ts#L119
+	local r, g, b = table.unpack(hsluv.hex_to_rgb(c))
+	r = r * 255 -- hex_to_rgb returns values between 0 and 1
+	g = g * 255
+	b = b * 255
+
+	local f = function(x)
+		local channel = x / 255
+		if channel <= 0.03928 then
+			return channel / 12.92
+		end
+		return ((channel + 0.055) / 1.055) ^ 2.4
+	end
+
+	return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b)
+end
+
+-- This function is used in: https://github.com/primer/prism but comes from
+-- the 'color2k' TS library
+M.contrast = function(color1, color2)
+	local l1 = luminance(color1)
+	local l2 = luminance(color2)
+
+	if l1 > l2 then
+		return (l1 + 0.05) / (l2 + 0.05)
+	end
+
+	return (l2 + 0.05) / (l1 + 0.05)
 end
 
 return M
