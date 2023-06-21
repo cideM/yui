@@ -279,9 +279,9 @@ hi TreesitterContextBottom gui=underline cterm=underline
 hi TreesitterContext guifg=fg ctermfg=fg guibg=#ebe4dd ctermbg=254 gui=bold cterm=bold
 
 " Leap
-hi LeapMatch guifg=#38551E ctermfg=237 guibg=#DFF0D0 ctermbg=194 gui=NONE cterm=NONE
-hi LeapLabelPrimary guifg=#1E5571 ctermfg=23 guibg=#E7F4F8 ctermbg=255 gui=bold cterm=bold
-hi LeapLabelSecondary guifg=#256484 ctermfg=24 guibg=#ffffff ctermbg=231 gui=NONE cterm=NONE
+hi! link LeapMatch CurSearch
+hi! link LeapLabelPrimary CurSearch
+hi LeapLabelSecondary guifg=#6132d7 ctermfg=62 guibg=#dcd7f9 ctermbg=189 gui=NONE cterm=NONE
 hi LeapLabelSelected guifg=#6132d7 ctermfg=62 guibg=#dcd7f9 ctermbg=189 gui=NONE cterm=NONE
 
 " Which Key

@@ -478,17 +478,15 @@ local theme_colors = {
 	"",
 
 	[[" Leap]],
-	HLGroup { name = "LeapMatch", guifg = p.success_fg, guibg = p.success_bg, gui = "NONE" },
+	HLGroup { name = "LeapMatch", link = "CurSearch" },
 	HLGroup {
 		name = "LeapLabelPrimary",
-		guifg = p.info_fg,
-		guibg = p.info_bg,
-		gui = "bold",
+    link = "CurSearch",
 	},
 	HLGroup {
 		name = "LeapLabelSecondary",
-		guifg = lighten(p.info_fg, 6),
-		guibg = lighten(p.info_bg, 6),
+		guifg = p.focus_fg,
+		guibg = p.focus_bg,
 		gui = "NONE",
 	},
 	HLGroup {
