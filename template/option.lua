@@ -49,14 +49,28 @@ function ThemeOption:new(init)
 	return t
 end
 
+function ThemeOption:iter()
+	return coroutine.wrap(function()
+		for _, v in pairs(self.cases) do
+			for _, hl_group in ipairs(v.groups) do
+				if hl_group.iter then
+					for x in hl_group:iter() do
+						coroutine.yield(x)
+					end
+				end
+			end
+		end
+	end)
+end
+
 function ThemeOption:to_vim()
-  local num_cases = 0
-  for _ in pairs(self.cases) do
-    num_cases = num_cases + 1
-  end
-  if num_cases == 0 then
-    return ""
-  end
+	local num_cases = 0
+	for _ in pairs(self.cases) do
+		num_cases = num_cases + 1
+	end
+	if num_cases == 0 then
+		return ""
+	end
 
 	local var_name_vim = self.name .. "_value"
 	local lines = {

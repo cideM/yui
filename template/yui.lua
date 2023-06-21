@@ -4,6 +4,7 @@ local HLGroup = require("hlgroup")
 local TerminalColors = require("terminal_colors")
 local ThemeOption = require("option").ThemeOption
 local Cond = require("condition")
+local contrast = require("colour").contrast
 local lighten = require("colour").lightness
 
 local colors = {
@@ -640,9 +641,43 @@ local theme = Theme {
 	colors = theme_colors,
 }
 
+local report = {}
+
+-- round to 2 decimal places
+local function round(n)
+	local c = math.floor(n * 10 ^ 2 + 0.5) / 10 ^ 2
+	return c
+end
+
+local function report_line(name, color_contrast)
+	local c = round(color_contrast)
+	local rating = c > 7 and "AAA" or c > 4.5 and "AA" or c > 3 and "A" or "B"
+	return string.format("%-30s %-5s %s", name, c, rating)
+end
+
+for x in theme:iter() do
+	for _, v in ipairs { "guifg", "guibg" } do
+		if x[v] == nil or x[v]:sub(0, 1) ~= "#" then
+			goto continue
+		end
+	end
+
+	table.insert(report, report_line(x.name, contrast(x.guifg, x.guibg)))
+	::continue::
+end
+
+table.insert(report, "")
+table.insert(report, "========= term colors:")
+for x in term_colors:iter() do
+	if x ~= p.bg then
+		table.insert(report, report_line(x, contrast(x, p.bg)))
+	end
+end
+
 local lightline = Lightline(p)
 
 return {
 	theme = theme,
+	report = table.concat(report, "\n"),
 	lightline = lightline,
 }

@@ -51,6 +51,12 @@ setmetatable(HLGroup, {
 	end,
 })
 
+function HLGroup:iter()
+	return coroutine.wrap(function()
+		coroutine.yield(self)
+	end)
+end
+
 function HLGroup:to_vim()
 	local buf = {}
 

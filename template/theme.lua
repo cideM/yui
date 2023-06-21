@@ -80,6 +80,18 @@ function Theme:new(options)
 	return t
 end
 
+function Theme:iter()
+	return coroutine.wrap(function()
+		for _, v in ipairs(self.colors) do
+			if v.iter then
+				for x in v:iter() do
+					coroutine.yield(x)
+				end
+			end
+		end
+	end)
+end
+
 function Theme:to_vim()
 	local buf = {}
 	for _, v in ipairs(self.colors) do
