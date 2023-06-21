@@ -28,9 +28,7 @@ DiagnosticError                6.08  AA
 DiagnosticHint                 7.04  AAA
 DiagnosticInfo                 7.21  AAA
 DiagnosticWarn                 4.69  AA
-LeapMatch                      7.04  AAA
-LeapLabelPrimary               7.21  AAA
-LeapLabelSecondary             6.49  AA
+LeapLabelSecondary             5.14  AA
 LeapLabelSelected              5.14  AA
 FoldColumn                     6.17  AA
 Folded                         6.17  AA
