@@ -22,6 +22,14 @@ function TerminalColors:new(init)
 	return t
 end
 
+function TerminalColors:iter()
+  return coroutine.wrap(function()
+    for _, v in ipairs(self) do
+      coroutine.yield(v)
+    end
+  end)
+end
+
 -- to_vim generates both Neovim and Vim colors plus a condition so the correct
 -- one is rendered
 function TerminalColors:to_vim()

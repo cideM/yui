@@ -20,6 +20,18 @@ function and_or_base:to_vim()
 	return "(" .. table.concat(out, " " .. self.sep .. " ") .. ")"
 end
 
+function and_or_base:iter()
+  return coroutine.wrap(function()
+    for _, v in ipairs(self.conditions) do
+      if v.iter then
+        for x in v:iter() do
+          coroutine.yield(x)
+        end
+      end
+    end
+  end)
+end
+
 -- apply fn to each condition string
 function and_or_base:map(fn)
 	local out = { sep = self.sep, conditions = {} }

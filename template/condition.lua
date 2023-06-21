@@ -47,6 +47,18 @@ function Cond:new(init)
 	return t
 end
 
+function Cond:iter()
+  return coroutine.wrap(function()
+    for _, v in ipairs(self) do
+      if v.iter then
+        for x in v:iter() do
+          coroutine.yield(x)
+        end
+      end
+    end
+  end)
+end
+
 -- apply a function to each condition; values are skipped
 function Cond:map(fn)
 	local out = {}
