@@ -6,19 +6,18 @@ setmetatable(TerminalColors, {
 	__call = function(cls, ...)
 		return cls:new(...)
 	end,
-})
-
-local term_color_neovim_mt = {
-	__tostring = function(self)
-		return self:to_vim()
+	__tostring = function(__self)
+		return __self:to_vim()
 	end,
-	__index = TerminalColors,
-}
+	__index = function(_, k)
+		return rawget(TerminalColors, k)
+	end,
+})
 
 function TerminalColors:new(init)
 	assert(#init == 16, "init must be a table of 16 elements")
 	local t = table.move(init, 1, 16, 1, {})
-	setmetatable(t, term_color_neovim_mt)
+	setmetatable(t, getmetatable(self))
 	return t
 end
 
@@ -28,6 +27,10 @@ function TerminalColors:iter()
       coroutine.yield(v)
     end
   end)
+end
+
+function Is(t)
+	return getmetatable(t) == getmetatable(TerminalColors)
 end
 
 -- to_vim generates both Neovim and Vim colors plus a condition so the correct
@@ -56,4 +59,7 @@ function TerminalColors:to_nvim_term()
 	return table.concat(buf, "\n")
 end
 
-return TerminalColors
+return {
+	TerminalColors = TerminalColors,
+	Is = Is,
+}
