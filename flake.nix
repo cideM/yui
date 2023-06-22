@@ -26,7 +26,7 @@
 
           buildPhase = ''
             make
-            rm -r template Makefile flake.nix flake.lock README.md
+            rm -r src Makefile flake.nix flake.lock README.md report.txt CONTRIBUTING.md LICENSE.txt
           '';
 
           src = pkgs.lib.cleanSourceWith {
