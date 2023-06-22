@@ -1,4 +1,4 @@
-local Cond = require("condition")
+local Cond = require("condition").Cond
 
 local TerminalColors = {}
 
@@ -19,14 +19,6 @@ function TerminalColors:new(init)
 	local t = table.move(init, 1, 16, 1, {})
 	setmetatable(t, getmetatable(self))
 	return t
-end
-
-function TerminalColors:iter()
-  return coroutine.wrap(function()
-    for _, v in ipairs(self) do
-      coroutine.yield(v)
-    end
-  end)
 end
 
 function Is(t)

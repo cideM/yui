@@ -1,7 +1,9 @@
 local option = require("option")
 local strings = require("strings")
 local And = require("and_or").And
-local Cond = require("condition")
+local Cond = require("condition").Cond
+local IsTerminalColor = require("terminal_colors").Is
+local IsHLGroup = require("hlgroup").Is
 
 local LINE_LEN = 78
 
@@ -80,13 +82,43 @@ function Theme:new(options)
 	return t
 end
 
+local function recursive_drain(iter)
+	for x in iter do
+		if x.iter then
+			recursive_drain(x:iter())
+		else
+			coroutine.yield(x)
+		end
+	end
+end
+
 function Theme:iter()
 	return coroutine.wrap(function()
 		for _, v in ipairs(self.colors) do
 			if v.iter then
-				for x in v:iter() do
-					coroutine.yield(x)
-				end
+				recursive_drain(v:iter())
+			else
+				coroutine.yield(v)
+			end
+		end
+	end)
+end
+
+function Theme:hlgroup_iter()
+	return coroutine.wrap(function()
+		for v in self:iter() do
+			if IsHLGroup(v) then
+				coroutine.yield(v)
+			end
+		end
+	end)
+end
+
+function Theme:termcolors_iter()
+	return coroutine.wrap(function()
+		for v in self:iter() do
+			if IsTerminalColor(v) then
+				coroutine.yield(v)
 			end
 		end
 	end)

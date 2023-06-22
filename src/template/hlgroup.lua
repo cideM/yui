@@ -38,24 +38,17 @@ local allowed_attrs = {
 	NONE = true,
 }
 
-local hlgroup_mt = {
-	__tostring = function(self)
-		return self:to_vim()
-	end,
-	__index = HLGroup,
-}
-
 setmetatable(HLGroup, {
 	__call = function(cls, ...)
 		return cls:new(...)
 	end,
+	__tostring = function(self)
+		return self:to_vim()
+	end,
+	__index = function(_, k)
+		return rawget(HLGroup, k)
+	end,
 })
-
-function HLGroup:iter()
-	return coroutine.wrap(function()
-		coroutine.yield(self)
-	end)
-end
 
 function HLGroup:to_vim()
 	local buf = {}
@@ -110,7 +103,7 @@ end
 
 function HLGroup:new(init)
 	local t = {}
-	setmetatable(t, hlgroup_mt)
+	setmetatable(t, getmetatable(self))
 
 	assert(init.name, "name is required")
 	t.name = init.name
@@ -169,4 +162,12 @@ function HLGroup:new(init)
 	return t
 end
 
-return HLGroup
+function Is(t)
+	return getmetatable(t) == getmetatable(HLGroup)
+end
+
+return {
+	Is = Is,
+	HLGroup = HLGroup,
+}
+

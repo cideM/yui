@@ -1,4 +1,4 @@
-local Cond = require("condition")
+local Cond = require("condition").Cond
 local strings = require("strings")
 
 local ThemeOption = {}
@@ -57,6 +57,8 @@ function ThemeOption:iter()
 					for x in hl_group:iter() do
 						coroutine.yield(x)
 					end
+				else
+					coroutine.yield(hl_group)
 				end
 			end
 		end

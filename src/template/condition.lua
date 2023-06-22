@@ -5,6 +5,12 @@ setmetatable(Cond, {
 	__call = function(cls, ...)
 		return cls:new(...)
 	end,
+	__tostring = function(__self)
+		return __self:to_vim()
+	end,
+	__index = function(_, k)
+		return rawget(Cond, k)
+	end,
 })
 
 function Cond:to_vim()
@@ -30,20 +36,13 @@ function Cond:to_vim()
 	return table.concat(out, "\n")
 end
 
-local cond_mt = {
-	__tostring = function(__self)
-		return __self:to_vim()
-	end,
-	__index = Cond,
-}
-
 function Cond:new(init)
   assert(#init > 1, "Conditionals must have at least two arguments")
 	local t = {}
 	for _, v in ipairs(init) do
 		table.insert(t, v)
 	end
-	setmetatable(t, cond_mt)
+	setmetatable(t, getmetatable(self))
 	return t
 end
 
@@ -54,6 +53,8 @@ function Cond:iter()
         for x in v:iter() do
           coroutine.yield(x)
         end
+			else
+				coroutine.yield(v)
       end
     end
   end)
@@ -69,8 +70,15 @@ function Cond:map(fn)
 			table.insert(out, v)
 		end
 	end
-	setmetatable(out, cond_mt)
+	setmetatable(out, getmetatable(self))
 	return out
 end
 
-return Cond
+function Is(t)
+	return getmetatable(t) == getmetatable(Cond)
+end
+
+return {
+	Cond = Cond,
+	Is = Is,
+}

@@ -1,9 +1,9 @@
 local Theme = require("theme")
 local Lightline = require("lightline")
-local HLGroup = require("hlgroup")
+local HLGroup = require("hlgroup").HLGroup
 local TerminalColors = require("terminal_colors").TerminalColors
 local ThemeOption = require("option").ThemeOption
-local Cond = require("condition")
+local Cond = require("condition").Cond
 local contrast = require("colour").contrast
 local Report = require("report")
 local lighten = require("colour").lightness
@@ -678,15 +678,18 @@ local theme = Theme {
 	colors = theme_colors,
 }
 
-for x in theme:iter() do
-	for _, v in ipairs { "guifg", "guibg" } do
-		if x[v] == nil or x[v]:sub(0, 1) ~= "#" then
-			goto continue
+for x in theme:hlgroup_iter() do
+	if x.guifg and x.guifg:sub(0, 1) == "#" and x.guibg and x.guibg:sub(0, 1) == "#" then
+		report:add(x.name, x.guifg, x.guibg)
+	end
+end
+
+for x in theme:termcolors_iter() do
+	for _, hex in ipairs(x) do
+		if hex ~= p.bg then
+			report:add(string.format("%s %s", hex, p.bg), hex, p.bg)
 		end
 	end
-
-	report:add(x.name, x.guifg, x.guibg)
-	::continue::
 end
 
 local lightline = Lightline(p)

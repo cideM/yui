@@ -42,3 +42,17 @@ Folded                         6.66  AA  #504944 #e5dede
 SignColumn                     6.66  AA  #504944 #e5dede
 LineNr                         6.66  AA  #504944 #e5dede
 Comment                        6.66  AA  #504944 #e5dede
+#504944 #f1eded                7.6   AAA #504944 #f1eded
+#A50303 #f1eded                6.91  AA  #A50303 #f1eded
+#38551E #f1eded                7.27  AAA #38551E #f1eded
+#605001 #f1eded                6.83  AA  #605001 #f1eded
+#1E5571 #f1eded                6.97  AA  #1E5571 #f1eded
+#2D199F #f1eded                10.32 AAA #2D199F #f1eded
+#29574E #f1eded                7.04  AAA #29574E #f1eded
+#504944 #f1eded                7.6   AAA #504944 #f1eded
+#A50303 #f1eded                6.91  AA  #A50303 #f1eded
+#38551E #f1eded                7.27  AAA #38551E #f1eded
+#605001 #f1eded                6.83  AA  #605001 #f1eded
+#1E5571 #f1eded                6.97  AA  #1E5571 #f1eded
+#2D199F #f1eded                10.32 AAA #2D199F #f1eded
+#29574E #f1eded                7.04  AAA #29574E #f1eded
