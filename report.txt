@@ -1,53 +1,44 @@
-Normal                         7.03  AAA
-StatusLine                     6.95  AA
-StatusLineNC                   6.5   AA
-DiffAdd                        7.04  AAA
-DiffChange                     4.69  AA
-DiffDelete                     6.08  AA
-DiffText                       7.21  AAA
-TabLineSel                     6.95  AA
-ModeMsg                        7.21  AAA
-MoreMsg                        7.21  AAA
-WarningMsg                     4.69  AA
-Pmenu                          6.17  AA
-PmenuSel                       5.14  AA
-PmenuKind                      6.17  AA
-PmenuKindSel                   5.14  AA
-PmenuExtra                     6.17  AA
-PmenuExtraSel                  5.14  AA
-CurSearch                      5.52  AA
-IncSearch                      5.14  AA
-Search                         5.14  AA
-Visual                         5.14  AA
-VisualNOS                      4.91  AA
-SpecialKey                     4.69  AA
-Tooltip                        6.17  AA
-Menu                           6.17  AA
-Todo                           4.69  AA
-DiagnosticError                6.08  AA
-DiagnosticHint                 7.04  AAA
-DiagnosticInfo                 7.21  AAA
-DiagnosticWarn                 4.69  AA
-LeapLabelSecondary             5.14  AA
-LeapLabelSelected              5.14  AA
-FoldColumn                     6.17  AA
-Folded                         6.17  AA
-SignColumn                     6.17  AA
-LineNr                         6.17  AA
-Comment                        6.17  AA
-
-========= term colors:
-#5f503e                        7.03  AAA
-#A50303                        7.27  AAA
-#38551E                        7.64  AAA
-#7E6901                        4.86  AA
-#1E5571                        7.33  AAA
-#6132d7                        6.45  AA
-#37766F                        4.77  AA
-#5f503e                        7.03  AAA
-#A50303                        7.27  AAA
-#38551E                        7.64  AAA
-#7E6901                        4.86  AA
-#1E5571                        7.33  AAA
-#6132d7                        6.45  AA
-#37766F                        4.77  AA
+black - white                  7.03  AAA #504944 #eae4e4
+purple - light_purple          7.03  AAA #2D199F #c3c3ea
+dark_blue - light_blue         7.09  AAA #1E5571 #efeff9
+dark_green - light_green       7.08  AAA #38551E #daf3c5
+dark_red - light_red           7.01  AAA #A50303 #ffebeb
+dark_yellow - light_yellow     7.06  AAA #605001 #fff1c9
+dark_cyan - light_cyan         7.05  AAA #29574E #d9f4ed
+Normal                         7.6   AAA #504944 #f1eded
+StatusLine                     7.47  AAA #3f3935 #dacfcf
+StatusLineNC                   7.03  AAA #504944 #eae4e4
+DiffAdd                        7.08  AAA #38551E #daf3c5
+DiffChange                     7.06  AAA #605001 #fff1c9
+DiffDelete                     7.01  AAA #A50303 #ffebeb
+DiffText                       7.09  AAA #1E5571 #efeff9
+TabLineSel                     7.47  AAA #3f3935 #dacfcf
+ModeMsg                        7.09  AAA #1E5571 #efeff9
+MoreMsg                        7.09  AAA #1E5571 #efeff9
+WarningMsg                     7.06  AAA #605001 #fff1c9
+Pmenu                          6.66  AA  #504944 #e5dede
+PmenuSel                       7.03  AAA #2D199F #c3c3ea
+PmenuKind                      6.66  AA  #504944 #e5dede
+PmenuKindSel                   7.03  AAA #2D199F #c3c3ea
+PmenuExtra                     6.66  AA  #504944 #e5dede
+PmenuExtraSel                  7.03  AAA #2D199F #c3c3ea
+CurSearch                      7.09  AAA #1e0f74 #acace2
+IncSearch                      7.03  AAA #c3c3ea #2D199F
+Search                         7.03  AAA #2d199f #c3c3ea
+Visual                         7.03  AAA #2D199F #c3c3ea
+VisualNOS                      6.84  AA  #371fbb #d2d2ef
+SpecialKey                     7.06  AAA #605001 #fff1c9
+Tooltip                        6.66  AA  #504944 #e5dede
+Menu                           6.66  AA  #504944 #e5dede
+Todo                           7.06  AAA #605001 #fff1c9
+DiagnosticError                7.01  AAA #A50303 #ffebeb
+DiagnosticHint                 7.08  AAA #38551E #daf3c5
+DiagnosticInfo                 7.09  AAA #1E5571 #efeff9
+DiagnosticWarn                 7.06  AAA #605001 #fff1c9
+LeapLabelSecondary             7.03  AAA #2D199F #c3c3ea
+LeapLabelSelected              7.03  AAA #2D199F #c3c3ea
+FoldColumn                     6.66  AA  #504944 #e5dede
+Folded                         6.66  AA  #504944 #e5dede
+SignColumn                     6.66  AA  #504944 #e5dede
+LineNr                         6.66  AA  #504944 #e5dede
+Comment                        6.66  AA  #504944 #e5dede

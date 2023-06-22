@@ -1,26 +1,65 @@
 local Theme = require("theme")
 local Lightline = require("lightline")
 local HLGroup = require("hlgroup")
-local TerminalColors = require("terminal_colors")
+local TerminalColors = require("terminal_colors").TerminalColors
 local ThemeOption = require("option").ThemeOption
 local Cond = require("condition")
 local contrast = require("colour").contrast
+local Report = require("report")
 local lighten = require("colour").lightness
 
 local colors = {
-	black = "#5f503e",
-	white = "#efeae5",
-	accent = "#dcd7f9",
+	black = "#504944",
+	purple = "#2D199F",
 	dark_blue = "#1E5571",
-	light_blue = "#E7F4F8",
 	dark_green = "#38551E",
-	light_green = "#DFF0D0",
 	dark_red = "#A50303",
-	light_red = "#F7D9D9",
-	dark_yellow = "#7E6901",
-	light_yellow = "#FEF0B4",
-	dark_cyan = "#37766F",
+	dark_yellow = "#605001",
+	dark_cyan = "#29574E",
 }
+
+local rating_to_contrast = {
+	AA = 4.5,
+	AAA = 7,
+}
+
+local function find_bg(color, rating)
+	local target_contrast = rating_to_contrast[rating]
+	if not target_contrast then
+		error("invalid rating: " .. rating)
+		os.exit(1)
+	end
+
+	local bg = color
+	while contrast(color, bg) < target_contrast and bg ~= "#ffffff" do
+		bg = lighten(bg, 0.5):lower()
+	end
+
+	return bg, bg ~= "#ffffff"
+end
+
+local report = Report {}
+
+for _, x in ipairs {
+	{ "black", "white" },
+	{ "purple", "light_purple" },
+	{ "dark_blue", "light_blue" },
+	{ "dark_green", "light_green" },
+	{ "dark_red", "light_red" },
+	{ "dark_yellow", "light_yellow" },
+	{ "dark_cyan", "light_cyan" },
+} do
+	local old, new = x[1], x[2]
+	local bg, valid = find_bg(colors[old], "AAA")
+	if not valid then
+		print("couldn't find bg for " .. old)
+		os.exit(1)
+	end
+
+	colors[new] = bg
+
+	report:add(string.format("%s - %s", old, new), colors[old], bg)
+end
 
 local p = {
 	fg = colors.black,
@@ -39,8 +78,8 @@ local p = {
 	error_fg = colors.dark_red,
 	info_bg = colors.light_blue,
 	info_fg = colors.dark_blue,
-	focus_fg = lighten(colors.accent, -50),
-	focus_bg = lighten(colors.accent, 0),
+	focus_fg = colors.purple,
+	focus_bg = colors.light_purple,
 }
 
 local term_colors = TerminalColors {
@@ -481,7 +520,7 @@ local theme_colors = {
 	HLGroup { name = "LeapMatch", link = "CurSearch" },
 	HLGroup {
 		name = "LeapLabelPrimary",
-    link = "CurSearch",
+		link = "CurSearch",
 	},
 	HLGroup {
 		name = "LeapLabelSecondary",
@@ -639,20 +678,6 @@ local theme = Theme {
 	colors = theme_colors,
 }
 
-local report = {}
-
--- round to 2 decimal places
-local function round(n)
-	local c = math.floor(n * 10 ^ 2 + 0.5) / 10 ^ 2
-	return c
-end
-
-local function report_line(name, color_contrast)
-	local c = round(color_contrast)
-	local rating = c > 7 and "AAA" or c > 4.5 and "AA" or c > 3 and "A" or "B"
-	return string.format("%-30s %-5s %s", name, c, rating)
-end
-
 for x in theme:iter() do
 	for _, v in ipairs { "guifg", "guibg" } do
 		if x[v] == nil or x[v]:sub(0, 1) ~= "#" then
@@ -660,22 +685,14 @@ for x in theme:iter() do
 		end
 	end
 
-	table.insert(report, report_line(x.name, contrast(x.guifg, x.guibg)))
+	report:add(x.name, x.guifg, x.guibg)
 	::continue::
-end
-
-table.insert(report, "")
-table.insert(report, "========= term colors:")
-for x in term_colors:iter() do
-	if x ~= p.bg then
-		table.insert(report, report_line(x, contrast(x, p.bg)))
-	end
 end
 
 local lightline = Lightline(p)
 
 return {
 	theme = theme,
-	report = table.concat(report, "\n"),
+	report = tostring(report),
 	lightline = lightline,
 }
