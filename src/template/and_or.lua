@@ -20,6 +20,20 @@ function and_or_base:to_vim()
 	return "(" .. table.concat(out, " " .. self.sep .. " ") .. ")"
 end
 
+function and_or_base:iter()
+  return coroutine.wrap(function()
+    for _, v in ipairs(self.conditions) do
+      if v.iter then
+        for x in v:iter() do
+          coroutine.yield(x)
+        end
+      else
+        coroutine.yield(v)
+      end
+    end
+  end)
+end
+
 -- apply fn to each condition string
 function and_or_base:map(fn)
 	local out = { sep = self.sep, conditions = {} }
@@ -41,6 +55,10 @@ setmetatable(And, {
 	end,
 })
 
+local function IsAnd(t)
+  return getmetatable(t) == getmetatable(And)
+end
+
 local Or = {}
 setmetatable(Or, {
 	__call = function(_, ...)
@@ -48,7 +66,13 @@ setmetatable(Or, {
 	end,
 })
 
+local function IsOr(t)
+  return getmetatable(t) == getmetatable(Or)
+end
+
 return {
 	And = And,
 	Or = Or,
+  IsAnd = IsAnd,
+  IsOr = IsOr,
 }
