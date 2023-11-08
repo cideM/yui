@@ -1,15 +1,16 @@
 .PHONY: all
-all: colors/yui.vim doc/yui.txt autoload/lightline/colorscheme/yui.vim report.txt
+all: colors/yui.vim doc/yui.txt autoload/lightline/colorscheme/yui.vim alacritty/yui.yml
 
-lua_path = src/template/?.lua;src/?.lua
-lua_files = src/template/*.lua src/*.lua
+lua_path = src/?.lua
+lua_files = src/*.lua
 
 colors/yui.vim: $(lua_files)
 	@mkdir -p colors
 	LUA_PATH="$(lua_path)" lua -e 'print(tostring(require("yui").theme))' > $@
 
-report.txt: $(lua_files)
-	LUA_PATH="$(lua_path)" lua -e 'print(require("yui").report)' > $@
+alacritty/yui.yml: $(lua_files)
+	@mkdir -p alacritty
+	LUA_PATH="$(lua_path)" lua -e 'print(require("yui").alacritty)' > $@
 
 autoload/lightline/colorscheme/yui.vim: $(lua_files)
 	@mkdir -p autoload/lightline/colorscheme
@@ -17,8 +18,8 @@ autoload/lightline/colorscheme/yui.vim: $(lua_files)
 
 doc/yui.txt: $(lua_files)
 	@mkdir -p doc
-	LUA_PATH="$(lua_path)" lua -e 'print(require("yui").theme:docs())' > $@
+	LUA_PATH="$(lua_path)" lua -e 'print(require("yui").docs)' > $@
 
 .PHONY: clean
 clean:
-	@rm -f colors/yui.vim doc/yui.txt report.txt autoload/lightline/colorscheme/yui.vim
+	@rm -f colors/yui.vim doc/yui.txt autoload/lightline/colorscheme/yui.vim alacritty/yui.yml
