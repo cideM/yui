@@ -17,8 +17,31 @@
           inherit system;
         };
 
-        yuiVim = pkgs.vimUtils.buildVimPlugin rec {
-          name = "yui";
+        alacritty = pkgs.stdenv.mkDerivation rec {
+          name = "yui-alacritty";
+          buildInputs = with pkgs; [
+            lua54Packages.lua
+          ];
+          buildPhase = ''
+            make alacritty/yui.yml
+            rm -r src Makefile flake.nix flake.lock README.md CONTRIBUTING.md LICENSE.txt
+          '';
+          src = pkgs.lib.cleanSourceWith {
+            filter = path: type:
+              !(pkgs.lib.hasInfix "screenshots" path)
+              && !(pkgs.lib.hasInfix "colors/" path)
+              && !(pkgs.lib.hasInfix "autoload/" path)
+              && !(pkgs.lib.hasInfix "doc/" path);
+            src = ./.;
+          };
+					installPhase = ''
+						mkdir -p $out
+						cp alacritty/yui.yml $out/yui.yml
+					'';
+        };
+
+        nvim = pkgs.vimUtils.buildVimPlugin rec {
+          name = "yui-theme-nvim";
 
           buildInputs = with pkgs; [
             lua54Packages.lua
@@ -26,7 +49,7 @@
 
           buildPhase = ''
             make
-            rm -r src Makefile flake.nix flake.lock README.md report.txt CONTRIBUTING.md LICENSE.txt
+            rm -r src Makefile flake.nix flake.lock README.md CONTRIBUTING.md LICENSE.txt
           '';
 
           src = pkgs.lib.cleanSourceWith {
@@ -40,7 +63,8 @@
         };
       in rec {
         packages = flake-utils.lib.flattenTree {
-          yui = yuiVim;
+          nvim = nvim;
+          alacritty = alacritty;
         };
 
         defaultPackage = packages.yui;

@@ -74,7 +74,8 @@ end
 
 -- The code below this line is not part of the original tmux file!
 
-M.lightness = function(color, amount)
+-- This is used by the M.lighten function and not exported
+local lightness = function(color, amount)
 	local color_hsluv = hsluv.hex_to_hsluv(color)
 	color_hsluv[3] = color_hsluv[3] + amount
 	return hsluv.hsluv_to_hex(color_hsluv)
@@ -98,9 +99,11 @@ local function luminance(c)
 	return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b)
 end
 
--- This function is used in: https://github.com/primer/prism but comes from
--- the 'color2k' TS library
+-- Measure the contrast between two colors. I don't know anything about
+-- color spaces so I'm just using the formula from the WCAG 2.0 spec.
 M.contrast = function(color1, color2)
+	-- This function is used in: https://github.com/primer/prism but comes from
+	-- the 'color2k' TS library
 	local l1 = luminance(color1)
 	local l2 = luminance(color2)
 
@@ -109,6 +112,49 @@ M.contrast = function(color1, color2)
 	end
 
 	return (l2 + 0.05) / (l1 + 0.05)
+end
+
+-- Amount can either be a positive or negative number, or one of the following:
+-- - "aa"
+-- - "aaa"
+-- - "-aa"
+-- - "-aaa"
+-- If it's a string, we'll try to find a color that has the given W3C contrast
+-- ratio. Negative numbers and strings will darken up until #000000, positive
+-- numbers and strings will lighten up until #ffffff.
+-- Example:
+-- local color = "#ff0000"
+-- print(M.lighten(color, 0.5))
+-- print(M.lighten(color, -0.5))
+-- print(M.lighten(color, "aa"))
+-- print(M.lighten(color, "-aa"))
+M.lighten = function(color, amount)
+	if type(amount) == "number" then
+		return lightness(color, amount)
+	end
+
+	local ratios = {
+		["aa"] = 4.5,
+		["aaa"] = 7,
+		["-aa"] = 4.5,
+		["-aaa"] = 7,
+	}
+
+	local is_negative = amount:sub(1, 1) == "-"
+	local factor = is_negative and -0.5 or 0.5
+	local max = is_negative and "000000" or "ffffff"
+
+	local starting_color = color
+	local ratio = ratios[amount:lower()]
+
+	while M.contrast(color, starting_color) < ratio and color ~= max do
+		color = lightness(color, factor):lower()
+		if color == max then
+			error("could not find a color with a M.contrast ratio of " .. ratio .. " for " .. starting_color)
+		end
+	end
+
+	return color
 end
 
 return M
