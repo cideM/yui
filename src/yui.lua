@@ -723,95 +723,65 @@ endif
 )
 
 local docs = Docs:new()
-docs:section_header("OPTIONS")
+docs:section("OPTIONS")
 docs:option {
 	title = "g:yui_folds",
-	desc = s.interpolate(
-		[[
-How folds should be displayed
-${emphasize}
-${fade}
-]],
-		{
-			emphasize = docs:space_between("* `\"emphasize\"`:", "Make folds more visible"),
-			fade = docs:space_between("* `\"fade\"`:", "Fade out folds (default)"),
-		}
-	),
+	desc = "How folds should be displayed",
+	values = {
+		{ "fade", "Fade out folds (default)" },
+		{ "emphasize", "Make folds more visible" },
+	},
 	example = "let g:yui_folds = 'fade'",
 }
 
 docs:option {
 	title = "g:yui_line_numbers",
-	desc = s.interpolate(
-		[[
-How line numbers should be displayed
-${emphasize}
-${fade}
-]],
-		{
-			emphasize = docs:space_between("* `\"emphasize\"`:", "Make line numbers more visible"),
-			fade = docs:space_between("* `\"fade\"`:", "Fade out line numbers (default)"),
-		}
-	),
+	desc = "How line numbers should be displayed",
+	values = {
+		{ "fade", "Fade out line numbers (default)" },
+		{ "emphasize", "Make line numbers more visible" },
+	},
 	example = "let g:yui_line_numbers = 'fade'",
 }
 
 docs:option {
 	title = "g:yui_emphasized_comments",
-	desc = s.interpolate(
-		[[
+	desc = [[
 DEPRECATED: Use |yui_comments| instead
 
-Whether to emphasize comments
-${yes}
-${no}
-]],
-		{
-			yes = docs:space_between("* `0`:", "Do no emphasize comments (default)"),
-			no = docs:space_between("* `1`:", "Emphasize comments"),
-		}
-	),
+Whether to emphasize comments]],
+	values = {
+		{ "0", "Do not emphasize comments (default)" },
+		{ "1", "Emphasize comments" },
+	},
 	example = "let g:yui_line_numbers = 'fade'",
 }
 
 docs:option {
 	title = "g:yui_comments",
-	desc = s.interpolate(
-		[[
-How comments should be displayed
-${bg}
-${emphasize}
-${fade}
-${normal}
-]],
-		{
-			bg = docs:space_between("* `\"bg\"`:", "Make comments have a background color"),
-			emphasize = docs:space_between("* `\"emphasize\"`:", "Make comments more visible"),
-			fade = docs:space_between("* `\"fade\"`:", "Fade out comments"),
-			normal = docs:space_between("* `\"normal\"`:", "Do not change comments (default)"),
-		}
-	),
+	desc = "How comments should be displayed",
+	values = {
+		{ "bg", "Make comments have a background color" },
+		{ "emphasize", "Make comments more visible" },
+		{ "fade", "Fade out comments" },
+		{ "normal", "Do not change comments (default)" },
+	},
 	example = "let g:yui_comments = 'normal'",
 }
 
 docs:option {
 	title = "g:yui_lightline",
-	desc = s.interpolate(
-		[[
+	desc = [[
 DEPRECATED: The lightline initialization is now done through an autoloaded
 function. You therefore no longer need to tell the yui theme whether or not
 you're using lightline. It's enough to just set the g:lightline.colorscheme
 variable to 'yui' (see below).
 
-Whether to use the lightline theme
-${yes}
-${no}
-]],
-		{
-			yes = docs:space_between("* `v:true`:", "Use the lightline theme"),
-			no = docs:space_between("* `v:false`:", "Do not use the lightline theme (default)"),
-		}
-	),
+Whether to use the lightline theme]],
+	values = {
+		{ "v:true", "Use the lightline theme" },
+		{ "v:false", "Do not use the lightline theme (default)" },
+	},
 	example = [[
 let g:yui_lightline = v:true
 let g:lightline.colorscheme = 'yui']],
