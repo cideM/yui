@@ -562,6 +562,7 @@ if has('nvim')
 	${@variable.builtin.lua}
 	${@method.lua}
 	${@label.lua}
+	${@lsp.typemod.method.declaration.lua}
 else
 	${statusline_term}
 	${statusline_term_nc}
@@ -612,6 +613,7 @@ endif
 		["@variable.builtin.lua"] = hl { "@variable.builtin.lua", link = "luaSpecialValue" },
 		["@method.lua"] = hl { "@method.lua", link = "@function.lua" },
 		["@label.lua"] = hl { "@label.lua", guifg = "fg", guibg = "NONE", gui = { "bold", "underline" } },
+		["@lsp.typemod.method.declaration.lua"] = hl { "@lsp.typemod.method.declaration.lua", link = "luaFuncName" },
 		statusline_term = hl { "StatusLineTerm", link = "StatusLine" },
 		statusline_term_nc = hl { "StatusLineTermNC", link = "StatusLineNC" },
 	}

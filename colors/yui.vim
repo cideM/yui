@@ -256,6 +256,7 @@ if has('nvim')
 	hi! link @variable.builtin.lua luaSpecialValue
 	hi! link @method.lua @function.lua
 	hi @label.lua guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold,underline cterm=bold,underline
+	hi! link @lsp.typemod.method.declaration.lua luaFuncName
 else
 	hi! link StatusLineTerm StatusLine
 	hi! link StatusLineTermNC StatusLineNC
