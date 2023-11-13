@@ -5,54 +5,55 @@ YUI | ユイ
 ==============================================================================
 OPTIONS                                                              *OPTIONS*
 
+------------------------------------------------------------------------------
                                                                  *g:yui_folds*
 g:yui_folds~
 
 How folds should be displayed
-* `"emphasize"`:                                       Make folds more visible
-* `"fade"`:                                           Fade out folds (default)
+ * fade:                                              Fade out folds (default)
+ * emphasize:                                          Make folds more visible
 
 Example: >
  let g:yui_folds = 'fade'
 <
-
+------------------------------------------------------------------------------
                                                           *g:yui_line_numbers*
 g:yui_line_numbers~
 
 How line numbers should be displayed
-* `"emphasize"`:                                Make line numbers more visible
-* `"fade"`:                                    Fade out line numbers (default)
+ * fade:                                       Fade out line numbers (default)
+ * emphasize:                                   Make line numbers more visible
 
 Example: >
  let g:yui_line_numbers = 'fade'
 <
-
+------------------------------------------------------------------------------
                                                    *g:yui_emphasized_comments*
 g:yui_emphasized_comments~
 
 DEPRECATED: Use |yui_comments| instead
 
 Whether to emphasize comments
-* `0`:                                      Do no emphasize comments (default)
-* `1`:                                                      Emphasize comments
+ * 0:                                      Do not emphasize comments (default)
+ * 1:                                                       Emphasize comments
 
 Example: >
  let g:yui_line_numbers = 'fade'
 <
-
+------------------------------------------------------------------------------
                                                               *g:yui_comments*
 g:yui_comments~
 
 How comments should be displayed
-* `"bg"`:                                Make comments have a background color
-* `"emphasize"`:                                    Make comments more visible
-* `"fade"`:                                                  Fade out comments
-* `"normal"`:                                 Do not change comments (default)
+ * bg:                                   Make comments have a background color
+ * emphasize:                                       Make comments more visible
+ * fade:                                                     Fade out comments
+ * normal:                                    Do not change comments (default)
 
 Example: >
  let g:yui_comments = 'normal'
 <
-
+------------------------------------------------------------------------------
                                                              *g:yui_lightline*
 g:yui_lightline~
 
@@ -62,12 +63,11 @@ you're using lightline. It's enough to just set the g:lightline.colorscheme
 variable to 'yui' (see below).
 
 Whether to use the lightline theme
-* `v:true`:                                            Use the lightline theme
-* `v:false`:                          Do not use the lightline theme (default)
+ * v:true:                                             Use the lightline theme
+ * v:false:                           Do not use the lightline theme (default)
 
 Example: >
  let g:yui_lightline = v:true
  let g:lightline.colorscheme = 'yui'
 <
-
 vim:tw=78:ts=8:ft=help:norl:
