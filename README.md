@@ -1,17 +1,12 @@
 # YUI
 
-A truly minimal color scheme inspired by the [Field Notes "Rams"
-Notebook](https://fieldnotesbrand.com/products/rams).
+A truly minimal color scheme inspired by the [Field Notes "Rams" Notebook](https://fieldnotesbrand.com/products/rams).
 
 ## Documentation
 
-Please check [the plugin documentation in the help text](./doc/yui.txt) with
-`:h yui.txt`
+Please check [the documentation in the help text](./doc/yui.txt) with `:h yui.txt`
 
 ## Supported Plugins
-
-Make sure to check [the plugin documentation in the help text](./doc/yui.txt)
-with `h:yui.txt` for further information on some of these integrations.
 
 - `nvim-hlslens`
 - `lightline`
