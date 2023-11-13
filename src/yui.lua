@@ -1,10 +1,13 @@
+-- TODO: from :h lsp add highlights for the @lsp groups and use them as the source of truth
+--       change hl groups like luaFuncKeyword to link to @lsp groups and do the same for
+--       TS groups. The old school Vim HL groups are then mainly general fallbacks
+
 local colour = require("colour")
 local Theme = require("theme")
 local Nvim = require("nvim")
 local hl = require("hlgroup")
 local Deferred = require("deferred")
 local ll = require("lightline")
-local s = require("strings")
 local Docs = require("docs")
 
 local redirections = {
