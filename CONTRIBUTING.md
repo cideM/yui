@@ -1,23 +1,22 @@
 # Contributing
 
-## Architecture
+## Setup
 
-All the output files (Vim/Neovim colors, docs...) are generated with a
-lightweight, custom templating system written in Lua.
+If you have Nix then you can just add enter the provided dev shell. If you don't then you need:
 
-In the `src/template/` directory, you'll find data structures, that have a `to_vim`
-method and an optional `docs` method. Those data structures represent either
-lower level Vim script constructs such as conditionals, or more high level
-concepts such as a theme option or the lightline snippet.
+- Make
+- Lua 5.3 and above
+- Neovim
+- Vim
+- Git
+- Alacritty only if you want to work on the Alacritty theme
 
-Each data structure should encapsulate all the information and functionality
-it needs to do its job.
+## Getting Started
 
-## Build
+The most likely scenario is that you want to add or modify highlights. This all happens in `yui.lua`. It's basically a long list of highlight group definitions. The most likely place you'll work in is the table passed to `add_hlgroups`.
 
-Use the Makefile. For Nix users, there's also a Flake: `nix build .#yui`
-does the trick.
+You can refer to the color of another HL group through `d:get("Normal", "guifg")`. The path is a little different for HL groups that are introduced through `interpolate` calls. Here you replace the HL group name with the key of the HL group in the table that's passed to `interpolate`. For example, among the various Neovim options there's one that determines how folds are rendered. If you'd like to copy the value of the "fade folds out" option you can do `d:get("fold_column_fade", "guifg")`.
 
-If you're only adding or modifying highlight groups and options, you should
-be able to stick to `src/yui.lua`, which is where all highlight groups
-are defined.
+You can also go a step further and modify the color that you are copying. Replace  `d:get("Normal", "guifg")` with  `d:call("Normal", "guifg", colour.lighten, 5)`. This makes the color lighter. Supported values for `colour.lighten` are positive and negative integers and `-aa`, `-aaa`, `aa` and  `aaa`. These refer to pre-determined contrast ratios of the W3C.
+
+That's it!
