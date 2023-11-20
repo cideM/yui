@@ -1,7 +1,3 @@
--- TODO: from :h lsp add highlights for the @lsp groups and use them as the source of truth
---       change hl groups like luaFuncKeyword to link to @lsp groups and do the same for
---       TS groups. The old school Vim HL groups are then mainly general fallbacks
-
 local colour = require("colour")
 local Theme = require("theme")
 local Nvim = require("nvim")
@@ -279,8 +275,57 @@ nvim:add_hlgroups {
 	hl { "DiffText", guifg = p.blue, guibg = colour.lighten(p.blue, "AAA") },
 	hl { "Directory", guifg = "fg", guibg = "NONE" },
 	hl { "ErrorMsg", guifg = d:get("DiffDelete", "guifg"), guibg = "NONE", gui = "bold" },
+
+	-- ===================================
+	-- = Base Vim Language Syntax Groups =
+	-- ===================================
+	-- These are the groups mentioned in :h syntax.txt under
+	-- "NAMING CONVENTIONS". A lot of other groups are linked to
+	-- these, such as some Treesitter and LSP groups.
+	hl { "Constant", guifg = "fg", guibg = "NONE", gui = "bold" },
+	hl { "String", link = "Constant" },
+	hl { "Character", link = "Constant" },
+	hl { "Number", link = "Constant" },
+	hl { "Boolean", link = "Constant" },
+	hl { "Float", link = "Constant" },
+
 	hl { "Identifier", guifg = "fg", guibg = "NONE" },
+	hl { "Function", link = "Identifier" },
+
+	hl { "Statement", guifg = "fg", guibg = "NONE", gui = "NONE" },
+	hl { "Conditional", guifg = "fg", guibg = "NONE", gui = "italic" },
+	hl { "Repeat", guifg = "fg", guibg = "NONE", gui = "italic" },
+	hl { "Label", guifg = "fg", guibg = "NONE", gui = "underline" },
+	hl { "Operator", link = "Statement" },
+	hl { "Keyword", link = "Statement" },
+	hl { "Exception", link = "Statement" },
+
+	hl { "PreProc", guifg = "fg", guibg = "NONE", gui = "bold" },
+	hl { "Include", link = "PreProc" },
+	hl { "Define", link = "PreProc" },
+	hl { "Macro", link = "PreProc" },
+	hl { "PreCondit", link = "PreProc" },
+
+	hl { "Type", guifg = "NONE", guibg = "NONE", gui = "NONE" },
+	hl { "StorageClass", link = "Type" },
+	hl { "Structure", link = "Type" },
+	hl { "Typedef", guifg = "fg", guibg = "NONE", gui = { "italic" } },
+
+	hl { "Special", guifg = "fg", guibg = "NONE", gui = { "NONE" } },
+	hl { "SpecialChar", link = "Special" },
+	hl { "Tag", link = "Special" },
+	hl { "Delimiter", link = "Special" },
+	hl { "SpecialComment", link = "Special" },
+	hl { "Debug", link = "Special" },
+
+	hl { "Underlined", guifg = "fg", guibg = "NONE", gui = "underline" },
+
 	hl { "Ignore", guifg = "fg", guibg = "NONE" },
+
+	hl { "Error", guifg = p.red, guibg = "NONE", gui = "bold" },
+
+	hl { "Todo", link = "DiffChange" },
+
 	hl { "MatchParen", guibg = "NONE", guifg = "fg", gui = "bold" },
 	hl { "ModeMsg", guifg = d:get("DiffText", "guifg"), guibg = d:get("DiffText", "guibg"), gui = "NONE" },
 	hl { "MoreMsg", guifg = d:get("DiffText", "guifg"), guibg = d:get("DiffText", "guibg"), gui = "NONE" },
@@ -302,52 +347,20 @@ nvim:add_hlgroups {
 		guibg = d:call("IncSearch", "guifg", colour.lighten, "AA"),
 		gui = "bold",
 	},
-	hl { "SpecialKey", guifg = p.yellow, guibg = colour.lighten(p.yellow, "AAA") },
 	hl { "SpellCap", link = "SpellBad" },
 	hl { "SpellLocal", link = "SpellBad" },
 	hl { "SpellRare", link = "SpellBad" },
-	hl { "Type", guifg = "NONE", guibg = "NONE", gui = "italic" },
 	hl { "Tooltip", link = "Pmenu" },
 	hl { "MsgSeparator", link = "VertSplit" },
 	hl { "EndOfBuffer", link = "NonText" },
 	hl { "QuickFixLine", link = "Search" },
 	hl { "WildMenu", link = "IncSearch" },
-	hl { "Boolean", link = "Constant" },
-	hl { "Character", link = "Constant" },
-	hl { "Conditional", guifg = "fg", guibg = "NONE", gui = "NONE" },
-	hl { "Define", link = "PreProc" },
-	hl { "Debug", link = "Special" },
-	hl { "Delimiter", link = "Special" },
-	hl { "Float", link = "Number" },
-	hl { "Function", link = "Identifier" },
-	hl { "Include", link = "PreProc" },
-	hl { "Macro", link = "PreProc" },
-	hl { "Number", link = "Constant" },
-	hl { "PreCondit", link = "PreProc" },
-	hl { "SpecialChar", link = "Special" },
-	hl { "SpecialComment", link = "Special" },
-	hl { "StorageClass", link = "Type" },
-	hl { "String", guifg = "fg", guibg = "NONE", gui = "bold" },
-	hl { "Structure", link = "Type" },
-	hl { "Tag", link = "Special" },
-	hl { "Typedef", link = "Type" },
 	hl { "Substitute", link = "IncSearch" },
-	hl { "Operator", guifg = "fg", guibg = "NONE" },
-	hl { "Repeat", guifg = "fg", guibg = "NONE" },
-	hl { "Constant", guifg = "fg", guibg = "NONE", gui = "bold" },
 	hl { "jsParensError", guifg = "fg", guibg = "NONE" },
-	hl { "Todo", link = "DiffChange" },
-	hl { "Error", guifg = p.red, guibg = "bg", gui = "bold" },
-	hl { "Exception", guifg = "fg", guibg = "NONE" },
-	hl { "Keyword", guifg = "fg", guibg = "NONE" },
-	hl { "Label", guifg = "fg", guibg = "NONE" },
-	hl { "Special", guifg = "fg", guibg = "NONE" },
 	hl { "SpellBad", guifg = "fg", guibg = "NONE", gui = "undercurl", guisp = p.red },
-	hl { "Statement", guifg = "fg", guibg = "NONE", gui = "italic" },
-	hl { "Underlined", guifg = "fg", guibg = "NONE", gui = "underline" },
 	hl { "VertSplit", link = "NonText" },
 	hl { "Menu", link = "Pmenu" },
-	hl { "Title", guifg = "fg", guibg = "NONE" },
+	hl { "Title", guifg = "fg", guibg = "NONE", gui = { "bold", "underline" } },
 	hl { "NormalFloat", link = "Pmenu" },
 	hl { "FloatTitle", guifg = "fg", guibg = d:get("Pmenu", "guibg"), gui = { "underline", "bold" } },
 	hl { "FloatBorder", guifg = d:get("Pmenu", "guibg"), guibg = d:get("Pmenu", "guibg") },
@@ -393,7 +406,6 @@ nvim:add_hlgroups {
 	hl { "PmenuExtra", guifg = d:call("Pmenu", "guifg", colour.lighten, 5), guibg = "NONE" },
 	hl { "PmenuSbar", guifg = "NONE", guibg = "NONE" },
 	hl { "PmenuThumb", guifg = "NONE", guibg = d:call("Pmenu", "guibg", colour.lighten, -10) },
-	hl { "PreProc", guifg = "fg", guibg = "NONE" },
 	hl { "Question", guifg = "fg", guibg = "NONE" },
 	hl { "Visual", guifg = d:get("Search", "guifg"), guibg = d:get("Search", "guibg"), gui = "NONE" },
 	hl {
@@ -428,17 +440,6 @@ nvim:add_hlgroups {
 	hl { "vimHiCTerm", guifg = "fg", guibg = "NONE" },
 	hl { "vimHiCTermFgBg", guifg = "fg", guibg = "NONE" },
 	hl { "vimHiGuiFgBg", guifg = "fg", guibg = "NONE" },
-	hl { "luaFuncKeyword", guifg = "fg", guibg = "NONE", gui = "NONE" },
-	hl { "luaFuncName", guifg = "fg", guibg = "NONE", gui = { "underline", "bold" } },
-	hl { "luaRepeat", link = "Repeat" },
-	hl { "luaCond", link = "Conditional" },
-	hl { "luaParens", guifg = "fg", guibg = "NONE", gui = "NONE" },
-	hl { "luaSpecialValue", guifg = "fg", guibg = "NONE", gui = "bold" },
-	hl { "luaLocal", guifg = "fg", guibg = "NONE" },
-	hl { "luaGotoLabel", guifg = "fg", guibg = "NONE", gui = d:get("@label.lua", "gui") },
-	hl { "luaBraces", guifg = "fg", guibg = "NONE" },
-	hl { "luaStatement", guifg = "fg", guibg = "NONE" },
-	hl { "luaBuiltIn", link = "luaSpecialValue" },
 	hl { "htmlTagName", guifg = "fg", guibg = "NONE", gui = "NONE" },
 	hl { "typescriptParens", guifg = "fg", guibg = "NONE" },
 	hl { "typescriptFuncName", link = "luaFuncName" },
@@ -551,18 +552,14 @@ if has('nvim')
 	let g:terminal_color_13 = '${term_bright_purple}'
 	let g:terminal_color_14 = '${term_bright_cyan}'
 	let g:terminal_color_15 = '${term_bright_white}'
-	${@text_literal}
-	${@text_reference}
-	${@tag.tsx}
-	${@function.lua}
-	${@keyword.function.lua}
-	${@repeat.lua}
-	${@conditional.lua}
-	${@function.builtin.lua}
-	${@variable.builtin.lua}
-	${@method.lua}
-	${@label.lua}
-	${@lsp.typemod.method.declaration.lua}
+
+	${@text.literal}
+	${@function}
+	${@function.call}
+	${@function.builtin}
+
+	${@lsp.typemod.function.defaultLibrary}
+	${@lsp.typemod.function.declaration}
 else
 	${statusline_term}
 	${statusline_term_nc}
@@ -602,20 +599,36 @@ endif
 		term_bright_purple = colour.lighten(p.purple, 10),
 		term_bright_cyan = colour.lighten(p.cyan, 10),
 		term_bright_white = d:call("term_bright_black", colour.lighten, "aa"),
-		["@text_literal"] = hl { "@text.literal", link = "helpExample" },
-		["@text_reference"] = hl { "@text.reference", link = "helpOption" },
-		["@tag.tsx"] = hl { "@tag.tsx", guifg = "fg", guibg = "NONE" },
-		["@function.lua"] = hl { "@function.lua", link = "luaFuncName" },
-		["@keyword.function.lua"] = hl { "@keyword.function.lua", link = "luaFuncKeyword" },
-		["@repeat.lua"] = hl { "@repeat.lua", link = "luaRepeat" },
-		["@conditional.lua"] = hl { "@conditional.lua", link = "luaCond" },
-		["@function.builtin.lua"] = hl { "@function.builtin.lua", link = "luaSpecialValue" },
-		["@variable.builtin.lua"] = hl { "@variable.builtin.lua", link = "luaSpecialValue" },
-		["@method.lua"] = hl { "@method.lua", link = "@function.lua" },
-		["@label.lua"] = hl { "@label.lua", guifg = "fg", guibg = "NONE", gui = { "bold", "underline" } },
-		["@lsp.typemod.method.declaration.lua"] = hl { "@lsp.typemod.method.declaration.lua", link = "luaFuncName" },
 		statusline_term = hl { "StatusLineTerm", link = "StatusLine" },
 		statusline_term_nc = hl { "StatusLineTermNC", link = "StatusLineNC" },
+
+		["@text.literal"] = hl { "@text.literal", guifg = "fg", guibg = "NONE", gui = "NONE" },
+		["@function.call"] = hl { "@function.call", guifg = "fg", guibg = "NONE", gui = "NONE" },
+		["@function"] = hl {
+			"@function",
+			guifg = d:get("@lsp.typemod.function.declaration", "guifg"),
+			guibg = d:get("@lsp.typemod.function.declaration", "guibg"),
+			gui = d:get("@lsp.typemod.function.declaration", "gui"),
+		},
+		["@function.builtin"] = hl {
+			"@function.builtin",
+			guifg = d:get("@lsp.typemod.function.defaultLibrary", "guifg"),
+			guibg = d:get("@lsp.typemod.function.defaultLibrary", "guibg"),
+			gui = d:get("@lsp.typemod.function.defaultLibrary", "gui"),
+		},
+
+		["@lsp.typemod.function.defaultLibrary"] = hl {
+			"@lsp.typemod.function.defaultLibrary",
+			guifg = "fg",
+			guibg = "NONE",
+			gui = { "bold" },
+		},
+		["@lsp.typemod.function.declaration"] = hl {
+			"@lsp.typemod.function.declaration",
+			guifg = "fg",
+			guibg = "NONE",
+			gui = { "underline" },
+		},
 	}
 )
 
