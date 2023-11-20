@@ -28,8 +28,40 @@ hi DiffDelete guifg=#A50303 ctermfg=124 guibg=#ffebeb ctermbg=255 gui=NONE cterm
 hi DiffText guifg=#1E5571 ctermfg=23 guibg=#efeff9 ctermbg=255
 hi Directory guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 hi ErrorMsg guifg=#A50303 ctermfg=124 guibg=NONE ctermbg=NONE gui=bold cterm=bold
+hi Constant guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
+hi! link String Constant
+hi! link Character Constant
+hi! link Number Constant
+hi! link Boolean Constant
+hi! link Float Constant
 hi Identifier guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
+hi! link Function Identifier
+hi Statement guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi Conditional guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=italic cterm=italic
+hi Repeat guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=italic cterm=italic
+hi Label guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline cterm=underline
+hi! link Operator Statement
+hi! link Keyword Statement
+hi! link Exception Statement
+hi PreProc guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
+hi! link Include PreProc
+hi! link Define PreProc
+hi! link Macro PreProc
+hi! link PreCondit PreProc
+hi Type guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi! link StorageClass Type
+hi! link Structure Type
+hi Typedef guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=italic cterm=italic
+hi Special guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi! link SpecialChar Special
+hi! link Tag Special
+hi! link Delimiter Special
+hi! link SpecialComment Special
+hi! link Debug Special
+hi Underlined guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline cterm=underline
 hi Ignore guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
+hi Error guifg=#A50303 ctermfg=124 guibg=NONE ctermbg=NONE gui=bold cterm=bold
+hi! link Todo DiffChange
 hi MatchParen guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
 hi ModeMsg guifg=#1E5571 ctermfg=23 guibg=#efeff9 ctermbg=255 gui=NONE cterm=NONE
 hi MoreMsg guifg=#1E5571 ctermfg=23 guibg=#efeff9 ctermbg=255 gui=NONE cterm=NONE
@@ -41,52 +73,20 @@ hi! link TabLineFill TabLine
 hi Search guifg=#2D199F ctermfg=19 guibg=#c3c3ea ctermbg=252 gui=NONE cterm=NONE
 hi CurSearch guifg=#241384 ctermfg=18 guibg=#8a8ae1 ctermbg=104 gui=bold cterm=bold
 hi IncSearch guifg=#27158e ctermfg=18 guibg=#8f8fe2 ctermbg=104 gui=bold cterm=bold
-hi SpecialKey guifg=#605001 ctermfg=58 guibg=#fff1c9 ctermbg=230
 hi! link SpellCap SpellBad
 hi! link SpellLocal SpellBad
 hi! link SpellRare SpellBad
-hi Type guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=italic cterm=italic
 hi! link Tooltip Pmenu
 hi! link MsgSeparator VertSplit
 hi! link EndOfBuffer NonText
 hi! link QuickFixLine Search
 hi! link WildMenu IncSearch
-hi! link Boolean Constant
-hi! link Character Constant
-hi Conditional guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi! link Define PreProc
-hi! link Debug Special
-hi! link Delimiter Special
-hi! link Float Number
-hi! link Function Identifier
-hi! link Include PreProc
-hi! link Macro PreProc
-hi! link Number Constant
-hi! link PreCondit PreProc
-hi! link SpecialChar Special
-hi! link SpecialComment Special
-hi! link StorageClass Type
-hi String guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
-hi! link Structure Type
-hi! link Tag Special
-hi! link Typedef Type
 hi! link Substitute IncSearch
-hi Operator guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-hi Repeat guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-hi Constant guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
 hi jsParensError guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-hi! link Todo DiffChange
-hi Error guifg=#A50303 ctermfg=124 guibg=bg ctermbg=bg gui=bold cterm=bold
-hi Exception guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-hi Keyword guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-hi Label guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-hi Special guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 hi SpellBad guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE guisp=#A50303 gui=undercurl cterm=undercurl
-hi Statement guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=italic cterm=italic
-hi Underlined guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline cterm=underline
 hi! link VertSplit NonText
 hi! link Menu Pmenu
-hi Title guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
+hi Title guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold,underline cterm=bold,underline
 hi! link NormalFloat Pmenu
 hi FloatTitle guifg=fg ctermfg=fg guibg=#ffffff ctermbg=231 gui=underline,bold cterm=underline,bold
 hi FloatBorder guifg=#ffffff ctermfg=231 guibg=#ffffff ctermbg=231
@@ -106,7 +106,6 @@ hi PmenuKindSel guifg=#2D199F ctermfg=19 guibg=#c3c3ea ctermbg=252 gui=bold cter
 hi PmenuExtra guifg=#656565 ctermfg=241 guibg=NONE ctermbg=NONE
 hi PmenuSbar guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE
 hi PmenuThumb guifg=NONE ctermfg=NONE guibg=#e2e2e2 ctermbg=254
-hi PreProc guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 hi Question guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 hi Visual guifg=#2D199F ctermfg=19 guibg=#c3c3ea ctermbg=252 gui=NONE cterm=NONE
 hi VisualNOS guifg=#371fbb ctermfg=55 guibg=#d2d2ef ctermbg=189
@@ -137,17 +136,6 @@ hi vimHiGroup guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 hi vimHiCTerm guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 hi vimHiCTermFgBg guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 hi vimHiGuiFgBg guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-hi luaFuncKeyword guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi luaFuncName guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline,bold cterm=underline,bold
-hi! link luaRepeat Repeat
-hi! link luaCond Conditional
-hi luaParens guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi luaSpecialValue guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
-hi luaLocal guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-hi luaGotoLabel guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold,underline cterm=bold,underline
-hi luaBraces guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-hi luaStatement guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-hi! link luaBuiltIn luaSpecialValue
 hi htmlTagName guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi typescriptParens guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 hi! link typescriptFuncName luaFuncName
@@ -229,6 +217,7 @@ hi! link WhichKeyFloating Pmenu
 hi! link TelescopeMatching CurSearch
 hi! link TelescopeSelection Search
 if has('nvim')
+	hi SpecialKey guifg=#605001 ctermfg=58 guibg=#fff1c9 ctermbg=230
 	let g:terminal_color_0 = '#504944'
 	let g:terminal_color_1 = '#A50303'
 	let g:terminal_color_2 = '#38551E'
@@ -245,21 +234,18 @@ if has('nvim')
 	let g:terminal_color_13 = '#4126d8'
 	let g:terminal_color_14 = '#377166'
 	let g:terminal_color_15 = '#e4dbdb'
-	hi! link @text.literal helpExample
-	hi! link @text.reference helpOption
-	hi @tag.tsx guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-	hi! link @function.lua luaFuncName
-	hi! link @keyword.function.lua luaFuncKeyword
-	hi! link @repeat.lua luaRepeat
-	hi! link @conditional.lua luaCond
-	hi! link @function.builtin.lua luaSpecialValue
-	hi! link @variable.builtin.lua luaSpecialValue
-	hi! link @method.lua @function.lua
-	hi @label.lua guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold,underline cterm=bold,underline
-	hi! link @lsp.typemod.method.declaration.lua luaFuncName
+
+	hi @text.literal guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi @function guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline cterm=underline
+	hi @function.call guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi @function.builtin guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
+
+	hi @lsp.typemod.function.defaultLibrary guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
+	hi @lsp.typemod.function.declaration guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline cterm=underline
 else
 	hi! link StatusLineTerm StatusLine
 	hi! link StatusLineTermNC StatusLineNC
+	hi! link SpecialKey Whitespace
 	let g:terminal_ansi_colors = [
 		\ '#504944',
 		\ '#A50303',
