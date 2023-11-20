@@ -536,6 +536,7 @@ nvim:add_hlgroups {
 nvim:interpolate(
 	[[
 if has('nvim')
+	${specialkey_nvim}
 	let g:terminal_color_0 = '${term_black}'
 	let g:terminal_color_1 = '${term_red}'
 	let g:terminal_color_2 = '${term_green}'
@@ -563,6 +564,7 @@ if has('nvim')
 else
 	${statusline_term}
 	${statusline_term_nc}
+	${specialkey_vim}
 	let g:terminal_ansi_colors = [
 		\ '${term_black}',
 		\ '${term_red}',
@@ -601,6 +603,9 @@ endif
 		term_bright_white = d:call("term_bright_black", colour.lighten, "aa"),
 		statusline_term = hl { "StatusLineTerm", link = "StatusLine" },
 		statusline_term_nc = hl { "StatusLineTermNC", link = "StatusLineNC" },
+		-- SpecialKey is not listchars whitespace in Neovim but it is in Vim!
+		specialkey_nvim = hl { "SpecialKey", guifg = p.yellow, guibg = colour.lighten(p.yellow, "AAA") },
+		specialkey_vim = hl { "SpecialKey", link = "Whitespace" },
 
 		["@text.literal"] = hl { "@text.literal", guifg = "fg", guibg = "NONE", gui = "NONE" },
 		["@function.call"] = hl { "@function.call", guifg = "fg", guibg = "NONE", gui = "NONE" },
