@@ -219,17 +219,17 @@ hi! link TelescopeSelection Search
 if has('nvim')
 	hi SpecialKey guifg=#605001 ctermfg=58 guibg=#fff1c9 ctermbg=230
 	let g:terminal_color_0 = '#504944'
-	let g:terminal_color_1 = '#A50303'
-	let g:terminal_color_2 = '#38551E'
-	let g:terminal_color_3 = '#605001'
-	let g:terminal_color_4 = '#1E5571'
-	let g:terminal_color_5 = '#2D199F'
-	let g:terminal_color_6 = '#29574E'
+	let g:terminal_color_1 = '#d30505'
+	let g:terminal_color_2 = '#5e8a36'
+	let g:terminal_color_3 = '#d9c046'
+	let g:terminal_color_4 = '#296e92'
+	let g:terminal_color_5 = '#371fbb'
+	let g:terminal_color_6 = '#377166'
 	let g:terminal_color_7 = '#bfb8b3'
 	let g:terminal_color_8 = '#69605a'
 	let g:terminal_color_9 = '#d30505'
-	let g:terminal_color_10 = '#4a6f2a'
-	let g:terminal_color_11 = '#7c6802'
+	let g:terminal_color_10 = '#72a643'
+	let g:terminal_color_11 = '#f8dc51'
 	let g:terminal_color_12 = '#296e92'
 	let g:terminal_color_13 = '#4126d8'
 	let g:terminal_color_14 = '#377166'
@@ -248,17 +248,17 @@ else
 	hi! link SpecialKey Whitespace
 	let g:terminal_ansi_colors = [
 		\ '#504944',
-		\ '#A50303',
-		\ '#38551E',
-		\ '#605001',
-		\ '#1E5571',
-		\ '#2D199F',
-		\ '#29574E',
+		\ '#d30505',
+		\ '#5e8a36',
+		\ '#d9c046',
+		\ '#296e92',
+		\ '#371fbb',
+		\ '#377166',
 		\ '#bfb8b3',
 		\ '#69605a',
 		\ '#d30505',
-		\ '#4a6f2a',
-		\ '#7c6802',
+		\ '#72a643',
+		\ '#f8dc51',
 		\ '#296e92',
 		\ '#4126d8',
 		\ '#377166',
