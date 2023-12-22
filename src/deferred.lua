@@ -57,7 +57,11 @@ function Deferred:get(...)
 
 	local args = { ... }
 	return function()
-		return fn(table.unpack(args))
+		local ok, result = pcall(fn, table.unpack(args))
+		if not ok then
+			error("error when getting '" .. table.concat(args, ".") .. "'; " .. result)
+		end
+		return result
 	end
 end
 
