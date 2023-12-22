@@ -34,10 +34,10 @@
               && !(pkgs.lib.hasInfix "doc/" path);
             src = ./.;
           };
-					installPhase = ''
-						mkdir -p $out
-						cp alacritty/yui.yml $out/yui.yml
-					'';
+          installPhase = ''
+            mkdir -p $out
+            cp alacritty/yui.yml $out/yui.yml
+          '';
         };
 
         nvim = pkgs.vimUtils.buildVimPlugin rec {
