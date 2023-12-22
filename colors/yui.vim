@@ -222,7 +222,7 @@ if has('nvim')
 	let g:terminal_color_0 = '#504944'
 	let g:terminal_color_1 = '#d30505'
 	let g:terminal_color_2 = '#5e8a36'
-	let g:terminal_color_3 = '#d9c046'
+	let g:terminal_color_3 = '#bba53b'
 	let g:terminal_color_4 = '#296e92'
 	let g:terminal_color_5 = '#371fbb'
 	let g:terminal_color_6 = '#377166'
@@ -230,19 +230,36 @@ if has('nvim')
 	let g:terminal_color_8 = '#69605a'
 	let g:terminal_color_9 = '#d30505'
 	let g:terminal_color_10 = '#72a643'
-	let g:terminal_color_11 = '#f8dc51'
+	let g:terminal_color_11 = '#d9c046'
 	let g:terminal_color_12 = '#296e92'
 	let g:terminal_color_13 = '#4126d8'
 	let g:terminal_color_14 = '#377166'
 	let g:terminal_color_15 = '#e4dbdb'
 
-	hi @text.literal guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-	hi @function guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline cterm=underline
-	hi @function.call guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-	hi @function.builtin guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
+	hi @keyword.coroutine guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
+	hi! link @text.literal helpExample
+	hi! link @constant.builtin Constant
+	hi @function guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline,bold cterm=underline,bold
+	hi @text.strong guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
+	hi @text.emphasis guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
+	hi @method guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline,bold cterm=underline,bold
+	hi @field guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi @symbol guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
+	hi! link @exception Normal
+	hi @function.call guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=italic cterm=italic
+	hi @method.call guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=italic cterm=italic
+	hi @function.builtin guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi @namespace.builtin guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi @keyword.function guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi @keyword.operator guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
+	hi @keyword.return guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
 
-	hi @lsp.typemod.function.defaultLibrary guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
-	hi @lsp.typemod.function.declaration guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline cterm=underline
+	hi @lsp.type.function guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi @lsp.type.method guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi @lsp.typemod.function.defaultLibrary guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi @lsp.typemod.function.declaration guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline,bold cterm=underline,bold
+	hi @lsp.typemod.member.declaration guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline,bold cterm=underline,bold
+	hi @lsp.typemod.variable.declaration guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=none cterm=none
 else
 	hi! link StatusLineTerm StatusLine
 	hi! link StatusLineTermNC StatusLineNC
@@ -251,7 +268,7 @@ else
 		\ '#504944',
 		\ '#d30505',
 		\ '#5e8a36',
-		\ '#d9c046',
+		\ '#bba53b',
 		\ '#296e92',
 		\ '#371fbb',
 		\ '#377166',
@@ -259,7 +276,7 @@ else
 		\ '#69605a',
 		\ '#d30505',
 		\ '#72a643',
-		\ '#f8dc51',
+		\ '#d9c046',
 		\ '#296e92',
 		\ '#4126d8',
 		\ '#377166',

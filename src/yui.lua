@@ -559,13 +559,30 @@ if has('nvim')
 	let g:terminal_color_14 = '${term_bright_cyan}'
 	let g:terminal_color_15 = '${term_bright_white}'
 
+	${@keyword.coroutine}
 	${@text.literal}
+	${@constant.builtin}
 	${@function}
+	${@text.strong}
+	${@text.emphasis}
+	${@method}
+	${@field}
+	${@symbol}
+	${@exception}
 	${@function.call}
+	${@method.call}
 	${@function.builtin}
+	${@namespace.builtin}
+	${@keyword.function}
+	${@keyword.operator}
+	${@keyword.return}
 
+	${@lsp.type.function}
+	${@lsp.type.method}
 	${@lsp.typemod.function.defaultLibrary}
 	${@lsp.typemod.function.declaration}
+	${@lsp.typemod.member.declaration}
+	${@lsp.typemod.variable.declaration}
 else
 	${statusline_term}
 	${statusline_term_nc}
@@ -593,7 +610,7 @@ endif
 		term_black = p.black,
 		term_red = colour.lighten(p.red, 10),
 		term_green = colour.lighten(p.green, 20),
-		term_yellow = colour.lighten(p.yellow, 35),
+		term_yellow = colour.lighten(p.yellow, 25),
 		term_blue = colour.lighten(p.blue, 10),
 		term_purple = colour.lighten(p.purple, 5),
 		term_cyan = colour.lighten(p.cyan, 10),
@@ -609,16 +626,87 @@ endif
 		statusline_term = hl { "StatusLineTerm", link = "StatusLine" },
 		statusline_term_nc = hl { "StatusLineTermNC", link = "StatusLineNC" },
 		-- SpecialKey is not listchars whitespace in Neovim but it is in Vim!
-		specialkey_nvim = hl { "SpecialKey", guifg = p.yellow, guibg = colour.lighten(p.yellow, "AAA") },
+		specialkey_nvim = hl { "SpecialKey", guifg = p.yellow, guibg = colour.lighten(p.yellow, "AA") },
 		specialkey_vim = hl { "SpecialKey", link = "Whitespace" },
 
-		["@text.literal"] = hl { "@text.literal", guifg = "fg", guibg = "NONE", gui = "NONE" },
-		["@function.call"] = hl { "@function.call", guifg = "fg", guibg = "NONE", gui = "NONE" },
+		["@text.literal"] = hl { "@text.literal", link = "helpExample" },
+		["@text.strong"] = hl { "@text.strong", guifg = "fg", guibg = "NONE", gui = "bold" },
+		["@text.emphasis"] = hl {
+			"@text.emphasis",
+			guifg = d:get("@text.strong", "guifg"),
+			guibg = d:get("@text.strong", "guibg"),
+			gui = d:get("@text.strong", "gui"),
+		},
+		["@function.call"] = hl {
+			"@function.call",
+			guifg = d:get("@method.call", "guifg"),
+			guibg = d:get("@method.call", "guibg"),
+			gui = d:get("@method.call", "gui"),
+		},
+		["@symbol"] = hl {
+			"@symbol",
+			guifg = "fg",
+			guibg = "NONE",
+			gui = { "bold" },
+		},
+		["@method.call"] = hl {
+			"@method.call",
+			guifg = "fg",
+			guibg = "NONE",
+			gui = { "italic" },
+		},
+		["@field"] = hl {
+			"@field",
+			guifg = "fg",
+			guibg = "NONE",
+			gui = "NONE",
+		},
+		["@keyword.function"] = hl {
+			"@keyword.function",
+			guifg = "fg",
+			guibg = "NONE",
+			gui = "NONE",
+		},
+		["@keyword.coroutine"] = hl {
+			"@keyword.coroutine",
+			guifg = "fg",
+			guibg = "NONE",
+			gui = "bold",
+		},
+		["@constant.builtin"] = hl { "@constant.builtin", link = "Constant" },
+		["@keyword.operator"] = hl {
+			"@keyword.operator",
+			guifg = "fg",
+			guibg = "NONE",
+			gui = "bold",
+		},
+		["@keyword.return"] = hl {
+			"@keyword.return",
+			guifg = "fg",
+			guibg = "NONE",
+			gui = "bold",
+		},
 		["@function"] = hl {
 			"@function",
 			guifg = d:get("@lsp.typemod.function.declaration", "guifg"),
 			guibg = d:get("@lsp.typemod.function.declaration", "guibg"),
 			gui = d:get("@lsp.typemod.function.declaration", "gui"),
+		},
+		["@exception"] = hl {
+			"@exception",
+			link = "Normal",
+		},
+		["@method"] = hl {
+			"@method",
+			guifg = d:get("@lsp.typemod.member.declaration", "guifg"),
+			guibg = d:get("@lsp.typemod.member.declaration", "guibg"),
+			gui = d:get("@lsp.typemod.member.declaration", "gui"),
+		},
+		["@namespace.builtin"] = hl {
+			"@namespace.builtin",
+			guifg = d:get("@lsp.typemod.function.defaultLibrary", "guifg"),
+			guibg = d:get("@lsp.typemod.function.defaultLibrary", "guibg"),
+			gui = d:get("@lsp.typemod.function.defaultLibrary", "gui"),
 		},
 		["@function.builtin"] = hl {
 			"@function.builtin",
@@ -631,13 +719,37 @@ endif
 			"@lsp.typemod.function.defaultLibrary",
 			guifg = "fg",
 			guibg = "NONE",
-			gui = { "bold" },
+			gui = { "NONE" },
+		},
+		["@lsp.type.method"] = hl {
+			"@lsp.type.method",
+			guifg = d:get("@lsp.type.function", "guifg"),
+			guibg = d:get("@lsp.type.function", "guibg"),
+			gui = d:get("@lsp.type.function", "gui"),
+		},
+		["@lsp.type.function"] = hl {
+			"@lsp.type.function",
+			guifg = "fg",
+			guibg = "NONE",
+			gui = { "NONE" },
+		},
+		["@lsp.typemod.variable.declaration"] = hl {
+			"@lsp.typemod.variable.declaration",
+			guifg = "fg",
+			guibg = "NONE",
+			gui = { "none" },
 		},
 		["@lsp.typemod.function.declaration"] = hl {
 			"@lsp.typemod.function.declaration",
 			guifg = "fg",
 			guibg = "NONE",
-			gui = { "underline" },
+			gui = { "underline", "bold" },
+		},
+		["@lsp.typemod.member.declaration"] = hl {
+			"@lsp.typemod.member.declaration",
+			guifg = d:get("@lsp.typemod.function.declaration", "guifg"),
+			guibg = d:get("@lsp.typemod.function.declaration", "guibg"),
+			gui = d:get("@lsp.typemod.function.declaration", "gui"),
 		},
 	}
 )
