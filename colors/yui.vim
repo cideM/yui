@@ -23,9 +23,9 @@ hi CursorLine guifg=NONE ctermfg=NONE guibg=#eae4e4 ctermbg=254 gui=NONE cterm=N
 hi! link lCursor Cursor
 hi! link CursorIM Cursor
 hi DiffAdd guifg=#38551E ctermfg=237 guibg=#daf3c5 ctermbg=194
-hi DiffChange guifg=#605001 ctermfg=58 guibg=#fff1c9 ctermbg=230
+hi DiffChange guifg=#554717 ctermfg=58 guibg=#fee264 ctermbg=221
 hi DiffDelete guifg=#A50303 ctermfg=124 guibg=#ffebeb ctermbg=255 gui=NONE cterm=NONE
-hi DiffText guifg=#1E5571 ctermfg=23 guibg=#efeff9 ctermbg=255
+hi DiffText guifg=#1E5571 ctermfg=23 guibg=#bcbee8 ctermbg=146
 hi Directory guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 hi ErrorMsg guifg=#A50303 ctermfg=124 guibg=NONE ctermbg=NONE gui=bold cterm=bold
 hi Constant guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
@@ -34,12 +34,12 @@ hi! link Character Constant
 hi! link Number Constant
 hi! link Boolean Constant
 hi! link Float Constant
-hi Identifier guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-hi! link Function Identifier
+hi Identifier guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
+hi Function guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 hi Statement guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Conditional guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=italic cterm=italic
-hi Repeat guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=italic cterm=italic
-hi Label guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline cterm=underline
+hi Repeat guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
+hi Conditional guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
+hi Label guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline,bold cterm=underline,bold
 hi! link Operator Statement
 hi! link Keyword Statement
 hi! link Exception Statement
@@ -62,16 +62,16 @@ hi Underlined guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline cterm=un
 hi Ignore guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 hi Error guifg=#A50303 ctermfg=124 guibg=NONE ctermbg=NONE gui=bold cterm=bold
 hi! link Todo DiffChange
-hi MatchParen guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
-hi ModeMsg guifg=#1E5571 ctermfg=23 guibg=#efeff9 ctermbg=255 gui=NONE cterm=NONE
-hi MoreMsg guifg=#1E5571 ctermfg=23 guibg=#efeff9 ctermbg=255 gui=NONE cterm=NONE
-hi WarningMsg guifg=#605001 ctermfg=58 guibg=#fff1c9 ctermbg=230 gui=NONE cterm=NONE
+hi MatchParen guifg=#A50303 ctermfg=124 guibg=#ffebeb ctermbg=255 gui=bold cterm=bold
+hi ModeMsg guifg=#1E5571 ctermfg=23 guibg=#bcbee8 ctermbg=146 gui=NONE cterm=NONE
+hi MoreMsg guifg=#1E5571 ctermfg=23 guibg=#bcbee8 ctermbg=146 gui=NONE cterm=NONE
+hi WarningMsg guifg=#554717 ctermfg=58 guibg=#fee264 ctermbg=221 gui=NONE cterm=NONE
 hi! link Whitespace NonText
 hi TabLine guifg=#655b5b ctermfg=59 guibg=#dfd5d5 ctermbg=188 gui=NONE cterm=NONE
 hi! link TabLineSel StatusLine
 hi! link TabLineFill TabLine
 hi Search guifg=#2D199F ctermfg=19 guibg=#c3c3ea ctermbg=252 gui=NONE cterm=NONE
-hi CurSearch guifg=#241384 ctermfg=18 guibg=#8a8ae1 ctermbg=104 gui=bold cterm=bold
+hi CurSearch guifg=#241384 ctermfg=18 guibg=#b4b4e5 ctermbg=146 gui=bold cterm=bold
 hi IncSearch guifg=#27158e ctermfg=18 guibg=#8f8fe2 ctermbg=104 gui=bold cterm=bold
 hi! link SpellCap SpellBad
 hi! link SpellLocal SpellBad
@@ -94,16 +94,16 @@ hi StatusLine guifg=#423333 ctermfg=237 guibg=#d2c3c3 ctermbg=251 gui=NONE cterm
 hi StatusLineNC guifg=#655b5b ctermfg=59 guibg=#dfd5d5 ctermbg=188 gui=NONE cterm=NONE
 hi ColorColumn guifg=#504944 ctermfg=239 guibg=#ece7e7 ctermbg=254
 hi! link CursorColumn CursorLine
-hi CopilotSuggestion guifg=#766d66 ctermfg=242 guibg=NONE ctermbg=NONE
+hi CopilotSuggestion guifg=#716761 ctermfg=242 guibg=NONE ctermbg=NONE
 hi WinBar guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE guisp=#766d66 gui=underline cterm=underline
 hi NonText guifg=#dbcfcf ctermfg=252 guibg=NONE ctermbg=NONE
 hi WinBarNC guifg=#766d66 ctermfg=242 guibg=NONE ctermbg=NONE guisp=#dbcfcf gui=underline cterm=underline
 hi! link PmenuExtraSel PmenuSel
 hi PmenuSel guifg=#2D199F ctermfg=19 guibg=#c3c3ea ctermbg=252 gui=NONE cterm=NONE
 hi Pmenu guifg=#595959 ctermfg=240 guibg=#ffffff ctermbg=231
-hi PmenuKind guifg=#595959 ctermfg=240 guibg=NONE ctermbg=NONE gui=bold cterm=bold
+hi PmenuKind guifg=#595959 ctermfg=240 guibg=#ffffff ctermbg=231 gui=bold cterm=bold
 hi PmenuKindSel guifg=#2D199F ctermfg=19 guibg=#c3c3ea ctermbg=252 gui=bold cterm=bold
-hi PmenuExtra guifg=#656565 ctermfg=241 guibg=NONE ctermbg=NONE
+hi PmenuExtra guifg=#656565 ctermfg=241 guibg=#ffffff ctermbg=231
 hi PmenuSbar guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE
 hi PmenuThumb guifg=NONE ctermfg=NONE guibg=#e2e2e2 ctermbg=254
 hi Question guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
@@ -111,21 +111,22 @@ hi Visual guifg=#2D199F ctermfg=19 guibg=#c3c3ea ctermbg=252 gui=NONE cterm=NONE
 hi VisualNOS guifg=#371fbb ctermfg=55 guibg=#d2d2ef ctermbg=189
 hi Scrollbar guifg=NONE ctermfg=NONE guibg=#dfd5d5 ctermbg=188
 hi! link DiagnosticError DiffDelete
-hi! link DiagnosticHint DiffAdd
+hi! link DiagnosticHint DiffChange
 hi! link DiagnosticInfo DiffText
 hi! link DiagnosticWarn DiffChange
+hi! link DiagnosticUnnecessary DiagnosticHint
 hi DiagnosticFloatingError guifg=#A50303 ctermfg=124 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi DiagnosticFloatingHint guifg=#38551E ctermfg=237 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi DiagnosticFloatingInfo guifg=#1E5571 ctermfg=23 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi DiagnosticFloatingWarn guifg=#605001 ctermfg=58 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi DiagnosticFloatingWarn guifg=#554717 ctermfg=58 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi DiagnosticUnderlineError guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#A50303 gui=undercurl cterm=undercurl
 hi DiagnosticUnderlineHint guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#38551E gui=undercurl cterm=undercurl
 hi DiagnosticUnderlineInfo guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#1E5571 gui=undercurl cterm=undercurl
-hi DiagnosticUnderlineWarn guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#605001 gui=undercurl cterm=undercurl
+hi DiagnosticUnderlineWarn guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#736521 gui=undercurl cterm=undercurl
 hi DiagnosticSignError guifg=#A50303 ctermfg=124 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi DiagnosticSignHint guifg=#38551E ctermfg=237 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi DiagnosticSignInfo guifg=#1E5571 ctermfg=23 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi DiagnosticSignWarn guifg=#605001 ctermfg=58 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi DiagnosticSignWarn guifg=#736521 ctermfg=94 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi! link LspSignatureActiveParameter Search
 hi vimCommand guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi vimFilter guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
@@ -186,7 +187,7 @@ hi! link diffComment Comment
 hi GitSignsAdd guifg=#5e8a36 ctermfg=65 guibg=NONE ctermbg=NONE
 hi! link GitSignsAddNr GitSignsAdd
 hi! link GitSignsAddLn GitSignsAdd
-hi GitSignsChange guifg=#b79a04 ctermfg=136 guibg=NONE ctermbg=NONE
+hi GitSignsChange guifg=#aa9037 ctermfg=137 guibg=NONE ctermbg=NONE
 hi! link GitSignsChangeNr DiffChange
 hi! link GitSignsChangeLn DiffChange
 hi GitSignsDelete guifg=#fe1e1e ctermfg=196 guibg=NONE ctermbg=NONE
@@ -206,8 +207,8 @@ hi! link ConflictMarkerOurs DiffAdd
 hi! link ConflictMarkerTheirs DiffText
 hi! link ConflictMarkerEnd DiffText
 hi jsxOpenPunct guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-hi TreesitterContextBottom guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#d1d1ee gui=underline cterm=underline
-hi TreesitterContext guifg=#1E5571 ctermfg=23 guibg=#efeff9 ctermbg=255 gui=NONE cterm=NONE
+hi TreesitterContextBottom guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#c7b1b1 gui=underline cterm=underline
+hi TreesitterContext guifg=#504944 ctermfg=239 guibg=#dbcfcf ctermbg=252 gui=NONE cterm=NONE
 hi! link LeapMatch CurSearch
 hi! link LeapLabelPrimary CurSearch
 hi LeapLabelSecondary guifg=#2D199F ctermfg=19 guibg=#2D199F ctermbg=19 gui=NONE cterm=NONE
@@ -217,7 +218,7 @@ hi! link WhichKeyFloating Pmenu
 hi! link TelescopeMatching CurSearch
 hi! link TelescopeSelection Search
 if has('nvim')
-	hi SpecialKey guifg=#605001 ctermfg=58 guibg=#fff1c9 ctermbg=230
+	hi SpecialKey guifg=#736521 ctermfg=94 guibg=#fee264 ctermbg=221
 	let g:terminal_color_0 = '#504944'
 	let g:terminal_color_1 = '#d30505'
 	let g:terminal_color_2 = '#5e8a36'
