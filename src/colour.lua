@@ -142,7 +142,7 @@ M.lighten = function(color, amount)
 
 	local is_negative = amount:sub(1, 1) == "-"
 	local factor = is_negative and -0.5 or 0.5
-	local max = is_negative and "000000" or "ffffff"
+	local max = is_negative and "#000000" or "#ffffff"
 
 	local starting_color = color
 	local ratio = ratios[amount:lower()]
