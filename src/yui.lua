@@ -27,7 +27,7 @@ local lightline = Theme:new(d)
 
 local palette = {
 	black = "#504944",
-	purple = "#2D199F",
+	purple = "#522F86",
 	blue = "#1E5571",
 	green = "#38551E",
 	red = "#A50303",
