@@ -338,7 +338,7 @@ nvim:add_hlgroups {
 	hl { "TabLine", guifg = d:get("StatusLineNC", "guifg"), guibg = d:get("StatusLineNC", "guibg"), gui = "NONE" },
 	hl { "TabLineSel", link = "StatusLine" },
 	hl { "TabLineFill", link = "TabLine" },
-	hl { "Search", guifg = p.purple, guibg = colour.lighten(p.purple, "AAA"), gui = "NONE" },
+	hl { "Search", guifg = p.purple, guibg = d:call("Search", "guifg", colour.lighten, "AAA"), gui = "NONE" },
 	hl {
 		"CurSearch",
 		guifg = d:call("Search", "guifg", colour.lighten, -5),
