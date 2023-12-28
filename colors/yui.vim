@@ -70,9 +70,9 @@ hi! link Whitespace NonText
 hi TabLine guifg=#655b5b ctermfg=59 guibg=#dfd5d5 ctermbg=188 gui=NONE cterm=NONE
 hi! link TabLineSel StatusLine
 hi! link TabLineFill TabLine
-hi Search guifg=#2D199F ctermfg=19 guibg=#c3c3ea ctermbg=252 gui=NONE cterm=NONE
-hi CurSearch guifg=#241384 ctermfg=18 guibg=#b4b4e5 ctermbg=146 gui=bold cterm=bold
-hi IncSearch guifg=#27158e ctermfg=18 guibg=#8f8fe2 ctermbg=104 gui=bold cterm=bold
+hi Search guifg=#522F86 ctermfg=54 guibg=#d7d6f1 ctermbg=189 gui=NONE cterm=NONE
+hi CurSearch guifg=#452771 ctermfg=53 guibg=#c8c5eb ctermbg=252 gui=bold cterm=bold
+hi IncSearch guifg=#4a2a7a ctermfg=54 guibg=#a89edf ctermbg=146 gui=bold cterm=bold
 hi! link SpellCap SpellBad
 hi! link SpellLocal SpellBad
 hi! link SpellRare SpellBad
@@ -99,16 +99,16 @@ hi WinBar guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE guisp=#766d66 gui=underlin
 hi NonText guifg=#dbcfcf ctermfg=252 guibg=NONE ctermbg=NONE
 hi WinBarNC guifg=#766d66 ctermfg=242 guibg=NONE ctermbg=NONE guisp=#dbcfcf gui=underline cterm=underline
 hi! link PmenuExtraSel PmenuSel
-hi PmenuSel guifg=#2D199F ctermfg=19 guibg=#c3c3ea ctermbg=252 gui=NONE cterm=NONE
+hi PmenuSel guifg=#522F86 ctermfg=54 guibg=#d7d6f1 ctermbg=189 gui=NONE cterm=NONE
 hi Pmenu guifg=#595959 ctermfg=240 guibg=#ffffff ctermbg=231
 hi PmenuKind guifg=#595959 ctermfg=240 guibg=#ffffff ctermbg=231 gui=bold cterm=bold
-hi PmenuKindSel guifg=#2D199F ctermfg=19 guibg=#c3c3ea ctermbg=252 gui=bold cterm=bold
+hi PmenuKindSel guifg=#522F86 ctermfg=54 guibg=#d7d6f1 ctermbg=189 gui=bold cterm=bold
 hi PmenuExtra guifg=#656565 ctermfg=241 guibg=#ffffff ctermbg=231
 hi PmenuSbar guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE
 hi PmenuThumb guifg=NONE ctermfg=NONE guibg=#e2e2e2 ctermbg=254
 hi Question guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-hi Visual guifg=#2D199F ctermfg=19 guibg=#c3c3ea ctermbg=252 gui=NONE cterm=NONE
-hi VisualNOS guifg=#371fbb ctermfg=55 guibg=#d2d2ef ctermbg=189
+hi Visual guifg=#522F86 ctermfg=54 guibg=#d7d6f1 ctermbg=189 gui=NONE cterm=NONE
+hi VisualNOS guifg=#60389b ctermfg=61 guibg=#e6e5f6 ctermbg=255
 hi Scrollbar guifg=NONE ctermfg=NONE guibg=#dfd5d5 ctermbg=188
 hi! link DiagnosticError DiffDelete
 hi! link DiagnosticHint DiffChange
@@ -211,8 +211,8 @@ hi TreesitterContextBottom guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp
 hi TreesitterContext guifg=#504944 ctermfg=239 guibg=#dbcfcf ctermbg=252 gui=NONE cterm=NONE
 hi! link LeapMatch CurSearch
 hi! link LeapLabelPrimary CurSearch
-hi LeapLabelSecondary guifg=#2D199F ctermfg=19 guibg=#2D199F ctermbg=19 gui=NONE cterm=NONE
-hi LeapLabelSelected guifg=#2D199F ctermfg=19 guibg=#c3c3ea ctermbg=252 gui=NONE cterm=NONE
+hi LeapLabelSecondary guifg=#522F86 ctermfg=54 guibg=#522F86 ctermbg=54 gui=NONE cterm=NONE
+hi LeapLabelSelected guifg=#522F86 ctermfg=54 guibg=#d7d6f1 ctermbg=189 gui=NONE cterm=NONE
 hi WhichKeySeperator guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 hi! link WhichKeyFloating Pmenu
 hi! link TelescopeMatching CurSearch
@@ -224,7 +224,7 @@ if has('nvim')
 	let g:terminal_color_2 = '#5e8a36'
 	let g:terminal_color_3 = '#bba53b'
 	let g:terminal_color_4 = '#296e92'
-	let g:terminal_color_5 = '#371fbb'
+	let g:terminal_color_5 = '#60389b'
 	let g:terminal_color_6 = '#377166'
 	let g:terminal_color_7 = '#bfb8b3'
 	let g:terminal_color_8 = '#69605a'
@@ -232,7 +232,7 @@ if has('nvim')
 	let g:terminal_color_10 = '#72a643'
 	let g:terminal_color_11 = '#d9c046'
 	let g:terminal_color_12 = '#296e92'
-	let g:terminal_color_13 = '#4126d8'
+	let g:terminal_color_13 = '#6e41b1'
 	let g:terminal_color_14 = '#377166'
 	let g:terminal_color_15 = '#e4dbdb'
 
@@ -270,7 +270,7 @@ else
 		\ '#5e8a36',
 		\ '#bba53b',
 		\ '#296e92',
-		\ '#371fbb',
+		\ '#60389b',
 		\ '#377166',
 		\ '#bfb8b3',
 		\ '#69605a',
@@ -278,7 +278,7 @@ else
 		\ '#72a643',
 		\ '#d9c046',
 		\ '#296e92',
-		\ '#4126d8',
+		\ '#6e41b1',
 		\ '#377166',
 		\ '#e4dbdb']
 endif
@@ -306,7 +306,7 @@ endif
 
 let s:yui_emphasized_comments_value = get(g:, 'yui_emphasized_comments', 0)
 if s:yui_emphasized_comments_value ==? 1
-	hi Comment guifg=#2D199F ctermfg=19 guibg=NONE ctermbg=NONE
+	hi Comment guifg=#522F86 ctermfg=54 guibg=NONE ctermbg=NONE
 elseif s:yui_emphasized_comments_value ==? 0
 	hi Comment guifg=#766d66 ctermfg=242 guibg=NONE ctermbg=NONE
 endif
@@ -318,7 +318,7 @@ if s:yui_comments_value ==? 'normal'
 elseif s:yui_comments_value ==? 'fade'
 	hi Comment guifg=#bcada2 ctermfg=145 guibg=NONE ctermbg=NONE gui=italic cterm=italic
 elseif s:yui_comments_value ==? 'emphasize'
-	hi Comment guifg=#2D199F ctermfg=19 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi Comment guifg=#6e41b1 ctermfg=61 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 elseif s:yui_comments_value ==? 'bg'
 	hi Comment guifg=NONE ctermfg=NONE guibg=#e6dede ctermbg=254 gui=NONE cterm=NONE
 endif
