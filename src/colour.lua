@@ -150,7 +150,7 @@ M.lighten = function(color, amount)
 	while M.contrast(color, starting_color) < ratio and color ~= max do
 		color = lightness(color, factor):lower()
 		if color == max then
-			error("could not find a color with a M.contrast ratio of " .. ratio .. " for " .. starting_color)
+			error("could not find a color with a M.contrast ratio of " .. ratio .. "(" .. amount .. ")" .. " for " .. starting_color)
 		end
 	end
 
