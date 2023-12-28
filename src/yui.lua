@@ -852,7 +852,7 @@ endif
 			guibg = d:get("fold_column_fade", "guibg"),
 			gui = "italic",
 		},
-		comments_emphasize = hl { "Comment", guifg = p.purple, guibg = "NONE", gui = "NONE" },
+		comments_emphasize = hl { "Comment", guifg = colour.lighten(p.purple, 10), guibg = "NONE", gui = "NONE" },
 		comments_bg = hl {
 			"Comment",
 			guifg = "NONE",
