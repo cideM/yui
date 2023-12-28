@@ -16,12 +16,12 @@
 		},
 		"search": {
 			"matches": {
-				"foreground": "#2D199F",
-				"background": "#c3c3ea",
+				"foreground": "#522F86",
+				"background": "#d7d6f1",
 			},
 			"focused_match": {
-				"foreground": "#27158e",
-				"background": "#8f8fe2",
+				"foreground": "#4a2a7a",
+				"background": "#a89edf",
 			},
 		},
 		"hints": {
@@ -43,8 +43,8 @@
 			"background": "#d2c3c3",
 		},
 		"selection": {
-			"text": "#2D199F",
-			"background": "#c3c3ea",
+			"text": "#522F86",
+			"background": "#d7d6f1",
 		},
 		"normal": {
 			"black": "#504944",
@@ -52,7 +52,7 @@
 			"green": "#5e8a36",
 			"yellow": "#bba53b",
 			"blue": "#296e92",
-			"magenta": "#371fbb",
+			"magenta": "#60389b",
 			"cyan": "#377166",
 			"white": "#bfb8b3",
 		},
@@ -62,7 +62,7 @@
 			"green": "#72a643",
 			"yellow": "#d9c046",
 			"blue": "#296e92",
-			"magenta": "#4126d8",
+			"magenta": "#6e41b1",
 			"cyan": "#377166",
 			"white": "#e4dbdb",
 		},
@@ -72,7 +72,7 @@
 			"green": "#4b6f2a",
 			"yellow": "#9d8b30",
 			"blue": "#1e5571",
-			"magenta": "#241383",
+			"magenta": "#452771",
 			"cyan": "#29574e",
 			"white": "#a39d99",
 		}
