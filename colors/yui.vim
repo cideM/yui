@@ -10,6 +10,7 @@ if exists('syntax_on')
 	syntax reset
 endif
 
+let g:colors_name = 'yui'
 	
 hi Normal guifg=#504944 ctermfg=239 guibg=#f1eded ctermbg=255
 hi NormalNC guifg=#4b4440 ctermfg=238 guibg=#eae4e4 ctermbg=254
