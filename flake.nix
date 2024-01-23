@@ -17,6 +17,29 @@
           inherit system;
         };
 
+        alacrittyToml = pkgs.stdenv.mkDerivation rec {
+          name = "yui-alacritty";
+          buildInputs = with pkgs; [
+            lua54Packages.lua
+          ];
+          buildPhase = ''
+            make alacritty/yui.toml
+            rm -r src Makefile flake.nix flake.lock README.md CONTRIBUTING.md LICENSE.txt
+          '';
+          src = pkgs.lib.cleanSourceWith {
+            filter = path: type:
+              !(pkgs.lib.hasInfix "screenshots" path)
+              && !(pkgs.lib.hasInfix "colors/" path)
+              && !(pkgs.lib.hasInfix "autoload/" path)
+              && !(pkgs.lib.hasInfix "doc/" path);
+            src = ./.;
+          };
+          installPhase = ''
+            mkdir -p $out
+            cp alacritty/yui.toml $out/yui.toml
+          '';
+        };
+
         alacritty = pkgs.stdenv.mkDerivation rec {
           name = "yui-alacritty";
           buildInputs = with pkgs; [
@@ -65,6 +88,7 @@
         packages = flake-utils.lib.flattenTree {
           nvim = nvim;
           alacritty = alacritty;
+          alacrittyToml = alacrittyToml;
         };
 
         defaultPackage = packages.yui;

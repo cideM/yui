@@ -1,5 +1,5 @@
 .PHONY: all
-all: colors/yui.vim doc/yui.txt autoload/lightline/colorscheme/yui.vim alacritty/yui.yml fish/yui.fish
+all: colors/yui.vim doc/yui.txt autoload/lightline/colorscheme/yui.vim alacritty/yui.yml alacritty/yui.toml fish/yui.fish
 
 lua_path = src/?.lua
 lua_files = src/*.lua
@@ -11,6 +11,10 @@ colors/yui.vim: $(lua_files)
 alacritty/yui.yml: $(lua_files)
 	@mkdir -p alacritty
 	LUA_PATH="$(lua_path)" lua -e 'print(require("yui").alacritty)' > $@
+
+alacritty/yui.toml: $(lua_files)
+	@mkdir -p alacritty
+	LUA_PATH="$(lua_path)" lua -e 'print(require("yui").alacritty_toml)' > $@
 
 fish/yui.fish: $(lua_files)
 	@mkdir -p fish
