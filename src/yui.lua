@@ -102,6 +102,55 @@ let g:lightline#colorscheme#yui#palette = lightline#colorscheme#fill(s:p)
 	}
 )
 
+local alacritty_colors = {
+	alac_primary_fg = d:get("Normal", "guifg"),
+	alac_primary_bg = d:get("Normal", "guibg"),
+	alac_primary_dim_fg = d:call("Normal", "guifg", colour.lighten, -5),
+	alac_primary_bright_fg = d:call("Normal", "guifg", colour.lighten, 5),
+	alac_cursor_fg = p.black,
+	alac_cursor_bg = d:call("alac_vi_cursor_bg", colour.lighten, 5),
+	alac_vi_cursor_fg = p.black,
+	alac_vi_cursor_bg = p.orange,
+	alac_matches_fg = d:get("Search", "guifg"),
+	alac_matches_bg = d:get("Search", "guibg"),
+	alac_focused_match_fg = d:get("IncSearch", "guifg"),
+	alac_focused_match_bg = d:get("IncSearch", "guibg"),
+	alac_first_hint_char_fg = d:get("DiagnosticInfo", "guibg"),
+	alac_first_hint_char_bg = d:get("DiagnosticInfo", "guifg"),
+	alac_chars_after_first_hint_fg = d:get("DiagnosticInfo", "guifg"),
+	alac_chars_after_first_hint_bg = d:get("DiagnosticInfo", "guibg"),
+	alac_line_indicator_fg = d:get("StatusLine", "guifg"),
+	alac_line_indicator_bg = d:get("StatusLine", "guibg"),
+	alac_footer_fg = d:get("StatusLine", "guifg"),
+	alac_footer_bg = d:get("StatusLine", "guibg"),
+	alac_selection_fg = d:get("Visual", "guifg"),
+	alac_selection_bg = d:get("Visual", "guibg"),
+	alac_normal_black = d:get("term_black"),
+	alac_normal_red = d:get("term_red"),
+	alac_normal_green = d:get("term_green"),
+	alac_normal_yellow = d:get("term_yellow"),
+	alac_normal_blue = d:get("term_blue"),
+	alac_normal_magenta = d:get("term_purple"),
+	alac_normal_cyan = d:get("term_cyan"),
+	alac_normal_white = d:get("term_white"),
+	alac_bright_black = d:get("term_bright_black"),
+	alac_bright_red = d:get("term_bright_red"),
+	alac_bright_green = d:get("term_bright_green"),
+	alac_bright_yellow = d:get("term_bright_yellow"),
+	alac_bright_blue = d:get("term_bright_blue"),
+	alac_bright_magenta = d:get("term_bright_purple"),
+	alac_bright_cyan = d:get("term_bright_cyan"),
+	alac_bright_white = d:get("term_bright_white"),
+	alac_dim_black = d:call("term_black", colour.lighten, -10),
+	alac_dim_red = d:call("term_red", colour.lighten, -10),
+	alac_dim_green = d:call("term_green", colour.lighten, -10),
+	alac_dim_yellow = d:call("term_yellow", colour.lighten, -10),
+	alac_dim_blue = d:call("term_blue", colour.lighten, -10),
+	alac_dim_magenta = d:call("term_purple", colour.lighten, -10),
+	alac_dim_cyan = d:call("term_cyan", colour.lighten, -10),
+	alac_dim_white = d:call("term_white", colour.lighten, -10),
+}
+
 alacritty:interpolate(
 	[[
 { 
@@ -185,54 +234,82 @@ alacritty:interpolate(
 	}
 }
 ]],
-	{
-		alac_primary_fg = d:get("Normal", "guifg"),
-		alac_primary_bg = d:get("Normal", "guibg"),
-		alac_primary_dim_fg = d:call("Normal", "guifg", colour.lighten, -5),
-		alac_primary_bright_fg = d:call("Normal", "guifg", colour.lighten, 5),
-		alac_cursor_fg = p.black,
-		alac_cursor_bg = d:call("alac_vi_cursor_bg", colour.lighten, 5),
-		alac_vi_cursor_fg = p.black,
-		alac_vi_cursor_bg = p.orange,
-		alac_matches_fg = d:get("Search", "guifg"),
-		alac_matches_bg = d:get("Search", "guibg"),
-		alac_focused_match_fg = d:get("IncSearch", "guifg"),
-		alac_focused_match_bg = d:get("IncSearch", "guibg"),
-		alac_first_hint_char_fg = d:get("DiagnosticInfo", "guibg"),
-		alac_first_hint_char_bg = d:get("DiagnosticInfo", "guifg"),
-		alac_chars_after_first_hint_fg = d:get("DiagnosticInfo", "guifg"),
-		alac_chars_after_first_hint_bg = d:get("DiagnosticInfo", "guibg"),
-		alac_line_indicator_fg = d:get("StatusLine", "guifg"),
-		alac_line_indicator_bg = d:get("StatusLine", "guibg"),
-		alac_footer_fg = d:get("StatusLine", "guifg"),
-		alac_footer_bg = d:get("StatusLine", "guibg"),
-		alac_selection_fg = d:get("Visual", "guifg"),
-		alac_selection_bg = d:get("Visual", "guibg"),
-		alac_normal_black = d:get("term_black"),
-		alac_normal_red = d:get("term_red"),
-		alac_normal_green = d:get("term_green"),
-		alac_normal_yellow = d:get("term_yellow"),
-		alac_normal_blue = d:get("term_blue"),
-		alac_normal_magenta = d:get("term_purple"),
-		alac_normal_cyan = d:get("term_cyan"),
-		alac_normal_white = d:get("term_white"),
-		alac_bright_black = d:get("term_bright_black"),
-		alac_bright_red = d:get("term_bright_red"),
-		alac_bright_green = d:get("term_bright_green"),
-		alac_bright_yellow = d:get("term_bright_yellow"),
-		alac_bright_blue = d:get("term_bright_blue"),
-		alac_bright_magenta = d:get("term_bright_purple"),
-		alac_bright_cyan = d:get("term_bright_cyan"),
-		alac_bright_white = d:get("term_bright_white"),
-		alac_dim_black = d:call("term_black", colour.lighten, -10),
-		alac_dim_red = d:call("term_red", colour.lighten, -10),
-		alac_dim_green = d:call("term_green", colour.lighten, -10),
-		alac_dim_yellow = d:call("term_yellow", colour.lighten, -10),
-		alac_dim_blue = d:call("term_blue", colour.lighten, -10),
-		alac_dim_magenta = d:call("term_purple", colour.lighten, -10),
-		alac_dim_cyan = d:call("term_cyan", colour.lighten, -10),
-		alac_dim_white = d:call("term_white", colour.lighten, -10),
-	}
+	alacritty_colors
+)
+
+local alacritty_toml_colors = {}
+for k, v in pairs(alacritty_colors) do
+	local prefixed = k:gsub("alac_", "alac_toml_")
+	alacritty_toml_colors[prefixed] = v
+end
+
+local alacritty_toml = Theme:new(d)
+alacritty_toml:interpolate(
+	[[
+	[colors]
+	[colors.primary]
+	foreground = "${alac_toml_primary_fg}"
+	background = "${alac_toml_primary_bg}"
+	dim_foreground = "${alac_toml_primary_dim_fg}"
+	bright_foreground = "${alac_toml_primary_bright_fg}"
+	[colors.cursor]
+	text = "${alac_toml_cursor_fg}"
+	cursor = "${alac_toml_cursor_bg}"
+	[colors.vi_mode_cursor]
+	text = "${alac_toml_vi_cursor_fg}"
+	cursor = "${alac_toml_vi_cursor_bg}"
+	[colors.search]
+	[colors.search.matches]
+	foreground = "${alac_toml_matches_fg}"
+	background = "${alac_toml_matches_bg}"
+	[colors.search.focused_match]
+	foreground = "${alac_toml_focused_match_fg}"
+	background = "${alac_toml_focused_match_bg}"
+	[colors.hints]
+	[colors.hints.start]
+	foreground = "${alac_toml_first_hint_char_fg}"
+	background = "${alac_toml_first_hint_char_bg}"
+	[colors.hints.end]
+	foreground = "${alac_toml_chars_after_first_hint_fg}"
+	background = "${alac_toml_chars_after_first_hint_bg}"
+	[colors.line_indicator]
+	foreground = "${alac_toml_line_indicator_fg}"
+	background = "${alac_toml_line_indicator_bg}"
+	[colors.footer_bar]
+	foreground = "${alac_toml_footer_fg}"
+	background = "${alac_toml_footer_bg}"
+	[colors.selection]
+	text = "${alac_toml_selection_fg}"
+	background = "${alac_toml_selection_bg}"
+	[colors.normal]
+	black = "${alac_toml_normal_black}"
+	red = "${alac_toml_normal_red}"
+	green = "${alac_toml_normal_green}"
+	yellow = "${alac_toml_normal_yellow}"
+	blue = "${alac_toml_normal_blue}"
+	magenta = "${alac_toml_normal_magenta}"
+	cyan = "${alac_toml_normal_cyan}"
+	white = "${alac_toml_normal_white}"
+	[colors.bright]
+	black = "${alac_toml_bright_black}"
+	red = "${alac_toml_bright_red}"
+	green = "${alac_toml_bright_green}"
+	yellow = "${alac_toml_bright_yellow}"
+	blue = "${alac_toml_bright_blue}"
+	magenta = "${alac_toml_bright_magenta}"
+	cyan = "${alac_toml_bright_cyan}"
+	white = "${alac_toml_bright_white}"
+	[colors.dim]
+	black = "${alac_toml_dim_black}"
+	red = "${alac_toml_dim_red}"
+	green = "${alac_toml_dim_green}"
+	yellow = "${alac_toml_dim_yellow}"
+	blue = "${alac_toml_dim_blue}"
+	magenta = "${alac_toml_dim_magenta}"
+	cyan = "${alac_toml_dim_cyan}"
+	white = "${alac_toml_dim_white}"
+]],
+	alacritty_toml_colors
 )
 
 nvim:interpolate(
@@ -1097,6 +1174,7 @@ set fish_pager_color_selected_completion ${fish_pager_selected_completion}
 return {
 	theme = nvim:render(),
 	alacritty = alacritty:render(),
+	alacritty_toml = alacritty_toml:render(),
 	fish = fish:render(),
 	lightline = lightline:render(),
 	docs = docs:render(),
