@@ -641,6 +641,7 @@ if has('nvim')
 	${@text.literal}
 	${@constant.builtin}
 	${@function}
+	${@function.method.call}
 	${@text.strong}
 	${@text.emphasis}
 	${@method}
@@ -714,6 +715,12 @@ endif
 			guifg = d:get("@text.strong", "guifg"),
 			guibg = d:get("@text.strong", "guibg"),
 			gui = d:get("@text.strong", "gui"),
+		},
+		["@function.method.call"] = hl {
+			"@function.method.call",
+			guifg = d:get("@method.call", "guifg"),
+			guibg = d:get("@method.call", "guibg"),
+			gui = d:get("@method.call", "gui"),
 		},
 		["@function.call"] = hl {
 			"@function.call",

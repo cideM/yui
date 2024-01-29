@@ -241,6 +241,7 @@ if has('nvim')
 	hi! link @text.literal helpExample
 	hi! link @constant.builtin Constant
 	hi @function guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline,bold cterm=underline,bold
+	hi @function.method.call guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=italic cterm=italic
 	hi @text.strong guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi @text.emphasis guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi @method guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline,bold cterm=underline,bold
