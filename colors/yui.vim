@@ -237,6 +237,12 @@ if has('nvim')
 	let g:terminal_color_14 = '#377166'
 	let g:terminal_color_15 = '#e4dbdb'
 
+	hi @function.haskell guifg=#504944 ctermfg=239 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi @variable.haskell guifg=#504944 ctermfg=239 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi @variable.parameter.haskell guifg=#504944 ctermfg=239 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi @keyword.haskell guifg=#504944 ctermfg=239 guibg=NONE ctermbg=NONE gui=bold cterm=bold
+	hi @operator.haskell guifg=#504944 ctermfg=239 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+
 	hi @keyword.coroutine guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi! link @text.literal helpExample
 	hi! link @constant.builtin Constant
