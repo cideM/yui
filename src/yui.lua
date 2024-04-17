@@ -637,6 +637,12 @@ if has('nvim')
 	let g:terminal_color_14 = '${term_bright_cyan}'
 	let g:terminal_color_15 = '${term_bright_white}'
 
+	${@function.haskell}
+	${@variable.haskell}
+	${@variable.parameter.haskell}
+	${@keyword.haskell}
+	${@operator.haskell}
+
 	${@keyword.coroutine}
 	${@text.literal}
 	${@constant.builtin}
@@ -727,6 +733,36 @@ endif
 			guifg = d:get("@method.call", "guifg"),
 			guibg = d:get("@method.call", "guibg"),
 			gui = d:get("@method.call", "gui"),
+		},
+		["@operator.haskell"] = hl {
+			"@operator.haskell",
+			guifg = d:get("Normal", "guifg"),
+			guibg = "NONE",
+			gui = { "NONE" },
+		},
+		["@variable.parameter.haskell"] = hl {
+			"@variable.parameter.haskell",
+			guifg = d:get("Normal", "guifg"),
+			guibg = "NONE",
+			gui = { "NONE" },
+		},
+		["@keyword.haskell"] = hl {
+			"@keyword.haskell",
+			guifg = d:get("Normal", "guifg"),
+			guibg = "NONE",
+			gui = { "bold" },
+		},
+		["@variable.haskell"] = hl {
+			"@variable.haskell",
+			guifg = d:get("Normal", "guifg"),
+			guibg = "NONE",
+			gui = { "NONE" },
+		},
+		["@function.haskell"] = hl {
+			"@function.haskell",
+			guifg = d:get("Normal", "guifg"),
+			guibg = "NONE",
+			gui = "NONE",
 		},
 		["@symbol"] = hl {
 			"@symbol",
