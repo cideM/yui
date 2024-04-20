@@ -6,7 +6,7 @@ M.interpolate = function(s, tab)
 		if not value then
 			error("interpolate: interpolate key does not exist: " .. w:sub(3, -2))
 		end
-		return value
+		return tostring(value)
 	end)
 	return out
 end
