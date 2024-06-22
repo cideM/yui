@@ -261,6 +261,9 @@ if has('nvim')
 	hi @keyword.function guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi @keyword.operator guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi @keyword.return guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
+	hi! link @diff.plus DiffAdd
+	hi! link @diff.minus DiffDelete
+	hi! link @diff.delta DiffChange
 
 	hi @lsp.type.function guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi @lsp.type.method guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
