@@ -153,7 +153,7 @@ local alacritty_colors = {
 
 alacritty:interpolate(
 	[[
-{ 
+{
 	"colors": {
 		"primary": {
 			"foreground": "${alac_primary_fg}",
@@ -661,6 +661,9 @@ if has('nvim')
 	${@keyword.function}
 	${@keyword.operator}
 	${@keyword.return}
+	${@diff.plus}
+	${@diff.minus}
+	${@diff.delta}
 
 	${@lsp.type.function}
 	${@lsp.type.method}
@@ -822,6 +825,18 @@ endif
 			guifg = d:get("@lsp.typemod.member.declaration", "guifg"),
 			guibg = d:get("@lsp.typemod.member.declaration", "guibg"),
 			gui = d:get("@lsp.typemod.member.declaration", "gui"),
+		},
+		["@diff.plus"] = hl {
+			"@diff.plus",
+			link = "DiffAdd",
+		},
+		["@diff.minus"] = hl {
+			"@diff.minus",
+			link = "DiffDelete",
+		},
+		["@diff.delta"] = hl {
+			"@diff.delta",
+			link = "DiffChange",
 		},
 		["@namespace.builtin"] = hl {
 			"@namespace.builtin",
