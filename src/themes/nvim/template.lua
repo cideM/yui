@@ -181,6 +181,9 @@ return function(colors, name)
 	${markdownH2}
 	${markdownH3}
 	${markdownH4}
+	${TsDiffPlus}
+	${TsDiffMinus}
+	${TsDiffDelta}
 	${diffAdded}
 	${diffSubname}
 	${diffChanged}

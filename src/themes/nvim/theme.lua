@@ -33,6 +33,9 @@ return function(t, dsl)
 		CursorColumn = link("CursorColumn", "CursorLine"),
 		lCursor = link("lCursor", "Cursor"),
 		CursorIM = link("CursorIM", "Cursor"),
+		TsDiffPlus = link("@diff.plus", "DiffAdd"),
+		TsDiffMinus = link("@diff.minus", "DiffDelete"),
+		TsDiffDelta = link("@diff.delta", "DiffChange"),
 		DiffAdd = hlgroup {
 			name = "DiffAdd",
 			guifg = t.success.fg,
