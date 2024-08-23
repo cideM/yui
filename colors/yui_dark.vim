@@ -175,9 +175,6 @@
 	hi! link markdownH2 mkdHeading
 	hi! link markdownH3 mkdHeading
 	hi! link markdownH4 mkdHeading
-	hi! link @diff.plus DiffAdd
-	hi! link @diff.minus DiffDelete
-	hi! link @diff.delta DiffChange
 	hi! link diffAdded DiffAdd
 	hi! link diffSubname diffLine
 	hi! link diffChanged DiffChange
@@ -246,6 +243,10 @@
 		hi @variable.parameter.haskell guifg=fg ctermfg=fg gui=NONE cterm=NONE
 		hi @keyword.haskell guifg=fg ctermfg=fg gui=bold cterm=bold
 		hi @operator.haskell guifg=fg ctermfg=fg gui=NONE cterm=NONE
+
+		hi! link @diff.plus DiffAdd
+		hi! link @diff.minus DiffDelete
+		hi! link @diff.delta DiffChange
 
 		hi @keyword.coroutine guifg=fg ctermfg=fg gui=bold cterm=bold
 		hi! link @text.literal helpExample
