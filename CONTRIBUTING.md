@@ -6,49 +6,57 @@ If you have Nix then you can just add enter the provided dev shell. If you don't
 
 - Make
 - Lua 5.3 and above
-- Neovim
-- Vim
-- Git
-- Alacritty only if you want to work on the Alacritty theme
+- Neovim (and ideally Vim to make sure the theme works there too)
 
 ## Getting Started
 
-The most likely scenario is that you want to add or modify highlights. This all happens in `yui.lua`. It's basically a long list of highlight group definitions. The most likely place you'll work in is the table passed to `add_hlgroups`.
+For the common case of changing a color or adding a missing highlight group, you'll be working with `src/themes/nvim/theme.lua` and `src/themes/nvim/template.lua`. `theme.lua` is where we define key/value pairs, where the keys are arbitrary and the values are typically highlight groups or links (think `hi! link foo bar`). Even though the keys are arbitrary, it's good practice to name them after the highlight group they represent.
 
-You can refer to the color of another HL group through `d:get("Normal", "guifg")`. The path is a little different for HL groups that are introduced through `interpolate` calls. Here you replace the HL group name with the key of the HL group in the table that's passed to `interpolate`. For example, among the various Neovim options there's one that determines how folds are rendered. If you'd like to copy the value of the "fade folds out" option you can do `d:get("fold_column_fade", "guifg")`.
+Here's an excerpt from the file showing what this typically looks like. The key is `Normal` and the value is a highlight group. The `name` field is what is rendered into Vimscript for the `hi` command. If we changed `name = "Normal"` to `name = "Foo"`, then the `hi` command would be `hi Foo ...`. The rest of the values are the same as what you'd expect from a `hi` command (e.g. `guifg`, `guibg`, etc.).
 
-You can also go a step further and modify the color that you are copying. Replace  `d:get("Normal", "guifg")` with  `d:call("Normal", "guifg", colour.lighten, 5)`. This makes the color lighter. Supported values for `colour.lighten` are positive and negative integers and `-aa`, `-aaa`, `aa` and  `aaa`. These refer to pre-determined contrast ratios of the W3C.
+The values for e.g., `guifg` should always come from `t` value here, which is the set of available, semantic colors. Here's the full list of values:
 
-That's it!
+- term_black
+- term_red
+- term_green
+- term_yellow
+- term_blue
+- term_magenta
+- term_cyan
+- term_white
+- term_bright_black
+- term_bright_red
+- term_bright_green
+- term_bright_yellow
+- term_bright_blue
+- term_bright_magenta
+- term_bright_cyan
+- term_bright_white
+- success.fg, success.bg, success.fg_normal
+- error.fg, error.bg, error.fg_normal
+- warning.fg, warning.bg, warning.fg_normal
+- info.fg, info.bg, info.fg_normal
+- accent.fg, accent.bg, accent.fg_normal
+- canvas.fg, canvas.bg, canvas.fg_faint, canvas.fg_muted, canvas.border
+- layer{1,2,3,4}.fg, layer{1,2,3,4}.bg, layer{1,2,3,4}.fg_faint, layer{1,2,3,4}.fg_muted, layer{1,2,3,4}.border
 
-## Handling LSP & TS Colors
+The status colors (success, error, ...) have two different foreground colors. `fg` should only ever be used in conjunction with the `bg` color from the same status color. Otherwise the contrast between fg and bg might not be high enough. `fg_normal` can be used with the normal editor background. Generally not all possible combinations will have sufficient contrast (e.g., `fg_normal` might not work well with `layer4.bg`) but it mostly works.
 
-### Guidelines
-
-- Prefer general over specific; choose `@lsp.typemod.function.declaration` over `@lsp.typemod.function.declaration.lua`
-- When overriding colors, link LSP and TS groups when possible
-
-### Details
-
-There are two layers of highlight groups:
-- The base colors from Vim that are mentioned in `:h syntax.txt`, such as `Title`
-- LSP colors (all the `@lsp.*` tokens), Treesitter colors (such as `@function`) and more specific Vim colors (such as `luaFunc`)
-
-Changing the base colors should be done sparingly, since it affects a lot of languages and it's impossible to properly anticipate the impact of a change.
-
-The other layer is already linked to the first by default. If you change a color in one of the groups, please consider if the other groups should be linked to the first one. Here's an example: say you want to make function declarations underlined. Open a file and check the current HL groups with `:Inspect`. You might discover that this is `@function` in TS and `@lsp.typemod.declaration.function` in LSP. Here it makes sense to treat one of them as the source of truth and link the other (s) to that. So make the LSP color the source of truth and link the other color to it like this:
+Canvas and the 4 layers are essentially fg and bg colors for UI elements, ranging from the most basic editor background to popups, sidebars, status bars, etc.
 
 ```lua
-{
-	["@function"] = hl {
-		"@function",
-		guifg = d:get("@lsp.typemod.function.declaration", "guifg"),
-		guibg = d:get("@lsp.typemod.function.declaration", "guibg"),
-		gui = d:get("@lsp.typemod.function.declaration", "gui"),
-	}
+Normal = hlgroup {
+	name = "Normal",
+	guifg = t.canvas.fg,
+	guibg = t.canvas.bg,
 }
 ```
 
-The LSP and TS groups are often language specific but you can just remove the last `.lua` part in `@lsp.typemod.function.declaration.lua` and make the declaration more general.
+The key/value pairs from `theme.lua` are used for string interpolation in `template.lua`. If you change an existing color, you don't need to open `template.lua`. If you add a new color, you'll need to add a corresponding line in the template. The syntax is `${Normal}` where `Normal` is the **key** from `theme.lua` (not the `name` field). The template files are written in the language of the application they're for (Vimscript, YAML, ...).
 
-Ideally also locate some of the Vim colors and link them as well. Unfortunately there's no real middle ground here. There's the base syntax which doesn't include anything for function declarations and then there's a myriad of language specific rules. Update as many as you have at hand.
+For more information, see ARCHITECTURE.md.
+
+## Guidelines
+
+- Prefer general over specific; choose `@lsp.typemod.function.declaration` over `@lsp.typemod.function.declaration.lua`
+

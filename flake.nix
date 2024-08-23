@@ -17,81 +17,82 @@
           inherit system;
         };
 
-        alacrittyToml = pkgs.stdenv.mkDerivation rec {
-          name = "yui-alacritty";
+        neovim = pkgs.vimUtils.buildVimPlugin {
+          pname = "yui";
+          version = "latest";
           buildInputs = with pkgs; [
             lua54Packages.lua
           ];
           buildPhase = ''
-            make alacritty/yui.toml
-            rm -r src Makefile flake.nix flake.lock README.md CONTRIBUTING.md LICENSE.txt
+            make clean
+            make colors/yui.vim
+            make colors/yui_dark.vim
+            make autoload/lightline/colorscheme/yui.vim
+            make autoload/lightline/colorscheme/yui_dark.vim
+            rm -rf src flake.* screenshots README.md Makefile LICENSE* CONTRIBUTING.md
           '';
-          src = pkgs.lib.cleanSourceWith {
-            filter = path: type:
-              !(pkgs.lib.hasInfix "screenshots" path)
-              && !(pkgs.lib.hasInfix "colors/" path)
-              && !(pkgs.lib.hasInfix "autoload/" path)
-              && !(pkgs.lib.hasInfix "doc/" path);
-            src = ./.;
-          };
-          installPhase = ''
-            mkdir -p $out
-            cp alacritty/yui.toml $out/yui.toml
-          '';
+          src = with pkgs.lib;
+            cleanSourceWith {
+              filter = cleanSourceFilter;
+              src = ./.;
+            };
         };
 
-        alacritty = pkgs.stdenv.mkDerivation rec {
-          name = "yui-alacritty";
+        makeFishPlugin = pkgName: makePath:
+          pkgs.fishPlugins.buildFishPlugin rec {
+            pname = pkgName;
+            version = "git";
+
+            buildInputs = with pkgs; [
+              lua54Packages.lua
+            ];
+
+            buildPhase = ''
+              make clean
+              make ${makePath}
+              mkdir -p conf.d
+              mv ${makePath} conf.d/
+            '';
+
+            src = with pkgs.lib;
+              cleanSourceWith {
+                filter = cleanSourceFilter;
+                src = ./.;
+              };
+          };
+
+        alacritty = pkgs.stdenv.mkDerivation {
           buildInputs = with pkgs; [
             lua54Packages.lua
           ];
+          pname = "yui";
+          version = "latest";
           buildPhase = ''
-            make alacritty/yui.yml
-            rm -r src Makefile flake.nix flake.lock README.md CONTRIBUTING.md LICENSE.txt
+            make clean
+            make alacritty/yui_light.yml
+            make alacritty/yui_light.toml
+            make alacritty/yui_dark.yml
+            make alacritty/yui_dark.toml
           '';
-          src = pkgs.lib.cleanSourceWith {
-            filter = path: type:
-              !(pkgs.lib.hasInfix "screenshots" path)
-              && !(pkgs.lib.hasInfix "colors/" path)
-              && !(pkgs.lib.hasInfix "autoload/" path)
-              && !(pkgs.lib.hasInfix "doc/" path);
-            src = ./.;
-          };
           installPhase = ''
             mkdir -p $out
-            cp alacritty/yui.yml $out/yui.yml
+            cp -r alacritty $out
           '';
-        };
-
-        nvim = pkgs.vimUtils.buildVimPlugin rec {
-          name = "yui-theme-nvim";
-
-          buildInputs = with pkgs; [
-            lua54Packages.lua
-          ];
-
-          buildPhase = ''
-            make
-            rm -r src Makefile flake.nix flake.lock README.md CONTRIBUTING.md LICENSE.txt
-          '';
-
-          src = pkgs.lib.cleanSourceWith {
-            filter = path: type:
-              !(pkgs.lib.hasInfix "screenshots" path)
-              && !(pkgs.lib.hasInfix "colors/" path)
-              && !(pkgs.lib.hasInfix "autoload/" path)
-              && !(pkgs.lib.hasInfix "doc/" path);
-            src = ./.;
-          };
+          src = with pkgs.lib;
+            cleanSourceWith {
+              filter = cleanSourceFilter;
+              src = ./.;
+            };
         };
       in rec {
         packages = flake-utils.lib.flattenTree {
-          nvim = nvim;
+          neovim = neovim;
           alacritty = alacritty;
-          alacrittyToml = alacrittyToml;
+          fish_dark = makeFishPlugin "fish_dark" "fish/yui_dark.fish";
+          fish_light = makeFishPlugin "fish_light" "fish/yui.fish";
         };
 
-        defaultPackage = packages.yui;
+        defaultPackage = packages.nvim;
 
         devShell = pkgs.mkShell {
           buildInputs = with pkgs; [
@@ -99,7 +100,9 @@
             moreutils
             jq
             alejandra
-            lua54Packages.lua
+            (lua54Packages.lua.withPackages (ps:
+              with ps; [
+              ]))
             lua-language-server
             stylua
           ];

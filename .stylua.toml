@@ -1,2 +1,2 @@
-call_parentheses = "NoSingleTable"
-column_width = 120
+call_parentheses = "None"
+column_width = 80

@@ -1,0 +1,70 @@
+{ 
+	"colors": {
+		"primary": {
+			"foreground": "#d6d5d5",
+			"background": "#353341",
+			"dim_foreground": "#7d7979",
+		},
+		"cursor": {
+			"text": "#353341",
+			"cursor": "#d6d5d5",
+		},
+		"vi_mode_cursor": {
+			"text": "#353341",
+			"cursor": "#d6d5d5",
+		},
+		"search": {
+			"matches": {
+				"foreground": "#eae9e9",
+				"background": "#474355",
+			},
+			"focused_match": {
+				"foreground": "#3d3b51",
+				"background": "#69aafd",
+			},
+		},
+		"hints": {
+			"start": {
+				"foreground": "#69aafd",
+				"background": "#3d3b51",
+			},
+			"end": {
+				"foreground": "#d6d5d5",
+				"background": "#353341",
+			},
+		},
+		"line_indicator": {
+			"foreground": "#3d3b51",
+			"background": "#69aafd",
+		},
+		"footer_bar": {
+			"foreground": "#e0dfdf",
+			"background": "#3e3b4b",
+		},
+		"selection": {
+			"text": "#eae9e9",
+			"background": "#474355",
+		},
+		"normal": {
+			"black": "#d6d5d5",
+			"red": "#F55661",
+			"green": "#70cf92",
+			"yellow": "#cfb787",
+			"blue": "#69aafd",
+			"magenta": "#b5a0ff",
+			"cyan": "#18c6ce",
+			"white": "#f5f5f5",
+		},
+		"bright": {
+			"black": "#d6d5d5",
+			"red": "#F55661",
+			"green": "#70cf92",
+			"yellow": "#cfb787",
+			"blue": "#69aafd",
+			"magenta": "#b5a0ff",
+			"cyan": "#18c6ce",
+			"white": "#f5f5f5",
+		}
+	}
+}
+		
