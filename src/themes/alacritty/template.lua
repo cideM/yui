@@ -79,6 +79,56 @@ M.yaml = function(colors)
 	)
 end
 
+M.msg = function(colors)
+	-- alacritty msg config -w -1 'colors.primary.background="#CCCCCC"' 'colors.primary.foreground="#FF0000"'
+	-- https://github.com/alacritty/alacritty/issues/8225
+	-- can't use colors.cursor.text and other aliases
+
+	return interpolate(
+		[[
+		alacritty msg config -w -1\
+			'colors.primary.foreground="${primary_fg}"'\
+			'colors.primary.background="${primary_bg}"'\
+			'colors.primary.dim_foreground="${primary_dim_fg}"'\
+			'colors.cursor.foreground="${cursor_fg}"'\
+			'colors.cursor.background="${cursor_bg}"'\
+			'colors.vi_mode_cursor.foreground="${vi_cursor_fg}"'\
+			'colors.vi_mode_cursor.background="${vi_cursor_bg}"'\
+			'colors.search.matches.foreground="${matches_fg}"'\
+			'colors.search.matches.background="${matches_bg}"'\
+			'colors.search.focused_match.foreground="${focused_match_fg}"'\
+			'colors.search.focused_match.background="${focused_match_bg}"'\
+			'colors.hints.start.foreground="${HintsStartForeground}"'\
+			'colors.hints.start.background="${HintsStartBackground}"'\
+			'colors.hints.end.foreground="${HintsEndForeground}"'\
+			'colors.hints.end.background="${HintsEndBackground}"'\
+			'colors.line_indicator.foreground="${LineIndicatorForeground}"'\
+			'colors.line_indicator.background="${LineIndicatorBackground}"'\
+			'colors.footer_bar.foreground="${footer_fg}"'\
+			'colors.footer_bar.background="${footer_bg}"'\
+			'colors.selection.foreground="${selection_fg}"'\
+			'colors.selection.background="${selection_bg}"'\
+			'colors.normal.black="${normal_black}"'\
+			'colors.normal.red="${normal_red}"'\
+			'colors.normal.green="${normal_green}"'\
+			'colors.normal.yellow="${normal_yellow}"'\
+			'colors.normal.blue="${normal_blue}"'\
+			'colors.normal.magenta="${normal_magenta}"'\
+			'colors.normal.cyan="${normal_cyan}"'\
+			'colors.normal.white="${normal_white}"'\
+			'colors.bright.black="${normal_black}"'\
+			'colors.bright.red="${normal_red}"'\
+			'colors.bright.green="${normal_green}"'\
+			'colors.bright.yellow="${normal_yellow}"'\
+			'colors.bright.blue="${normal_blue}"'\
+			'colors.bright.magenta="${normal_magenta}"'\
+			'colors.bright.cyan="${normal_cyan}"'\
+			'colors.bright.white="${normal_white}"'
+	]],
+		colors
+	)
+end
+
 M.toml = function(colors)
 	return interpolate(
 		[[
