@@ -1,8 +1,8 @@
 local M = {}
 
--- merge merges multiple tables into a single table.
--- If a key is present in multiple tables, the value from the
--- last table is used.
+-- merge merges multiple tables into a single table. If a key is present in
+-- multiple tables, the value from the last table is used. It generates a
+-- new root table but it does not perform a deep copy.
 M.merge = function(...)
 	local res = {}
 	for _, t in ipairs { ... } do
@@ -13,10 +13,10 @@ M.merge = function(...)
 	return res
 end
 
--- fold implements a bottom-up fold on a tree (also called
--- tree catamorphism). For simple values, f is applied to the
--- value itself. For tables, f is applied to the table and a
--- list of results from folding the table's children.
+-- fold implements a bottom-up fold on a tree (also called tree
+-- catamorphism). For simple values, f is applied to the value itself. For
+-- tables, f is applied to the table and a list of results from folding the
+-- table's children.
 M.fold = function(f, t)
 	local function go(node)
 		if type(node) ~= "table" then
@@ -31,8 +31,8 @@ M.fold = function(f, t)
 	return go(t)
 end
 
--- mapkv applies a function to each key-value pair in a table.
--- It does not recurse.
+-- mapkv applies a function to each key-value pair in a table. It does
+-- not recurse.
 M.mapkv = function(f, t)
 	local res = {}
 	for k, v in pairs(t) do
