@@ -71,6 +71,7 @@ local function make_themes(colors, theme_name)
 		alacritty = {
 			toml = require("themes/alacritty/template").toml(kv),
 			yaml = require("themes/alacritty/template").yaml(kv),
+			msg = require("themes/alacritty/template").msg(kv),
 		},
 		lightline = require "themes/lightline/template"(kv, theme_name),
 		fish = require "themes/fish/template"(kv),
