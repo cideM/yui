@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="author" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<style>
+			*,
+			*::before,
+			*::after {
+				box-sizing: border-box;
+			}
+
+			* {
+				margin: 0;
+				max-inline-size: var(--measure);
+			}
+
+			html,
+			body,
+			div,
+			header,
+			nav,
+			main,
+			footer {
+				max-inline-size: none;
+			}
+
+			img,
+			picture,
+			video,
+			canvas,
+			svg {
+				display: block;
+				max-block-size: 100%;
+			}
+
+			* {
+				background-color: inherit;
+			}
+
+			html {
+				background: var(--color-canvas-bg);
+				color: var(--color-canvas-fg);
+			}
+
+			body {
+				padding: 1rem 1rem;
+				display: flex;
+				gap: 1rem;
+				flex-direction: column;
+			}
+
+			.canvas {
+				border: 1px solid var(--color-canvas-border);
+				padding: 1rem 1rem;
+			}
+
+			.layer1 {
+				background: var(--color-layer1-bg);
+				color: var(--color-layer1-fg);
+				padding: 1rem 1rem;
+				border: 1px solid var(--color-layer1-border);
+
+				& .muted {
+					color: var(--color-layer1-fg-muted);
+				}
+
+				& .faint {
+					color: var(--color-layer1-fg-faint);
+				}
+			}
+
+			.layer2 {
+				background: var(--color-layer2-bg);
+				border: 1px solid var(--color-layer2-border);
+				color: var(--color-layer2-fg);
+				padding: 1rem 1rem;
+
+				& .muted {
+					color: var(--color-layer2-fg-muted);
+				}
+
+				& .faint {
+					color: var(--color-layer2-fg-faint);
+				}
+			}
+
+			.layer3 {
+				background: var(--color-layer3-bg);
+				border: 1px solid var(--color-layer3-border);
+				color: var(--color-layer3-fg);
+				padding: 1rem 1rem;
+
+				& .muted {
+					color: var(--color-layer3-fg-muted);
+				}
+
+				& .faint {
+					color: var(--color-layer3-fg-faint);
+				}
+			}
+
+			.layer2-float {
+				position: absolute;
+				display: flex;
+				align-items: center;
+				justify-items: center;
+				top: 10%;
+				width: 400px;
+				right: 10%;
+				bottom: 10%;
+			}
+
+			.layer3-float {
+				position: absolute;
+				display: flex;
+				align-items: center;
+				justify-items: center;
+				top: 10%;
+				right: 10%;
+				bottom: 10%;
+			}
+
+			.position\:relative {
+				position: relative;
+			}
+
+			.muted {
+				color: var(--color-canvas-fg-muted);
+			}
+
+			.faint {
+				color: var(--color-canvas-fg-faint);
+			}
+
+			.error {
+				background: var(--color-error-bg);
+				color: var(--color-error-fg);
+			}
+
+			.error-fg-normal {
+				color: var(--color-error-fg-normal);
+			}
+
+			.success {
+				background: var(--color-success-bg);
+				color: var(--color-success-fg);
+			}
+
+			.success-fg-normal {
+				color: var(--color-success-fg-normal);
+			}
+
+			.warning {
+				background: var(--color-warning-bg);
+				color: var(--color-warning-fg);
+			}
+
+			.warning-fg-normal {
+				color: var(--color-warning-fg-normal);
+			}
+
+			.accent {
+				background: var(--color-accent-bg);
+				color: var(--color-accent-fg);
+			}
+
+			.accent-fg-normal {
+				color: var(--color-accent-fg-normal);
+			}
+
+			.info {
+				background: var(--color-info-bg);
+				color: var(--color-info-fg);
+			}
+
+			.info-fg-normal {
+				color: var(--color-info-fg-normal);
+			}
+
+			.term_black {
+				color: var(--color-term-black);
+			}
+			.term_red {
+				color: var(--color-term-red);
+			}
+			.term_green {
+				color: var(--color-term-green);
+			}
+			.term_yellow {
+				color: var(--color-term-yellow);
+			}
+			.term_blue {
+				color: var(--color-term-blue);
+			}
+			.term_magenta {
+				color: var(--color-term-magenta);
+			}
+			.term_cyan {
+				color: var(--color-term-cyan);
+			}
+			.term_white {
+				color: var(--color-term-white);
+			}
+			.term_bright_black {
+				color: var(--color-term-bright-black);
+			}
+			.term_bright_red {
+				color: var(--color-term-bright-red);
+			}
+			.term_bright_green {
+				color: var(--color-term-bright-green);
+			}
+			.term_bright_yellow {
+				color: var(--color-term-bright-yellow);
+			}
+			.term_bright_blue {
+				color: var(--color-term-bright-blue);
+			}
+			.term_bright_magenta {
+				color: var(--color-term-bright-magenta);
+			}
+			.term_bright_cyan {
+				color: var(--color-term-bright-cyan);
+			}
+			.term_bright_white {
+				color: var(--color-term-bright-white);
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="canvas">
+			<p>Hello, world!</p>
+			<p class="muted">this is fg_muted</p>
+			<p class="faint">this is fg_faint</p>
+		</div>
+		<div class="layer1">
+			<p>this is a layer1 box</p>
+			<p class="muted">this is fg_muted</p>
+			<p class="faint">this is fg_faint</p>
+		</div>
+		<div class="layer2">
+			<p>this is a layer2 box</p>
+			<p class="muted">this is fg_muted</p>
+			<p class="faint">this is fg_faint</p>
+		</div>
+		<div class="layer3">
+			<p>this is a layer3 box</p>
+			<p class="muted">this is fg_muted</p>
+			<p class="faint">this is fg_faint</p>
+		</div>
+
+		<div class="layer1 position:relative">
+			<p>this is a layer1 box</p>
+			<div class="layer2 layer2-float">
+				<p>this is a layer2 box</p>
+				<div class="layer3 layer3-float">
+					<p>this is a layer3 box</p>
+				</div>
+			</div>
+		</div>
+
+		<p class="error">error</p>
+		<p class="error-fg-normal">error</p>
+
+		<p class="success">success</p>
+		<p class="success-fg-normal">success</p>
+
+		<p class="warning">warning</p>
+		<p class="warning-fg-normal">warning</p>
+
+		<p class="info">info</p>
+		<p class="info-fg-normal">info</p>
+
+		<p class="accent">accent</p>
+		<p class="accent-fg-normal">accent</p>
+
+		<p class="term_black">term_black</p>
+		<p class="term_red">term_red</p>
+		<p class="term_green">term_green</p>
+		<p class="term_yellow">term_yellow</p>
+		<p class="term_blue">term_blue</p>
+		<p class="term_magenta">term_magenta</p>
+		<p class="term_cyan">term_cyan</p>
+		<p class="term_white">term_white</p>
+		<p class="term_bright_black">term_bright_black</p>
+		<p class="term_bright_red">term_bright_red</p>
+		<p class="term_bright_green">term_bright_green</p>
+		<p class="term_bright_yellow">term_bright_yellow</p>
+		<p class="term_bright_blue">term_bright_blue</p>
+		<p class="term_bright_magenta">term_bright_magenta</p>
+		<p class="term_bright_cyan">term_bright_cyan</p>
+		<p class="term_bright_white">term_bright_white</p>
+	</body>
+</html>

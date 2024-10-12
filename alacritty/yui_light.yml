@@ -3,30 +3,30 @@
 		"primary": {
 			"foreground": "#3D3C44",
 			"background": "#F1EDED",
-			"dim_foreground": "#85848e",
+			"dim_foreground": "#b19da8",
 		},
 		"cursor": {
-			"text": "#F1EDED",
+			"text": "#e6dfdf",
 			"cursor": "#3D3C44",
 		},
 		"vi_mode_cursor": {
-			"text": "#F1EDED",
+			"text": "#e6dfdf",
 			"cursor": "#3D3C44",
 		},
 		"search": {
 			"matches": {
-				"foreground": "#303036",
+				"foreground": "#3D3C44",
 				"background": "#dcd2d2",
 			},
 			"focused_match": {
-				"foreground": "#DDE4F8",
+				"foreground": "#e5dcf3",
 				"background": "#3856d1",
 			},
 		},
 		"hints": {
 			"start": {
 				"foreground": "#3856d1",
-				"background": "#DDE4F8",
+				"background": "#e5dcf3",
 			},
 			"end": {
 				"foreground": "#3D3C44",
@@ -34,15 +34,15 @@
 			},
 		},
 		"line_indicator": {
-			"foreground": "#DDE4F8",
+			"foreground": "#e5dcf3",
 			"background": "#3856d1",
 		},
 		"footer_bar": {
-			"foreground": "#37363e",
+			"foreground": "#3D3C44",
 			"background": "#e6dfdf",
 		},
 		"selection": {
-			"text": "#303036",
+			"text": "#3D3C44",
 			"background": "#dcd2d2",
 		},
 		"normal": {

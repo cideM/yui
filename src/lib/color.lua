@@ -131,7 +131,7 @@ M.find_color_with_ratio = function(color, contrast_ratio, base, delta)
 		error "delta is required"
 	end
 
-	local results = {}
+	local results = { { color = color, contrast_diff = contrast_ratio } }
 
 	local cur = color
 	while true do

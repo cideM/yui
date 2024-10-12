@@ -1,4 +1,4 @@
-return function(t, dsl)
+local function gen_variant(t, dsl)
 	local get = dsl.get
 	return {
 		fish_normal = get { "Normal", "guifg" },
@@ -38,5 +38,12 @@ return function(t, dsl)
 		fish_pager_background = get { "Normal", "guibg" },
 		fish_pager_secondary_background = get { "Normal", "guibg" },
 		fish_pager_selected_background = get { "PmenuSel", "guibg" },
+	}
+end
+
+return function(t, dsl)
+	return {
+		light = gen_variant(t.light, dsl),
+		dark = gen_variant(t.dark, dsl),
 	}
 end

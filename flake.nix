@@ -100,6 +100,7 @@
             moreutils
             jq
             alejandra
+			nodePackages.prettier
             (lua54Packages.lua.withPackages (ps:
               with ps; [
               ]))

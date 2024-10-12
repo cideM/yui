@@ -1,4 +1,4 @@
-return function(t, dsl)
+local function gen_variant(t, dsl)
 	local lightline = dsl.lightline
 	local get = dsl.get
 	return {
@@ -51,5 +51,12 @@ return function(t, dsl)
 		LlNormalWarning = lightline { t.warning.fg, t.warning.bg },
 		LlNormalError = lightline { t.error.fg, t.error.bg },
 		LlInsertLeft1 = lightline { t.success.fg, t.success.bg },
+	}
+end
+
+return function(t, dsl)
+	return {
+		light = gen_variant(t.light, dsl),
+		dark = gen_variant(t.dark, dsl),
 	}
 end

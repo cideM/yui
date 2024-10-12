@@ -1,9 +1,9 @@
-return function(t, dsl)
+local function gen_variant(context, dsl)
 	local get = dsl.get
 	return {
 		primary_fg = get { "Normal", "guifg" },
 		primary_bg = get { "Normal", "guibg" },
-		primary_dim_fg = t.canvas.fg_muted,
+		primary_dim_fg = context.canvas.fg_muted,
 		cursor_fg = get { "Cursor", "guifg" },
 		cursor_bg = get { "Cursor", "guibg" },
 		vi_cursor_fg = get { "cursor_fg" },
@@ -12,8 +12,8 @@ return function(t, dsl)
 		matches_bg = get { "Search", "guibg" },
 		focused_match_fg = get { "IncSearch", "guifg" },
 		focused_match_bg = get { "IncSearch", "guibg" },
-		HintsStartForeground = t.info.fg,
-		HintsStartBackground = t.info.bg,
+		HintsStartForeground = context.info.fg,
+		HintsStartBackground = context.info.bg,
 		HintsEndForeground = get { "primary_fg" },
 		HintsEndBackground = get { "primary_bg" },
 		LineIndicatorForeground = get { "CurSearch", "guifg" },
@@ -46,5 +46,12 @@ return function(t, dsl)
 		-- dim_magenta= Contrast(-10, get { "TermPurple" },
 		-- dim_cyan= Contrast(-10, get { "TermCyan" },
 		-- dim_white= Contrast(-10, get { "TermWhite" },
+	}
+end
+
+return function(context, dsl)
+	return {
+		light = gen_variant(context.light, dsl),
+		dark = gen_variant(context.dark, dsl),
 	}
 end

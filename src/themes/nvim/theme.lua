@@ -1,4 +1,4 @@
-return function(t, dsl)
+local function gen_variant(t, dsl)
 	local hlgroup = dsl.hlgroup
 	local link = dsl.link
 	local get = dsl.get
@@ -22,7 +22,11 @@ return function(t, dsl)
 		},
 		ToolbarButton = link("ToolbarButton", "TabLine"),
 		ToolbarLine = link("ToolbarLine", "TabLineFill"),
-		Cursor = hlgroup { name = "Cursor", guifg = "bg", guibg = "fg" },
+		Cursor = hlgroup {
+			name = "Cursor",
+			guifg = t.layer1.bg,
+			guibg = "fg",
+		},
 		CursorLineNr = link("CursorLineNr", "CursorLine"),
 		CursorLine = hlgroup {
 			name = "CursorLine",
@@ -82,7 +86,7 @@ return function(t, dsl)
 			name = "Identifier",
 			guifg = "fg",
 			guibg = "NONE",
-			gui = "bold",
+			gui = "NONE",
 		},
 		Function = hlgroup { name = "Function", guifg = "fg", guibg = "NONE" },
 		Statement = hlgroup {
@@ -306,8 +310,8 @@ return function(t, dsl)
 		Substitute = link("Substitute", "IncSearch"),
 		Pmenu = hlgroup {
 			name = "Pmenu",
-			guifg = t.layer1.fg,
-			guibg = t.layer1.bg,
+			guifg = t.layer2.fg,
+			guibg = t.layer2.bg,
 		},
 		PmenuSel = hlgroup {
 			name = "PmenuSel",
@@ -341,7 +345,7 @@ return function(t, dsl)
 		PmenuThumb = hlgroup {
 			name = "PmenuThumb",
 			guifg = "NONE",
-			guibg = t.layer4.bg,
+			guibg = t.layer3.bg,
 		},
 		Question = hlgroup { name = "Question", guifg = "fg", guibg = "NONE" },
 		Visual = hlgroup {
@@ -794,7 +798,7 @@ return function(t, dsl)
 		TermBrightWhite = t.term_bright_white,
 		LspCodeLens = hlgroup {
 			name = "LspCodeLens",
-			guifg = t.layer4.bg,
+			guifg = t.layer3.bg,
 			guibg = "NONE",
 		},
 		LspSignatureActiveParameter = link(
@@ -940,7 +944,7 @@ return function(t, dsl)
 		},
 		LegacyOptionFadedComments = hlgroup {
 			name = "Comment",
-			guifg = t.layer4.fg,
+			guifg = t.layer3.fg,
 			guibg = "NONE",
 		},
 		OptionNormalComments = hlgroup {
@@ -970,5 +974,12 @@ return function(t, dsl)
 		StatusLineTerm = link("StatusLineTerm", "StatusLine"),
 		StatusLineTermNC = link("StatusLineTermNC", "StatusLineNC"),
 		SpecialKey = link("SpecialKey", "Whitespace"),
+	}
+end
+
+return function(t, dsl)
+	return {
+		light = gen_variant(t.light, dsl),
+		dark = gen_variant(t.dark, dsl),
 	}
 end

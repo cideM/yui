@@ -1,48 +1,42 @@
-local merge = require("lib/table").merge
 local mapkv = require("lib/table").mapkv
+local merge = require("lib/table").merge
 local cfg = require "config"
-local fold = require("lib/table").fold
 local dsl = require "lib/dsl"
-local palette = require "lib/palette"
 
-local function invert_contrasts(t, sub_forest_results)
-	if type(t) == "table" and t.__type == dsl.contrast_type then
-		local out = {}
-		for k, v in pairs(sub_forest_results) do
-			if k == "delta" then
-				out[k] = v * -1
-			else
-				out[k] = v
-			end
-		end
-		return out
-	end
-	return type(t) == "table" and sub_forest_results or t
-end
-
-local nvim_redirects = {
-	fg = { "Normal", "guifg" },
-	bg = { "Normal", "guibg" },
-	foreground = { "Normal", "guifg" },
-	background = { "Normal", "guibg" },
+-- These are the functions that are called with the 'context' table we'll
+-- define later. That table has all the color values, from the base palette,
+-- the layers, the terminal colors, and so on. Each function is called with
+-- that table plus the DSL functions and it returns a table that has a 'light'
+-- and a 'dark' attribute. The values of these two attributes are k/v pairs,
+-- where the keys are used in string interpolation later and the values
+-- are, at this point, DSL values (darken, brighten, link to other color,
+-- ...) that we'll resolve (~ flatten) later.
+local theme_fns = {
+	(require "themes/alacritty/theme"),
+	(require "themes/lightline/theme"),
+	(require "themes/fish/theme"),
+	(require "themes/css/theme"),
 }
 
-local function make_themes(colors, theme_name)
-	-- Flatten only the "get" calls of the Neovim theme. We're
-	-- then left with a table of all the colors that the Neovim theme
-	-- uses, but the values are still tables with color values instead of
-	-- Vimscript strings.
-	local nvim_hlgroups =
-		dsl.flatten(require "themes/nvim/theme"(colors, dsl), {
-			[dsl.get_type] = dsl.flatten_get,
-		})
+-- This function is weird, but you don't really have to understand what it
+-- does. In Neovim you can use 'fg' and 'bg' as color values. But in other
+-- programs, for example Alacritty, these are meaningless. What if the
+-- Alacritty theme function links to a Neovim color value that uses one of
+-- those special words though? That's why there is 'replace_special_colors'. It
+-- finds these special values in themes that *are not Neovim* and replaces
+-- them with the *actual color value* (meaning the foreground or background
+-- color used by Neovim, taken from the 'Normal' highlight group).
+local replace_special_colors = function(nvim_colors)
+	local nvim_redirects = {
+		fg = { "Normal", "guifg" },
+		bg = { "Normal", "guibg" },
+		foreground = { "Normal", "guifg" },
+		background = { "Normal", "guibg" },
+	}
 
-	-- Now replace special color values in non-Neovim themes (like 'fg' or 'bg') with
-	-- the actual color values from the partially flattened Neovim theme. We don't do this
-	-- for the Neovim theme itself, since 'fg' and 'bg' are valid Vimscript values.
-	local replace_special_colors = function(k, v)
-		if not nvim_hlgroups[k] and nvim_redirects[v] then
-			local x = nvim_hlgroups
+	return function(k, v)
+		if not nvim_colors[k] and nvim_redirects[v] then
+			local x = nvim_colors
 			for _, path in ipairs(nvim_redirects[v]) do
 				x = x[path]
 			end
@@ -50,53 +44,69 @@ local function make_themes(colors, theme_name)
 		end
 		return v
 	end
-
-	-- We can only flatten the other themes if they're in a table that
-	-- also has all the Neovim theme colors (since the other themes
-	-- refer to Neovim colors). So we merge them together.
-	local kv = mapkv(
-		replace_special_colors,
-		dsl.flatten(
-			merge(
-				nvim_hlgroups,
-				(require "themes/alacritty/theme")(colors, dsl),
-				(require "themes/lightline/theme")(colors, dsl),
-				(require "themes/fish/theme")(colors, dsl)
-			)
-		)
-	)
-
-	return {
-		nvim = require "themes/nvim/template"(kv, theme_name),
-		alacritty = {
-			toml = require("themes/alacritty/template").toml(kv),
-			yaml = require("themes/alacritty/template").yaml(kv),
-			msg = require("themes/alacritty/template").msg(kv),
-		},
-		lightline = require "themes/lightline/template"(kv, theme_name),
-		fish = require "themes/fish/template"(kv),
-	}
 end
 
+local context = dsl.flatten(cfg)
+
+local nvim_theme_fn = require "themes/nvim/theme"
+
+local nvim_variants = nvim_theme_fn(context, dsl)
+
+-- I didn't know what else to call it. This table is a grab bag for all the
+-- string interpolation keys from all themes. The values are DSL entities
+-- that will be flattened later. Having all keys from all themes in a single
+-- table is on purpose. That way themes can reference each others keys' and
+-- those references can be resolved later through the 'flatten' call. Having
+-- all keys in the same table makes resolving references easier.
+local kv = {
+	light = nvim_variants.light,
+	dark = nvim_variants.dark,
+}
+
+for _, fn in ipairs(theme_fns) do
+	local result = fn(context, dsl)
+	kv.light = merge(kv.light, result.light)
+	kv.dark = merge(kv.dark, result.dark)
+end
+
+kv.light =
+	mapkv(replace_special_colors(nvim_variants.light), dsl.flatten(kv.light))
+
+kv.dark =
+	mapkv(replace_special_colors(nvim_variants.dark), dsl.flatten(kv.dark))
+
+-- TODO: Make sure that all theme functions accept (context, kv) and return both light and dark
+
 return {
-	light = make_themes(
-		dsl.flatten(
-			merge(
-				palette.gen_canvases(cfg.light),
-				palette.gen_status_colors(cfg.light),
-				palette.gen_term_colors(cfg.light)
-			)
+	light = {
+		nvim = require "themes/nvim/template"(
+			kv.light,
+			context.light.theme_name
 		),
-		cfg.light.theme_name
-	),
-	dark = make_themes(
-		dsl.flatten(
-			merge(
-				fold(invert_contrasts, palette.gen_canvases(cfg.dark)),
-				palette.gen_status_colors(cfg.dark),
-				palette.gen_term_colors(cfg.dark)
-			)
+		alacritty = {
+			toml = require("themes/alacritty/template").toml(kv.light),
+			yaml = require("themes/alacritty/template").yaml(kv.light),
+			msg = require("themes/alacritty/template").msg(kv.light),
+		},
+		css = require "themes/css/template"(kv),
+		lightline = require "themes/lightline/template"(
+			kv.light,
+			context.light.theme_name
 		),
-		cfg.dark.theme_name
-	),
+		fish = require "themes/fish/template"(kv.light),
+	},
+	dark = {
+		nvim = require "themes/nvim/template"(kv.dark, context.dark.theme_name),
+		alacritty = {
+			toml = require("themes/alacritty/template").toml(kv.dark),
+			yaml = require("themes/alacritty/template").yaml(kv.dark),
+			msg = require("themes/alacritty/template").msg(kv.dark),
+		},
+		css = require "themes/css/template"(kv),
+		lightline = require "themes/lightline/template"(
+			kv.dark,
+			context.dark.theme_name
+		),
+		fish = require "themes/fish/template"(kv.dark),
+	},
 }

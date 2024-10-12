@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="author" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<style>
+			*,
+			*::before,
+			*::after {
+				box-sizing: border-box;
+			}
+
+			* {
+				margin: 0;
+				max-inline-size: var(--measure);
+			}
+
+			html,
+			body,
+			div,
+			header,
+			nav,
+			main,
+			footer {
+				max-inline-size: none;
+			}
+
+			img,
+			picture,
+			video,
+			canvas,
+			svg {
+				display: block;
+				max-block-size: 100%;
+			}
+
+			* {
+				background-color: inherit;
+			}
+
+			html {
+				background: var(--color-canvas-bg);
+				color: var(--color-canvas-fg);
+			}
+
+			body {
+				padding: 1rem 1rem;
+				display: flex;
+				gap: 1rem;
+				flex-direction: column;
+			}
+
+			.canvas {
+				border: 1px solid var(--color-canvas-border);
+				padding: 1rem 1rem;
+			}
+
+			.layer1 {
+				background: var(--color-layer1-bg);
+				color: var(--color-layer1-fg);
+				padding: 1rem 1rem;
+				border: 1px solid var(--color-layer1-border);
+
+				& .muted {
+					color: var(--color-layer1-fg-muted);
+				}
+
+				& .faint {
+					color: var(--color-layer1-fg-faint);
+				}
+			}
+
+			.layer2 {
+				background: var(--color-layer2-bg);
+				border: 1px solid var(--color-layer2-border);
+				color: var(--color-layer2-fg);
+				padding: 1rem 1rem;
+
+				& .muted {
+					color: var(--color-layer2-fg-muted);
+				}
+
+				& .faint {
+					color: var(--color-layer2-fg-faint);
+				}
+			}
+
+			.layer3 {
+				background: var(--color-layer3-bg);
+				border: 1px solid var(--color-layer3-border);
+				color: var(--color-layer3-fg);
+				padding: 1rem 1rem;
+
+				& .muted {
+					color: var(--color-layer3-fg-muted);
+				}
+
+				& .faint {
+					color: var(--color-layer3-fg-faint);
+				}
+			}
+
+			.layer2-float {
+				position: absolute;
+				display: flex;
+				align-items: center;
+				justify-items: center;
+				top: 10%;
+				width: 400px;
+				right: 10%;
+				bottom: 10%;
+			}
+
+			.layer3-float {
+				position: absolute;
+				display: flex;
+				align-items: center;
+				justify-items: center;
+				top: 10%;
+				right: 10%;
+				bottom: 10%;
+			}
+
+			.position\:relative {
+				position: relative;
+			}
+
+			.muted {
+				color: var(--color-canvas-fg-muted);
+			}
+
+			.faint {
+				color: var(--color-canvas-fg-faint);
+			}
+
+			.error {
+				background: var(--color-error-bg);
+				color: var(--color-error-fg);
+			}
+
+			.error-fg-normal {
+				color: var(--color-error-fg-normal);
+			}
+
+			.success {
+				background: var(--color-success-bg);
+				color: var(--color-success-fg);
+			}
+
+			.success-fg-normal {
+				color: var(--color-success-fg-normal);
+			}
+
+			.warning {
+				background: var(--color-warning-bg);
+				color: var(--color-warning-fg);
+			}
+
+			.warning-fg-normal {
+				color: var(--color-warning-fg-normal);
+			}
+
+			.accent {
+				background: var(--color-accent-bg);
+				color: var(--color-accent-fg);
+			}
+
+			.accent-fg-normal {
+				color: var(--color-accent-fg-normal);
+			}
+
+			.info {
+				background: var(--color-info-bg);
+				color: var(--color-info-fg);
+			}
+
+			.info-fg-normal {
+				color: var(--color-info-fg-normal);
+			}
+
+			.term_black {
+				color: var(--color-term-black);
+			}
+			.term_red {
+				color: var(--color-term-red);
+			}
+			.term_green {
+				color: var(--color-term-green);
+			}
+			.term_yellow {
+				color: var(--color-term-yellow);
+			}
+			.term_blue {
+				color: var(--color-term-blue);
+			}
+			.term_magenta {
+				color: var(--color-term-magenta);
+			}
+			.term_cyan {
+				color: var(--color-term-cyan);
+			}
+			.term_white {
+				color: var(--color-term-white);
+			}
+			.term_bright_black {
+				color: var(--color-term-bright-black);
+			}
+			.term_bright_red {
+				color: var(--color-term-bright-red);
+			}
+			.term_bright_green {
+				color: var(--color-term-bright-green);
+			}
+			.term_bright_yellow {
+				color: var(--color-term-bright-yellow);
+			}
+			.term_bright_blue {
+				color: var(--color-term-bright-blue);
+			}
+			.term_bright_magenta {
+				color: var(--color-term-bright-magenta);
+			}
+			.term_bright_cyan {
+				color: var(--color-term-bright-cyan);
+			}
+			.term_bright_white {
+				color: var(--color-term-bright-white);
+			}
+		</style>
+<style>
+:root {
+color-scheme: light dark;
+--color-accent-bg: light-dark(#f5e2e0, #2e2836);
+--color-accent-fg-normal: light-dark(#C43E1C, #E66F51);
+--color-accent-fg: light-dark(#C43E1C, #E66F51);
+--color-canvas-bg: light-dark(#F1EDED, #211F29);
+--color-canvas-border: light-dark(#bca3a3, #4d4a5d);
+--color-canvas-fg-faint: light-dark(#d1c4c8, #453e49);
+--color-canvas-fg-muted: light-dark(#b19da8, #6c616b);
+--color-canvas-fg: light-dark(#3D3C44, #DCDBDB);
+--color-error-bg: light-dark(#f2d8d8, #2e2737);
+--color-error-fg-normal: light-dark(#B22E32, #F55661);
+--color-error-fg: light-dark(#B22E32, #ee5c66);
+--color-info-bg: light-dark(#e5dcf3, #2d293f);
+--color-info-fg-normal: light-dark(#3856d1, #69aafd);
+--color-info-fg: light-dark(#3856d1, #69aafd);
+--color-inverted-accent-bg: light-dark(#2e2836, #f5e2e0);
+--color-inverted-accent-fg-normal: light-dark(#E66F51, #C43E1C);
+--color-inverted-accent-fg: light-dark(#E66F51, #C43E1C);
+--color-inverted-canvas-bg: light-dark(#211F29, #F1EDED);
+--color-inverted-canvas-border: light-dark(#4d4a5d, #bca3a3);
+--color-inverted-canvas-fg-faint: light-dark(#453e49, #d1c4c8);
+--color-inverted-canvas-fg-muted: light-dark(#6c616b, #b19da8);
+--color-inverted-canvas-fg: light-dark(#DCDBDB, #3D3C44);
+--color-inverted-error-bg: light-dark(#2e2737, #f2d8d8);
+--color-inverted-error-fg-normal: light-dark(#F55661, #B22E32);
+--color-inverted-error-fg: light-dark(#ee5c66, #B22E32);
+--color-inverted-info-bg: light-dark(#2d293f, #e5dcf3);
+--color-inverted-info-fg-normal: light-dark(#69aafd, #3856d1);
+--color-inverted-info-fg: light-dark(#69aafd, #3856d1);
+--color-inverted-layer1-bg: light-dark(#33313f, #e6dfdf);
+--color-inverted-layer1-border: light-dark(#5d5a6f, #b69999);
+--color-inverted-layer1-fg-faint: light-dark(#564e5b, #c8b9bd);
+--color-inverted-layer1-fg-muted: light-dark(#796e78, #aa95a1);
+--color-inverted-layer1-fg: light-dark(#DCDBDB, #3D3C44);
+--color-inverted-layer2-bg: light-dark(#454253, #dcd2d2);
+--color-inverted-layer2-border: light-dark(#726f83, #b08f8f);
+--color-inverted-layer2-fg-faint: light-dark(#665d6b, #c0afb4);
+--color-inverted-layer2-fg-muted: light-dark(#867984, #a48e9a);
+--color-inverted-layer2-fg: light-dark(#DCDBDB, #3D3C44);
+--color-inverted-layer3-bg: light-dark(#555266, #d3c5c5);
+--color-inverted-layer3-border: light-dark(#858294, #ab8686);
+--color-inverted-layer3-fg-faint: light-dark(#746a7a, #baa5ab);
+--color-inverted-layer3-fg-muted: light-dark(#91848f, #9f8694);
+--color-inverted-layer3-fg: light-dark(#DCDBDB, #3D3C44);
+--color-inverted-success-bg: light-dark(#2b2d3a, #e8e792);
+--color-inverted-success-fg-normal: light-dark(#70cf92, #346e27);
+--color-inverted-success-fg: light-dark(#70cf92, #565633);
+--color-inverted-term-black: light-dark(#DCDBDB, #3D3C44);
+--color-inverted-term-blue: light-dark(#69aafd, #3856d1);
+--color-inverted-term-bright-black: light-dark(#DCDBDB, #3D3C44);
+--color-inverted-term-bright-blue: light-dark(#69aafd, #3856d1);
+--color-inverted-term-bright-cyan: light-dark(#18c6ce, #2c6a73);
+--color-inverted-term-bright-green: light-dark(#70cf92, #346e27);
+--color-inverted-term-bright-magenta: light-dark(#b5a0ff, #8f35bd);
+--color-inverted-term-bright-red: light-dark(#F55661, #B22E32);
+--color-inverted-term-bright-white: light-dark(#f5f5f5, #909098);
+--color-inverted-term-bright-yellow: light-dark(#cfb787, #b17900);
+--color-inverted-term-cyan: light-dark(#18c6ce, #2c6a73);
+--color-inverted-term-green: light-dark(#70cf92, #346e27);
+--color-inverted-term-magenta: light-dark(#b5a0ff, #8f35bd);
+--color-inverted-term-red: light-dark(#F55661, #B22E32);
+--color-inverted-term-white: light-dark(#f5f5f5, #909098);
+--color-inverted-term-yellow: light-dark(#cfb787, #b17900);
+--color-inverted-warning-bg: light-dark(#322b38, #fde37c);
+--color-inverted-warning-fg-normal: light-dark(#cfb787, #b17900);
+--color-inverted-warning-fg: light-dark(#cfb787, #615413);
+--color-layer1-bg: light-dark(#e6dfdf, #33313f);
+--color-layer1-border: light-dark(#b69999, #5d5a6f);
+--color-layer1-fg-faint: light-dark(#c8b9bd, #564e5b);
+--color-layer1-fg-muted: light-dark(#aa95a1, #796e78);
+--color-layer1-fg: light-dark(#3D3C44, #DCDBDB);
+--color-layer2-bg: light-dark(#dcd2d2, #454253);
+--color-layer2-border: light-dark(#b08f8f, #726f83);
+--color-layer2-fg-faint: light-dark(#c0afb4, #665d6b);
+--color-layer2-fg-muted: light-dark(#a48e9a, #867984);
+--color-layer2-fg: light-dark(#3D3C44, #DCDBDB);
+--color-layer3-bg: light-dark(#d3c5c5, #555266);
+--color-layer3-border: light-dark(#ab8686, #858294);
+--color-layer3-fg-faint: light-dark(#baa5ab, #746a7a);
+--color-layer3-fg-muted: light-dark(#9f8694, #91848f);
+--color-layer3-fg: light-dark(#3D3C44, #DCDBDB);
+--color-success-bg: light-dark(#e8e792, #2b2d3a);
+--color-success-fg-normal: light-dark(#346e27, #70cf92);
+--color-success-fg: light-dark(#565633, #70cf92);
+--color-term-black: light-dark(#3D3C44, #DCDBDB);
+--color-term-blue: light-dark(#3856d1, #69aafd);
+--color-term-bright-black: light-dark(#3D3C44, #DCDBDB);
+--color-term-bright-blue: light-dark(#3856d1, #69aafd);
+--color-term-bright-cyan: light-dark(#2c6a73, #18c6ce);
+--color-term-bright-green: light-dark(#346e27, #70cf92);
+--color-term-bright-magenta: light-dark(#8f35bd, #b5a0ff);
+--color-term-bright-red: light-dark(#B22E32, #F55661);
+--color-term-bright-white: light-dark(#909098, #f5f5f5);
+--color-term-bright-yellow: light-dark(#b17900, #cfb787);
+--color-term-cyan: light-dark(#2c6a73, #18c6ce);
+--color-term-green: light-dark(#346e27, #70cf92);
+--color-term-magenta: light-dark(#8f35bd, #b5a0ff);
+--color-term-red: light-dark(#B22E32, #F55661);
+--color-term-white: light-dark(#909098, #f5f5f5);
+--color-term-yellow: light-dark(#b17900, #cfb787);
+--color-warning-bg: light-dark(#fde37c, #322b38);
+--color-warning-fg-normal: light-dark(#b17900, #cfb787);
+--color-warning-fg: light-dark(#615413, #cfb787);
+
+}
+</style>
+	</head>
+
+	<body>
+		<div class="canvas">
+			<p>Hello, world!</p>
+			<p class="muted">this is fg_muted</p>
+			<p class="faint">this is fg_faint</p>
+		</div>
+		<div class="layer1">
+			<p>this is a layer1 box</p>
+			<p class="muted">this is fg_muted</p>
+			<p class="faint">this is fg_faint</p>
+		</div>
+		<div class="layer2">
+			<p>this is a layer2 box</p>
+			<p class="muted">this is fg_muted</p>
+			<p class="faint">this is fg_faint</p>
+		</div>
+		<div class="layer3">
+			<p>this is a layer3 box</p>
+			<p class="muted">this is fg_muted</p>
+			<p class="faint">this is fg_faint</p>
+		</div>
+
+		<div class="layer1 position:relative">
+			<p>this is a layer1 box</p>
+			<div class="layer2 layer2-float">
+				<p>this is a layer2 box</p>
+				<div class="layer3 layer3-float">
+					<p>this is a layer3 box</p>
+				</div>
+			</div>
+		</div>
+
+		<p class="error">error</p>
+		<p class="error-fg-normal">error</p>
+
+		<p class="success">success</p>
+		<p class="success-fg-normal">success</p>
+
+		<p class="warning">warning</p>
+		<p class="warning-fg-normal">warning</p>
+
+		<p class="info">info</p>
+		<p class="info-fg-normal">info</p>
+
+		<p class="accent">accent</p>
+		<p class="accent-fg-normal">accent</p>
+
+		<p class="term_black">term_black</p>
+		<p class="term_red">term_red</p>
+		<p class="term_green">term_green</p>
+		<p class="term_yellow">term_yellow</p>
+		<p class="term_blue">term_blue</p>
+		<p class="term_magenta">term_magenta</p>
+		<p class="term_cyan">term_cyan</p>
+		<p class="term_white">term_white</p>
+		<p class="term_bright_black">term_bright_black</p>
+		<p class="term_bright_red">term_bright_red</p>
+		<p class="term_bright_green">term_bright_green</p>
+		<p class="term_bright_yellow">term_bright_yellow</p>
+		<p class="term_bright_blue">term_bright_blue</p>
+		<p class="term_bright_magenta">term_bright_magenta</p>
+		<p class="term_bright_cyan">term_bright_cyan</p>
+		<p class="term_bright_white">term_bright_white</p>
+	</body>
+</html>
