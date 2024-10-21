@@ -39,10 +39,7 @@ M.render_hlgroup = function(t)
 		if special_colors[v] then
 			table.insert(buf, string.format("guifg=%s ctermfg=%s", v, v))
 		else
-			table.insert(
-				buf,
-				string.format("guifg=%s ctermfg=%d", v, color.hex_to_256(v))
-			)
+			table.insert(buf, string.format("guifg=%s ctermfg=%d", v, color.hex_to_256(v)))
 		end
 	end
 
@@ -51,10 +48,7 @@ M.render_hlgroup = function(t)
 		if special_colors[v] then
 			table.insert(buf, string.format("guibg=%s ctermbg=%s", v, v))
 		else
-			table.insert(
-				buf,
-				string.format("guibg=%s ctermbg=%d", v, color.hex_to_256(v))
-			)
+			table.insert(buf, string.format("guibg=%s ctermbg=%d", v, color.hex_to_256(v)))
 		end
 	end
 
@@ -139,15 +133,28 @@ M.flatten_get = function(t, v)
 	for _, key in ipairs(v.path) do
 		target = target[key]
 		if not target then
-			error(
-				"key not found: " .. key .. " in " .. table.concat(v.path, ".")
-			)
+			error("key not found: " .. key .. " in " .. table.concat(v.path, "."))
 		end
 		if target.__type == M.link_type then -- follow links
 			target = t[target.to]
 		end
 	end
 	return target
+end
+
+M.blend_type = "blend"
+
+M.blend = function(start, stop, ratio)
+	return {
+		__type = M.blend_type,
+		start = start,
+		stop = stop,
+		ratio = ratio,
+	}
+end
+
+M.flatten_blend = function(_, v)
+	return color.blend_hex(v.start, v.stop, v.ratio)
 end
 
 M.contrast_type = "contrast"
@@ -184,17 +191,11 @@ M.default_mapping = {
 	[M.hlgroup_type] = M.flatten_hlgroup,
 	[M.contrast_type] = M.flatten_contrast,
 	[M.lightline_type] = M.flatten_lightline,
+	[M.blend_type] = M.flatten_blend,
 }
 
 M.flatten = function(t, mapping)
-	mapping = mapping
-		or {
-			[M.get_type] = M.flatten_get,
-			[M.link_type] = M.flatten_link,
-			[M.hlgroup_type] = M.flatten_hlgroup,
-			[M.contrast_type] = M.flatten_contrast,
-			[M.lightline_type] = M.flatten_lightline,
-		}
+	mapping = mapping or M.default_mapping
 	local foldfn
 	foldfn = function(node, sub_forest_results)
 		if type(node) == "table" and mapping[node.__type] then
