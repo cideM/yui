@@ -29,19 +29,19 @@
 	hi DiffDelete guifg=#B22E32 ctermfg=125 guibg=#f2d8d8 ctermbg=224 gui=NONE cterm=NONE
 	hi DiffText guifg=#3856d1 ctermfg=62 guibg=#e5dcf3 ctermbg=254 gui=NONE cterm=NONE
 	hi Directory guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-	hi ErrorMsg guifg=#B22E32 ctermfg=125 guibg=#f2d8d8 ctermbg=224 gui=bold cterm=bold
-	hi Constant guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
-	hi! link String Constant
-	hi! link Character Constant
-	hi! link Number Constant
-	hi! link Boolean Constant
-	hi! link Float Constant
+	hi ErrorMsg guifg=#B22E32 ctermfg=125 guibg=#f2d8d8 ctermbg=224 gui=none cterm=none
+	hi Constant guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi String guifg=#C43E1C ctermfg=166 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi Character guifg=#C43E1C ctermfg=166 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi Number guifg=#C43E1C ctermfg=166 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi Boolean guifg=#C43E1C ctermfg=166 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi Float guifg=#C43E1C ctermfg=166 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi Identifier guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi Function guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-	hi Statement guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi Statement guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi Repeat guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi Conditional guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
-	hi Label guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline,bold cterm=underline,bold
+	hi Label guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi! link Operator Statement
 	hi! link Keyword Statement
 	hi! link Exception Statement
@@ -54,7 +54,7 @@
 	hi! link StorageClass Type
 	hi! link Structure Type
 	hi Typedef guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=italic cterm=italic
-	hi Special guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
+	hi Special guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi! link SpecialChar Special
 	hi! link Tag Special
 	hi! link Delimiter Special
@@ -164,8 +164,9 @@
 	hi helpURL guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=underline cterm=underline
 	hi xmlProcessingDelim guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 	hi xmlTagName guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-	hi fugitiveStagedSection guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline,bold cterm=underline,bold
-	hi fugitiveUnstagedSection guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline,bold cterm=underline,bold
+	hi fugitiveStagedSection guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi fugitiveUnstagedSection guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi! link gitCommitOverflow WarningMsg
 	hi! link helpBacktick Constant
 	hi! link helpDeprecated DiffDelete
 	hi! link mkdCodeDelimiter mkCode
@@ -204,7 +205,7 @@
 	hi! link TelescopeMatching CurSearch
 	hi! link TelescopeSelection Search
 	hi markdownLinkText guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-	hi diffLine guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold,underline cterm=bold,underline
+	hi diffLine guifg=#3D3C44 ctermfg=238 guibg=#e6dfdf ctermbg=254 gui=NONE cterm=NONE
 	hi gitHashAbbrev guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline cterm=underline
 	hi GitSignsAdd guifg=#346e27 ctermfg=238 guibg=NONE ctermbg=NONE
 	hi GitSignsChange guifg=#b17900 ctermfg=136 guibg=NONE ctermbg=NONE
@@ -271,7 +272,7 @@
 		hi @lsp.type.function guifg=fg ctermfg=fg gui=NONE cterm=NONE
 		hi! link @lsp.type.method @lsp.type.function
 		hi @lsp.typemod.function.defaultLibrary guifg=fg ctermfg=fg gui=NONE cterm=NONE
-		hi @lsp.typemod.function.declaration guifg=fg ctermfg=fg gui=bold cterm=bold
+		hi @lsp.typemod.function.declaration guifg=fg ctermfg=fg gui=NONE cterm=NONE
 		hi! link @lsp.typemod.member.declaration @lsp.typemod.function.declaration
 		hi @lsp.typemod.variable.declaration guifg=fg ctermfg=fg gui=NONE cterm=NONE
 	else

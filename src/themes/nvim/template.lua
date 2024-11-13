@@ -172,6 +172,7 @@ return function(colors, name)
 	${xmlTagName}
 	${fugitiveStagedSection}
 	${fugitiveUnstagedSection}
+	${GitCommitOverflow}
 	${helpBacktick}
 	${helpDeprecated}
 	${mkdCodeDelimiter}
