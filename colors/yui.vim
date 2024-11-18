@@ -25,7 +25,7 @@
 	hi! link CursorIM Cursor
 	hi WinSeparator guifg=#bca3a3 ctermfg=248
 	hi DiffAdd guifg=#565633 ctermfg=239 guibg=#e8e792 ctermbg=186 gui=NONE cterm=NONE
-	hi DiffChange guifg=#615413 ctermfg=58 guibg=#fde37c ctermbg=222 gui=NONE cterm=NONE
+	hi DiffChange guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi DiffDelete guifg=#B22E32 ctermfg=125 guibg=#f2d8d8 ctermbg=224 gui=NONE cterm=NONE
 	hi DiffText guifg=#3856d1 ctermfg=62 guibg=#e5dcf3 ctermbg=254 gui=NONE cterm=NONE
 	hi Directory guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
@@ -67,7 +67,7 @@
 	hi MatchParen guifg=NONE ctermfg=NONE guibg=#d3c5c5 ctermbg=251 gui=NONE cterm=NONE
 	hi ModeMsg guifg=#3856d1 ctermfg=62 guibg=#e5dcf3 ctermbg=254 gui=NONE cterm=NONE
 	hi MoreMsg guifg=#3856d1 ctermfg=62 guibg=#e5dcf3 ctermbg=254 gui=NONE cterm=NONE
-	hi WarningMsg guifg=#615413 ctermfg=58 guibg=#fde37c ctermbg=222 gui=NONE cterm=NONE
+	hi WarningMsg guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi Whitespace guifg=#d1c4c8 ctermfg=251 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi TabLine guifg=#aa95a1 ctermfg=247 guibg=#e6dfdf ctermbg=254 gui=NONE cterm=NONE
 	hi! link TabLineSel StatusLine
