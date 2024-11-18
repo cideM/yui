@@ -48,8 +48,8 @@ local function gen_variant(t, dsl)
 		},
 		DiffChange = hlgroup {
 			name = "DiffChange",
-			guifg = t.warning.fg,
-			guibg = t.warning.bg,
+			guifg = "NONE",
+			guibg = "NONE",
 			gui = "NONE",
 		},
 		DiffDelete = hlgroup {
