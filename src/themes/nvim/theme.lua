@@ -161,13 +161,13 @@ local function gen_variant(t, dsl)
 		Structure = link("Structure", "Type"),
 		Typedef = hlgroup {
 			name = "Typedef",
-			guifg = "fg",
+			guifg = "NONE",
 			guibg = "NONE",
 			gui = { "italic" },
 		},
 		Special = hlgroup {
+			guifg = "NONE",
 			name = "Special",
-			guifg = "fg",
 			guibg = "NONE",
 			gui = { "NONE" },
 		},
@@ -178,7 +178,7 @@ local function gen_variant(t, dsl)
 		Debug = link("Debug", "Special"),
 		Underlined = hlgroup {
 			name = "Underlined",
-			guifg = "fg",
+			guifg = "NONE",
 			guibg = "NONE",
 			gui = "underline",
 		},
@@ -389,6 +389,12 @@ local function gen_variant(t, dsl)
 			guifg = "NONE",
 			guibg = t.layer2.bg,
 		},
+		DiagnosticUnnecessary = hlgroup {
+			name = "DiagnosticUnnecessary",
+			guifg = t.warning.fg,
+			guibg = t.warning.bg,
+			gui = "NONE",
+		},
 		DiagnosticError = hlgroup {
 			name = "DiagnosticError",
 			guifg = t.error.fg,
@@ -576,6 +582,18 @@ local function gen_variant(t, dsl)
 		GitSignsDeleteNr = link("GitSignsDeleteNr", "GitSignsDelete"),
 		GitSignsDeleteLn = link("GitSignsDeleteLn", "GitSignsDelete"),
 		GitCommitOverflow = link("gitCommitOverflow", "WarningMsg"),
+		GitCommitOnBranch = hlgroup {
+			name = "gitcommitOnBranch",
+			guifg = "fg",
+			guibg = "NONE",
+			gui = "NONE",
+		},
+		GitCommitComment = hlgroup {
+			name = "gitcommitComment",
+			guifg = "fg",
+			guibg = "NONE",
+			gui = "NONE",
+		},
 		IndentBlanklineChar = link("IndentBlanklineChar", "VertSplit"),
 		Sneak = link("Sneak", "Visual"),
 		SneakScope = link("SneakScope", "IncSearch"),
@@ -893,7 +911,7 @@ local function gen_variant(t, dsl)
 		["@text.literal"] = link("@text.literal", "helpExample"),
 		["@text.strong"] = hlgroup {
 			name = "@text.strong",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = "bold",
 		},
 		["@field"] = hlgroup { name = "@field", guifg = "fg", gui = "NONE" },
@@ -910,37 +928,37 @@ local function gen_variant(t, dsl)
 		},
 		["@keyword.function"] = hlgroup {
 			name = "@keyword.function",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = "NONE",
 		},
 		["@keyword.operator"] = hlgroup {
 			name = "@keyword.operator",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = "NONE",
 		},
 		["@keyword.return"] = hlgroup {
 			name = "@keyword.return",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = "NONE",
 		},
 		["@lsp.type.function"] = hlgroup {
 			name = "@lsp.type.function",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = "NONE",
 		},
 		["@lsp.typemod.function.defaultLibrary"] = hlgroup {
 			name = "@lsp.typemod.function.defaultLibrary",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = "NONE",
 		},
 		["@lsp.typemod.variable.declaration"] = hlgroup {
 			name = "@lsp.typemod.variable.declaration",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = "NONE",
 		},
 		["@lsp.typemod.function.declaration"] = hlgroup {
 			name = "@lsp.typemod.function.declaration",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = { "NONE" },
 		},
 		OptionFadeFoldColumn = hlgroup {
@@ -993,8 +1011,8 @@ local function gen_variant(t, dsl)
 		},
 		OptionBackgroundComments = hlgroup {
 			name = "Comment",
-			guifg = t.accent.fg,
-			guibg = t.accent.bg,
+			guifg = "bg",
+			guibg = "fg",
 			gui = "NONE",
 		},
 		StatusLineTerm = link("StatusLineTerm", "StatusLine"),

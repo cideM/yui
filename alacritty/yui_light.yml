@@ -6,12 +6,12 @@
 			"dim_foreground": "#b19da8",
 		},
 		"cursor": {
-			"text": "#e6dfdf",
-			"cursor": "#3D3C44",
+			"text": "CellBackground",
+			"cursor": "CellForeground",
 		},
 		"vi_mode_cursor": {
-			"text": "#e6dfdf",
-			"cursor": "#3D3C44",
+			"text": "CellBackground",
+			"cursor": "CellForeground",
 		},
 		"search": {
 			"matches": {
@@ -19,14 +19,14 @@
 				"background": "#dcd2d2",
 			},
 			"focused_match": {
-				"foreground": "#e5dcf3",
+				"foreground": "#ccc2f2",
 				"background": "#3856d1",
 			},
 		},
 		"hints": {
 			"start": {
 				"foreground": "#3856d1",
-				"background": "#e5dcf3",
+				"background": "#ccc2f2",
 			},
 			"end": {
 				"foreground": "#3D3C44",
@@ -34,7 +34,7 @@
 			},
 		},
 		"line_indicator": {
-			"foreground": "#e5dcf3",
+			"foreground": "#ccc2f2",
 			"background": "#3856d1",
 		},
 		"footer_bar": {

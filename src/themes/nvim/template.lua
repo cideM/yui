@@ -120,6 +120,7 @@ return function(colors, name)
 	${VisualNOS}
 	${Scrollbar}
 	${DiagnosticError}
+	${DiagnosticUnnecessary}
 	${DiagnosticOk}
 	${DiagnosticHint}
 	${DiagnosticInfo}
@@ -173,6 +174,8 @@ return function(colors, name)
 	${fugitiveStagedSection}
 	${fugitiveUnstagedSection}
 	${GitCommitOverflow}
+	${GitCommitComment}
+	${GitCommitOnBranch}
 	${helpBacktick}
 	${helpDeprecated}
 	${mkdCodeDelimiter}

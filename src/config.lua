@@ -13,7 +13,7 @@ return {
 			fg_faint = dsl.blend(
 				dsl.get { "light", "canvas", "fg" },
 				dsl.get { "light", "canvas", "bg" },
-				0.8
+				0.9
 			),
 			fg_muted = dsl.blend(
 				dsl.get { "light", "canvas", "fg" },
@@ -118,16 +118,16 @@ return {
 		info = {
 			fg = dsl.get { "light", "colors", "blue", "fg" },
 			bg = dsl.blend(
-				brighten(dsl.get { "light", "colors", "blue", "fg" }, 4.5),
+				brighten(dsl.get { "light", "colors", "blue", "fg" }, 3.5),
 				dsl.get { "light", "canvas", "bg" },
-				0.2
+				0.1
 			),
 			fg_normal = dsl.get { "light", "colors", "blue", "fg_normal" },
 		},
 		accent = {
 			fg = dsl.get { "light", "colors", "orange", "fg" },
 			bg = dsl.blend(
-				brighten(dsl.get { "light", "colors", "orange", "fg" }, 4),
+				brighten(dsl.get { "light", "colors", "orange", "fg" }, 3.5),
 				dsl.get { "light", "canvas", "bg" },
 				0.3
 			),
@@ -158,14 +158,14 @@ return {
 	dark = {
 		theme_name = "yui_dark",
 		fg = "#DCDBDB",
-		bg = "#211F29",
+		bg = "#23212C",
 		canvas = {
 			fg = dsl.get { "dark", "fg" },
 			bg = dsl.get { "dark", "bg" },
 			fg_faint = dsl.blend(
 				dsl.get { "dark", "canvas", "fg" },
 				dsl.get { "dark", "canvas", "bg" },
-				0.8
+				0.9
 			),
 			fg_muted = dsl.blend(
 				dsl.get { "dark", "canvas", "fg" },
@@ -270,7 +270,7 @@ return {
 			bg = dsl.blend(
 				dsl.get { "dark", "colors", "orange", "fg" },
 				dsl.get { "dark", "canvas", "bg" },
-				0.9
+				0.85
 			),
 			fg_normal = dsl.get { "dark", "colors", "orange", "fg_normal" },
 		},

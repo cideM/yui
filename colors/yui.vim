@@ -27,7 +27,7 @@
 	hi DiffAdd guifg=#565633 ctermfg=239 guibg=#e8e792 ctermbg=186 gui=NONE cterm=NONE
 	hi DiffChange guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi DiffDelete guifg=#B22E32 ctermfg=125 guibg=#f2d8d8 ctermbg=224 gui=NONE cterm=NONE
-	hi DiffText guifg=#3856d1 ctermfg=62 guibg=#e5dcf3 ctermbg=254 gui=NONE cterm=NONE
+	hi DiffText guifg=#3856d1 ctermfg=62 guibg=#ccc2f2 ctermbg=183 gui=NONE cterm=NONE
 	hi Directory guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 	hi ErrorMsg guifg=#B22E32 ctermfg=125 guibg=#f2d8d8 ctermbg=224 gui=none cterm=none
 	hi Constant guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
@@ -53,27 +53,27 @@
 	hi Type guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi! link StorageClass Type
 	hi! link Structure Type
-	hi Typedef guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=italic cterm=italic
-	hi Special guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi Typedef guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=italic cterm=italic
+	hi Special guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi! link SpecialChar Special
 	hi! link Tag Special
 	hi! link Delimiter Special
 	hi! link SpecialComment Special
 	hi! link Debug Special
-	hi Underlined guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline cterm=underline
+	hi Underlined guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=underline cterm=underline
 	hi Ignore guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 	hi Error guifg=#B22E32 ctermfg=125 guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi! link Todo DiffChange
 	hi MatchParen guifg=NONE ctermfg=NONE guibg=#d3c5c5 ctermbg=251 gui=NONE cterm=NONE
-	hi ModeMsg guifg=#3856d1 ctermfg=62 guibg=#e5dcf3 ctermbg=254 gui=NONE cterm=NONE
-	hi MoreMsg guifg=#3856d1 ctermfg=62 guibg=#e5dcf3 ctermbg=254 gui=NONE cterm=NONE
+	hi ModeMsg guifg=#3856d1 ctermfg=62 guibg=#ccc2f2 ctermbg=183 gui=NONE cterm=NONE
+	hi MoreMsg guifg=#3856d1 ctermfg=62 guibg=#ccc2f2 ctermbg=183 gui=NONE cterm=NONE
 	hi WarningMsg guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-	hi Whitespace guifg=#d1c4c8 ctermfg=251 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi Whitespace guifg=#e1d9da ctermfg=253 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi TabLine guifg=#aa95a1 ctermfg=247 guibg=#e6dfdf ctermbg=254 gui=NONE cterm=NONE
 	hi! link TabLineSel StatusLine
 	hi! link TabLineFill TabLine
 	hi Search guifg=#3D3C44 ctermfg=238 guibg=#dcd2d2 ctermbg=188 gui=NONE cterm=NONE
-	hi CurSearch guifg=#e5dcf3 ctermfg=254 guibg=#3856d1 ctermbg=62 gui=NONE cterm=NONE
+	hi CurSearch guifg=#ccc2f2 ctermfg=183 guibg=#3856d1 ctermbg=62 gui=NONE cterm=NONE
 	hi! link IncSearch CurSearch
 	hi! link SpellCap SpellBad
 	hi! link SpellLocal SpellBad
@@ -114,9 +114,10 @@
 	hi VisualNOS guifg=NONE ctermfg=NONE guibg=#d3c5c5 ctermbg=251
 	hi Scrollbar guifg=NONE ctermfg=NONE guibg=#dcd2d2 ctermbg=188
 	hi DiagnosticError guifg=#B22E32 ctermfg=125 guibg=#f2d8d8 ctermbg=224 gui=NONE cterm=NONE
+	hi DiagnosticUnnecessary guifg=#615413 ctermfg=58 guibg=#fde37c ctermbg=222 gui=NONE cterm=NONE
 	hi DiagnosticOk guifg=#565633 ctermfg=239 guibg=#e8e792 ctermbg=186 gui=NONE cterm=NONE
-	hi DiagnosticHint guifg=#3856d1 ctermfg=62 guibg=#e5dcf3 ctermbg=254 gui=NONE cterm=NONE
-	hi DiagnosticInfo guifg=#3856d1 ctermfg=62 guibg=#e5dcf3 ctermbg=254 gui=NONE cterm=NONE
+	hi DiagnosticHint guifg=#3856d1 ctermfg=62 guibg=#ccc2f2 ctermbg=183 gui=NONE cterm=NONE
+	hi DiagnosticInfo guifg=#3856d1 ctermfg=62 guibg=#ccc2f2 ctermbg=183 gui=NONE cterm=NONE
 	hi DiagnosticWarn guifg=#615413 ctermfg=58 guibg=#fde37c ctermbg=222 gui=NONE cterm=NONE
 	hi DiagnosticUnderlineError guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#B22E32 gui=underline cterm=underline
 	hi DiagnosticUnderlineHint guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#3856d1 gui=underline cterm=underline
@@ -167,6 +168,8 @@
 	hi fugitiveStagedSection guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi fugitiveUnstagedSection guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi! link gitCommitOverflow WarningMsg
+	hi gitcommitComment guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi gitcommitOnBranch guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi! link helpBacktick Constant
 	hi! link helpDeprecated DiffDelete
 	hi! link mkdCodeDelimiter mkCode
@@ -221,7 +224,7 @@
 	hi WhichKeySeperator guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 
 	if has('nvim')
-		hi SpecialKey guifg=#3856d1 ctermfg=62 guibg=#e5dcf3 ctermbg=254
+		hi SpecialKey guifg=#3856d1 ctermfg=62 guibg=#ccc2f2 ctermbg=183
 		let g:terminal_color_0 = '#3D3C44'
 		let g:terminal_color_1 = '#B22E32'
 		let g:terminal_color_2 = '#346e27'
@@ -254,7 +257,7 @@
 		hi! link @constant.builtin Constant
 		hi! link @function @lsp.typemod.function.declaration
 		hi! link @function.method.call @method.call
-		hi @text.strong guifg=fg ctermfg=fg gui=bold cterm=bold
+		hi @text.strong guifg=NONE ctermfg=NONE gui=bold cterm=bold
 		hi! link @text.emphasis @text.strong
 		hi! link @method @lsp.typemod.member.declaration
 		hi @field guifg=fg ctermfg=fg gui=NONE cterm=NONE
@@ -265,16 +268,16 @@
 		hi @method.call guifg=fg ctermfg=fg gui=italic cterm=italic
 		hi! link @function.builtin @lsp.typemod.function.defaultLibrary
 		hi! link @namespace.builtin @lsp.typemod.function.defaultLibrary
-		hi @keyword.function guifg=fg ctermfg=fg gui=NONE cterm=NONE
-		hi @keyword.operator guifg=fg ctermfg=fg gui=NONE cterm=NONE
-		hi @keyword.return guifg=fg ctermfg=fg gui=NONE cterm=NONE
+		hi @keyword.function guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
+		hi @keyword.operator guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
+		hi @keyword.return guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
 
-		hi @lsp.type.function guifg=fg ctermfg=fg gui=NONE cterm=NONE
+		hi @lsp.type.function guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
 		hi! link @lsp.type.method @lsp.type.function
-		hi @lsp.typemod.function.defaultLibrary guifg=fg ctermfg=fg gui=NONE cterm=NONE
-		hi @lsp.typemod.function.declaration guifg=fg ctermfg=fg gui=NONE cterm=NONE
+		hi @lsp.typemod.function.defaultLibrary guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
+		hi @lsp.typemod.function.declaration guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
 		hi! link @lsp.typemod.member.declaration @lsp.typemod.function.declaration
-		hi @lsp.typemod.variable.declaration guifg=fg ctermfg=fg gui=NONE cterm=NONE
+		hi @lsp.typemod.variable.declaration guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
 	else
 		hi LspCodeLens guifg=#d3c5c5 ctermfg=251 guibg=NONE ctermbg=NONE
 		hi LspInlayHint guifg=#3856d1 ctermfg=62 guibg=NONE ctermbg=NONE
@@ -337,6 +340,6 @@
 	elseif s:yui_comments_value ==? 'emphasize'
 		hi Comment guifg=#C43E1C ctermfg=166 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	elseif s:yui_comments_value ==? 'bg'
-		hi Comment guifg=#C43E1C ctermfg=166 guibg=#f5e2e0 ctermbg=224 gui=NONE cterm=NONE
+		hi Comment guifg=bg ctermfg=bg guibg=fg ctermbg=fg gui=NONE cterm=NONE
 	endif
 	

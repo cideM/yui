@@ -92,7 +92,7 @@
           fish_light = makeFishPlugin "fish_light" "fish/yui.fish";
         };
 
-        defaultPackage = packages.nvim;
+        defaultPackage = packages.neovim;
 
         devShell = pkgs.mkShell {
           buildInputs = with pkgs; [

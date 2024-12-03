@@ -1,5 +1,5 @@
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
-let s:p.visual.left = [['#3856d1', '#e5dcf3', 62, 254], ['#3D3C44', '#dcd2d2', 238, 188]]
+let s:p.visual.left = [['#3856d1', '#ccc2f2', 62, 183], ['#3D3C44', '#dcd2d2', 238, 188]]
 let s:p.tabline.tabsel = [['#3D3C44', '#e6dfdf', 238, 254]]
 let s:p.tabline.middle = [['#aa95a1', '#e6dfdf', 247, 254]]
 let s:p.tabline.left = [['#aa95a1', '#e6dfdf', 247, 254]]
