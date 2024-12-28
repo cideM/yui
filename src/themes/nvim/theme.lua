@@ -148,7 +148,7 @@ local function gen_variant(t, dsl)
 			guifg = "NONE",
 			name = "Special",
 			guibg = "NONE",
-			gui = { "NONE" },
+			gui = { "bold" },
 		},
 		SpecialChar = link("SpecialChar", "Special"),
 		Tag = link("Tag", "Special"),

@@ -55,7 +55,7 @@
 	hi! link StorageClass Type
 	hi! link Structure Type
 	hi Typedef guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=italic cterm=italic
-	hi Special guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi Special guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi! link SpecialChar Special
 	hi! link Tag Special
 	hi! link Delimiter Special
