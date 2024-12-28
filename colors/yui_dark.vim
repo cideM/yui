@@ -32,7 +32,7 @@
 	hi ErrorMsg guifg=#ee5c66 ctermfg=203 guibg=#30293a ctermbg=236 gui=none cterm=none
 	hi Constant guifg=#E66F51 ctermfg=167 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi! link String Constant
-	hi @punctuation guifg=#6e626c ctermfg=242
+	hi @punctuation guifg=#81747d ctermfg=244
 	hi! link @constructor.lua @punctuation
 	hi! link Character Constant
 	hi! link Number Constant
@@ -71,7 +71,7 @@
 	hi MoreMsg guifg=#69aafd ctermfg=75 guibg=#2e2b42 ctermbg=236 gui=NONE cterm=NONE
 	hi WarningMsg guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi Whitespace guifg=#35303c ctermfg=237 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-	hi TabLine guifg=#7b6f7a ctermfg=243 guibg=#353342 ctermbg=237 gui=NONE cterm=NONE
+	hi TabLine guifg=#988893 ctermfg=246 guibg=#474356 ctermbg=239 gui=NONE cterm=NONE
 	hi! link TabLineSel StatusLine
 	hi! link TabLineFill TabLine
 	hi Search guifg=#DCDBDB ctermfg=253 guibg=#474356 ctermbg=239 gui=NONE cterm=NONE
@@ -94,14 +94,14 @@
 	hi NormalFloat guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 	hi FloatTitle guifg=fg ctermfg=fg guibg=#474356 ctermbg=239 gui=underline,bold cterm=underline,bold
 	hi FloatBorder guifg=#4f4b60 ctermfg=240 guibg=NONE ctermbg=NONE
-	hi StatusLine guifg=#DCDBDB ctermfg=253 guibg=#353342 ctermbg=237 gui=NONE cterm=NONE
-	hi StatusLineNC guifg=#7b6f7a ctermfg=243 guibg=#353342 ctermbg=237 gui=NONE cterm=NONE
+	hi StatusLine guifg=#DCDBDB ctermfg=253 guibg=#474356 ctermbg=239 gui=NONE cterm=NONE
+	hi StatusLineNC guifg=#988893 ctermfg=246 guibg=#474356 ctermbg=239 gui=NONE cterm=NONE
 	hi ColorColumn guifg=#DCDBDB ctermfg=253 guibg=#353342 ctermbg=237
 	hi! link CursorColumn CursorLine
-	hi CopilotSuggestion guifg=#6e626c ctermfg=242 guibg=NONE ctermbg=NONE
+	hi CopilotSuggestion guifg=#81747d ctermfg=244 guibg=NONE ctermbg=NONE
 	hi WinBar guifg=#DCDBDB ctermfg=253 guibg=#474356 ctermbg=239 guisp=#746f86 gui=underline cterm=underline
 	hi NonText guifg=#474356 ctermfg=239 guibg=NONE ctermbg=NONE
-	hi WinBarNC guifg=#887a86 ctermfg=244 guibg=#353342 ctermbg=237 guisp=#746f86 gui=underline cterm=underline
+	hi WinBarNC guifg=#988893 ctermfg=246 guibg=#353342 ctermbg=237 guisp=#746f86 gui=underline cterm=underline
 	hi! link PmenuExtraSel PmenuSel
 	hi! link LspSignatureActiveParameter Search
 	hi PmenuSel guifg=#DCDBDB ctermfg=253 guibg=#575369 ctermbg=59 gui=NONE cterm=NONE
@@ -313,7 +313,7 @@
 
 	let s:yui_folds_value = get(g:, 'yui_folds', 'fade')
 	if s:yui_folds_value ==? 'fade'
-		hi FoldColumn guifg=#6e626c ctermfg=242 guibg=NONE ctermbg=NONE
+		hi FoldColumn guifg=#81747d ctermfg=244 guibg=NONE ctermbg=NONE
 		hi! link Folded FoldColumn
 	elseif s:yui_folds_value ==? 'emphasize'
 		hi FoldColumn guifg=#DCDBDB ctermfg=253 guibg=NONE ctermbg=NONE
@@ -323,7 +323,7 @@
 
 	let s:yui_line_numbers_value = get(g:, 'yui_line_numbers', 'fade')
 	if s:yui_line_numbers_value ==? 'fade'
-		hi SignColumn guifg=#6e626c ctermfg=242 guibg=NONE ctermbg=NONE
+		hi SignColumn guifg=#81747d ctermfg=244 guibg=NONE ctermbg=NONE
 		hi! link LineNr SignColumn
 	elseif s:yui_line_numbers_value ==? 'emphasize'
 		hi SignColumn guifg=#DCDBDB ctermfg=253 guibg=NONE ctermbg=NONE
@@ -343,7 +343,7 @@
 	if s:yui_comments_value ==? 'normal'
 		hi Comment guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=italic cterm=italic
 	elseif s:yui_comments_value ==? 'fade'
-		hi Comment guifg=#6e626c ctermfg=242 guibg=NONE ctermbg=NONE gui=italic cterm=italic
+		hi Comment guifg=#81747d ctermfg=244 guibg=NONE ctermbg=NONE gui=italic cterm=italic
 	elseif s:yui_comments_value ==? 'emphasize'
 		hi Comment guifg=#E66F51 ctermfg=167 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	elseif s:yui_comments_value ==? 'bg'

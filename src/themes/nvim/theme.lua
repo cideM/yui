@@ -271,14 +271,14 @@ local function gen_variant(t, dsl)
 		},
 		StatusLine = hlgroup {
 			name = "StatusLine",
-			guifg = t.layer1.fg,
-			guibg = t.layer1.bg,
+			guifg = t.layer2.fg,
+			guibg = t.layer2.bg,
 			gui = "NONE",
 		},
 		StatusLineNC = hlgroup {
 			name = "StatusLineNC",
-			guifg = t.layer1.fg_muted,
-			guibg = t.layer1.bg,
+			guifg = t.layer2.fg_muted,
+			guibg = t.layer2.bg,
 			gui = "NONE",
 		},
 		ColorColumn = hlgroup {

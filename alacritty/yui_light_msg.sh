@@ -17,7 +17,7 @@
 			'colors.line_indicator.foreground="#ccc2f2"'\
 			'colors.line_indicator.background="#3856d1"'\
 			'colors.footer_bar.foreground="#3D3C44"'\
-			'colors.footer_bar.background="#e6dfdf"'\
+			'colors.footer_bar.background="#dcd2d2"'\
 			'colors.selection.foreground="#3D3C44"'\
 			'colors.selection.background="#dcd2d2"'\
 			'colors.normal.black="#3D3C44"'\

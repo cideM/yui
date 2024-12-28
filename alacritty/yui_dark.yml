@@ -3,7 +3,7 @@
 		"primary": {
 			"foreground": "#DCDBDB",
 			"background": "#23212C",
-			"dim_foreground": "#6e626c",
+			"dim_foreground": "#81747d",
 		},
 		"cursor": {
 			"text": "CellBackground",
@@ -39,7 +39,7 @@
 		},
 		"footer_bar": {
 			"foreground": "#DCDBDB",
-			"background": "#353342",
+			"background": "#474356",
 		},
 		"selection": {
 			"text": "#DCDBDB",

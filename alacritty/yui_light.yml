@@ -39,7 +39,7 @@
 		},
 		"footer_bar": {
 			"foreground": "#3D3C44",
-			"background": "#e6dfdf",
+			"background": "#dcd2d2",
 		},
 		"selection": {
 			"text": "#3D3C44",

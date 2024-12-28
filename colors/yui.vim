@@ -71,7 +71,7 @@
 	hi MoreMsg guifg=#3856d1 ctermfg=62 guibg=#ccc2f2 ctermbg=183 gui=NONE cterm=NONE
 	hi WarningMsg guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi Whitespace guifg=#e1d9da ctermfg=253 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-	hi TabLine guifg=#aa95a1 ctermfg=247 guibg=#e6dfdf ctermbg=254 gui=NONE cterm=NONE
+	hi TabLine guifg=#937f8d ctermfg=245 guibg=#dcd2d2 ctermbg=188 gui=NONE cterm=NONE
 	hi! link TabLineSel StatusLine
 	hi! link TabLineFill TabLine
 	hi Search guifg=#3D3C44 ctermfg=238 guibg=#dcd2d2 ctermbg=188 gui=NONE cterm=NONE
@@ -94,14 +94,14 @@
 	hi NormalFloat guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 	hi FloatTitle guifg=fg ctermfg=fg guibg=#dcd2d2 ctermbg=188 gui=underline,bold cterm=underline,bold
 	hi FloatBorder guifg=#bca3a3 ctermfg=248 guibg=NONE ctermbg=NONE
-	hi StatusLine guifg=#3D3C44 ctermfg=238 guibg=#e6dfdf ctermbg=254 gui=NONE cterm=NONE
-	hi StatusLineNC guifg=#aa95a1 ctermfg=247 guibg=#e6dfdf ctermbg=254 gui=NONE cterm=NONE
+	hi StatusLine guifg=#3D3C44 ctermfg=238 guibg=#dcd2d2 ctermbg=188 gui=NONE cterm=NONE
+	hi StatusLineNC guifg=#937f8d ctermfg=245 guibg=#dcd2d2 ctermbg=188 gui=NONE cterm=NONE
 	hi ColorColumn guifg=#3D3C44 ctermfg=238 guibg=#e6dfdf ctermbg=254
 	hi! link CursorColumn CursorLine
 	hi CopilotSuggestion guifg=#9f8a99 ctermfg=246 guibg=NONE ctermbg=NONE
 	hi WinBar guifg=#3D3C44 ctermfg=238 guibg=#dcd2d2 ctermbg=188 guisp=#b08f8f gui=underline cterm=underline
 	hi NonText guifg=#dcd2d2 ctermfg=188 guibg=NONE ctermbg=NONE
-	hi WinBarNC guifg=#a48e9a ctermfg=247 guibg=#e6dfdf ctermbg=254 guisp=#b08f8f gui=underline cterm=underline
+	hi WinBarNC guifg=#937f8d ctermfg=245 guibg=#e6dfdf ctermbg=254 guisp=#b08f8f gui=underline cterm=underline
 	hi! link PmenuExtraSel PmenuSel
 	hi! link LspSignatureActiveParameter Search
 	hi PmenuSel guifg=#3D3C44 ctermfg=238 guibg=#d3c5c5 ctermbg=251 gui=NONE cterm=NONE

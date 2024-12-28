@@ -36,7 +36,7 @@ return {
 			fg_muted = dsl.blend(
 				dsl.get { "light", "layer1", "fg" },
 				dsl.get { "light", "layer1", "bg" },
-				0.6
+				0.5
 			),
 			border = dsl.darker_contrast(
 				dsl.get { "light", "layer1", "bg" },
@@ -54,7 +54,7 @@ return {
 			fg_muted = dsl.blend(
 				dsl.get { "light", "layer2", "fg" },
 				dsl.get { "light", "layer2", "bg" },
-				0.6
+				0.5
 			),
 			border = dsl.darker_contrast(
 				dsl.get { "light", "layer2", "bg" },
@@ -72,7 +72,7 @@ return {
 			fg_muted = dsl.blend(
 				dsl.get { "light", "layer3", "fg" },
 				dsl.get { "light", "layer3", "bg" },
-				0.6
+				0.5
 			),
 			border = dsl.darker_contrast(
 				dsl.get { "light", "layer3", "bg" },
@@ -170,7 +170,7 @@ return {
 			fg_muted = dsl.blend(
 				dsl.get { "dark", "canvas", "fg" },
 				dsl.get { "dark", "canvas", "bg" },
-				0.6
+				0.5
 			),
 			border = brighten(dsl.get { "dark", "canvas", "bg" }, 2),
 		},
@@ -185,7 +185,7 @@ return {
 			fg_muted = dsl.blend(
 				dsl.get { "dark", "layer1", "fg" },
 				dsl.get { "dark", "layer1", "bg" },
-				0.6
+				0.5
 			),
 			border = brighten(dsl.get { "dark", "layer1", "bg" }, 2),
 		},
@@ -200,7 +200,7 @@ return {
 			fg_muted = dsl.blend(
 				dsl.get { "dark", "layer2", "fg" },
 				dsl.get { "dark", "layer2", "bg" },
-				0.6
+				0.5
 			),
 			border = brighten(dsl.get { "dark", "layer2", "bg" }, 2),
 		},
@@ -215,7 +215,7 @@ return {
 			fg_muted = dsl.blend(
 				dsl.get { "dark", "layer3", "fg" },
 				dsl.get { "dark", "layer3", "bg" },
-				0.6
+				0.5
 			),
 			border = brighten(dsl.get { "dark", "layer3", "bg" }, 2),
 		},

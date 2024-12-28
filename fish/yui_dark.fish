@@ -5,14 +5,14 @@ set fish_color_redirection DCDBDB --bold
 set fish_color_end DCDBDB
 set fish_color_error ee5c66
 set fish_color_param DCDBDB --bold
-set fish_color_comment 6e626c --italic
+set fish_color_comment 81747d --italic
 set fish_color_history_current DCDBDB
 set fish_color_operator DCDBDB
 set fish_color_escape DCDBDB
 set fish_color_cwd DCDBDB
 set fish_color_cwd_root DCDBDB
 set fish_color_valid_path --underline
-set fish_color_autosuggestion 6e626c
+set fish_color_autosuggestion 81747d
 set fish_color_user DCDBDB
 set fish_color_host DCDBDB
 set fish_color_cancel -r
@@ -37,7 +37,7 @@ set fish_pager_color_description DCDBDB
 set fish_pager_color_selected_description DCDBDB
 set fish_pager_color_secondary_description DCDBDB
 
-set fish_pager_color_completion 6e626c
-set fish_pager_color_secondary_completion 6e626c
+set fish_pager_color_completion 81747d
+set fish_pager_color_secondary_completion 81747d
 set fish_pager_color_selected_completion DCDBDB
 	

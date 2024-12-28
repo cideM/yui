@@ -1,7 +1,7 @@
 		alacritty msg config -w -1\
 			'colors.primary.foreground="#DCDBDB"'\
 			'colors.primary.background="#23212C"'\
-			'colors.primary.dim_foreground="#6e626c"'\
+			'colors.primary.dim_foreground="#81747d"'\
 			'colors.cursor.foreground="CellBackground"'\
 			'colors.cursor.background="CellForeground"'\
 			'colors.vi_mode_cursor.foreground="CellBackground"'\
@@ -17,7 +17,7 @@
 			'colors.line_indicator.foreground="#2e2b42"'\
 			'colors.line_indicator.background="#69aafd"'\
 			'colors.footer_bar.foreground="#DCDBDB"'\
-			'colors.footer_bar.background="#353342"'\
+			'colors.footer_bar.background="#474356"'\
 			'colors.selection.foreground="#DCDBDB"'\
 			'colors.selection.background="#474356"'\
 			'colors.normal.black="#DCDBDB"'\

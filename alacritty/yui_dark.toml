@@ -2,7 +2,7 @@
 [colors.primary]
 foreground = "#DCDBDB"
 background = "#23212C"
-dim_foreground = "#6e626c"
+dim_foreground = "#81747d"
 [colors.cursor]
 text = "CellBackground"
 cursor = "CellForeground"
@@ -28,7 +28,7 @@ foreground = "#2e2b42"
 background = "#69aafd"
 [colors.footer_bar]
 foreground = "#DCDBDB"
-background = "#353342"
+background = "#474356"
 [colors.selection]
 text = "#DCDBDB"
 background = "#474356"
