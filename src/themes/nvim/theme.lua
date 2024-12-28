@@ -80,7 +80,12 @@ local function gen_variant(t, dsl)
 		String = link("String", "Constant"),
 		Character = link("Character", "Constant"),
 		Number = link("Number", "Constant"),
-		Boolean = link("Boolean", "Constant"),
+		Boolean = hlgroup {
+			name = "Boolean",
+			guifg = get { "Constant", "guifg" },
+			guibg = get { "Constant", "guibg" },
+			gui = { "bold" },
+		},
 		Float = link("Float", "Constant"),
 		Identifier = hlgroup {
 			name = "Identifier",

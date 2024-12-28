@@ -35,7 +35,7 @@
 	hi @punctuation guifg=#9f8a99 ctermfg=246
 	hi! link Character Constant
 	hi! link Number Constant
-	hi! link Boolean Constant
+	hi Boolean guifg=#C43E1C ctermfg=166 guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi! link Float Constant
 	hi Identifier guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi Function guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
