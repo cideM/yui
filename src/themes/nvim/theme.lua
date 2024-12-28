@@ -256,7 +256,7 @@ local function gen_variant(t, dsl)
 		},
 		FloatBorder = hlgroup {
 			name = "FloatBorder",
-			guifg = t.info.fg_normal,
+			guifg = t.canvas.border,
 			guibg = "NONE",
 		},
 		StatusLine = hlgroup {

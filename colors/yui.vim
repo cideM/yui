@@ -92,7 +92,7 @@
 	hi Title guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold,underline cterm=bold,underline
 	hi NormalFloat guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 	hi FloatTitle guifg=fg ctermfg=fg guibg=#dcd2d2 ctermbg=188 gui=underline,bold cterm=underline,bold
-	hi FloatBorder guifg=#3856d1 ctermfg=62 guibg=NONE ctermbg=NONE
+	hi FloatBorder guifg=#bca3a3 ctermfg=248 guibg=NONE ctermbg=NONE
 	hi StatusLine guifg=#3D3C44 ctermfg=238 guibg=#e6dfdf ctermbg=254 gui=NONE cterm=NONE
 	hi StatusLineNC guifg=#aa95a1 ctermfg=247 guibg=#e6dfdf ctermbg=254 gui=NONE cterm=NONE
 	hi ColorColumn guifg=#3D3C44 ctermfg=238 guibg=#F1EDED ctermbg=255
