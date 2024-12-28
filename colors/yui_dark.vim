@@ -96,7 +96,7 @@
 	hi FloatBorder guifg=#4f4b60 ctermfg=240 guibg=NONE ctermbg=NONE
 	hi StatusLine guifg=#DCDBDB ctermfg=253 guibg=#353342 ctermbg=237 gui=NONE cterm=NONE
 	hi StatusLineNC guifg=#7b6f7a ctermfg=243 guibg=#353342 ctermbg=237 gui=NONE cterm=NONE
-	hi ColorColumn guifg=#DCDBDB ctermfg=253 guibg=#23212C ctermbg=235
+	hi ColorColumn guifg=#DCDBDB ctermfg=253 guibg=#353342 ctermbg=237
 	hi! link CursorColumn CursorLine
 	hi CopilotSuggestion guifg=#6e626c ctermfg=242 guibg=NONE ctermbg=NONE
 	hi WinBar guifg=#DCDBDB ctermfg=253 guibg=#474356 ctermbg=239 guisp=#746f86 gui=underline cterm=underline

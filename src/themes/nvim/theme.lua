@@ -283,8 +283,8 @@ local function gen_variant(t, dsl)
 		},
 		ColorColumn = hlgroup {
 			name = "ColorColumn",
-			guifg = get { "Normal", "guifg" },
-			guibg = get { "Normal", "guibg" },
+			guifg = t.layer1.fg,
+			guibg = t.layer1.bg,
 		},
 		CopilotSuggestion = hlgroup {
 			name = "CopilotSuggestion",
