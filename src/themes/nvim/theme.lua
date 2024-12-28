@@ -162,6 +162,8 @@ local function gen_variant(t, dsl)
 			guibg = "NONE",
 			gui = "NONE",
 		},
+		-- This seems to be applied to { } when creating literals
+		["@constructor.lua"] = link("@constructor.lua", "Punctuation"),
 		["@tag"] = link("@tag", "Tag"),
 		["@tag.builtin"] = link("@tag.builtin", "Tag"),
 		["@operator.tsx"] = link("@operator.tsx", "Tag"),

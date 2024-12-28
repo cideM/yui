@@ -33,6 +33,7 @@
 	hi Constant guifg=#E66F51 ctermfg=167 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi! link String Constant
 	hi @punctuation guifg=#6e626c ctermfg=242
+	hi! link @constructor.lua @punctuation
 	hi! link Character Constant
 	hi! link Number Constant
 	hi Boolean guifg=#E66F51 ctermfg=167 guibg=NONE ctermbg=NONE gui=bold cterm=bold

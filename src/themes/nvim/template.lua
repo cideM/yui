@@ -39,6 +39,7 @@ return function(colors, name)
 	${Constant}
 	${String}
 	${Punctuation}
+	${@constructor.lua}
 	${Character}
 	${Number}
 	${Boolean}
