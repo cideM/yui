@@ -262,14 +262,14 @@
 		hi! link @text.emphasis @text.strong
 		hi! link @method @lsp.typemod.member.declaration
 		hi @field guifg=fg ctermfg=fg gui=NONE cterm=NONE
-		hi @variable guifg=fg ctermfg=fg gui=NONE cterm=NONE
+		hi @variable guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
 		hi @symbol guifg=fg ctermfg=fg gui=bold cterm=bold
 		hi! link @exception Normal
 		hi! link @function.call @method.call
-		hi @method.call guifg=fg ctermfg=fg gui=italic cterm=italic
+		hi @method.call guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
 		hi! link @function.builtin @lsp.typemod.function.defaultLibrary
 		hi! link @namespace.builtin @lsp.typemod.function.defaultLibrary
-		hi @keyword.function guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
+		hi @keyword.function guifg=NONE ctermfg=NONE gui=bold cterm=bold
 		hi @keyword.operator guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
 		hi @keyword.return guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
 

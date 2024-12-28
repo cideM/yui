@@ -902,18 +902,18 @@ local function gen_variant(t, dsl)
 		["@symbol"] = hlgroup { name = "@symbol", guifg = "fg", gui = "bold" },
 		["@variable"] = hlgroup {
 			name = "@variable",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = "NONE",
 		},
 		["@method.call"] = hlgroup {
 			name = "@method.call",
-			guifg = "fg",
-			gui = "italic",
+			guifg = "NONE",
+			gui = "NONE",
 		},
 		["@keyword.function"] = hlgroup {
 			name = "@keyword.function",
 			guifg = "NONE",
-			gui = "NONE",
+			gui = "bold",
 		},
 		["@keyword.operator"] = hlgroup {
 			name = "@keyword.operator",
