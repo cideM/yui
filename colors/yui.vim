@@ -57,7 +57,7 @@
 	hi Typedef guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=italic cterm=italic
 	hi Special guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi! link SpecialChar Special
-	hi! link Tag Special
+	hi Tag guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi! link Delimiter Special
 	hi! link SpecialComment Special
 	hi! link Debug Special
@@ -255,6 +255,9 @@
 
 		hi @keyword.coroutine guifg=fg ctermfg=fg gui=bold cterm=bold
 		hi! link @text.literal helpExample
+		hi! link @tag Tag
+		hi! link @tag.builtin Tag
+		hi! link @operator.tsx Tag
 		hi! link @constant.builtin Constant
 		hi! link @function @lsp.typemod.function.declaration
 		hi! link @function.method.call @method.call

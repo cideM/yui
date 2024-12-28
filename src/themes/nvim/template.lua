@@ -261,6 +261,9 @@ return function(colors, name)
 
 		${@keyword.coroutine}
 		${@text.literal}
+		${@tag}
+		${@tag.builtin}
+		${@operator.tsx}
 		${@constant.builtin}
 		${@function}
 		${@function.method.call}
