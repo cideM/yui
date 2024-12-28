@@ -30,12 +30,13 @@
 	hi DiffText guifg=#3856d1 ctermfg=62 guibg=#ccc2f2 ctermbg=183 gui=NONE cterm=NONE
 	hi Directory guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 	hi ErrorMsg guifg=#B22E32 ctermfg=125 guibg=#f2d8d8 ctermbg=224 gui=none cterm=none
-	hi Constant guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-	hi String guifg=#C43E1C ctermfg=166 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-	hi Character guifg=#C43E1C ctermfg=166 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-	hi Number guifg=#C43E1C ctermfg=166 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-	hi Boolean guifg=#C43E1C ctermfg=166 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-	hi Float guifg=#C43E1C ctermfg=166 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi Constant guifg=#C43E1C ctermfg=166 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi! link String Constant
+	hi @punctuation guifg=#b19da8 ctermfg=248
+	hi! link Character Constant
+	hi! link Number Constant
+	hi! link Boolean Constant
+	hi! link Float Constant
 	hi Identifier guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi Function guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 	hi Statement guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
