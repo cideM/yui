@@ -251,6 +251,8 @@ return function(colors, name)
 		let g:terminal_color_15 = '${TermBrightWhite}'
 		
 		${@function.haskell}
+		${@constructor.haskell}
+		${@type.haskell}
 		${@variable.haskell}
 		${@variable.parameter.haskell}
 		${@keyword.haskell}

@@ -244,17 +244,19 @@
 		let g:terminal_color_14 = '#18c6ce'
 		let g:terminal_color_15 = '#f5f5f5'
 		
-		hi @function.haskell guifg=fg ctermfg=fg gui=NONE cterm=NONE
-		hi @variable.haskell guifg=fg ctermfg=fg gui=NONE cterm=NONE
-		hi @variable.parameter.haskell guifg=fg ctermfg=fg gui=NONE cterm=NONE
-		hi @keyword.haskell guifg=fg ctermfg=fg gui=bold cterm=bold
-		hi @operator.haskell guifg=fg ctermfg=fg gui=NONE cterm=NONE
+		hi @function.haskell guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
+		hi! link @constructor.haskell Normal
+		hi @type.haskell guifg=NONE ctermfg=NONE gui=bold cterm=bold
+		hi @variable.haskell guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
+		hi @variable.parameter.haskell guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
+		hi @keyword.haskell guifg=NONE ctermfg=NONE gui=bold cterm=bold
+		hi @operator.haskell guifg=NONE ctermfg=NONE gui=bold cterm=bold
 
 		hi! link @diff.plus DiffAdd
 		hi! link @diff.minus DiffDelete
 		hi! link @diff.delta DiffChange
 
-		hi @keyword.coroutine guifg=fg ctermfg=fg gui=bold cterm=bold
+		hi @keyword.coroutine guifg=NONE ctermfg=NONE gui=bold cterm=bold
 		hi! link @text.literal helpExample
 		hi! link @tag Tag
 		hi! link @tag.builtin Tag

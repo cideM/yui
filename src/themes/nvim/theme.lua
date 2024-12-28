@@ -848,34 +848,42 @@ local function gen_variant(t, dsl)
 			guifg = t.info.fg_normal,
 			guibg = "NONE",
 		},
+		-- In Haskell you use constructors a lot (e.g., when creating
+		-- data types) so they should just look like code
+		["@constructor.haskell"] = link("@constructor.haskell", "Normal"),
 		["@function.haskell"] = hlgroup {
 			name = "@function.haskell",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = "NONE",
+		},
+		["@type.haskell"] = hlgroup {
+			name = "@type.haskell",
+			guifg = "NONE",
+			gui = "bold",
 		},
 		["@variable.haskell"] = hlgroup {
 			name = "@variable.haskell",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = "NONE",
 		},
 		["@variable.parameter.haskell"] = hlgroup {
 			name = "@variable.parameter.haskell",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = "NONE",
 		},
 		["@keyword.haskell"] = hlgroup {
 			name = "@keyword.haskell",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = { "bold" },
 		},
 		["@operator.haskell"] = hlgroup {
 			name = "@operator.haskell",
-			guifg = "fg",
-			gui = { "NONE" },
+			guifg = "NONE",
+			gui = { "bold" },
 		},
 		["@keyword.coroutine"] = hlgroup {
 			name = "@keyword.coroutine",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = "bold",
 		},
 		helpExample = link("helpExample", "Pmenu"),
