@@ -32,7 +32,7 @@
 	hi ErrorMsg guifg=#B22E32 ctermfg=125 guibg=#f2d8d8 ctermbg=224 gui=none cterm=none
 	hi Constant guifg=#C43E1C ctermfg=166 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi! link String Constant
-	hi @punctuation guifg=#b19da8 ctermfg=248
+	hi @punctuation guifg=#9f8a99 ctermfg=246
 	hi! link Character Constant
 	hi! link Number Constant
 	hi! link Boolean Constant
@@ -97,7 +97,7 @@
 	hi StatusLineNC guifg=#aa95a1 ctermfg=247 guibg=#e6dfdf ctermbg=254 gui=NONE cterm=NONE
 	hi ColorColumn guifg=#3D3C44 ctermfg=238 guibg=#F1EDED ctermbg=255
 	hi! link CursorColumn CursorLine
-	hi CopilotSuggestion guifg=#b19da8 ctermfg=248 guibg=NONE ctermbg=NONE
+	hi CopilotSuggestion guifg=#9f8a99 ctermfg=246 guibg=NONE ctermbg=NONE
 	hi WinBar guifg=#3D3C44 ctermfg=238 guibg=#dcd2d2 ctermbg=188 guisp=#b08f8f gui=underline cterm=underline
 	hi NonText guifg=#dcd2d2 ctermfg=188 guibg=NONE ctermbg=NONE
 	hi WinBarNC guifg=#a48e9a ctermfg=247 guibg=#e6dfdf ctermbg=254 guisp=#b08f8f gui=underline cterm=underline
@@ -307,7 +307,7 @@
 
 	let s:yui_folds_value = get(g:, 'yui_folds', 'fade')
 	if s:yui_folds_value ==? 'fade'
-		hi FoldColumn guifg=#b19da8 ctermfg=248 guibg=NONE ctermbg=NONE
+		hi FoldColumn guifg=#9f8a99 ctermfg=246 guibg=NONE ctermbg=NONE
 		hi! link Folded FoldColumn
 	elseif s:yui_folds_value ==? 'emphasize'
 		hi FoldColumn guifg=#3D3C44 ctermfg=238 guibg=NONE ctermbg=NONE
@@ -317,7 +317,7 @@
 
 	let s:yui_line_numbers_value = get(g:, 'yui_line_numbers', 'fade')
 	if s:yui_line_numbers_value ==? 'fade'
-		hi SignColumn guifg=#b19da8 ctermfg=248 guibg=NONE ctermbg=NONE
+		hi SignColumn guifg=#9f8a99 ctermfg=246 guibg=NONE ctermbg=NONE
 		hi! link LineNr SignColumn
 	elseif s:yui_line_numbers_value ==? 'emphasize'
 		hi SignColumn guifg=#3D3C44 ctermfg=238 guibg=NONE ctermbg=NONE
@@ -337,7 +337,7 @@
 	if s:yui_comments_value ==? 'normal'
 		hi Comment guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=italic cterm=italic
 	elseif s:yui_comments_value ==? 'fade'
-		hi Comment guifg=#b19da8 ctermfg=248 guibg=NONE ctermbg=NONE gui=italic cterm=italic
+		hi Comment guifg=#9f8a99 ctermfg=246 guibg=NONE ctermbg=NONE gui=italic cterm=italic
 	elseif s:yui_comments_value ==? 'emphasize'
 		hi Comment guifg=#C43E1C ctermfg=166 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	elseif s:yui_comments_value ==? 'bg'

@@ -2,7 +2,7 @@
 [colors.primary]
 foreground = "#3D3C44"
 background = "#F1EDED"
-dim_foreground = "#b19da8"
+dim_foreground = "#9f8a99"
 [colors.cursor]
 text = "CellBackground"
 cursor = "CellForeground"

@@ -38,6 +38,7 @@ return function(colors, name)
 	${ErrorMsg}
 	${Constant}
 	${String}
+	${Punctuation}
 	${Character}
 	${Number}
 	${Boolean}

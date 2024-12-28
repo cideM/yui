@@ -18,7 +18,7 @@ return {
 			fg_muted = dsl.blend(
 				dsl.get { "light", "canvas", "fg" },
 				dsl.get { "light", "canvas", "bg" },
-				0.6
+				0.5
 			),
 			border = dsl.darker_contrast(
 				dsl.get { "light", "canvas", "bg" },

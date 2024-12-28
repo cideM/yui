@@ -5,14 +5,14 @@ set fish_color_redirection 3D3C44 --bold
 set fish_color_end 3D3C44
 set fish_color_error B22E32
 set fish_color_param 3D3C44 --bold
-set fish_color_comment b19da8 --italic
+set fish_color_comment 9f8a99 --italic
 set fish_color_history_current 3D3C44
 set fish_color_operator 3D3C44
 set fish_color_escape 3D3C44
 set fish_color_cwd 3D3C44
 set fish_color_cwd_root 3D3C44
 set fish_color_valid_path --underline
-set fish_color_autosuggestion b19da8
+set fish_color_autosuggestion 9f8a99
 set fish_color_user 3D3C44
 set fish_color_host 3D3C44
 set fish_color_cancel -r
@@ -37,7 +37,7 @@ set fish_pager_color_description 3D3C44
 set fish_pager_color_selected_description 3D3C44
 set fish_pager_color_secondary_description 3D3C44
 
-set fish_pager_color_completion b19da8
-set fish_pager_color_secondary_completion b19da8
+set fish_pager_color_completion 9f8a99
+set fish_pager_color_secondary_completion 9f8a99
 set fish_pager_color_selected_completion 3D3C44
 	

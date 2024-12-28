@@ -4,7 +4,7 @@
 --color-canvas-bg: light-dark(#F1EDED, #23212C);
 --color-canvas-border: light-dark(#bca3a3, #4f4b60);
 --color-canvas-fg-faint: light-dark(#e1d9da, #35303c);
---color-canvas-fg-muted: light-dark(#b19da8, #6e626c);
+--color-canvas-fg-muted: light-dark(#9f8a99, #6e626c);
 --color-canvas-fg: light-dark(#3D3C44, #DCDBDB);
 --color-error-bg: light-dark(#f2d8d8, #30293a);
 --color-error-fg-normal: light-dark(#B22E32, #F55661);
@@ -18,7 +18,7 @@
 --color-inverted-canvas-bg: light-dark(#23212C, #F1EDED);
 --color-inverted-canvas-border: light-dark(#4f4b60, #bca3a3);
 --color-inverted-canvas-fg-faint: light-dark(#35303c, #e1d9da);
---color-inverted-canvas-fg-muted: light-dark(#6e626c, #b19da8);
+--color-inverted-canvas-fg-muted: light-dark(#6e626c, #9f8a99);
 --color-inverted-canvas-fg: light-dark(#DCDBDB, #3D3C44);
 --color-inverted-error-bg: light-dark(#30293a, #f2d8d8);
 --color-inverted-error-fg-normal: light-dark(#F55661, #B22E32);

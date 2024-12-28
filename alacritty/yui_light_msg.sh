@@ -1,7 +1,7 @@
 		alacritty msg config -w -1\
 			'colors.primary.foreground="#3D3C44"'\
 			'colors.primary.background="#F1EDED"'\
-			'colors.primary.dim_foreground="#b19da8"'\
+			'colors.primary.dim_foreground="#9f8a99"'\
 			'colors.cursor.foreground="CellBackground"'\
 			'colors.cursor.background="CellForeground"'\
 			'colors.vi_mode_cursor.foreground="CellBackground"'\

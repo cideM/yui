@@ -88,6 +88,10 @@ local function gen_variant(t, dsl)
 			guibg = "NONE",
 			gui = "NONE",
 		},
+		Punctuation = hlgroup {
+			name = "@punctuation",
+			guifg = t.canvas.fg_muted,
+		},
 		Function = hlgroup { name = "Function", guifg = "fg", guibg = "NONE" },
 		Statement = hlgroup {
 			name = "Statement",
