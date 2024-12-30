@@ -39,7 +39,6 @@ return function(colors, name)
 	${Constant}
 	${String}
 	${Punctuation}
-	${@constructor.lua}
 	${Character}
 	${Number}
 	${Boolean}
@@ -251,6 +250,9 @@ return function(colors, name)
 		let g:terminal_color_15 = '${TermBrightWhite}'
 		
 		${@function.haskell}
+	    ${@constructor.lua}
+		${@markup.raw.block.markdown}
+		${@punctuation.special.markdown}
 		${@constructor.haskell}
 		${@type.haskell}
 		${@variable.haskell}

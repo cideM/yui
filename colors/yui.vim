@@ -33,14 +33,13 @@
 	hi Constant guifg=#C43E1C ctermfg=166 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi! link String Constant
 	hi @punctuation guifg=#9f8a99 ctermfg=246
-	hi! link @constructor.lua @punctuation
 	hi! link Character Constant
 	hi! link Number Constant
 	hi Boolean guifg=#C43E1C ctermfg=166 guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi! link Float Constant
 	hi Identifier guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi Function guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-	hi Statement guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
+	hi Statement guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi Repeat guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi Conditional guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi Label guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
@@ -66,7 +65,7 @@
 	hi Ignore guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 	hi Error guifg=#B22E32 ctermfg=125 guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi! link Todo DiffChange
-	hi MatchParen guifg=NONE ctermfg=NONE guibg=#d3c5c5 ctermbg=251 gui=NONE cterm=NONE
+	hi MatchParen guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=bold,underline cterm=bold,underline
 	hi ModeMsg guifg=#3856d1 ctermfg=62 guibg=#ccc2f2 ctermbg=183 gui=NONE cterm=NONE
 	hi MoreMsg guifg=#3856d1 ctermfg=62 guibg=#ccc2f2 ctermbg=183 gui=NONE cterm=NONE
 	hi WarningMsg guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
@@ -90,7 +89,7 @@
 	hi SpellBad guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE guisp=#f2d8d8 gui=undercurl cterm=undercurl
 	hi VertSplit guifg=#bca3a3 ctermfg=248 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi! link Menu Pmenu
-	hi Title guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold,underline cterm=bold,underline
+	hi Title guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi NormalFloat guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 	hi FloatTitle guifg=fg ctermfg=fg guibg=#dcd2d2 ctermbg=188 gui=underline,bold cterm=underline,bold
 	hi FloatBorder guifg=#bca3a3 ctermfg=248 guibg=NONE ctermbg=NONE
@@ -245,7 +244,10 @@
 		let g:terminal_color_15 = '#909098'
 		
 		hi @function.haskell guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
-		hi! link @constructor.haskell Normal
+	    hi! link @constructor.lua @punctuation
+		hi @markup.raw.block.markdown guifg=#3D3C44 ctermfg=238 guibg=#e6dfdf ctermbg=254 gui=NONE cterm=NONE
+		hi @punctuation.special.markdown guifg=#9f8a99 ctermfg=246 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+		hi @constructor.haskell guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
 		hi @type.haskell guifg=NONE ctermfg=NONE gui=bold cterm=bold
 		hi @variable.haskell guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
 		hi @variable.parameter.haskell guifg=NONE ctermfg=NONE gui=NONE cterm=NONE

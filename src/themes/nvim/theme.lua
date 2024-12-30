@@ -100,7 +100,7 @@ local function gen_variant(t, dsl)
 		Function = hlgroup { name = "Function", guifg = "fg", guibg = "NONE" },
 		Statement = hlgroup {
 			name = "Statement",
-			guifg = "fg",
+			guifg = "NONE",
 			guibg = "NONE",
 			gui = "bold",
 		},
@@ -183,12 +183,24 @@ local function gen_variant(t, dsl)
 			guibg = "NONE",
 			gui = "bold",
 		},
+		["@punctuation.special.markdown"] = hlgroup {
+			name = "@punctuation.special.markdown",
+			guifg = t.canvas.fg_muted,
+			guibg = "NONE",
+			gui = "NONE",
+		},
+		["@markup.raw.block.markdown"] = hlgroup {
+			name = "@markup.raw.block.markdown",
+			guifg = t.layer1.fg,
+			guibg = t.layer1.bg,
+			gui = "NONE",
+		},
 		Todo = link("Todo", "DiffChange"),
 		MatchParen = hlgroup {
 			name = "MatchParen",
 			guifg = "NONE",
-			guibg = t.layer3.bg,
-			gui = "NONE",
+			guibg = "NONE",
+			gui = { "bold", "underline" },
 		},
 		ModeMsg = hlgroup {
 			name = "ModeMsg",
@@ -251,7 +263,7 @@ local function gen_variant(t, dsl)
 			name = "Title",
 			guifg = "fg",
 			guibg = "NONE",
-			gui = { "bold", "underline" },
+			gui = { "bold" },
 		},
 		NormalFloat = hlgroup {
 			name = "NormalFloat",
@@ -850,7 +862,11 @@ local function gen_variant(t, dsl)
 		},
 		-- In Haskell you use constructors a lot (e.g., when creating
 		-- data types) so they should just look like code
-		["@constructor.haskell"] = link("@constructor.haskell", "Normal"),
+		["@constructor.haskell"] = hlgroup {
+			name = "@constructor.haskell",
+			guifg = "NONE",
+			gui = "NONE",
+		},
 		["@function.haskell"] = hlgroup {
 			name = "@function.haskell",
 			guifg = "NONE",
