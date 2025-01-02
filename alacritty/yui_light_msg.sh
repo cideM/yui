@@ -6,8 +6,8 @@
 			'colors.cursor.background="CellForeground"'\
 			'colors.vi_mode_cursor.foreground="CellBackground"'\
 			'colors.vi_mode_cursor.background="CellForeground"'\
-			'colors.search.matches.foreground="#3D3C44"'\
-			'colors.search.matches.background="#dcd2d2"'\
+			'colors.search.matches.foreground="#dcd2d2"'\
+			'colors.search.matches.background="#3D3C44"'\
 			'colors.search.focused_match.foreground="#ccc2f2"'\
 			'colors.search.focused_match.background="#3856d1"'\
 			'colors.hints.start.foreground="#3856d1"'\
@@ -18,8 +18,8 @@
 			'colors.line_indicator.background="#3856d1"'\
 			'colors.footer_bar.foreground="#3D3C44"'\
 			'colors.footer_bar.background="#dcd2d2"'\
-			'colors.selection.foreground="#3D3C44"'\
-			'colors.selection.background="#dcd2d2"'\
+			'colors.selection.foreground="#dcd2d2"'\
+			'colors.selection.background="#3D3C44"'\
 			'colors.normal.black="#3D3C44"'\
 			'colors.normal.red="#B22E32"'\
 			'colors.normal.green="#346e27"'\

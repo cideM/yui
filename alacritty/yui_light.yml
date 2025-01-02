@@ -15,8 +15,8 @@
 		},
 		"search": {
 			"matches": {
-				"foreground": "#3D3C44",
-				"background": "#dcd2d2",
+				"foreground": "#dcd2d2",
+				"background": "#3D3C44",
 			},
 			"focused_match": {
 				"foreground": "#ccc2f2",
@@ -42,8 +42,8 @@
 			"background": "#dcd2d2",
 		},
 		"selection": {
-			"text": "#3D3C44",
-			"background": "#dcd2d2",
+			"text": "#dcd2d2",
+			"background": "#3D3C44",
 		},
 		"normal": {
 			"black": "#3D3C44",

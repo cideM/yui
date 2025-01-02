@@ -6,7 +6,7 @@ set fish_color_end 3D3C44
 set fish_color_error B22E32
 set fish_color_param 3D3C44 --bold
 set fish_color_comment 9f8a99 --italic
-set fish_color_history_current 3D3C44
+set fish_color_history_current 565633
 set fish_color_operator 3D3C44
 set fish_color_escape 3D3C44
 set fish_color_cwd 3D3C44
@@ -20,24 +20,24 @@ set fish_color_option 3D3C44
 set fish_color_keyword 3D3C44
 set fish_color_host_remote 3D3C44
 set fish_color_status 3D3C44
-set fish_color_match 3D3C44
-set fish_color_selection --background=dcd2d2
-set fish_color_search_match --background=d3c5c5
+set fish_color_match dcd2d2
+set fish_color_selection --background=3D3C44
+set fish_color_search_match --background=e8e792
 
-set fish_pager_color_prefix 3D3C44
-set fish_pager_color_selected_prefix 3D3C44
-set fish_pager_color_secondary_prefix 3D3C44
+set fish_pager_color_prefix dcd2d2
+set fish_pager_color_selected_prefix 565633
+set fish_pager_color_secondary_prefix dcd2d2
 
 set fish_pager_color_progress 3D3C44 --background=F1EDED
-set fish_pager_color_selected_background --background=d3c5c5
+set fish_pager_color_selected_background --background=e8e792
 set fish_pager_color_background normal
 set fish_pager_color_secondary_background normal
 
 set fish_pager_color_description 3D3C44
-set fish_pager_color_selected_description 3D3C44
+set fish_pager_color_selected_description 565633
 set fish_pager_color_secondary_description 3D3C44
 
 set fish_pager_color_completion 9f8a99
 set fish_pager_color_secondary_completion 9f8a99
-set fish_pager_color_selected_completion 3D3C44
+set fish_pager_color_selected_completion 565633
 	

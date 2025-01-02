@@ -8,11 +8,7 @@ local function gen_variant(t, dsl)
 			guifg = t.canvas.fg,
 			guibg = t.canvas.bg,
 		},
-		NormalNC = hlgroup {
-			name = "NormalNC",
-			guifg = t.layer2.fg,
-			guibg = "NONE",
-		},
+		NormalNC = link("NormalNC", "Normal"),
 		MsgArea = link("MsgArea", "Normal"),
 		Conceal = hlgroup {
 			name = "Conceal",
@@ -73,7 +69,7 @@ local function gen_variant(t, dsl)
 		},
 		Constant = hlgroup {
 			name = "Constant",
-			guifg = t.accent.fg,
+			guifg = t.success.fg_normal,
 			guibg = "NONE",
 			gui = "NONE",
 		},
@@ -139,7 +135,7 @@ local function gen_variant(t, dsl)
 			name = "Type",
 			guifg = "NONE",
 			guibg = "NONE",
-			gui = "NONE",
+			gui = { "bold" },
 		},
 		StorageClass = link("StorageClass", "Type"),
 		Structure = link("Structure", "Type"),
@@ -236,8 +232,8 @@ local function gen_variant(t, dsl)
 		TabLineFill = link("TabLineFill", "TabLine"),
 		Search = hlgroup {
 			name = "Search",
-			guifg = t.layer2.fg,
-			guibg = t.layer2.bg,
+			guifg = t.layer2.bg,
+			guibg = t.layer2.fg,
 			gui = "NONE",
 		},
 		CurSearch = hlgroup {
@@ -346,8 +342,8 @@ local function gen_variant(t, dsl)
 		},
 		PmenuSel = hlgroup {
 			name = "PmenuSel",
-			guifg = t.layer3.fg,
-			guibg = t.layer3.bg,
+			guifg = t.success.fg,
+			guibg = t.success.bg,
 			gui = "NONE",
 		},
 		PmenuKind = hlgroup {
@@ -381,8 +377,8 @@ local function gen_variant(t, dsl)
 		Question = hlgroup { name = "Question", guifg = "fg", guibg = "NONE" },
 		Visual = hlgroup {
 			name = "Visual",
-			guifg = t.layer2.fg,
-			guibg = t.layer2.bg,
+			guifg = t.layer2.bg,
+			guibg = t.layer2.fg,
 			gui = "NONE",
 		},
 		VisualNOS = hlgroup {
@@ -1029,8 +1025,8 @@ local function gen_variant(t, dsl)
 		},
 		OptionBackgroundComments = hlgroup {
 			name = "Comment",
-			guifg = "bg",
-			guibg = "fg",
+			guifg = t.layer1.fg,
+			guibg = t.layer1.bg,
 			gui = "NONE",
 		},
 		StatusLineTerm = link("StatusLineTerm", "StatusLine"),

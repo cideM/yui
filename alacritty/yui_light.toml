@@ -11,8 +11,8 @@ text = "CellBackground"
 cursor = "CellForeground"
 [colors.search]
 [colors.search.matches]
-foreground = "#3D3C44"
-background = "#dcd2d2"
+foreground = "#dcd2d2"
+background = "#3D3C44"
 [colors.search.focused_match]
 foreground = "#ccc2f2"
 background = "#3856d1"
@@ -30,8 +30,8 @@ background = "#3856d1"
 foreground = "#3D3C44"
 background = "#dcd2d2"
 [colors.selection]
-text = "#3D3C44"
-background = "#dcd2d2"
+text = "#dcd2d2"
+background = "#3D3C44"
 [colors.normal]
 black = "#3D3C44"
 red = "#B22E32"

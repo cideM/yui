@@ -13,7 +13,7 @@
 	let g:colors_name = 'yui'
 
 	hi Normal guifg=#3D3C44 ctermfg=238 guibg=#F1EDED ctermbg=255
-	hi NormalNC guifg=#3D3C44 ctermfg=238 guibg=NONE ctermbg=NONE
+	hi! link NormalNC Normal
 	hi! link MsgArea Normal
 	hi Conceal guifg=#3D3C44 ctermfg=238 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi! link ToolbarButton TabLine
@@ -30,12 +30,12 @@
 	hi DiffText guifg=#3856d1 ctermfg=62 guibg=#ccc2f2 ctermbg=183 gui=NONE cterm=NONE
 	hi Directory guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 	hi ErrorMsg guifg=#B22E32 ctermfg=125 guibg=#f2d8d8 ctermbg=224 gui=none cterm=none
-	hi Constant guifg=#C43E1C ctermfg=166 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi Constant guifg=#346e27 ctermfg=238 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi! link String Constant
 	hi @punctuation guifg=#9f8a99 ctermfg=246
 	hi! link Character Constant
 	hi! link Number Constant
-	hi Boolean guifg=#C43E1C ctermfg=166 guibg=NONE ctermbg=NONE gui=bold cterm=bold
+	hi Boolean guifg=#346e27 ctermfg=238 guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi! link Float Constant
 	hi Identifier guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi Function guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
@@ -51,7 +51,7 @@
 	hi! link Define PreProc
 	hi! link Macro PreProc
 	hi! link PreCondit PreProc
-	hi Type guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi Type guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi! link StorageClass Type
 	hi! link Structure Type
 	hi Typedef guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=italic cterm=italic
@@ -73,7 +73,7 @@
 	hi TabLine guifg=#937f8d ctermfg=245 guibg=#dcd2d2 ctermbg=188 gui=NONE cterm=NONE
 	hi! link TabLineSel StatusLine
 	hi! link TabLineFill TabLine
-	hi Search guifg=#3D3C44 ctermfg=238 guibg=#dcd2d2 ctermbg=188 gui=NONE cterm=NONE
+	hi Search guifg=#dcd2d2 ctermfg=188 guibg=#3D3C44 ctermbg=238 gui=NONE cterm=NONE
 	hi CurSearch guifg=#ccc2f2 ctermfg=183 guibg=#3856d1 ctermbg=62 gui=NONE cterm=NONE
 	hi! link IncSearch CurSearch
 	hi! link SpellCap SpellBad
@@ -103,15 +103,15 @@
 	hi WinBarNC guifg=#937f8d ctermfg=245 guibg=#e6dfdf ctermbg=254 guisp=#b08f8f gui=underline cterm=underline
 	hi! link PmenuExtraSel PmenuSel
 	hi! link LspSignatureActiveParameter Search
-	hi PmenuSel guifg=#3D3C44 ctermfg=238 guibg=#d3c5c5 ctermbg=251 gui=NONE cterm=NONE
+	hi PmenuSel guifg=#565633 ctermfg=239 guibg=#e8e792 ctermbg=186 gui=NONE cterm=NONE
 	hi Pmenu guifg=#3D3C44 ctermfg=238 guibg=#dcd2d2 ctermbg=188
 	hi PmenuKind guifg=#3D3C44 ctermfg=238 guibg=#dcd2d2 ctermbg=188 gui=bold cterm=bold
-	hi PmenuKindSel guifg=#3D3C44 ctermfg=238 guibg=#d3c5c5 ctermbg=251 gui=bold cterm=bold
+	hi PmenuKindSel guifg=#565633 ctermfg=239 guibg=#e8e792 ctermbg=186 gui=bold cterm=bold
 	hi PmenuExtra guifg=#3D3C44 ctermfg=238 guibg=#dcd2d2 ctermbg=188
 	hi PmenuSbar guifg=NONE ctermfg=NONE guibg=#dcd2d2 ctermbg=188
 	hi PmenuThumb guifg=NONE ctermfg=NONE guibg=#d3c5c5 ctermbg=251
 	hi Question guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-	hi Visual guifg=#3D3C44 ctermfg=238 guibg=#dcd2d2 ctermbg=188 gui=NONE cterm=NONE
+	hi Visual guifg=#dcd2d2 ctermfg=188 guibg=#3D3C44 ctermbg=238 gui=NONE cterm=NONE
 	hi VisualNOS guifg=NONE ctermfg=NONE guibg=#d3c5c5 ctermbg=251
 	hi Scrollbar guifg=NONE ctermfg=NONE guibg=#dcd2d2 ctermbg=188
 	hi DiagnosticError guifg=#B22E32 ctermfg=125 guibg=#f2d8d8 ctermbg=224 gui=NONE cterm=NONE
@@ -220,8 +220,8 @@
 	hi TreesitterContext guifg=NONE ctermfg=NONE guibg=#e6dfdf ctermbg=254 gui=NONE cterm=NONE
 	hi! link TreesitterContextLineNumberBottom TreesitterContextBottom
 	hi TreesitterContextSeparator guifg=#b69999 ctermfg=247 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-	hi LeapLabelSecondary guifg=#3D3C44 ctermfg=238 guibg=#3D3C44 ctermbg=238 gui=NONE cterm=NONE
-	hi LeapLabelSelected guifg=#3D3C44 ctermfg=238 guibg=#dcd2d2 ctermbg=188 gui=NONE cterm=NONE
+	hi LeapLabelSecondary guifg=#dcd2d2 ctermfg=188 guibg=#dcd2d2 ctermbg=188 gui=NONE cterm=NONE
+	hi LeapLabelSelected guifg=#dcd2d2 ctermfg=188 guibg=#3D3C44 ctermbg=238 gui=NONE cterm=NONE
 	hi WhichKeySeperator guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 
 	if has('nvim')
@@ -349,6 +349,6 @@
 	elseif s:yui_comments_value ==? 'emphasize'
 		hi Comment guifg=#C43E1C ctermfg=166 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	elseif s:yui_comments_value ==? 'bg'
-		hi Comment guifg=bg ctermfg=bg guibg=fg ctermbg=fg gui=NONE cterm=NONE
+		hi Comment guifg=#3D3C44 ctermfg=238 guibg=#e6dfdf ctermbg=254 gui=NONE cterm=NONE
 	endif
 	

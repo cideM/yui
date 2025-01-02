@@ -157,8 +157,8 @@ return {
 	},
 	dark = {
 		theme_name = "yui_dark",
-		fg = "#DCDBDB",
-		bg = "#23212C",
+		fg = "#B0ABAB",
+		bg = "#1F2029",
 		canvas = {
 			fg = dsl.get { "dark", "fg" },
 			bg = dsl.get { "dark", "bg" },
@@ -172,11 +172,15 @@ return {
 				dsl.get { "dark", "canvas", "bg" },
 				0.5
 			),
-			border = brighten(dsl.get { "dark", "canvas", "bg" }, 2),
+			border = dsl.darker_contrast(dsl.get { "dark", "layer1", "bg" }, 2),
 		},
 		layer1 = {
-			fg = dsl.get { "dark", "fg" },
-			bg = brighten(dsl.get { "dark", "canvas", "bg" }, 1.3),
+			fg = dsl.brighter_contrast(dsl.get { "dark", "layer1", "bg" }, 6),
+			bg = dsl.blend(
+				dsl.darker_contrast(dsl.get { "dark", "canvas", "bg" }, 1.1),
+				dsl.get { "dark", "canvas", "bg" },
+				0.2
+			),
 			fg_faint = dsl.blend(
 				dsl.get { "dark", "layer1", "fg" },
 				dsl.get { "dark", "layer1", "bg" },
@@ -187,11 +191,11 @@ return {
 				dsl.get { "dark", "layer1", "bg" },
 				0.5
 			),
-			border = brighten(dsl.get { "dark", "layer1", "bg" }, 2),
+			border = dsl.darker_contrast(dsl.get { "dark", "layer1", "bg" }, 2),
 		},
 		layer2 = {
-			fg = dsl.get { "dark", "fg" },
-			bg = brighten(dsl.get { "dark", "layer1", "bg" }, 1.3),
+			fg = dsl.brighter_contrast(dsl.get { "dark", "layer2", "bg" }, 6),
+			bg = dsl.darker_contrast(dsl.get { "dark", "layer1", "bg" }, 0.7),
 			fg_faint = dsl.blend(
 				dsl.get { "dark", "layer2", "fg" },
 				dsl.get { "dark", "layer2", "bg" },
@@ -202,11 +206,11 @@ return {
 				dsl.get { "dark", "layer2", "bg" },
 				0.5
 			),
-			border = brighten(dsl.get { "dark", "layer2", "bg" }, 2),
+			border = dsl.darker_contrast(dsl.get { "dark", "layer1", "bg" }, 2),
 		},
 		layer3 = {
-			fg = dsl.get { "dark", "fg" },
-			bg = brighten(dsl.get { "dark", "layer2", "bg" }, 1.3),
+			fg = dsl.brighter_contrast(dsl.get { "dark", "layer3", "bg" }, 5),
+			bg = dsl.darker_contrast(dsl.get { "dark", "layer2", "bg" }, 0.6),
 			fg_faint = dsl.blend(
 				dsl.get { "dark", "layer3", "fg" },
 				dsl.get { "dark", "layer3", "bg" },
@@ -217,7 +221,7 @@ return {
 				dsl.get { "dark", "layer3", "bg" },
 				0.5
 			),
-			border = brighten(dsl.get { "dark", "layer3", "bg" }, 2),
+			border = dsl.darker_contrast(dsl.get { "dark", "layer1", "bg" }, 2),
 		},
 		colors = {
 			yellow = { fg = "#cfb787", bg = "#473f50", fg_normal = "#cfb787" },
