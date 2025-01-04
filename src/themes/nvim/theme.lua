@@ -232,15 +232,15 @@ local function gen_variant(t, dsl)
 		TabLineFill = link("TabLineFill", "TabLine"),
 		Search = hlgroup {
 			name = "Search",
-			guifg = t.layer2.bg,
-			guibg = t.layer2.fg,
-			gui = "NONE",
+			guifg = t.layer2.fg,
+			guibg = t.layer2.bg,
+			gui = "bold",
 		},
 		CurSearch = hlgroup {
 			name = "CurSearch",
-			guifg = t.info.bg,
-			guibg = t.info.fg,
-			gui = "NONE",
+			guifg = t.layer2.bg,
+			guibg = t.layer2.fg,
+			gui = "bold",
 		},
 		IncSearch = link("IncSearch", "CurSearch"),
 		jsParensError = hlgroup {
