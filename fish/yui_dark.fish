@@ -1,43 +1,43 @@
-set fish_color_normal B0ABAB
-set fish_color_command B0ABAB
-set fish_color_quote B0ABAB
-set fish_color_redirection B0ABAB --bold
-set fish_color_end B0ABAB
+set fish_color_normal aaaab5
+set fish_color_command aaaab5
+set fish_color_quote aaaab5
+set fish_color_redirection aaaab5 --bold
+set fish_color_end aaaab5
 set fish_color_error ee5c66
-set fish_color_param B0ABAB --bold
-set fish_color_comment 6a5f67 --italic
-set fish_color_history_current 70cf92
-set fish_color_operator B0ABAB
-set fish_color_escape B0ABAB
-set fish_color_cwd B0ABAB
-set fish_color_cwd_root B0ABAB
+set fish_color_param aaaab5 --bold
+set fish_color_comment 5f5f72 --italic
+set fish_color_history_current c8c8d0
+set fish_color_operator aaaab5
+set fish_color_escape aaaab5
+set fish_color_cwd aaaab5
+set fish_color_cwd_root aaaab5
 set fish_color_valid_path --underline
-set fish_color_autosuggestion 6a5f67
-set fish_color_user B0ABAB
-set fish_color_host B0ABAB
+set fish_color_autosuggestion 5f5f72
+set fish_color_user aaaab5
+set fish_color_host aaaab5
 set fish_color_cancel -r
-set fish_color_option B0ABAB
-set fish_color_keyword B0ABAB
-set fish_color_host_remote B0ABAB
-set fish_color_status B0ABAB
-set fish_color_match 171820
-set fish_color_selection --background=9295a6
-set fish_color_search_match --background=2a2e36
+set fish_color_option aaaab5
+set fish_color_keyword aaaab5
+set fish_color_host_remote aaaab5
+set fish_color_status aaaab5
+set fish_color_match c8c8d0
+set fish_color_selection --background=2e2e3c
+set fish_color_search_match --background=373747
 
-set fish_pager_color_prefix 171820
-set fish_pager_color_selected_prefix 70cf92
-set fish_pager_color_secondary_prefix 171820
+set fish_pager_color_prefix c8c8d0
+set fish_pager_color_selected_prefix c8c8d0
+set fish_pager_color_secondary_prefix c8c8d0
 
-set fish_pager_color_progress B0ABAB --background=1F2029
-set fish_pager_color_selected_background --background=2a2e36
+set fish_pager_color_progress aaaab5 --background=1F1F29
+set fish_pager_color_selected_background --background=373747
 set fish_pager_color_background normal
 set fish_pager_color_secondary_background normal
 
-set fish_pager_color_description B0ABAB
-set fish_pager_color_selected_description 70cf92
-set fish_pager_color_secondary_description B0ABAB
+set fish_pager_color_description aaaab5
+set fish_pager_color_selected_description c8c8d0
+set fish_pager_color_secondary_description aaaab5
 
-set fish_pager_color_completion 6a5f67
-set fish_pager_color_secondary_completion 6a5f67
-set fish_pager_color_selected_completion 70cf92
+set fish_pager_color_completion 5f5f72
+set fish_pager_color_secondary_completion 5f5f72
+set fish_pager_color_selected_completion c8c8d0
 	

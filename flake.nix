@@ -123,7 +123,7 @@
             moreutils
             jq
             alejandra
-			nodePackages.prettier
+            nodePackages.prettier
             (lua54Packages.lua.withPackages (ps:
               with ps; [
               ]))

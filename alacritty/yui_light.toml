@@ -11,27 +11,27 @@ text = "CellBackground"
 cursor = "CellForeground"
 [colors.search]
 [colors.search.matches]
-foreground = "#dcd2d2"
-background = "#3D3C44"
+foreground = "#5c4040"
+background = "#e5dede"
 [colors.search.focused_match]
-foreground = "#ccc2f2"
-background = "#3856d1"
+foreground = "#e5dede"
+background = "#5c4040"
 [colors.hints]
 [colors.hints.start]
-foreground = "#3856d1"
+foreground = "#42267d"
 background = "#ccc2f2"
 [colors.hints.end]
 foreground = "#3D3C44"
 background = "#F1EDED"
 [colors.line_indicator]
-foreground = "#ccc2f2"
-background = "#3856d1"
+foreground = "#e5dede"
+background = "#5c4040"
 [colors.footer_bar]
-foreground = "#3D3C44"
-background = "#dcd2d2"
+foreground = "#5c4040"
+background = "#e6dfdf"
 [colors.selection]
-text = "#dcd2d2"
-background = "#3D3C44"
+text = "#5c4040"
+background = "#e5dede"
 [colors.normal]
 black = "#3D3C44"
 red = "#B22E32"

@@ -1,8 +1,8 @@
 [colors]
 [colors.primary]
-foreground = "#B0ABAB"
-background = "#1F2029"
-dim_foreground = "#6a5f67"
+foreground = "#aaaab5"
+background = "#1F1F29"
+dim_foreground = "#5f5f72"
 [colors.cursor]
 text = "CellBackground"
 cursor = "CellForeground"
@@ -11,29 +11,29 @@ text = "CellBackground"
 cursor = "CellForeground"
 [colors.search]
 [colors.search.matches]
-foreground = "#171820"
-background = "#9295a6"
+foreground = "#c8c8d0"
+background = "#2e2e3c"
 [colors.search.focused_match]
-foreground = "#292b3c"
-background = "#69aafd"
+foreground = "#2e2e3c"
+background = "#c8c8d0"
 [colors.hints]
 [colors.hints.start]
 foreground = "#69aafd"
-background = "#292b3c"
+background = "#292a3d"
 [colors.hints.end]
-foreground = "#B0ABAB"
-background = "#1F2029"
+foreground = "#aaaab5"
+background = "#1F1F29"
 [colors.line_indicator]
-foreground = "#292b3c"
-background = "#69aafd"
+foreground = "#2e2e3c"
+background = "#c8c8d0"
 [colors.footer_bar]
-foreground = "#9295a6"
-background = "#171820"
+foreground = "#9fa4a4"
+background = "#151717"
 [colors.selection]
-text = "#171820"
-background = "#9295a6"
+text = "#c8c8d0"
+background = "#2e2e3c"
 [colors.normal]
-black = "#B0ABAB"
+black = "#bbbbbb"
 red = "#F55661"
 green = "#70cf92"
 yellow = "#cfb787"
@@ -42,7 +42,7 @@ magenta = "#b5a0ff"
 cyan = "#18c6ce"
 white = "#f5f5f5"
 [colors.bright]
-black = "#B0ABAB"
+black = "#bbbbbb"
 red = "#F55661"
 green = "#70cf92"
 yellow = "#cfb787"

@@ -15,17 +15,17 @@
 		},
 		"search": {
 			"matches": {
-				"foreground": "#dcd2d2",
-				"background": "#3D3C44",
+				"foreground": "#5c4040",
+				"background": "#e5dede",
 			},
 			"focused_match": {
-				"foreground": "#ccc2f2",
-				"background": "#3856d1",
+				"foreground": "#e5dede",
+				"background": "#5c4040",
 			},
 		},
 		"hints": {
 			"start": {
-				"foreground": "#3856d1",
+				"foreground": "#42267d",
 				"background": "#ccc2f2",
 			},
 			"end": {
@@ -34,16 +34,16 @@
 			},
 		},
 		"line_indicator": {
-			"foreground": "#ccc2f2",
-			"background": "#3856d1",
+			"foreground": "#e5dede",
+			"background": "#5c4040",
 		},
 		"footer_bar": {
-			"foreground": "#3D3C44",
-			"background": "#dcd2d2",
+			"foreground": "#5c4040",
+			"background": "#e6dfdf",
 		},
 		"selection": {
-			"text": "#dcd2d2",
-			"background": "#3D3C44",
+			"text": "#5c4040",
+			"background": "#e5dede",
 		},
 		"normal": {
 			"black": "#3D3C44",

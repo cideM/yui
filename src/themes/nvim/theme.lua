@@ -281,14 +281,22 @@ local function gen_variant(t, dsl)
 		},
 		StatusLine = hlgroup {
 			name = "StatusLine",
-			guifg = t.layer2.fg,
-			guibg = t.layer2.bg,
+			guibg = dsl.blend(
+				dsl.darker_contrast(dsl.get { "Normal", "guibg" }, 1.3),
+				dsl.get { "Normal", "guibg" },
+				0.5
+			),
+			guifg = dsl.darker_contrast(dsl.get { "StatusLine", "guibg" }, 7),
 			gui = "NONE",
 		},
 		StatusLineNC = hlgroup {
 			name = "StatusLineNC",
-			guifg = t.layer2.fg_muted,
-			guibg = t.layer2.bg,
+			guifg = dsl.darker_contrast(dsl.get { "StatusLineNC", "guibg" }, 3),
+			guibg = dsl.blend(
+				dsl.get { "StatusLine", "guibg" },
+				dsl.get { "Normal", "guibg" },
+				0.3
+			),
 			gui = "NONE",
 		},
 		ColorColumn = hlgroup {
@@ -331,7 +339,10 @@ local function gen_variant(t, dsl)
 			guibg = "NONE",
 			gui = "NONE",
 		},
-		WinSeparator = hlgroup { name = "WinSeparator", guifg = t.canvas.border },
+		WinSeparator = hlgroup {
+			name = "WinSeparator",
+			guifg = t.canvas.border,
+		},
 		EndOfBuffer = link("EndOfBuffer", "NonText"),
 		Menu = link("Menu", "Pmenu"),
 		QuickFixLine = link("QuickFixLine", "Search"),
@@ -344,9 +355,9 @@ local function gen_variant(t, dsl)
 		},
 		PmenuSel = hlgroup {
 			name = "PmenuSel",
-			guifg = t.success.fg,
-			guibg = t.success.bg,
-			gui = "NONE",
+			guifg = t.layer3.fg,
+			guibg = t.layer3.bg,
+			gui = "bold",
 		},
 		PmenuKind = hlgroup {
 			name = "PmenuKind",
@@ -379,14 +390,18 @@ local function gen_variant(t, dsl)
 		Question = hlgroup { name = "Question", guifg = "fg", guibg = "NONE" },
 		Visual = hlgroup {
 			name = "Visual",
-			guifg = t.layer2.bg,
-			guibg = t.layer2.fg,
+			guifg = t.layer2.fg,
+			guibg = t.layer2.bg,
 			gui = "NONE",
 		},
 		VisualNOS = hlgroup {
 			name = "VisualNOS",
 			guifg = "NONE",
-			guibg = t.layer3.bg,
+			guibg = dsl.blend(
+				dsl.get { "Visual", "guibg" },
+				dsl.get { "Normal", "guibg" },
+				0.5
+			),
 		},
 		Scrollbar = hlgroup {
 			name = "Scrollbar",
@@ -1038,8 +1053,31 @@ local function gen_variant(t, dsl)
 end
 
 return function(t, dsl)
+	local dark = gen_variant(t.dark, dsl)
+	dark["StatusLine"] = dsl.hlgroup {
+		name = "StatusLine",
+		guibg = dsl.blend(
+			dsl.darker_contrast(dsl.get { "Normal", "guibg" }, 1.3),
+			dsl.get { "Normal", "guibg" },
+			0.5
+		),
+		guifg = dsl.brighter_contrast(dsl.get { "StatusLine", "guibg" }, 7),
+		gui = "NONE",
+	}
+
+	dark["StatusLineNC"] = dsl.hlgroup {
+		name = "StatusLineNC",
+		guifg = dsl.brighter_contrast(dsl.get { "StatusLineNC", "guibg" }, 3),
+		guibg = dsl.blend(
+			dsl.get { "StatusLine", "guibg" },
+			dsl.get { "Normal", "guibg" },
+			0.3
+		),
+		gui = "NONE",
+	}
+
 	return {
 		light = gen_variant(t.light, dsl),
-		dark = gen_variant(t.dark, dsl),
+		dark = dark,
 	}
 end
