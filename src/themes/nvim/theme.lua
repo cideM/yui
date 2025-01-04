@@ -263,19 +263,21 @@ local function gen_variant(t, dsl)
 		},
 		NormalFloat = hlgroup {
 			name = "NormalFloat",
-			guifg = "fg",
-			guibg = "NONE",
+			guifg = get { "@markup.raw.block.markdown", "guifg" },
+			guibg = get { "@markup.raw.block.markdown", "guibg" },
 		},
 		FloatTitle = hlgroup {
 			name = "FloatTitle",
-			guifg = "fg",
-			guibg = get { "Pmenu", "guibg" },
-			gui = { "underline", "bold" },
+			guifg = get { "NormalFloat", "guifg" },
+			guibg = get { "NormalFloat", "guibg" },
+			gui = { "bold" },
 		},
 		FloatBorder = hlgroup {
 			name = "FloatBorder",
-			guifg = t.canvas.border,
-			guibg = "NONE",
+			guifg = t.layer1.fg_muted,
+			guibg = get { "NormalFloat", "guibg" },
+			gui = "NONE",
+			guisp = "NONE",
 		},
 		StatusLine = hlgroup {
 			name = "StatusLine",
@@ -783,7 +785,7 @@ local function gen_variant(t, dsl)
 		},
 		TreesitterContext = hlgroup {
 			name = "TreesitterContext",
-			guifg = "NONE",
+			guifg = dsl.blend(t.layer1.fg, get { "Normal", "guibg" }, 0.2),
 			guibg = t.layer1.bg,
 			gui = "NONE",
 		},
@@ -792,7 +794,7 @@ local function gen_variant(t, dsl)
 			guifg = "NONE",
 			guibg = "NONE",
 			gui = "underline",
-			guisp = t.layer1.border,
+			guisp = get { "StatusLine", "guibg" },
 		},
 		TreesitterContextLineNumberBottom = link(
 			"TreesitterContextLineNumberBottom",
@@ -800,7 +802,7 @@ local function gen_variant(t, dsl)
 		),
 		TreesitterContextSeparator = hlgroup {
 			name = "TreesitterContextSeparator",
-			guifg = t.layer1.border,
+			guifg = get { "StatusLine", "guibg" },
 			guibg = "NONE",
 			gui = "NONE",
 		},
@@ -844,7 +846,7 @@ local function gen_variant(t, dsl)
 		TermBrightWhite = t.term_bright_white,
 		LspCodeLens = hlgroup {
 			name = "LspCodeLens",
-			guifg = t.layer3.bg,
+			guifg = t.canvas.fg_faint,
 			guibg = "NONE",
 		},
 		LspSignatureActiveParameter = link(
@@ -1002,7 +1004,7 @@ local function gen_variant(t, dsl)
 		},
 		LegacyOptionFadedComments = hlgroup {
 			name = "Comment",
-			guifg = t.layer3.fg,
+			guifg = t.canvas.fg_muted,
 			guibg = "NONE",
 		},
 		OptionNormalComments = hlgroup {
