@@ -12,33 +12,33 @@
 
 	let g:colors_name = 'yui_dark'
 
-	hi Normal guifg=#DCDBDB ctermfg=253 guibg=#211F29 ctermbg=235
-	hi NormalNC guifg=#DCDBDB ctermfg=253 guibg=NONE ctermbg=NONE
+	hi Normal guifg=#aaaab5 ctermfg=145 guibg=#1F1F29 ctermbg=235
+	hi! link NormalNC Normal
 	hi! link MsgArea Normal
-	hi Conceal guifg=#DCDBDB ctermfg=253 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi Conceal guifg=#c8c8d0 ctermfg=251 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi! link ToolbarButton TabLine
 	hi! link ToolbarLine TabLineFill
-	hi Cursor guifg=#33313f ctermfg=237 guibg=fg ctermbg=fg
+	hi Cursor guifg=#252531 ctermfg=235 guibg=fg ctermbg=fg
 	hi! link CursorLineNr CursorLine
-	hi CursorLine guifg=NONE ctermfg=NONE guibg=#33313f ctermbg=237 gui=NONE cterm=NONE
+	hi CursorLine guifg=NONE ctermfg=NONE guibg=#252531 ctermbg=235 gui=NONE cterm=NONE
 	hi! link lCursor Cursor
 	hi! link CursorIM Cursor
-	hi WinSeparator guifg=#4d4a5d ctermfg=239
-	hi DiffAdd guifg=#70cf92 ctermfg=78 guibg=#2b2d3a ctermbg=236 gui=NONE cterm=NONE
+	hi WinSeparator guifg=#12121d ctermfg=233
+	hi DiffAdd guifg=#70cf92 ctermfg=78 guibg=#2a2d35 ctermbg=236 gui=NONE cterm=NONE
 	hi DiffChange guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-	hi DiffDelete guifg=#ee5c66 ctermfg=203 guibg=#2e2737 ctermbg=236 gui=NONE cterm=NONE
-	hi DiffText guifg=#69aafd ctermfg=75 guibg=#2d293f ctermbg=236 gui=NONE cterm=NONE
+	hi DiffDelete guifg=#ee5c66 ctermfg=203 guibg=#2c2737 ctermbg=236 gui=NONE cterm=NONE
+	hi DiffText guifg=#69aafd ctermfg=75 guibg=#292a3d ctermbg=236 gui=NONE cterm=NONE
 	hi Directory guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-	hi ErrorMsg guifg=#ee5c66 ctermfg=203 guibg=#2e2737 ctermbg=236 gui=none cterm=none
-	hi Constant guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-	hi String guifg=#E66F51 ctermfg=167 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-	hi Character guifg=#E66F51 ctermfg=167 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-	hi Number guifg=#E66F51 ctermfg=167 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-	hi Boolean guifg=#E66F51 ctermfg=167 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-	hi Float guifg=#E66F51 ctermfg=167 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi ErrorMsg guifg=#ee5c66 ctermfg=203 guibg=#2c2737 ctermbg=236 gui=none cterm=none
+	hi Constant guifg=#E66F51 ctermfg=167 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi! link String Constant
+	hi! link Character Constant
+	hi! link Number Constant
+	hi Boolean guifg=#E66F51 ctermfg=167 guibg=NONE ctermbg=NONE gui=bold cterm=bold
+	hi! link Float Constant
 	hi Identifier guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi Function guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-	hi Statement guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
+	hi Statement guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi Repeat guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi Conditional guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi Label guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
@@ -50,30 +50,30 @@
 	hi! link Define PreProc
 	hi! link Macro PreProc
 	hi! link PreCondit PreProc
-	hi Type guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi Type guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi! link StorageClass Type
 	hi! link Structure Type
-	hi Typedef guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=italic cterm=italic
-	hi Special guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi Typedef guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=italic cterm=italic
+	hi Special guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi! link SpecialChar Special
-	hi! link Tag Special
+	hi Tag guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi! link Delimiter Special
 	hi! link SpecialComment Special
 	hi! link Debug Special
-	hi Underlined guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline cterm=underline
+	hi Underlined guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=underline cterm=underline
 	hi Ignore guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 	hi Error guifg=#ee5c66 ctermfg=203 guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi! link Todo DiffChange
-	hi MatchParen guifg=NONE ctermfg=NONE guibg=#555266 ctermbg=240 gui=NONE cterm=NONE
-	hi ModeMsg guifg=#69aafd ctermfg=75 guibg=#2d293f ctermbg=236 gui=NONE cterm=NONE
-	hi MoreMsg guifg=#69aafd ctermfg=75 guibg=#2d293f ctermbg=236 gui=NONE cterm=NONE
+	hi MatchParen guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=bold,underline cterm=bold,underline
+	hi ModeMsg guifg=#69aafd ctermfg=75 guibg=#292a3d ctermbg=236 gui=NONE cterm=NONE
+	hi MoreMsg guifg=#69aafd ctermfg=75 guibg=#292a3d ctermbg=236 gui=NONE cterm=NONE
 	hi WarningMsg guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-	hi Whitespace guifg=#453e49 ctermfg=238 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-	hi TabLine guifg=#796e78 ctermfg=243 guibg=#33313f ctermbg=237 gui=NONE cterm=NONE
+	hi Whitespace guifg=#2b2b37 ctermfg=236 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi TabLine guifg=#3e4249 ctermfg=238 guibg=#1c1e22 ctermbg=234 gui=NONE cterm=NONE
 	hi! link TabLineSel StatusLine
 	hi! link TabLineFill TabLine
-	hi Search guifg=#DCDBDB ctermfg=253 guibg=#454253 ctermbg=238 gui=NONE cterm=NONE
-	hi CurSearch guifg=#2d293f ctermfg=236 guibg=#69aafd ctermbg=75 gui=NONE cterm=NONE
+	hi Search guifg=#c8c8d0 ctermfg=251 guibg=#2e2e3c ctermbg=236 gui=bold cterm=bold
+	hi CurSearch guifg=#2e2e3c ctermfg=236 guibg=#c8c8d0 ctermbg=251 gui=bold cterm=bold
 	hi! link IncSearch CurSearch
 	hi! link SpellCap SpellBad
 	hi! link SpellLocal SpellBad
@@ -85,40 +85,41 @@
 	hi! link WildMenu IncSearch
 	hi! link Substitute IncSearch
 	hi jsParensError guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-	hi SpellBad guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE guisp=#2e2737 gui=undercurl cterm=undercurl
-	hi VertSplit guifg=#4d4a5d ctermfg=239 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi SpellBad guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE guisp=#2c2737 gui=undercurl cterm=undercurl
+	hi VertSplit guifg=#12121d ctermfg=233 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi! link Menu Pmenu
-	hi Title guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold,underline cterm=bold,underline
-	hi NormalFloat guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-	hi FloatTitle guifg=fg ctermfg=fg guibg=#454253 ctermbg=238 gui=underline,bold cterm=underline,bold
-	hi FloatBorder guifg=#69aafd ctermfg=75 guibg=NONE ctermbg=NONE
-	hi StatusLine guifg=#DCDBDB ctermfg=253 guibg=#33313f ctermbg=237 gui=NONE cterm=NONE
-	hi StatusLineNC guifg=#796e78 ctermfg=243 guibg=#33313f ctermbg=237 gui=NONE cterm=NONE
-	hi ColorColumn guifg=#DCDBDB ctermfg=253 guibg=#211F29 ctermbg=235
+	hi Title guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
+	hi NormalFloat guifg=#a0a0ad ctermfg=248 guibg=#252531 ctermbg=235
+	hi FloatTitle guifg=#a0a0ad ctermfg=248 guibg=#252531 ctermbg=235 gui=bold cterm=bold
+	hi FloatBorder guifg=#5e5e73 ctermfg=241 guibg=#252531 ctermbg=235 guisp=NONE gui=NONE cterm=NONE
+	hi StatusLine guifg=#9fa4a4 ctermfg=247 guibg=#151717 ctermbg=233 gui=NONE cterm=NONE
+	hi StatusLineNC guifg=#3e4249 ctermfg=238 guibg=#1c1e22 ctermbg=234 gui=NONE cterm=NONE
+	hi ColorColumn guifg=#a0a0ad ctermfg=248 guibg=#252531 ctermbg=235
 	hi! link CursorColumn CursorLine
-	hi CopilotSuggestion guifg=#6c616b ctermfg=242 guibg=NONE ctermbg=NONE
-	hi WinBar guifg=#DCDBDB ctermfg=253 guibg=#454253 ctermbg=238 guisp=#726f83 gui=underline cterm=underline
-	hi NonText guifg=#454253 ctermfg=238 guibg=NONE ctermbg=NONE
-	hi WinBarNC guifg=#867984 ctermfg=244 guibg=#33313f ctermbg=237 guisp=#726f83 gui=underline cterm=underline
+	hi CopilotSuggestion guifg=#5f5f72 ctermfg=241 guibg=NONE ctermbg=NONE
+	hi WinBar guifg=#c8c8d0 ctermfg=251 guibg=#2e2e3c ctermbg=236 guisp=#090a09 gui=underline cterm=underline
+	hi NonText guifg=#2b2b37 ctermfg=236 guibg=NONE ctermbg=NONE
+	hi WinBarNC guifg=#767689 ctermfg=244 guibg=#252531 ctermbg=235 guisp=#090a09 gui=underline cterm=underline
 	hi! link PmenuExtraSel PmenuSel
 	hi! link LspSignatureActiveParameter Search
-	hi PmenuSel guifg=#DCDBDB ctermfg=253 guibg=#555266 ctermbg=240 gui=NONE cterm=NONE
-	hi Pmenu guifg=#DCDBDB ctermfg=253 guibg=#454253 ctermbg=238
-	hi PmenuKind guifg=#DCDBDB ctermfg=253 guibg=#454253 ctermbg=238 gui=bold cterm=bold
-	hi PmenuKindSel guifg=#DCDBDB ctermfg=253 guibg=#555266 ctermbg=240 gui=bold cterm=bold
-	hi PmenuExtra guifg=#DCDBDB ctermfg=253 guibg=#454253 ctermbg=238
-	hi PmenuSbar guifg=NONE ctermfg=NONE guibg=#454253 ctermbg=238
-	hi PmenuThumb guifg=NONE ctermfg=NONE guibg=#555266 ctermbg=240
+	hi PmenuSel guifg=#c8c8d0 ctermfg=251 guibg=#373747 ctermbg=237 gui=bold cterm=bold
+	hi Pmenu guifg=#c8c8d0 ctermfg=251 guibg=#2e2e3c ctermbg=236
+	hi PmenuKind guifg=#c8c8d0 ctermfg=251 guibg=#2e2e3c ctermbg=236 gui=bold cterm=bold
+	hi PmenuKindSel guifg=#c8c8d0 ctermfg=251 guibg=#373747 ctermbg=237 gui=bold cterm=bold
+	hi PmenuExtra guifg=#c8c8d0 ctermfg=251 guibg=#2e2e3c ctermbg=236
+	hi PmenuSbar guifg=NONE ctermfg=NONE guibg=#2e2e3c ctermbg=236
+	hi PmenuThumb guifg=NONE ctermfg=NONE guibg=#373747 ctermbg=237
 	hi Question guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-	hi Visual guifg=#DCDBDB ctermfg=253 guibg=#454253 ctermbg=238 gui=NONE cterm=NONE
-	hi VisualNOS guifg=NONE ctermfg=NONE guibg=#555266 ctermbg=240
-	hi Scrollbar guifg=NONE ctermfg=NONE guibg=#454253 ctermbg=238
-	hi DiagnosticError guifg=#ee5c66 ctermfg=203 guibg=#2e2737 ctermbg=236 gui=NONE cterm=NONE
-	hi DiagnosticOk guifg=#70cf92 ctermfg=78 guibg=#2b2d3a ctermbg=236 gui=NONE cterm=NONE
-	hi DiagnosticHint guifg=#69aafd ctermfg=75 guibg=#2d293f ctermbg=236 gui=NONE cterm=NONE
-	hi DiagnosticInfo guifg=#69aafd ctermfg=75 guibg=#2d293f ctermbg=236 gui=NONE cterm=NONE
-	hi DiagnosticWarn guifg=#cfb787 ctermfg=180 guibg=#322b38 ctermbg=236 gui=NONE cterm=NONE
-	hi DiagnosticUnderlineError guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#F55661 gui=underline cterm=underline
+	hi Visual guifg=#c8c8d0 ctermfg=251 guibg=#2e2e3c ctermbg=236 gui=NONE cterm=NONE
+	hi VisualNOS guifg=NONE ctermfg=NONE guibg=#262632 ctermbg=235
+	hi Scrollbar guifg=NONE ctermfg=NONE guibg=#2e2e3c ctermbg=236
+	hi DiagnosticError guifg=#ee5c66 ctermfg=203 guibg=#2c2737 ctermbg=236 gui=italic cterm=italic
+	hi DiagnosticUnnecessary guifg=#cfb787 ctermfg=180 guibg=#302b38 ctermbg=236 gui=italic cterm=italic
+	hi DiagnosticOk guifg=#70cf92 ctermfg=78 guibg=#2a2d35 ctermbg=236 gui=italic cterm=italic
+	hi DiagnosticHint guifg=#69aafd ctermfg=75 guibg=#292a3d ctermbg=236 gui=italic cterm=italic
+	hi DiagnosticInfo guifg=#69aafd ctermfg=75 guibg=#292a3d ctermbg=236 gui=italic cterm=italic
+	hi DiagnosticWarn guifg=#cfb787 ctermfg=180 guibg=#302b38 ctermbg=236 gui=italic cterm=italic
+	hi DiagnosticUnderlineError guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#a8487d gui=undercurl cterm=undercurl
 	hi DiagnosticUnderlineHint guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#69aafd gui=underline cterm=underline
 	hi DiagnosticUnderlineInfo guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#69aafd gui=underline cterm=underline
 	hi DiagnosticUnderlineWarn guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#cfb787 gui=underline cterm=underline
@@ -167,6 +168,8 @@
 	hi fugitiveStagedSection guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi fugitiveUnstagedSection guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi! link gitCommitOverflow WarningMsg
+	hi gitcommitComment guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi gitcommitOnBranch guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi! link helpBacktick Constant
 	hi! link helpDeprecated DiffDelete
 	hi! link mkdCodeDelimiter mkCode
@@ -205,24 +208,25 @@
 	hi! link TelescopeMatching CurSearch
 	hi! link TelescopeSelection Search
 	hi markdownLinkText guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-	hi diffLine guifg=#DCDBDB ctermfg=253 guibg=#33313f ctermbg=237 gui=NONE cterm=NONE
+	hi diffLine guifg=#a0a0ad ctermfg=248 guibg=#252531 ctermbg=235 gui=NONE cterm=NONE
 	hi gitHashAbbrev guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=underline cterm=underline
 	hi GitSignsAdd guifg=#70cf92 ctermfg=78 guibg=NONE ctermbg=NONE
 	hi GitSignsChange guifg=#cfb787 ctermfg=180 guibg=NONE ctermbg=NONE
 	hi GitSignsDelete guifg=#F55661 ctermfg=203 guibg=NONE ctermbg=NONE
 	hi DirvishPathTail guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi jsxOpenPunct guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
-	hi TreesitterContextBottom guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#5d5a6f gui=underline cterm=underline
-	hi TreesitterContext guifg=NONE ctermfg=NONE guibg=#33313f ctermbg=237 gui=NONE cterm=NONE
+	hi TreesitterContextBottom guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#151717 gui=underline cterm=underline
+	hi TreesitterContext guifg=#838394 ctermfg=245 guibg=#252531 ctermbg=235 gui=NONE cterm=NONE
 	hi! link TreesitterContextLineNumberBottom TreesitterContextBottom
-	hi TreesitterContextSeparator guifg=#5d5a6f ctermfg=241 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-	hi LeapLabelSecondary guifg=#DCDBDB ctermfg=253 guibg=#DCDBDB ctermbg=253 gui=NONE cterm=NONE
-	hi LeapLabelSelected guifg=#DCDBDB ctermfg=253 guibg=#454253 ctermbg=238 gui=NONE cterm=NONE
+	hi TreesitterContextSeparator guifg=#151717 ctermfg=233 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi LeapLabelSecondary guifg=#c8c8d0 ctermfg=251 guibg=#c8c8d0 ctermbg=251 gui=NONE cterm=NONE
+	hi LeapLabelSelected guifg=#c8c8d0 ctermfg=251 guibg=#2e2e3c ctermbg=236 gui=NONE cterm=NONE
 	hi WhichKeySeperator guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 
 	if has('nvim')
-		hi SpecialKey guifg=#69aafd ctermfg=75 guibg=#2d293f ctermbg=236
-		let g:terminal_color_0 = '#DCDBDB'
+		hi @punctuation guifg=#5f5f72 ctermfg=241
+		hi SpecialKey guifg=#69aafd ctermfg=75 guibg=#292a3d ctermbg=236
+		let g:terminal_color_0 = '#bbbbbb'
 		let g:terminal_color_1 = '#F55661'
 		let g:terminal_color_2 = '#70cf92'
 		let g:terminal_color_3 = '#cfb787'
@@ -230,7 +234,7 @@
 		let g:terminal_color_5 = '#b5a0ff'
 		let g:terminal_color_6 = '#18c6ce'
 		let g:terminal_color_7 = '#f5f5f5'
-		let g:terminal_color_8 = '#DCDBDB'
+		let g:terminal_color_8 = '#bbbbbb'
 		let g:terminal_color_9 = '#F55661'
 		let g:terminal_color_10 = '#70cf92'
 		let g:terminal_color_11 = '#cfb787'
@@ -239,50 +243,58 @@
 		let g:terminal_color_14 = '#18c6ce'
 		let g:terminal_color_15 = '#f5f5f5'
 		
-		hi @function.haskell guifg=fg ctermfg=fg gui=NONE cterm=NONE
-		hi @variable.haskell guifg=fg ctermfg=fg gui=NONE cterm=NONE
-		hi @variable.parameter.haskell guifg=fg ctermfg=fg gui=NONE cterm=NONE
-		hi @keyword.haskell guifg=fg ctermfg=fg gui=bold cterm=bold
-		hi @operator.haskell guifg=fg ctermfg=fg gui=NONE cterm=NONE
+		hi @function.haskell guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
+	    hi! link @constructor.lua @punctuation
+		hi @markup.raw.block.markdown guifg=#a0a0ad ctermfg=248 guibg=#252531 ctermbg=235 gui=NONE cterm=NONE
+		hi @punctuation.special.markdown guifg=#5f5f72 ctermfg=241 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+		hi @constructor.haskell guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
+		hi @type.haskell guifg=NONE ctermfg=NONE gui=bold cterm=bold
+		hi @variable.haskell guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
+		hi @variable.parameter.haskell guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
+		hi @keyword.haskell guifg=NONE ctermfg=NONE gui=bold cterm=bold
+		hi @operator.haskell guifg=NONE ctermfg=NONE gui=bold cterm=bold
 
 		hi! link @diff.plus DiffAdd
 		hi! link @diff.minus DiffDelete
 		hi! link @diff.delta DiffChange
 
-		hi @keyword.coroutine guifg=fg ctermfg=fg gui=bold cterm=bold
+		hi @keyword.coroutine guifg=NONE ctermfg=NONE gui=bold cterm=bold
 		hi! link @text.literal helpExample
+		hi! link @tag Tag
+		hi! link @tag.builtin Tag
+		hi! link @operator.tsx Tag
 		hi! link @constant.builtin Constant
 		hi! link @function @lsp.typemod.function.declaration
 		hi! link @function.method.call @method.call
-		hi @text.strong guifg=fg ctermfg=fg gui=bold cterm=bold
+		hi @text.strong guifg=NONE ctermfg=NONE gui=bold cterm=bold
 		hi! link @text.emphasis @text.strong
 		hi! link @method @lsp.typemod.member.declaration
 		hi @field guifg=fg ctermfg=fg gui=NONE cterm=NONE
-		hi @variable guifg=fg ctermfg=fg gui=NONE cterm=NONE
+		hi @variable guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
 		hi @symbol guifg=fg ctermfg=fg gui=bold cterm=bold
 		hi! link @exception Normal
 		hi! link @function.call @method.call
-		hi @method.call guifg=fg ctermfg=fg gui=italic cterm=italic
+		hi @method.call guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
 		hi! link @function.builtin @lsp.typemod.function.defaultLibrary
 		hi! link @namespace.builtin @lsp.typemod.function.defaultLibrary
-		hi @keyword.function guifg=fg ctermfg=fg gui=NONE cterm=NONE
-		hi @keyword.operator guifg=fg ctermfg=fg gui=NONE cterm=NONE
-		hi @keyword.return guifg=fg ctermfg=fg gui=NONE cterm=NONE
+		hi @keyword.function guifg=NONE ctermfg=NONE gui=bold cterm=bold
+		hi @keyword.operator guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
+		hi @keyword.return guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
 
-		hi @lsp.type.function guifg=fg ctermfg=fg gui=NONE cterm=NONE
+		hi @lsp.type.function guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
 		hi! link @lsp.type.method @lsp.type.function
-		hi @lsp.typemod.function.defaultLibrary guifg=fg ctermfg=fg gui=NONE cterm=NONE
-		hi @lsp.typemod.function.declaration guifg=fg ctermfg=fg gui=NONE cterm=NONE
+		hi @lsp.typemod.function.defaultLibrary guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
+		hi @lsp.typemod.function.declaration guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
 		hi! link @lsp.typemod.member.declaration @lsp.typemod.function.declaration
-		hi @lsp.typemod.variable.declaration guifg=fg ctermfg=fg gui=NONE cterm=NONE
+		hi @lsp.typemod.variable.declaration guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
 	else
-		hi LspCodeLens guifg=#555266 ctermfg=240 guibg=NONE ctermbg=NONE
+		hi LspCodeLens guifg=#2b2b37 ctermfg=236 guibg=NONE ctermbg=NONE
 		hi LspInlayHint guifg=#69aafd ctermfg=75 guibg=NONE ctermbg=NONE
 		hi! link StatusLineTerm StatusLine
 		hi! link StatusLineTermNC StatusLineNC
 		hi! link SpecialKey Whitespace
 		let g:terminal_ansi_colors = [
-			\ '#DCDBDB',
+			\ '#bbbbbb',
 			\ '#F55661',
 			\ '#70cf92',
 			\ '#cfb787',
@@ -290,7 +302,7 @@
 			\ '#b5a0ff',
 			\ '#18c6ce',
 			\ '#f5f5f5',
-			\ '#DCDBDB',
+			\ '#bbbbbb',
 			\ '#F55661',
 			\ '#70cf92',
 			\ '#cfb787',
@@ -303,20 +315,20 @@
 
 	let s:yui_folds_value = get(g:, 'yui_folds', 'fade')
 	if s:yui_folds_value ==? 'fade'
-		hi FoldColumn guifg=#6c616b ctermfg=242 guibg=NONE ctermbg=NONE
+		hi FoldColumn guifg=#5f5f72 ctermfg=241 guibg=NONE ctermbg=NONE
 		hi! link Folded FoldColumn
 	elseif s:yui_folds_value ==? 'emphasize'
-		hi FoldColumn guifg=#DCDBDB ctermfg=253 guibg=NONE ctermbg=NONE
+		hi FoldColumn guifg=#c8c8d0 ctermfg=251 guibg=NONE ctermbg=NONE
 		hi! link Folded FoldColumn
 	endif
 
 
 	let s:yui_line_numbers_value = get(g:, 'yui_line_numbers', 'fade')
 	if s:yui_line_numbers_value ==? 'fade'
-		hi SignColumn guifg=#6c616b ctermfg=242 guibg=NONE ctermbg=NONE
+		hi SignColumn guifg=#5f5f72 ctermfg=241 guibg=NONE ctermbg=NONE
 		hi! link LineNr SignColumn
 	elseif s:yui_line_numbers_value ==? 'emphasize'
-		hi SignColumn guifg=#DCDBDB ctermfg=253 guibg=NONE ctermbg=NONE
+		hi SignColumn guifg=#c8c8d0 ctermfg=251 guibg=NONE ctermbg=NONE
 		hi! link LineNr SignColumn
 	endif
 
@@ -325,7 +337,7 @@
 	if s:yui_emphasized_comments_value ==? 1
 		hi Comment guifg=#E66F51 ctermfg=167 guibg=NONE ctermbg=NONE
 	elseif s:yui_emphasized_comments_value ==? 0
-		hi Comment guifg=#DCDBDB ctermfg=253 guibg=NONE ctermbg=NONE
+		hi Comment guifg=#5f5f72 ctermfg=241 guibg=NONE ctermbg=NONE
 	endif
 
 
@@ -333,10 +345,10 @@
 	if s:yui_comments_value ==? 'normal'
 		hi Comment guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=italic cterm=italic
 	elseif s:yui_comments_value ==? 'fade'
-		hi Comment guifg=#6c616b ctermfg=242 guibg=NONE ctermbg=NONE gui=italic cterm=italic
+		hi Comment guifg=#5f5f72 ctermfg=241 guibg=NONE ctermbg=NONE gui=italic cterm=italic
 	elseif s:yui_comments_value ==? 'emphasize'
 		hi Comment guifg=#E66F51 ctermfg=167 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	elseif s:yui_comments_value ==? 'bg'
-		hi Comment guifg=#E66F51 ctermfg=167 guibg=#2e2836 ctermbg=236 gui=NONE cterm=NONE
+		hi Comment guifg=#a0a0ad ctermfg=248 guibg=#252531 ctermbg=235 gui=NONE cterm=NONE
 	endif
 	

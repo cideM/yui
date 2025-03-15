@@ -18,7 +18,7 @@ return {
 			fg_muted = dsl.blend(
 				dsl.get { "light", "canvas", "fg" },
 				dsl.get { "light", "canvas", "bg" },
-				0.6
+				0.5
 			),
 			border = dsl.darker_contrast(
 				dsl.get { "light", "canvas", "bg" },
@@ -26,8 +26,12 @@ return {
 			),
 		},
 		layer1 = {
-			fg = dsl.get { "light", "fg" },
-			bg = dsl.darker_contrast(dsl.get { "light", "canvas", "bg" }, 0.6),
+			fg = dsl.darker_contrast(dsl.get { "light", "layer1", "bg" }, 7),
+			bg = dsl.blend(
+				dsl.darker_contrast(dsl.get { "light", "canvas", "bg" }, 0.6),
+				dsl.get { "light", "canvas", "bg" },
+				0.5
+			),
 			fg_faint = dsl.blend(
 				dsl.get { "light", "layer1", "fg" },
 				dsl.get { "light", "layer1", "bg" },
@@ -36,7 +40,7 @@ return {
 			fg_muted = dsl.blend(
 				dsl.get { "light", "layer1", "fg" },
 				dsl.get { "light", "layer1", "bg" },
-				0.6
+				0.5
 			),
 			border = dsl.darker_contrast(
 				dsl.get { "light", "layer1", "bg" },
@@ -44,8 +48,12 @@ return {
 			),
 		},
 		layer2 = {
-			fg = dsl.get { "light", "fg" },
-			bg = dsl.darker_contrast(dsl.get { "light", "layer1", "bg" }, 1),
+			fg = dsl.darker_contrast(dsl.get { "light", "layer2", "bg" }, 7),
+			bg = dsl.blend(
+				dsl.darker_contrast(dsl.get { "light", "layer1", "bg" }, 0.6),
+				dsl.get { "light", "canvas", "bg" },
+				0.3
+			),
 			fg_faint = dsl.blend(
 				dsl.get { "light", "layer2", "fg" },
 				dsl.get { "light", "layer2", "bg" },
@@ -54,7 +62,7 @@ return {
 			fg_muted = dsl.blend(
 				dsl.get { "light", "layer2", "fg" },
 				dsl.get { "light", "layer2", "bg" },
-				0.6
+				0.5
 			),
 			border = dsl.darker_contrast(
 				dsl.get { "light", "layer2", "bg" },
@@ -62,7 +70,7 @@ return {
 			),
 		},
 		layer3 = {
-			fg = dsl.get { "light", "fg" },
+			fg = dsl.darker_contrast(dsl.get { "light", "layer3", "bg" }, 6),
 			bg = dsl.darker_contrast(dsl.get { "light", "layer2", "bg" }, 1),
 			fg_faint = dsl.blend(
 				dsl.get { "light", "layer3", "fg" },
@@ -72,7 +80,7 @@ return {
 			fg_muted = dsl.blend(
 				dsl.get { "light", "layer3", "fg" },
 				dsl.get { "light", "layer3", "bg" },
-				0.6
+				0.5
 			),
 			border = dsl.darker_contrast(
 				dsl.get { "light", "layer3", "bg" },
@@ -116,18 +124,18 @@ return {
 			fg_normal = dsl.get { "light", "colors", "yellow", "fg_normal" },
 		},
 		info = {
-			fg = dsl.get { "light", "colors", "blue", "fg" },
+			fg = dsl.darker_contrast(dsl.get { "light", "info", "bg" }, 7),
 			bg = dsl.blend(
-				brighten(dsl.get { "light", "colors", "blue", "fg" }, 4.5),
+				brighten(dsl.get { "light", "colors", "blue", "fg" }, 3.5),
 				dsl.get { "light", "canvas", "bg" },
-				0.2
+				0.1
 			),
 			fg_normal = dsl.get { "light", "colors", "blue", "fg_normal" },
 		},
 		accent = {
 			fg = dsl.get { "light", "colors", "orange", "fg" },
 			bg = dsl.blend(
-				brighten(dsl.get { "light", "colors", "orange", "fg" }, 4),
+				brighten(dsl.get { "light", "colors", "orange", "fg" }, 3.5),
 				dsl.get { "light", "canvas", "bg" },
 				0.3
 			),
@@ -157,26 +165,34 @@ return {
 	},
 	dark = {
 		theme_name = "yui_dark",
-		fg = "#DCDBDB",
-		bg = "#211F29",
+		fg = "#bbbbbb",
+		bg = "#1F1F29",
 		canvas = {
-			fg = dsl.get { "dark", "fg" },
+			fg = dsl.brighter_contrast(dsl.get { "dark", "bg" }, 7),
 			bg = dsl.get { "dark", "bg" },
 			fg_faint = dsl.blend(
 				dsl.get { "dark", "canvas", "fg" },
 				dsl.get { "dark", "canvas", "bg" },
-				0.8
+				0.9
 			),
 			fg_muted = dsl.blend(
 				dsl.get { "dark", "canvas", "fg" },
 				dsl.get { "dark", "canvas", "bg" },
-				0.6
+				0.5
 			),
-			border = brighten(dsl.get { "dark", "canvas", "bg" }, 2),
+			border = dsl.blend(
+				dsl.darker_contrast(dsl.get { "dark", "canvas", "bg" }, 1.2),
+				dsl.get { "dark", "canvas", "bg" },
+				0.3
+			),
 		},
 		layer1 = {
-			fg = dsl.get { "dark", "fg" },
-			bg = brighten(dsl.get { "dark", "canvas", "bg" }, 1.3),
+			fg = dsl.brighter_contrast(dsl.get { "dark", "layer1", "bg" }, 6),
+			bg = dsl.blend(
+				dsl.brighter_contrast(dsl.get { "dark", "canvas", "bg" }, 1),
+				dsl.get { "dark", "canvas", "bg" },
+				0.3
+			),
 			fg_faint = dsl.blend(
 				dsl.get { "dark", "layer1", "fg" },
 				dsl.get { "dark", "layer1", "bg" },
@@ -185,13 +201,13 @@ return {
 			fg_muted = dsl.blend(
 				dsl.get { "dark", "layer1", "fg" },
 				dsl.get { "dark", "layer1", "bg" },
-				0.6
+				0.5
 			),
-			border = brighten(dsl.get { "dark", "layer1", "bg" }, 2),
+			border = dsl.darker_contrast(dsl.get { "dark", "layer1", "bg" }, 2),
 		},
 		layer2 = {
-			fg = dsl.get { "dark", "fg" },
-			bg = brighten(dsl.get { "dark", "layer1", "bg" }, 1.3),
+			fg = dsl.brighter_contrast(dsl.get { "dark", "layer2", "bg" }, 8),
+			bg = dsl.brighter_contrast(dsl.get { "dark", "layer1", "bg" }, 1.2),
 			fg_faint = dsl.blend(
 				dsl.get { "dark", "layer2", "fg" },
 				dsl.get { "dark", "layer2", "bg" },
@@ -200,13 +216,13 @@ return {
 			fg_muted = dsl.blend(
 				dsl.get { "dark", "layer2", "fg" },
 				dsl.get { "dark", "layer2", "bg" },
-				0.6
+				0.5
 			),
-			border = brighten(dsl.get { "dark", "layer2", "bg" }, 2),
+			border = dsl.darker_contrast(dsl.get { "dark", "layer1", "bg" }, 2),
 		},
 		layer3 = {
-			fg = dsl.get { "dark", "fg" },
-			bg = brighten(dsl.get { "dark", "layer2", "bg" }, 1.3),
+			fg = dsl.brighter_contrast(dsl.get { "dark", "layer3", "bg" }, 7),
+			bg = dsl.brighter_contrast(dsl.get { "dark", "layer2", "bg" }, 1.2),
 			fg_faint = dsl.blend(
 				dsl.get { "dark", "layer3", "fg" },
 				dsl.get { "dark", "layer3", "bg" },
@@ -215,9 +231,9 @@ return {
 			fg_muted = dsl.blend(
 				dsl.get { "dark", "layer3", "fg" },
 				dsl.get { "dark", "layer3", "bg" },
-				0.6
+				0.5
 			),
-			border = brighten(dsl.get { "dark", "layer3", "bg" }, 2),
+			border = dsl.darker_contrast(dsl.get { "dark", "layer1", "bg" }, 2),
 		},
 		colors = {
 			yellow = { fg = "#cfb787", bg = "#473f50", fg_normal = "#cfb787" },
@@ -270,7 +286,7 @@ return {
 			bg = dsl.blend(
 				dsl.get { "dark", "colors", "orange", "fg" },
 				dsl.get { "dark", "canvas", "bg" },
-				0.9
+				0.85
 			),
 			fg_normal = dsl.get { "dark", "colors", "orange", "fg_normal" },
 		},

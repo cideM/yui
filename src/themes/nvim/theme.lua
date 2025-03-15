@@ -8,11 +8,7 @@ local function gen_variant(t, dsl)
 			guifg = t.canvas.fg,
 			guibg = t.canvas.bg,
 		},
-		NormalNC = hlgroup {
-			name = "NormalNC",
-			guifg = t.layer2.fg,
-			guibg = "NONE",
-		},
+		NormalNC = link("NormalNC", "Normal"),
 		MsgArea = link("MsgArea", "Normal"),
 		Conceal = hlgroup {
 			name = "Conceal",
@@ -73,50 +69,34 @@ local function gen_variant(t, dsl)
 		},
 		Constant = hlgroup {
 			name = "Constant",
-			guifg = "fg",
+			guifg = t.accent.fg_normal,
 			guibg = "NONE",
 			gui = "NONE",
 		},
-		String = hlgroup {
-			name = "String",
-			guifg = t.accent.fg,
-			guibg = "NONE",
-			gui = "NONE",
-		},
-		Character = hlgroup {
-			name = "Character",
-			guifg = t.accent.fg,
-			guibg = "NONE",
-			gui = "NONE",
-		},
-		Number = hlgroup {
-			name = "Number",
-			guifg = t.accent.fg,
-			guibg = "NONE",
-			gui = "NONE",
-		},
+		String = link("String", "Constant"),
+		Character = link("Character", "Constant"),
+		Number = link("Number", "Constant"),
 		Boolean = hlgroup {
 			name = "Boolean",
-			guifg = t.accent.fg,
-			guibg = "NONE",
-			gui = "NONE",
+			guifg = get { "Constant", "guifg" },
+			guibg = get { "Constant", "guibg" },
+			gui = { "bold" },
 		},
-		Float = hlgroup {
-			name = "Float",
-			guifg = t.accent.fg,
-			guibg = "NONE",
-			gui = "NONE",
-		},
+		Float = link("Float", "Constant"),
 		Identifier = hlgroup {
 			name = "Identifier",
 			guifg = "fg",
 			guibg = "NONE",
 			gui = "NONE",
 		},
+		Punctuation = hlgroup {
+			name = "@punctuation",
+			guifg = t.canvas.fg_muted,
+		},
 		Function = hlgroup { name = "Function", guifg = "fg", guibg = "NONE" },
 		Statement = hlgroup {
 			name = "Statement",
-			guifg = "fg",
+			guifg = "NONE",
 			guibg = "NONE",
 			gui = "bold",
 		},
@@ -155,30 +135,40 @@ local function gen_variant(t, dsl)
 			name = "Type",
 			guifg = "NONE",
 			guibg = "NONE",
-			gui = "NONE",
+			gui = { "bold" },
 		},
 		StorageClass = link("StorageClass", "Type"),
 		Structure = link("Structure", "Type"),
 		Typedef = hlgroup {
 			name = "Typedef",
-			guifg = "fg",
+			guifg = "NONE",
 			guibg = "NONE",
 			gui = { "italic" },
 		},
 		Special = hlgroup {
+			guifg = "NONE",
 			name = "Special",
-			guifg = "fg",
 			guibg = "NONE",
-			gui = { "NONE" },
+			gui = { "bold" },
 		},
 		SpecialChar = link("SpecialChar", "Special"),
-		Tag = link("Tag", "Special"),
+		Tag = hlgroup {
+			name = "Tag",
+			guifg = "NONE",
+			guibg = "NONE",
+			gui = "NONE",
+		},
+		-- This seems to be applied to { } when creating literals
+		["@constructor.lua"] = link("@constructor.lua", "Punctuation"),
+		["@tag"] = link("@tag", "Tag"),
+		["@tag.builtin"] = link("@tag.builtin", "Tag"),
+		["@operator.tsx"] = link("@operator.tsx", "Tag"),
 		Delimiter = link("Delimiter", "Special"),
 		SpecialComment = link("SpecialComment", "Special"),
 		Debug = link("Debug", "Special"),
 		Underlined = hlgroup {
 			name = "Underlined",
-			guifg = "fg",
+			guifg = "NONE",
 			guibg = "NONE",
 			gui = "underline",
 		},
@@ -189,12 +179,24 @@ local function gen_variant(t, dsl)
 			guibg = "NONE",
 			gui = "bold",
 		},
+		["@punctuation.special.markdown"] = hlgroup {
+			name = "@punctuation.special.markdown",
+			guifg = t.canvas.fg_muted,
+			guibg = "NONE",
+			gui = "NONE",
+		},
+		["@markup.raw.block.markdown"] = hlgroup {
+			name = "@markup.raw.block.markdown",
+			guifg = t.layer1.fg,
+			guibg = t.layer1.bg,
+			gui = "NONE",
+		},
 		Todo = link("Todo", "DiffChange"),
 		MatchParen = hlgroup {
 			name = "MatchParen",
 			guifg = "NONE",
-			guibg = t.layer3.bg,
-			gui = "NONE",
+			guibg = "NONE",
+			gui = { "bold", "underline" },
 		},
 		ModeMsg = hlgroup {
 			name = "ModeMsg",
@@ -232,13 +234,13 @@ local function gen_variant(t, dsl)
 			name = "Search",
 			guifg = t.layer2.fg,
 			guibg = t.layer2.bg,
-			gui = "NONE",
+			gui = "bold",
 		},
 		CurSearch = hlgroup {
 			name = "CurSearch",
-			guifg = t.info.bg,
-			guibg = t.info.fg,
-			gui = "NONE",
+			guifg = t.layer2.bg,
+			guibg = t.layer2.fg,
+			gui = "bold",
 		},
 		IncSearch = link("IncSearch", "CurSearch"),
 		jsParensError = hlgroup {
@@ -257,40 +259,50 @@ local function gen_variant(t, dsl)
 			name = "Title",
 			guifg = "fg",
 			guibg = "NONE",
-			gui = { "bold", "underline" },
+			gui = { "bold" },
 		},
 		NormalFloat = hlgroup {
 			name = "NormalFloat",
-			guifg = "fg",
-			guibg = "NONE",
+			guifg = get { "@markup.raw.block.markdown", "guifg" },
+			guibg = get { "@markup.raw.block.markdown", "guibg" },
 		},
 		FloatTitle = hlgroup {
 			name = "FloatTitle",
-			guifg = "fg",
-			guibg = get { "Pmenu", "guibg" },
-			gui = { "underline", "bold" },
+			guifg = get { "NormalFloat", "guifg" },
+			guibg = get { "NormalFloat", "guibg" },
+			gui = { "bold" },
 		},
 		FloatBorder = hlgroup {
 			name = "FloatBorder",
-			guifg = t.info.fg_normal,
-			guibg = "NONE",
+			guifg = t.layer1.fg_muted,
+			guibg = get { "NormalFloat", "guibg" },
+			gui = "NONE",
+			guisp = "NONE",
 		},
 		StatusLine = hlgroup {
 			name = "StatusLine",
-			guifg = t.layer1.fg,
-			guibg = t.layer1.bg,
+			guibg = dsl.blend(
+				dsl.darker_contrast(dsl.get { "Normal", "guibg" }, 1.3),
+				dsl.get { "Normal", "guibg" },
+				0.5
+			),
+			guifg = dsl.darker_contrast(dsl.get { "StatusLine", "guibg" }, 7),
 			gui = "NONE",
 		},
 		StatusLineNC = hlgroup {
 			name = "StatusLineNC",
-			guifg = t.layer1.fg_muted,
-			guibg = t.layer1.bg,
+			guifg = dsl.darker_contrast(dsl.get { "StatusLineNC", "guibg" }, 3),
+			guibg = dsl.blend(
+				dsl.get { "StatusLine", "guibg" },
+				dsl.get { "Normal", "guibg" },
+				0.3
+			),
 			gui = "NONE",
 		},
 		ColorColumn = hlgroup {
 			name = "ColorColumn",
-			guifg = get { "Normal", "guifg" },
-			guibg = get { "Normal", "guibg" },
+			guifg = t.layer1.fg,
+			guibg = t.layer1.bg,
 		},
 		CopilotSuggestion = hlgroup {
 			name = "CopilotSuggestion",
@@ -313,7 +325,7 @@ local function gen_variant(t, dsl)
 		},
 		NonText = hlgroup {
 			name = "NonText",
-			guifg = t.layer2.bg,
+			guifg = t.canvas.fg_faint,
 			guibg = "NONE",
 		},
 		SpellCap = link("SpellCap", "SpellBad"),
@@ -327,7 +339,10 @@ local function gen_variant(t, dsl)
 			guibg = "NONE",
 			gui = "NONE",
 		},
-		WinSeparator = hlgroup { name = "WinSeparator", guifg = t.canvas.border },
+		WinSeparator = hlgroup {
+			name = "WinSeparator",
+			guifg = t.canvas.border,
+		},
 		EndOfBuffer = link("EndOfBuffer", "NonText"),
 		Menu = link("Menu", "Pmenu"),
 		QuickFixLine = link("QuickFixLine", "Search"),
@@ -342,7 +357,7 @@ local function gen_variant(t, dsl)
 			name = "PmenuSel",
 			guifg = t.layer3.fg,
 			guibg = t.layer3.bg,
-			gui = "NONE",
+			gui = "bold",
 		},
 		PmenuKind = hlgroup {
 			name = "PmenuKind",
@@ -382,42 +397,52 @@ local function gen_variant(t, dsl)
 		VisualNOS = hlgroup {
 			name = "VisualNOS",
 			guifg = "NONE",
-			guibg = t.layer3.bg,
+			guibg = dsl.blend(
+				dsl.get { "Visual", "guibg" },
+				dsl.get { "Normal", "guibg" },
+				0.5
+			),
 		},
 		Scrollbar = hlgroup {
 			name = "Scrollbar",
 			guifg = "NONE",
 			guibg = t.layer2.bg,
 		},
+		DiagnosticUnnecessary = hlgroup {
+			name = "DiagnosticUnnecessary",
+			guifg = t.warning.fg,
+			guibg = t.warning.bg,
+			gui = "italic",
+		},
 		DiagnosticError = hlgroup {
 			name = "DiagnosticError",
 			guifg = t.error.fg,
 			guibg = t.error.bg,
-			gui = "NONE",
+			gui = "italic",
 		},
 		DiagnosticHint = hlgroup {
 			name = "DiagnosticHint",
 			guifg = t.info.fg,
 			guibg = t.info.bg,
-			gui = "NONE",
+			gui = "italic",
 		},
 		DiagnosticInfo = hlgroup {
 			name = "DiagnosticInfo",
 			guifg = t.info.fg,
 			guibg = t.info.bg,
-			gui = "NONE",
+			gui = "italic",
 		},
 		DiagnosticWarn = hlgroup {
 			name = "DiagnosticWarn",
 			guifg = t.warning.fg,
 			guibg = t.warning.bg,
-			gui = "NONE",
+			gui = "italic",
 		},
 		DiagnosticOk = hlgroup {
 			name = "DiagnosticOk",
 			guifg = t.success.fg,
 			guibg = t.success.bg,
-			gui = "NONE",
+			gui = "italic",
 		},
 		DiagnosticSignError = hlgroup {
 			name = "DiagnosticSignError",
@@ -481,8 +506,9 @@ local function gen_variant(t, dsl)
 			name = "DiagnosticUnderlineError",
 			guifg = "NONE",
 			guibg = "NONE",
-			gui = "underline",
-			guisp = get { "DiagnosticSignError", "guifg" },
+			gui = "undercurl",
+			-- This is an exception, but red underlines REALLY stand out
+			guisp = dsl.blend(t.error.fg, dsl.get { "Normal", "guibg" }, 0.3),
 		},
 		vimCommand = hlgroup {
 			name = "vimCommand",
@@ -576,6 +602,18 @@ local function gen_variant(t, dsl)
 		GitSignsDeleteNr = link("GitSignsDeleteNr", "GitSignsDelete"),
 		GitSignsDeleteLn = link("GitSignsDeleteLn", "GitSignsDelete"),
 		GitCommitOverflow = link("gitCommitOverflow", "WarningMsg"),
+		GitCommitOnBranch = hlgroup {
+			name = "gitcommitOnBranch",
+			guifg = "fg",
+			guibg = "NONE",
+			gui = "NONE",
+		},
+		GitCommitComment = hlgroup {
+			name = "gitcommitComment",
+			guifg = "fg",
+			guibg = "NONE",
+			gui = "NONE",
+		},
 		IndentBlanklineChar = link("IndentBlanklineChar", "VertSplit"),
 		Sneak = link("Sneak", "Visual"),
 		SneakScope = link("SneakScope", "IncSearch"),
@@ -763,7 +801,7 @@ local function gen_variant(t, dsl)
 		},
 		TreesitterContext = hlgroup {
 			name = "TreesitterContext",
-			guifg = "NONE",
+			guifg = dsl.blend(t.layer1.fg, get { "Normal", "guibg" }, 0.2),
 			guibg = t.layer1.bg,
 			gui = "NONE",
 		},
@@ -772,7 +810,7 @@ local function gen_variant(t, dsl)
 			guifg = "NONE",
 			guibg = "NONE",
 			gui = "underline",
-			guisp = t.layer1.border,
+			guisp = get { "StatusLine", "guibg" },
 		},
 		TreesitterContextLineNumberBottom = link(
 			"TreesitterContextLineNumberBottom",
@@ -780,7 +818,7 @@ local function gen_variant(t, dsl)
 		),
 		TreesitterContextSeparator = hlgroup {
 			name = "TreesitterContextSeparator",
-			guifg = t.layer1.border,
+			guifg = get { "StatusLine", "guibg" },
 			guibg = "NONE",
 			gui = "NONE",
 		},
@@ -824,7 +862,7 @@ local function gen_variant(t, dsl)
 		TermBrightWhite = t.term_bright_white,
 		LspCodeLens = hlgroup {
 			name = "LspCodeLens",
-			guifg = t.layer3.bg,
+			guifg = t.canvas.fg_faint,
 			guibg = "NONE",
 		},
 		LspSignatureActiveParameter = link(
@@ -836,34 +874,46 @@ local function gen_variant(t, dsl)
 			guifg = t.info.fg_normal,
 			guibg = "NONE",
 		},
+		-- In Haskell you use constructors a lot (e.g., when creating
+		-- data types) so they should just look like code
+		["@constructor.haskell"] = hlgroup {
+			name = "@constructor.haskell",
+			guifg = "NONE",
+			gui = "NONE",
+		},
 		["@function.haskell"] = hlgroup {
 			name = "@function.haskell",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = "NONE",
+		},
+		["@type.haskell"] = hlgroup {
+			name = "@type.haskell",
+			guifg = "NONE",
+			gui = "bold",
 		},
 		["@variable.haskell"] = hlgroup {
 			name = "@variable.haskell",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = "NONE",
 		},
 		["@variable.parameter.haskell"] = hlgroup {
 			name = "@variable.parameter.haskell",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = "NONE",
 		},
 		["@keyword.haskell"] = hlgroup {
 			name = "@keyword.haskell",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = { "bold" },
 		},
 		["@operator.haskell"] = hlgroup {
 			name = "@operator.haskell",
-			guifg = "fg",
-			gui = { "NONE" },
+			guifg = "NONE",
+			gui = { "bold" },
 		},
 		["@keyword.coroutine"] = hlgroup {
 			name = "@keyword.coroutine",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = "bold",
 		},
 		helpExample = link("helpExample", "Pmenu"),
@@ -893,54 +943,54 @@ local function gen_variant(t, dsl)
 		["@text.literal"] = link("@text.literal", "helpExample"),
 		["@text.strong"] = hlgroup {
 			name = "@text.strong",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = "bold",
 		},
 		["@field"] = hlgroup { name = "@field", guifg = "fg", gui = "NONE" },
 		["@symbol"] = hlgroup { name = "@symbol", guifg = "fg", gui = "bold" },
 		["@variable"] = hlgroup {
 			name = "@variable",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = "NONE",
 		},
 		["@method.call"] = hlgroup {
 			name = "@method.call",
-			guifg = "fg",
-			gui = "italic",
+			guifg = "NONE",
+			gui = "NONE",
 		},
 		["@keyword.function"] = hlgroup {
 			name = "@keyword.function",
-			guifg = "fg",
-			gui = "NONE",
+			guifg = "NONE",
+			gui = "bold",
 		},
 		["@keyword.operator"] = hlgroup {
 			name = "@keyword.operator",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = "NONE",
 		},
 		["@keyword.return"] = hlgroup {
 			name = "@keyword.return",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = "NONE",
 		},
 		["@lsp.type.function"] = hlgroup {
 			name = "@lsp.type.function",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = "NONE",
 		},
 		["@lsp.typemod.function.defaultLibrary"] = hlgroup {
 			name = "@lsp.typemod.function.defaultLibrary",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = "NONE",
 		},
 		["@lsp.typemod.variable.declaration"] = hlgroup {
 			name = "@lsp.typemod.variable.declaration",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = "NONE",
 		},
 		["@lsp.typemod.function.declaration"] = hlgroup {
 			name = "@lsp.typemod.function.declaration",
-			guifg = "fg",
+			guifg = "NONE",
 			gui = { "NONE" },
 		},
 		OptionFadeFoldColumn = hlgroup {
@@ -970,7 +1020,7 @@ local function gen_variant(t, dsl)
 		},
 		LegacyOptionFadedComments = hlgroup {
 			name = "Comment",
-			guifg = t.layer3.fg,
+			guifg = t.canvas.fg_muted,
 			guibg = "NONE",
 		},
 		OptionNormalComments = hlgroup {
@@ -993,8 +1043,8 @@ local function gen_variant(t, dsl)
 		},
 		OptionBackgroundComments = hlgroup {
 			name = "Comment",
-			guifg = t.accent.fg,
-			guibg = t.accent.bg,
+			guifg = t.layer1.fg,
+			guibg = t.layer1.bg,
 			gui = "NONE",
 		},
 		StatusLineTerm = link("StatusLineTerm", "StatusLine"),
@@ -1004,8 +1054,31 @@ local function gen_variant(t, dsl)
 end
 
 return function(t, dsl)
+	local dark = gen_variant(t.dark, dsl)
+	dark["StatusLine"] = dsl.hlgroup {
+		name = "StatusLine",
+		guibg = dsl.blend(
+			dsl.darker_contrast(dsl.get { "Normal", "guibg" }, 1.3),
+			dsl.get { "Normal", "guibg" },
+			0.5
+		),
+		guifg = dsl.brighter_contrast(dsl.get { "StatusLine", "guibg" }, 7),
+		gui = "NONE",
+	}
+
+	dark["StatusLineNC"] = dsl.hlgroup {
+		name = "StatusLineNC",
+		guifg = dsl.brighter_contrast(dsl.get { "StatusLineNC", "guibg" }, 1.7),
+		guibg = dsl.blend(
+			dsl.get { "StatusLine", "guibg" },
+			dsl.get { "Normal", "guibg" },
+			0.8
+		),
+		gui = "NONE",
+	}
+
 	return {
 		light = gen_variant(t.light, dsl),
-		dark = gen_variant(t.dark, dsl),
+		dark = dark,
 	}
 end

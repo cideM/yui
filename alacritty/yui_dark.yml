@@ -1,52 +1,52 @@
 { 
 	"colors": {
 		"primary": {
-			"foreground": "#DCDBDB",
-			"background": "#211F29",
-			"dim_foreground": "#6c616b",
+			"foreground": "#aaaab5",
+			"background": "#1F1F29",
+			"dim_foreground": "#5f5f72",
 		},
 		"cursor": {
-			"text": "#33313f",
-			"cursor": "#DCDBDB",
+			"text": "CellBackground",
+			"cursor": "CellForeground",
 		},
 		"vi_mode_cursor": {
-			"text": "#33313f",
-			"cursor": "#DCDBDB",
+			"text": "CellBackground",
+			"cursor": "CellForeground",
 		},
 		"search": {
 			"matches": {
-				"foreground": "#DCDBDB",
-				"background": "#454253",
+				"foreground": "#c8c8d0",
+				"background": "#2e2e3c",
 			},
 			"focused_match": {
-				"foreground": "#2d293f",
-				"background": "#69aafd",
+				"foreground": "#2e2e3c",
+				"background": "#c8c8d0",
 			},
 		},
 		"hints": {
 			"start": {
 				"foreground": "#69aafd",
-				"background": "#2d293f",
+				"background": "#292a3d",
 			},
 			"end": {
-				"foreground": "#DCDBDB",
-				"background": "#211F29",
+				"foreground": "#aaaab5",
+				"background": "#1F1F29",
 			},
 		},
 		"line_indicator": {
-			"foreground": "#2d293f",
-			"background": "#69aafd",
+			"foreground": "#2e2e3c",
+			"background": "#c8c8d0",
 		},
 		"footer_bar": {
-			"foreground": "#DCDBDB",
-			"background": "#33313f",
+			"foreground": "#9fa4a4",
+			"background": "#151717",
 		},
 		"selection": {
-			"text": "#DCDBDB",
-			"background": "#454253",
+			"text": "#c8c8d0",
+			"background": "#2e2e3c",
 		},
 		"normal": {
-			"black": "#DCDBDB",
+			"black": "#bbbbbb",
 			"red": "#F55661",
 			"green": "#70cf92",
 			"yellow": "#cfb787",
@@ -56,7 +56,7 @@
 			"white": "#f5f5f5",
 		},
 		"bright": {
-			"black": "#DCDBDB",
+			"black": "#bbbbbb",
 			"red": "#F55661",
 			"green": "#70cf92",
 			"yellow": "#cfb787",

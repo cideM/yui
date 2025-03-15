@@ -61,6 +61,28 @@
               };
           };
 
+        ghostty = pkgs.stdenv.mkDerivation {
+          buildInputs = with pkgs; [
+            lua54Packages.lua
+          ];
+          pname = "yui";
+          version = "latest";
+          buildPhase = ''
+            make clean
+            make ghostty/yui_light
+            make ghostty/yui_dark
+          '';
+          installPhase = ''
+            mkdir -p $out
+            cp -r ghostty $out
+          '';
+          src = with pkgs.lib;
+            cleanSourceWith {
+              filter = cleanSourceFilter;
+              src = ./.;
+            };
+        };
+
         alacritty = pkgs.stdenv.mkDerivation {
           buildInputs = with pkgs; [
             lua54Packages.lua
@@ -88,11 +110,12 @@
         packages = flake-utils.lib.flattenTree {
           neovim = neovim;
           alacritty = alacritty;
+          ghostty = ghostty;
           fish_dark = makeFishPlugin "fish_dark" "fish/yui_dark.fish";
           fish_light = makeFishPlugin "fish_light" "fish/yui.fish";
         };
 
-        defaultPackage = packages.nvim;
+        defaultPackage = packages.neovim;
 
         devShell = pkgs.mkShell {
           buildInputs = with pkgs; [
@@ -100,7 +123,7 @@
             moreutils
             jq
             alejandra
-			nodePackages.prettier
+            nodePackages.prettier
             (lua54Packages.lua.withPackages (ps:
               with ps; [
               ]))

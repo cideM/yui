@@ -13,12 +13,12 @@ M.yaml = function(colors)
 			"dim_foreground": "${primary_dim_fg}",
 		},
 		"cursor": {
-			"text": "${cursor_fg}",
-			"cursor": "${cursor_bg}",
+			"text": "CellBackground",
+			"cursor": "CellForeground",
 		},
 		"vi_mode_cursor": {
-			"text": "${vi_cursor_fg}",
-			"cursor": "${vi_cursor_bg}",
+			"text": "CellBackground",
+			"cursor": "CellForeground",
 		},
 		"search": {
 			"matches": {
@@ -90,10 +90,10 @@ M.msg = function(colors)
 			'colors.primary.foreground="${primary_fg}"'\
 			'colors.primary.background="${primary_bg}"'\
 			'colors.primary.dim_foreground="${primary_dim_fg}"'\
-			'colors.cursor.foreground="${cursor_fg}"'\
-			'colors.cursor.background="${cursor_bg}"'\
-			'colors.vi_mode_cursor.foreground="${vi_cursor_fg}"'\
-			'colors.vi_mode_cursor.background="${vi_cursor_bg}"'\
+			'colors.cursor.foreground="CellBackground"'\
+			'colors.cursor.background="CellForeground"'\
+			'colors.vi_mode_cursor.foreground="CellBackground"'\
+			'colors.vi_mode_cursor.background="CellForeground"'\
 			'colors.search.matches.foreground="${matches_fg}"'\
 			'colors.search.matches.background="${matches_bg}"'\
 			'colors.search.focused_match.foreground="${focused_match_fg}"'\
@@ -138,11 +138,11 @@ foreground = "${primary_fg}"
 background = "${primary_bg}"
 dim_foreground = "${primary_dim_fg}"
 [colors.cursor]
-text = "${cursor_fg}"
-cursor = "${cursor_bg}"
+text = "CellBackground"
+cursor = "CellForeground"
 [colors.vi_mode_cursor]
-text = "${vi_cursor_fg}"
-cursor = "${vi_cursor_bg}"
+text = "CellBackground"
+cursor = "CellForeground"
 [colors.search]
 [colors.search.matches]
 foreground = "${matches_fg}"

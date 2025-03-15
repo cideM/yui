@@ -120,6 +120,7 @@ return function(colors, name)
 	${VisualNOS}
 	${Scrollbar}
 	${DiagnosticError}
+	${DiagnosticUnnecessary}
 	${DiagnosticOk}
 	${DiagnosticHint}
 	${DiagnosticInfo}
@@ -173,6 +174,8 @@ return function(colors, name)
 	${fugitiveStagedSection}
 	${fugitiveUnstagedSection}
 	${GitCommitOverflow}
+	${GitCommitComment}
+	${GitCommitOnBranch}
 	${helpBacktick}
 	${helpDeprecated}
 	${mkdCodeDelimiter}
@@ -227,6 +230,7 @@ return function(colors, name)
 	${WhichKeySeperator}
 
 	if has('nvim')
+		${Punctuation}
 		${SpecialKeyNvim}
 		let g:terminal_color_0 = '${TermBlack}'
 		let g:terminal_color_1 = '${TermRed}'
@@ -246,6 +250,11 @@ return function(colors, name)
 		let g:terminal_color_15 = '${TermBrightWhite}'
 		
 		${@function.haskell}
+	    ${@constructor.lua}
+		${@markup.raw.block.markdown}
+		${@punctuation.special.markdown}
+		${@constructor.haskell}
+		${@type.haskell}
 		${@variable.haskell}
 		${@variable.parameter.haskell}
 		${@keyword.haskell}
@@ -257,6 +266,9 @@ return function(colors, name)
 
 		${@keyword.coroutine}
 		${@text.literal}
+		${@tag}
+		${@tag.builtin}
+		${@operator.tsx}
 		${@constant.builtin}
 		${@function}
 		${@function.method.call}

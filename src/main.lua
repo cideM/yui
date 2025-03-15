@@ -13,6 +13,7 @@ local dsl = require "lib/dsl"
 -- ...) that we'll resolve (~ flatten) later.
 local theme_fns = {
 	(require "themes/alacritty/theme"),
+	(require "themes/ghostty/theme"),
 	(require "themes/lightline/theme"),
 	(require "themes/fish/theme"),
 	(require "themes/css/theme"),
@@ -94,6 +95,7 @@ return {
 			context.light.theme_name
 		),
 		fish = require "themes/fish/template"(kv.light),
+		ghostty = require "themes/ghostty/template"(kv.light),
 	},
 	dark = {
 		nvim = require "themes/nvim/template"(kv.dark, context.dark.theme_name),
@@ -108,5 +110,6 @@ return {
 			context.dark.theme_name
 		),
 		fish = require "themes/fish/template"(kv.dark),
+		ghostty = require "themes/ghostty/template"(kv.dark),
 	},
 }

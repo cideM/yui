@@ -3,30 +3,30 @@
 		"primary": {
 			"foreground": "#3D3C44",
 			"background": "#F1EDED",
-			"dim_foreground": "#b19da8",
+			"dim_foreground": "#9f8a99",
 		},
 		"cursor": {
-			"text": "#e6dfdf",
-			"cursor": "#3D3C44",
+			"text": "CellBackground",
+			"cursor": "CellForeground",
 		},
 		"vi_mode_cursor": {
-			"text": "#e6dfdf",
-			"cursor": "#3D3C44",
+			"text": "CellBackground",
+			"cursor": "CellForeground",
 		},
 		"search": {
 			"matches": {
-				"foreground": "#3D3C44",
-				"background": "#dcd2d2",
+				"foreground": "#5c4040",
+				"background": "#e5dede",
 			},
 			"focused_match": {
-				"foreground": "#e5dcf3",
-				"background": "#3856d1",
+				"foreground": "#e5dede",
+				"background": "#5c4040",
 			},
 		},
 		"hints": {
 			"start": {
-				"foreground": "#3856d1",
-				"background": "#e5dcf3",
+				"foreground": "#42267d",
+				"background": "#ccc2f2",
 			},
 			"end": {
 				"foreground": "#3D3C44",
@@ -34,16 +34,16 @@
 			},
 		},
 		"line_indicator": {
-			"foreground": "#e5dcf3",
-			"background": "#3856d1",
+			"foreground": "#e5dede",
+			"background": "#5c4040",
 		},
 		"footer_bar": {
-			"foreground": "#3D3C44",
+			"foreground": "#5c4040",
 			"background": "#e6dfdf",
 		},
 		"selection": {
-			"text": "#3D3C44",
-			"background": "#dcd2d2",
+			"text": "#5c4040",
+			"background": "#e5dede",
 		},
 		"normal": {
 			"black": "#3D3C44",
