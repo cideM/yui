@@ -13,7 +13,7 @@ return {
 			fg_faint = dsl.blend(
 				dsl.get { "light", "canvas", "fg" },
 				dsl.get { "light", "canvas", "bg" },
-				0.9
+				0.8
 			),
 			fg_muted = dsl.blend(
 				dsl.get { "light", "canvas", "fg" },

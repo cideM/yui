@@ -325,7 +325,7 @@ local function gen_variant(t, dsl)
 		},
 		NonText = hlgroup {
 			name = "NonText",
-			guifg = t.layer2.bg,
+			guifg = t.canvas.fg_faint,
 			guibg = "NONE",
 		},
 		SpellCap = link("SpellCap", "SpellBad"),
@@ -1068,11 +1068,11 @@ return function(t, dsl)
 
 	dark["StatusLineNC"] = dsl.hlgroup {
 		name = "StatusLineNC",
-		guifg = dsl.brighter_contrast(dsl.get { "StatusLineNC", "guibg" }, 3),
+		guifg = dsl.brighter_contrast(dsl.get { "StatusLineNC", "guibg" }, 1.7),
 		guibg = dsl.blend(
 			dsl.get { "StatusLine", "guibg" },
 			dsl.get { "Normal", "guibg" },
-			0.3
+			0.8
 		),
 		gui = "NONE",
 	}
