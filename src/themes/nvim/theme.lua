@@ -69,7 +69,7 @@ local function gen_variant(t, dsl)
 		},
 		Constant = hlgroup {
 			name = "Constant",
-			guifg = t.success.fg_normal,
+			guifg = t.accent.fg_normal,
 			guibg = "NONE",
 			gui = "NONE",
 		},
