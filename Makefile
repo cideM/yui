@@ -82,4 +82,4 @@ ghostty/yui_light: $(lua_files)
 
 .PHONY: clean
 clean:
-	@rm -rf colors/ autoload/lightline/ alacritty/ fish/ ghostty/
+	@rm -rf colors/ autoload/lightline/ alacritty/ fish/ ghostty/ doc/ css/ html/
