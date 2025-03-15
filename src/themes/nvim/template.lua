@@ -38,7 +38,6 @@ return function(colors, name)
 	${ErrorMsg}
 	${Constant}
 	${String}
-	${Punctuation}
 	${Character}
 	${Number}
 	${Boolean}
@@ -231,6 +230,7 @@ return function(colors, name)
 	${WhichKeySeperator}
 
 	if has('nvim')
+		${Punctuation}
 		${SpecialKeyNvim}
 		let g:terminal_color_0 = '${TermBlack}'
 		let g:terminal_color_1 = '${TermRed}'
