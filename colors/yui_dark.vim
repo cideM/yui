@@ -30,12 +30,11 @@
 	hi DiffText guifg=#69aafd ctermfg=75 guibg=#292a3d ctermbg=236 gui=NONE cterm=NONE
 	hi Directory guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 	hi ErrorMsg guifg=#ee5c66 ctermfg=203 guibg=#2c2737 ctermbg=236 gui=none cterm=none
-	hi Constant guifg=#70cf92 ctermfg=78 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi Constant guifg=#E66F51 ctermfg=167 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi! link String Constant
-	hi @punctuation guifg=#5f5f72 ctermfg=241
 	hi! link Character Constant
 	hi! link Number Constant
-	hi Boolean guifg=#70cf92 ctermfg=78 guibg=NONE ctermbg=NONE gui=bold cterm=bold
+	hi Boolean guifg=#E66F51 ctermfg=167 guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi! link Float Constant
 	hi Identifier guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi Function guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
@@ -70,7 +69,7 @@
 	hi MoreMsg guifg=#69aafd ctermfg=75 guibg=#292a3d ctermbg=236 gui=NONE cterm=NONE
 	hi WarningMsg guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi Whitespace guifg=#2b2b37 ctermfg=236 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-	hi TabLine guifg=#616565 ctermfg=241 guibg=#181a1a ctermbg=234 gui=NONE cterm=NONE
+	hi TabLine guifg=#3e4249 ctermfg=238 guibg=#1c1e22 ctermbg=234 gui=NONE cterm=NONE
 	hi! link TabLineSel StatusLine
 	hi! link TabLineFill TabLine
 	hi Search guifg=#c8c8d0 ctermfg=251 guibg=#2e2e3c ctermbg=236 gui=bold cterm=bold
@@ -94,12 +93,12 @@
 	hi FloatTitle guifg=#a0a0ad ctermfg=248 guibg=#252531 ctermbg=235 gui=bold cterm=bold
 	hi FloatBorder guifg=#5e5e73 ctermfg=241 guibg=#252531 ctermbg=235 guisp=NONE gui=NONE cterm=NONE
 	hi StatusLine guifg=#9fa4a4 ctermfg=247 guibg=#151717 ctermbg=233 gui=NONE cterm=NONE
-	hi StatusLineNC guifg=#616565 ctermfg=241 guibg=#181a1a ctermbg=234 gui=NONE cterm=NONE
+	hi StatusLineNC guifg=#3e4249 ctermfg=238 guibg=#1c1e22 ctermbg=234 gui=NONE cterm=NONE
 	hi ColorColumn guifg=#a0a0ad ctermfg=248 guibg=#252531 ctermbg=235
 	hi! link CursorColumn CursorLine
 	hi CopilotSuggestion guifg=#5f5f72 ctermfg=241 guibg=NONE ctermbg=NONE
 	hi WinBar guifg=#c8c8d0 ctermfg=251 guibg=#2e2e3c ctermbg=236 guisp=#090a09 gui=underline cterm=underline
-	hi NonText guifg=#2e2e3c ctermfg=236 guibg=NONE ctermbg=NONE
+	hi NonText guifg=#2b2b37 ctermfg=236 guibg=NONE ctermbg=NONE
 	hi WinBarNC guifg=#767689 ctermfg=244 guibg=#252531 ctermbg=235 guisp=#090a09 gui=underline cterm=underline
 	hi! link PmenuExtraSel PmenuSel
 	hi! link LspSignatureActiveParameter Search
@@ -114,13 +113,13 @@
 	hi Visual guifg=#c8c8d0 ctermfg=251 guibg=#2e2e3c ctermbg=236 gui=NONE cterm=NONE
 	hi VisualNOS guifg=NONE ctermfg=NONE guibg=#262632 ctermbg=235
 	hi Scrollbar guifg=NONE ctermfg=NONE guibg=#2e2e3c ctermbg=236
-	hi DiagnosticError guifg=#ee5c66 ctermfg=203 guibg=#2c2737 ctermbg=236 gui=NONE cterm=NONE
-	hi DiagnosticUnnecessary guifg=#cfb787 ctermfg=180 guibg=#302b38 ctermbg=236 gui=NONE cterm=NONE
-	hi DiagnosticOk guifg=#70cf92 ctermfg=78 guibg=#2a2d35 ctermbg=236 gui=NONE cterm=NONE
-	hi DiagnosticHint guifg=#69aafd ctermfg=75 guibg=#292a3d ctermbg=236 gui=NONE cterm=NONE
-	hi DiagnosticInfo guifg=#69aafd ctermfg=75 guibg=#292a3d ctermbg=236 gui=NONE cterm=NONE
-	hi DiagnosticWarn guifg=#cfb787 ctermfg=180 guibg=#302b38 ctermbg=236 gui=NONE cterm=NONE
-	hi DiagnosticUnderlineError guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#F55661 gui=underline cterm=underline
+	hi DiagnosticError guifg=#ee5c66 ctermfg=203 guibg=#2c2737 ctermbg=236 gui=italic cterm=italic
+	hi DiagnosticUnnecessary guifg=#cfb787 ctermfg=180 guibg=#302b38 ctermbg=236 gui=italic cterm=italic
+	hi DiagnosticOk guifg=#70cf92 ctermfg=78 guibg=#2a2d35 ctermbg=236 gui=italic cterm=italic
+	hi DiagnosticHint guifg=#69aafd ctermfg=75 guibg=#292a3d ctermbg=236 gui=italic cterm=italic
+	hi DiagnosticInfo guifg=#69aafd ctermfg=75 guibg=#292a3d ctermbg=236 gui=italic cterm=italic
+	hi DiagnosticWarn guifg=#cfb787 ctermfg=180 guibg=#302b38 ctermbg=236 gui=italic cterm=italic
+	hi DiagnosticUnderlineError guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#a8487d gui=undercurl cterm=undercurl
 	hi DiagnosticUnderlineHint guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#69aafd gui=underline cterm=underline
 	hi DiagnosticUnderlineInfo guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#69aafd gui=underline cterm=underline
 	hi DiagnosticUnderlineWarn guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#cfb787 gui=underline cterm=underline
@@ -225,6 +224,7 @@
 	hi WhichKeySeperator guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 
 	if has('nvim')
+		hi @punctuation guifg=#5f5f72 ctermfg=241
 		hi SpecialKey guifg=#69aafd ctermfg=75 guibg=#292a3d ctermbg=236
 		let g:terminal_color_0 = '#bbbbbb'
 		let g:terminal_color_1 = '#F55661'

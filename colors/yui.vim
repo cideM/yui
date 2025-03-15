@@ -20,7 +20,7 @@
 	hi! link ToolbarLine TabLineFill
 	hi Cursor guifg=#ebe6e6 ctermfg=254 guibg=fg ctermbg=fg
 	hi! link CursorLineNr CursorLine
-	hi CursorLine guifg=NONE ctermfg=NONE guibg=#e5dede ctermbg=254 gui=NONE cterm=NONE
+	hi CursorLine guifg=NONE ctermfg=NONE guibg=#ebe6e6 ctermbg=254 gui=NONE cterm=NONE
 	hi! link lCursor Cursor
 	hi! link CursorIM Cursor
 	hi WinSeparator guifg=#bca3a3 ctermfg=248
@@ -30,12 +30,11 @@
 	hi DiffText guifg=#42267d ctermfg=54 guibg=#ccc2f2 ctermbg=183 gui=NONE cterm=NONE
 	hi Directory guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 	hi ErrorMsg guifg=#B22E32 ctermfg=125 guibg=#f2d8d8 ctermbg=224 gui=none cterm=none
-	hi Constant guifg=#346e27 ctermfg=238 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi Constant guifg=#C43E1C ctermfg=166 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi! link String Constant
-	hi @punctuation guifg=#9f8a99 ctermfg=246
 	hi! link Character Constant
 	hi! link Number Constant
-	hi Boolean guifg=#346e27 ctermfg=238 guibg=NONE ctermbg=NONE gui=bold cterm=bold
+	hi Boolean guifg=#C43E1C ctermfg=166 guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi! link Float Constant
 	hi Identifier guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi Function guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
@@ -69,7 +68,7 @@
 	hi ModeMsg guifg=#42267d ctermfg=54 guibg=#ccc2f2 ctermbg=183 gui=NONE cterm=NONE
 	hi MoreMsg guifg=#42267d ctermfg=54 guibg=#ccc2f2 ctermbg=183 gui=NONE cterm=NONE
 	hi WarningMsg guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-	hi Whitespace guifg=#e1d9da ctermfg=253 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+	hi Whitespace guifg=#d1c4c8 ctermfg=251 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 	hi TabLine guifg=#a57575 ctermfg=138 guibg=#e9e3e3 ctermbg=254 gui=NONE cterm=NONE
 	hi! link TabLineSel StatusLine
 	hi! link TabLineFill TabLine
@@ -92,14 +91,14 @@
 	hi Title guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE gui=bold cterm=bold
 	hi NormalFloat guifg=#604747 ctermfg=239 guibg=#ebe6e6 ctermbg=254
 	hi FloatTitle guifg=#604747 ctermfg=239 guibg=#ebe6e6 ctermbg=254 gui=bold cterm=bold
-	hi FloatBorder guibg=#ebe6e6 ctermbg=254 guisp=NONE gui=NONE cterm=NONE
+	hi FloatBorder guifg=#ac9090 ctermfg=138 guibg=#ebe6e6 ctermbg=254 guisp=NONE gui=NONE cterm=NONE
 	hi StatusLine guifg=#5c4040 ctermfg=239 guibg=#e6dfdf ctermbg=254 gui=NONE cterm=NONE
 	hi StatusLineNC guifg=#a57575 ctermfg=138 guibg=#e9e3e3 ctermbg=254 gui=NONE cterm=NONE
 	hi ColorColumn guifg=#604747 ctermfg=239 guibg=#ebe6e6 ctermbg=254
 	hi! link CursorColumn CursorLine
 	hi CopilotSuggestion guifg=#9f8a99 ctermfg=246 guibg=NONE ctermbg=NONE
 	hi WinBar guifg=#5c4040 ctermfg=239 guibg=#e5dede ctermbg=254 guisp=#b59898 gui=underline cterm=underline
-	hi NonText guifg=#e5dede ctermfg=254 guibg=NONE ctermbg=NONE
+	hi NonText guifg=#d1c4c8 ctermfg=251 guibg=NONE ctermbg=NONE
 	hi WinBarNC guifg=#ab8787 ctermfg=138 guibg=#ebe6e6 ctermbg=254 guisp=#b59898 gui=underline cterm=underline
 	hi! link PmenuExtraSel PmenuSel
 	hi! link LspSignatureActiveParameter Search
@@ -114,13 +113,13 @@
 	hi Visual guifg=#5c4040 ctermfg=239 guibg=#e5dede ctermbg=254 gui=NONE cterm=NONE
 	hi VisualNOS guifg=NONE ctermfg=NONE guibg=#ebe5e5 ctermbg=254
 	hi Scrollbar guifg=NONE ctermfg=NONE guibg=#e5dede ctermbg=254
-	hi DiagnosticError guifg=#B22E32 ctermfg=125 guibg=#f2d8d8 ctermbg=224 gui=NONE cterm=NONE
-	hi DiagnosticUnnecessary guifg=#615413 ctermfg=58 guibg=#fde37c ctermbg=222 gui=NONE cterm=NONE
-	hi DiagnosticOk guifg=#565633 ctermfg=239 guibg=#e8e792 ctermbg=186 gui=NONE cterm=NONE
-	hi DiagnosticHint guifg=#42267d ctermfg=54 guibg=#ccc2f2 ctermbg=183 gui=NONE cterm=NONE
-	hi DiagnosticInfo guifg=#42267d ctermfg=54 guibg=#ccc2f2 ctermbg=183 gui=NONE cterm=NONE
-	hi DiagnosticWarn guifg=#615413 ctermfg=58 guibg=#fde37c ctermbg=222 gui=NONE cterm=NONE
-	hi DiagnosticUnderlineError guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#B22E32 gui=underline cterm=underline
+	hi DiagnosticError guifg=#B22E32 ctermfg=125 guibg=#f2d8d8 ctermbg=224 gui=italic cterm=italic
+	hi DiagnosticUnnecessary guifg=#615413 ctermfg=58 guibg=#fde37c ctermbg=222 gui=italic cterm=italic
+	hi DiagnosticOk guifg=#565633 ctermfg=239 guibg=#e8e792 ctermbg=186 gui=italic cterm=italic
+	hi DiagnosticHint guifg=#42267d ctermfg=54 guibg=#ccc2f2 ctermbg=183 gui=italic cterm=italic
+	hi DiagnosticInfo guifg=#42267d ctermfg=54 guibg=#ccc2f2 ctermbg=183 gui=italic cterm=italic
+	hi DiagnosticWarn guifg=#615413 ctermfg=58 guibg=#fde37c ctermbg=222 gui=italic cterm=italic
+	hi DiagnosticUnderlineError guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#d96364 gui=undercurl cterm=undercurl
 	hi DiagnosticUnderlineHint guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#3856d1 gui=underline cterm=underline
 	hi DiagnosticUnderlineInfo guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#3856d1 gui=underline cterm=underline
 	hi DiagnosticUnderlineWarn guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE guisp=#b17900 gui=underline cterm=underline
@@ -225,6 +224,7 @@
 	hi WhichKeySeperator guifg=fg ctermfg=fg guibg=NONE ctermbg=NONE
 
 	if has('nvim')
+		hi @punctuation guifg=#9f8a99 ctermfg=246
 		hi SpecialKey guifg=#42267d ctermfg=54 guibg=#ccc2f2 ctermbg=183
 		let g:terminal_color_0 = '#3D3C44'
 		let g:terminal_color_1 = '#B22E32'
@@ -288,7 +288,7 @@
 		hi! link @lsp.typemod.member.declaration @lsp.typemod.function.declaration
 		hi @lsp.typemod.variable.declaration guifg=NONE ctermfg=NONE gui=NONE cterm=NONE
 	else
-		hi LspCodeLens guifg=#e1d9da ctermfg=253 guibg=NONE ctermbg=NONE
+		hi LspCodeLens guifg=#d1c4c8 ctermfg=251 guibg=NONE ctermbg=NONE
 		hi LspInlayHint guifg=#3856d1 ctermfg=62 guibg=NONE ctermbg=NONE
 		hi! link StatusLineTerm StatusLine
 		hi! link StatusLineTermNC StatusLineNC
