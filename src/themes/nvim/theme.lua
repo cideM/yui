@@ -506,8 +506,9 @@ local function gen_variant(t, dsl)
 			name = "DiagnosticUnderlineError",
 			guifg = "NONE",
 			guibg = "NONE",
-			gui = "underline",
-			guisp = get { "DiagnosticSignError", "guifg" },
+			gui = "undercurl",
+			-- This is an exception, but red underlines REALLY stand out
+			guisp = dsl.blend(t.error.fg, dsl.get { "Normal", "guibg" }, 0.3),
 		},
 		vimCommand = hlgroup {
 			name = "vimCommand",
