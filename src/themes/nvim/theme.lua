@@ -917,6 +917,7 @@ local function gen_variant(t, dsl)
 			gui = "bold",
 		},
 		helpExample = link("helpExample", "Pmenu"),
+		["@constant"] = link("@constant", "Type"),
 		["@constant.builtin"] = link("@constant.builtin", "Constant"),
 		["@function"] = link("@function", "@lsp.typemod.function.declaration"),
 		["@function.method.call"] = link(
