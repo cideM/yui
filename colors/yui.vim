@@ -264,6 +264,7 @@
 		hi! link @tag.builtin Tag
 		hi! link @operator.tsx Tag
 		hi! link @constant.builtin Constant
+		hi! link @constant Type
 		hi! link @function @lsp.typemod.function.declaration
 		hi! link @function.method.call @method.call
 		hi @text.strong guifg=NONE ctermfg=NONE gui=bold cterm=bold

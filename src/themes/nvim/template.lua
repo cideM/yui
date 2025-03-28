@@ -270,6 +270,7 @@ return function(colors, name)
 		${@tag.builtin}
 		${@operator.tsx}
 		${@constant.builtin}
+		${@constant}
 		${@function}
 		${@function.method.call}
 		${@text.strong}
