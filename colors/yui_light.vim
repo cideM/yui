@@ -1,16 +1,14 @@
-	set background=light
-
 	if (!has('gui_running') && &t_Co < 256 && !has('nvim'))
 		finish
 	endif
-
-	hi clear
 
 	if exists('syntax_on')
 		syntax reset
 	endif
 
-	let g:colors_name = 'yui'
+  if exists('g:colors_name') && g:colors_name != 'yui'
+    let g:colors_name = 'yui_light'
+  endif
 
 	hi Normal guifg=#3D3C44 ctermfg=238 guibg=#F1EDED ctermbg=255
 	hi! link NormalNC Normal
