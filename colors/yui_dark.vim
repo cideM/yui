@@ -2,13 +2,13 @@
 		finish
 	endif
 
+	hi clear
+
 	if exists('syntax_on')
 		syntax reset
 	endif
 
-  if exists('g:colors_name') && g:colors_name != 'yui'
-    let g:colors_name = 'yui_dark'
-  endif
+	let g:colors_name = 'yui_dark'
 
 	hi Normal guifg=#aaaab5 ctermfg=145 guibg=#1F1F29 ctermbg=235
 	hi! link NormalNC Normal
