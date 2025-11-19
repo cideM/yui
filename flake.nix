@@ -25,7 +25,7 @@
           ];
           buildPhase = ''
             make clean
-            make colors/yui.vim
+            make colors/yui_light.vim
             make colors/yui_dark.vim
             make autoload/lightline/colorscheme/yui.vim
             make autoload/lightline/colorscheme/yui_dark.vim
