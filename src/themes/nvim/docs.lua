@@ -42,6 +42,10 @@ function Docs:section(title, tag)
 	table.insert(self.buf, table.concat(lines, "\n"))
 end
 
+function Docs:text(content)
+	table.insert(self.buf, content)
+end
+
 function Docs:option(o)
 	local title = o.title
 	local tag = o.tag or title
@@ -71,6 +75,28 @@ function Docs:render()
 end
 
 local docs = Docs:new()
+
+docs:section("LIGHT OR DARK")
+docs:text([[
+yui ships with dark and light varients and chooses which to use based on what
+the *background* has been set to.
+
+Vim detects your light/dark setup automatically.
+
+	  Vim guesses the background color that you are using.  If it is black
+	  (or another dark color) it will use light colors for text.  If it is
+	  white (or another light color) it will use dark colors for text.
+
+          See Using syntax highlighting section *06.2*
+
+If you think detection failed or have a preference, you can set this yourself
+by setting this in your .vimrc or live:
+
+>
+        :set background=dark
+        :set background=light
+<
+]])
 
 docs:section("OPTIONS")
 docs:option {

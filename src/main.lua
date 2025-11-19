@@ -79,6 +79,7 @@ kv.dark =
 -- TODO: Make sure that all theme functions accept (context, kv) and return both light and dark
 
 return {
+	nvim_loader = require "themes/nvim/loader_template"("yui"),
 	light = {
 		nvim = require "themes/nvim/template"(
 			kv.light,
