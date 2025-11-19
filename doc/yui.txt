@@ -3,7 +3,7 @@
 YUI | ユイ
 
 ==============================================================================
-LIGHT OR DARK
+LIGHT OR DARK                                                  *LIGHT OR DARK*
 
 yui ships with dark and light varients and chooses which to use based on what
 the *background* has been set to.
