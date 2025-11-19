@@ -4,8 +4,6 @@ local interpolate = require("lib/strings").interpolate
 return function(colors, name)
 	return interpolate(
 		[[
-	set background=light
-
 	if (!has('gui_running') && &t_Co < 256 && !has('nvim'))
 		finish
 	endif
