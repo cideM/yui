@@ -1,5 +1,5 @@
 .PHONY: all
-all: colors/yui_dark.vim colors/yui_light.vim doc/yui.txt autoload/lightline/colorscheme/yui_dark.vim autoload/lightline/colorscheme/yui.vim alacritty/yui_dark.toml alacritty/yui_dark.yml alacritty/yui_light.yml alacritty/yui_light.toml alacritty/yui_dark_msg.sh alacritty/yui_light_msg.sh fish/yui.fish fish/yui_dark.fish css/yui.css css/yui_light.css css/yui_dark.css html/index.html ghostty/yui_dark ghostty/yui_light
+all: colors/yui.vim colors/yui_dark.vim colors/yui_light.vim doc/yui.txt autoload/lightline/colorscheme/yui_dark.vim autoload/lightline/colorscheme/yui.vim alacritty/yui_dark.toml alacritty/yui_dark.yml alacritty/yui_light.yml alacritty/yui_light.toml alacritty/yui_dark_msg.sh alacritty/yui_light_msg.sh fish/yui.fish fish/yui_dark.fish css/yui.css css/yui_light.css css/yui_dark.css html/index.html ghostty/yui_dark ghostty/yui_light
 
 lua_path = src/?.lua;src/lib/?.lua
 lua_files = $(shell find src)
@@ -27,6 +27,10 @@ colors/yui_light.vim: $(lua_files)
 colors/yui_dark.vim: $(lua_files)
 	@mkdir -p colors
 	LUA_PATH="$(lua_path)" lua -e 'print(require("main").dark.nvim)' > $@
+
+colors/yui.vim: $(lua_files)
+	@mkdir -p colors
+	LUA_PATH="$(lua_path)" lua -e 'print(require("main").nvim_loader)' > $@
 
 alacritty/yui_light.yml: $(lua_files)
 	@mkdir -p alacritty

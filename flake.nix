@@ -27,6 +27,7 @@
             make clean
             make colors/yui_light.vim
             make colors/yui_dark.vim
+            make colors/yui.vim
             make autoload/lightline/colorscheme/yui.vim
             make autoload/lightline/colorscheme/yui_dark.vim
             rm -rf src flake.* screenshots README.md Makefile LICENSE* CONTRIBUTING.md
