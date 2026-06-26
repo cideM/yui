@@ -5,7 +5,7 @@ set fish_color_redirection 3D3C44 --bold
 set fish_color_end 3D3C44
 set fish_color_error B22E32
 set fish_color_param 3D3C44 --bold
-set fish_color_comment 9f8a99 --italic
+set fish_color_comment 9f8a99
 set fish_color_history_current 614343
 set fish_color_operator 3D3C44
 set fish_color_escape 3D3C44

@@ -5,7 +5,7 @@ set fish_color_redirection aaaab5 --bold
 set fish_color_end aaaab5
 set fish_color_error ee5c66
 set fish_color_param aaaab5 --bold
-set fish_color_comment 5f5f72 --italic
+set fish_color_comment 5f5f72
 set fish_color_history_current c8c8d0
 set fish_color_operator aaaab5
 set fish_color_escape aaaab5

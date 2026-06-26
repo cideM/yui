@@ -14,7 +14,7 @@ set fish_color_redirection ${fish_redirection} --bold
 set fish_color_end ${fish_end}
 set fish_color_error ${fish_error}
 set fish_color_param ${fish_param} --bold
-set fish_color_comment ${fish_comment} --italic
+set fish_color_comment ${fish_comment}
 set fish_color_history_current ${fish_history_current}
 set fish_color_operator ${fish_operator}
 set fish_color_escape ${fish_escape}
