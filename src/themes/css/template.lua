@@ -31,8 +31,6 @@ return function(colors)
 
 	local buf_light = {}
 
-	table.insert(buf_light, "@media (prefers-color-scheme: light) {")
-
 	for k, v in pairs(colors.light) do
 		if not string.match(k, "css-") then
 			goto continue
@@ -45,11 +43,11 @@ return function(colors)
 		::continue::
 	end
 
+	table.sort(buf_light)
+	table.insert(buf_light, 1, "@media (prefers-color-scheme: light) {")
 	table.insert(buf_light, "}")
 
 	local buf_dark = {}
-
-	table.insert(buf_dark, "@media (prefers-color-scheme: dark) {")
 
 	for k, v in pairs(colors.dark) do
 		if not string.match(k, "css-") then
@@ -63,6 +61,8 @@ return function(colors)
 		::continue::
 	end
 
+	table.sort(buf_dark)
+	table.insert(buf_dark, 1, "@media (prefers-color-scheme: dark) {")
 	table.insert(buf_dark, "}")
 
 	return {
