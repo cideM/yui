@@ -42,7 +42,7 @@ magenta = "#8f35bd"
 cyan = "#2c6a73"
 white = "#909098"
 [colors.bright]
-black = "#3D3C44"
+black = "#c9babf"
 red = "#B22E32"
 green = "#346e27"
 yellow = "#b17900"
