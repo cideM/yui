@@ -232,7 +232,7 @@
 		let g:terminal_color_5 = '#b5a0ff'
 		let g:terminal_color_6 = '#18c6ce'
 		let g:terminal_color_7 = '#f5f5f5'
-		let g:terminal_color_8 = '#bbbbbb'
+		let g:terminal_color_8 = '#46404a'
 		let g:terminal_color_9 = '#F55661'
 		let g:terminal_color_10 = '#70cf92'
 		let g:terminal_color_11 = '#cfb787'
@@ -301,7 +301,7 @@
 			\ '#b5a0ff',
 			\ '#18c6ce',
 			\ '#f5f5f5',
-			\ '#bbbbbb',
+			\ '#46404a',
 			\ '#F55661',
 			\ '#70cf92',
 			\ '#cfb787',
