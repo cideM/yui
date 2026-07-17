@@ -305,7 +305,14 @@ return {
 		term_magenta = dsl.get { "dark", "colors", "purple", "fg_normal" },
 		term_cyan = dsl.get { "dark", "colors", "cyan", "fg_normal" },
 		term_white = brighten(dsl.get { "dark", "fg" }, 3.5),
-		term_bright_black = dsl.get { "dark", "fg" },
+		-- bright-black doubles as a subtle background (e.g. fzf's selected
+		-- line, --color=16). It must not equal `fg`, or light text painted on
+		-- it becomes invisible; use a warm-gray offset toward the bg.
+		term_bright_black = dsl.blend(
+			dsl.get { "dark", "fg" },
+			dsl.get { "dark", "bg" },
+			0.75
+		),
 		term_bright_red = dsl.get { "dark", "colors", "red", "fg_normal" },
 		term_bright_green = dsl.get { "dark", "colors", "green", "fg_normal" },
 		term_bright_yellow = dsl.get { "dark", "colors", "yellow", "fg_normal" },
