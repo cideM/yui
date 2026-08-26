@@ -1,0 +1,26 @@
+accent: "#C43E1C"
+background: "#F1EDED"
+cursor: "#C43E1C"
+details: lighter
+foreground: "#3D3C44"
+name: "yui"
+terminal_colors:
+  bright:
+    black: "#c9babf"
+    blue: "#3856d1"
+    cyan: "#2c6a73"
+    green: "#346e27"
+    magenta: "#8f35bd"
+    red: "#B22E32"
+    white: "#909098"
+    yellow: "#b17900"
+  normal:
+    black: "#3D3C44"
+    blue: "#3856d1"
+    cyan: "#2c6a73"
+    green: "#346e27"
+    magenta: "#8f35bd"
+    red: "#B22E32"
+    white: "#909098"
+    yellow: "#b17900"
+
