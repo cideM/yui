@@ -1,5 +1,5 @@
 .PHONY: all
-all: colors/yui.vim colors/yui_dark.vim colors/yui_light.vim doc/yui.txt autoload/lightline/colorscheme/yui_dark.vim autoload/lightline/colorscheme/yui.vim alacritty/yui_dark.toml alacritty/yui_dark.yml alacritty/yui_light.yml alacritty/yui_light.toml alacritty/yui_dark_msg.sh alacritty/yui_light_msg.sh fish/yui.fish fish/yui_dark.fish css/yui.css css/yui_light.css css/yui_dark.css html/index.html ghostty/yui_dark ghostty/yui_light
+all: colors/yui.vim colors/yui_dark.vim colors/yui_light.vim doc/yui.txt autoload/lightline/colorscheme/yui_dark.vim autoload/lightline/colorscheme/yui.vim alacritty/yui_dark.toml alacritty/yui_dark.yml alacritty/yui_light.yml alacritty/yui_light.toml alacritty/yui_dark_msg.sh alacritty/yui_light_msg.sh fish/yui.fish fish/yui_dark.fish css/yui.css css/yui_light.css css/yui_dark.css html/index.html ghostty/yui_dark ghostty/yui_light aerc/yui_light aerc/yui_dark
 
 lua_path = src/?.lua;src/lib/?.lua
 lua_files = $(shell find src)
@@ -84,6 +84,40 @@ ghostty/yui_light: $(lua_files)
 	@mkdir -p ghostty
 	LUA_PATH="$(lua_path)" lua -e 'print(require("main").light.ghostty)' > $@
 
+<<<<<<< HEAD
+||||||| parent of c19702b (feat: Create aerc styleset)
+warp/yui_light.yaml: $(lua_files)
+	@mkdir -p warp
+	LUA_PATH="$(lua_path)" lua -e 'print(require("main").light.warp)' > $@
+
+warp/yui_dark.yaml: $(lua_files)
+	@mkdir -p warp
+	LUA_PATH="$(lua_path)" lua -e 'print(require("main").dark.warp)' > $@
+
+=======
+warp/yui_light.yaml: $(lua_files)
+	@mkdir -p warp
+	LUA_PATH="$(lua_path)" lua -e 'print(require("main").light.warp)' > $@
+
+warp/yui_dark.yaml: $(lua_files)
+	@mkdir -p warp
+	LUA_PATH="$(lua_path)" lua -e 'print(require("main").dark.warp)' > $@
+
+aerc/yui_light: $(lua_files)
+	@mkdir -p aerc
+	LUA_PATH="$(lua_path)" lua -e 'print(require("main").light.aerc)' > $@
+
+aerc/yui_dark: $(lua_files)
+	@mkdir -p aerc
+	LUA_PATH="$(lua_path)" lua -e 'print(require("main").dark.aerc)' > $@
+
+>>>>>>> c19702b (feat: Create aerc styleset)
 .PHONY: clean
 clean:
+<<<<<<< HEAD
 	@rm -rf colors/ autoload/lightline/ alacritty/ fish/ ghostty/ doc/ css/ html/
+||||||| parent of c19702b (feat: Create aerc styleset)
+	@rm -rf colors/ autoload/lightline/ alacritty/ fish/ ghostty/ warp/ doc/ css/ html/
+=======
+	@rm -rf colors/ autoload/lightline/ alacritty/ fish/ ghostty/ warp/ aerc/ doc/ css/ html/
+>>>>>>> c19702b (feat: Create aerc styleset)
