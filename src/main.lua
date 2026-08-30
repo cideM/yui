@@ -14,6 +14,7 @@ local dsl = require "lib/dsl"
 local theme_fns = {
 	(require "themes/alacritty/theme"),
 	(require "themes/ghostty/theme"),
+	(require "themes/aerc/theme"),
 	(require "themes/lightline/theme"),
 	(require "themes/fish/theme"),
 	(require "themes/css/theme"),
@@ -97,6 +98,7 @@ return {
 		),
 		fish = require "themes/fish/template"(kv.light),
 		ghostty = require "themes/ghostty/template"(kv.light),
+		aerc = require "themes/aerc/template"(kv.light),
 	},
 	dark = {
 		nvim = require "themes/nvim/template"(kv.dark, context.dark.theme_name),
@@ -112,5 +114,6 @@ return {
 		),
 		fish = require "themes/fish/template"(kv.dark),
 		ghostty = require "themes/ghostty/template"(kv.dark),
+		aerc = require "themes/aerc/template"(kv.dark),
 	},
 }
